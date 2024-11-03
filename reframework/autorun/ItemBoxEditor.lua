@@ -2,7 +2,7 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For debug & Monster Hunter: Wilds Open Beta Version
-local version = "v0.0.1 Beta"
+local version = "v0.1 Beta"
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
