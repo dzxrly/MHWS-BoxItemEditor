@@ -41,10 +41,3 @@ A mod of Monster Hunter Wilds (Open Beta Ver.) for edit itembox. / 用于怪物�
 1. 打开REFramework菜单，然后展开Script Generated UI. 能看到`ItemBox Editor`窗口；
 2. 点击`Load ItemBox`按钮来读取道具箱内容；
 3. 选择需要修改物品，然后拖动滑动条改变数量。 
-
----
-
-## Update:
-
-### Ver0.0.1 - Alpha
-- 更新第一个测试版本
