@@ -1,0 +1,35 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送新标签时触发
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Create a zip of the directory
+        run: zip -r BoxItemEditor.zip reframework
+
+      - name: Check if release exists and delete it
+        run: |
+          if gh release view ${{ github.ref_name }}; then
+            gh release delete ${{ github.ref_name }} --yes
+          fi
+
+      - name: Create GitHub Release
+        id: create_release
+        run: |
+          gh release create ${{ github.ref_name }} BoxItemEditor.zip --title "${{ github.ref_name }} Release" --notes "Release for ${{ github.ref_name }}"
+
