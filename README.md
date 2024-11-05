@@ -14,7 +14,8 @@ A mod of Monster Hunter Wilds (Open Beta Ver.) for edit itembox. / 用于怪物�
 
 ---
 
-> [!CAUTION] This mod is under development, please backup your save before using! / 警告：该MOD仍处于开发阶段，使用前请备份存档！
+> [!CAUTION]
+> This mod is under development, please backup your save before using! / 警告：该MOD仍处于开发阶段，使用前请备份存档！
 
 ## Requirements:
 - [REFramework - Nightly Dev Build](https://github.com/praydog/REFramework-nightly/releases)
