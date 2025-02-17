@@ -2,10 +2,15 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For debug & Monster Hunter: Wilds Open Beta Version
-local version = "v0.2 Beta"
+local VERSION = "v0.3 Beta"
+local MONEY_PTS_MAX = 99999999
+local LARGE_BTN = Vector2f.new(300, 50)
+local SMALL_BTN = Vector2f.new(200, 40)
+
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
+local cBasicParam = nil
 
 local existedComboLabels = {}
 local existedComboItemIdFixedValues = {}
@@ -25,9 +30,21 @@ local addNewSliderNewVal = nil
 local addNewItemId = nil
 local addNewItemNum = nil
 
+local originMoney = 0
+local moneySilderVal = 0
+local moneyChangedDiff = 0
+local originPoints = 0
+local pointsSilderVal = 0
+local pointsChangedDiff = 0
+local moneySilderChanged = nil
+local pointsSilderChange = nil
+local moneySilderNewVal = nil
+local pointsSilderNewVal = nil
+
 local function clear()
     boxItemArray = nil
     cItemParam = nil
+    cBasicParam = nil
 
     existedComboLabels = {}
     existedComboItemIdFixedValues = {}
@@ -45,6 +62,17 @@ local function clear()
     addNewSliderNewVal = nil
     addNewItemId = nil
     addNewItemNum = nil
+
+    originMoney = 0
+    moneySilderVal = 0
+    moneyChangedDiff = 0
+    originPoints = 0
+    pointsSilderVal = 0
+    pointsChangedDiff = 0
+    moneySilderChanged = nil
+    pointsSilderChange = nil
+    moneySilderNewVal = nil
+    pointsSilderNewVal = nil
 end
 
 local function initBoxItem()
@@ -81,6 +109,16 @@ local function initPouchItem()
     end
 end
 
+local function initHunterBasicData()
+    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
+    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+    cBasicParam = cUserSaveParam:get_field("_BasicData")
+    originMoney = cBasicParam:call("getMoney")
+    originPoints = cBasicParam:call("getPoint")
+    moneySilderVal = originMoney
+    pointsSilderVal = originPoints
+end
+
 local function changeBoxItemNum(itemFixedId, changedNumber)
     if changedNumber >= 0 then
         for boxPosIndex = 0, #boxItemArray - 1 do
@@ -103,48 +141,95 @@ local function addNewToPouchItem(cItemWork, itemId, itemNum)
     end
 end
 
+local function moneyAddFunc(cBasicData, newMoney)
+    cBasicData:call("addMoney", newMoney, false)
+end
+
+local function pointAddFunc(cBasicData, newPoint)
+    cBasicData:call("addPoint", newPoint, false)
+end
+
+local function init()
+    initBoxItem()
+    initPouchItem()
+    initHunterBasicData()
+
+    existedSelectedItemFixedId = existedComboItemIdFixedValues[1]
+    existedSelectedItemNum = existedComboItemNumValues[1]
+end
+
 re.on_draw_ui(function()
     imgui.begin_window("ItemBox Editor", ImGuiWindowFlags_AlwaysAutoResize)
-    if imgui.button("Load ItemBox") then
-        initBoxItem()
-        initPouchItem()
+    imgui.text_colored("Warning: Please backup your save before using this mod !!!", 0xeb4034ff)
+
+    if imgui.button("Read In-Game ItemBox", LARGE_BTN) then
+        init()
     end
 
     imgui.new_line()
+    imgui.text("Item Count Changer:")
+    imgui.begin_disabled(cItemParam == nil)
     existedComboChanged, existedSelectedIndex = imgui.combo("Change Existed Item Number", existedSelectedIndex, existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int("Set New Num in 1 ~ 9999", existedSelectedItemNum, 1, 9999)
+    existedSliderChanged, existedSliderNewVal = imgui.slider_int("Select Changed Num (1~9999)", existedSelectedItemNum, 1, 9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
-
-    if imgui.button("Confirm Change") then
+    if imgui.button("Confirm Change", SMALL_BTN) then
         changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
         clear()
-        initBoxItem()
+        init()
     end
+    imgui.end_disabled()
 
     imgui.new_line()
+    imgui.text("Item Count Add:")
+    imgui.begin_disabled(cItemParam == nil)
     addNewInputChanged, addNewInputNewVal, start = imgui.input_text("Enter the Item ID", addNewItemId)
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int("Select Num (1~9999)", addNewItemNum, 1, 9999)
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int("Select Add Num (1~9999)", addNewItemNum, 1, 9999)
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end
-
-    if imgui.button("Confirm Add") then
+    if imgui.button("Confirm Add", SMALL_BTN) then
         addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
         clear()
-        initPouchItem()
+        init()
     end
+    imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("Version: " .. version)
+    imgui.text("Money & Points Add:")
+    imgui.begin_disabled(cBasicParam == nil)
+    moneySilderChanged, moneySilderNewVal = imgui.slider_int("Select New Money (" .. originMoney .."~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney, MONEY_PTS_MAX - originMoney)
+    if moneySilderChanged then
+        moneyChangedDiff = moneySilderNewVal - originMoney
+        moneySilderVal = moneySilderNewVal
+    end
+    if imgui.button("Confirm Money Edit", SMALL_BTN) then
+        moneyAddFunc(cBasicParam, moneyChangedDiff)
+        clear()
+        init()
+    end
+    pointsSilderChange, pointsSilderNewVal = imgui.slider_int("Select New Points (" .. originPoints .."~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal, originPoints, MONEY_PTS_MAX - originPoints)
+    if pointsSilderChange then
+        pointsChangedDiff = pointsSilderNewVal - originPoints
+        pointsSilderVal = pointsSilderNewVal
+    end
+    if imgui.button("Confirm Points Add", SMALL_BTN) then
+        pointAddFunc(cBasicParam, pointsChangedDiff)
+        clear()
+        init()
+    end
+    imgui.end_disabled()
+
+    imgui.new_line()
+    imgui.text("Version: " .. VERSION)
 
     imgui.end_window()
 end)
