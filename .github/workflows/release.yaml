@@ -19,8 +19,11 @@ jobs:
       - name: Authenticate GitHub CLI
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Create a zip of the directory
-        run: zip -r BoxItemEditor.zip reframework
+      - name: Create a zip of the directory for EN-US
+        run: zip -r BoxItemEditor_EN-US.zip reframework -x fonts/ -x "*ZH-Hans*"
+
+      - name: Create a zip of the directory for ZH-Hans
+        run: zip -r BoxItemEditor_ZH-Hans_中文版.zip reframework -x "*EN-US*"
 
       - name: Check if release exists and delete it
         run: |
@@ -31,5 +34,5 @@ jobs:
       - name: Create GitHub Release
         id: create_release
         run: |
-          gh release create ${{ github.ref_name }} BoxItemEditor.zip --title "${{ github.ref_name }} Release" --notes "Release for ${{ github.ref_name }}"
+          gh release create ${{ github.ref_name }} *.zip --title "${{ github.ref_name }} Release" --notes "Release for ${{ github.ref_name }}"
 
