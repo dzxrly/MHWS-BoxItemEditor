@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Manual trigger for release'
+        - 'v*'
 
   push:
     tags:
