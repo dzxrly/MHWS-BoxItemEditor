@@ -20,8 +20,13 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 ## Requirements:
 - [REFramework - Nightly Dev Build](https://github.com/praydog/REFramework-nightly/releases)
 
+## Mod Download:
+
+[https://github.com/dzxrly/MHWS-BoxItemEditor/releases/](https://github.com/dzxrly/MHWS-BoxItemEditor/releases/)
+
 ## How To Install:
-1. Install REFramework ;
+
+1. Install REFramework;
 2. Download the mod;
 3. Unzip the mod to the Monster Hunter Rise root directory. So the final directory seems like `./reframework/autorun/ItemBoxEditor.lua`.
 
@@ -34,6 +39,10 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 
 ## 前置：
 - [REFramework - Nightly Dev Build](https://github.com/praydog/REFramework-nightly/releases)
+
+## MOD下载:
+
+[https://github.com/dzxrly/MHWS-BoxItemEditor/releases/](https://github.com/dzxrly/MHWS-BoxItemEditor/releases/)
 
 ## 安装方式：
 1. 安装REFramework；
