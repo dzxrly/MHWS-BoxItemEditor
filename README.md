@@ -11,9 +11,9 @@
 </div>
 
 > [!CAUTION]
-> This mod is under development. Please backup your save before using! / 警告：该MOD仍处于开发阶段，使用前请备份存档！
+> Please backup your save before using! / 警告：使用前请备份存档！
 
-A mod of Monster Hunter Wilds (Open Beta Ver.) for editing the itembox. / 用于怪物猎人：荒野（测试版）的道具箱编辑器。
+A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人：荒野`的道具箱编辑器。
 
 ---
 
