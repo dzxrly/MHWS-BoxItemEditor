@@ -3,12 +3,9 @@ name: Create Release
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      tag:
+        description: 'Tag to release'
         required: true
-        default: 'warning'
-      tags:
-        - 'v*'
 
   push:
     tags:
@@ -41,21 +38,18 @@ jobs:
 
       - name: Check if release exists and delete it
         run: |
-          if gh release view ${{ github.ref_name }}; then
-            gh release delete ${{ github.ref_name }} --yes
+          if gh release view ${{ github.event.inputs.tag || github.ref_name }}; then
+            gh release delete ${{ github.event.inputs.tag || github.ref_name }} --yes
           fi
 
       - name: Prepare release notes
         id: generate_notes
         run: |
-          echo "## Files" > release_notes.md
-          echo "- \`BoxItemEditor_EN-US.zip\`: Default version" >> release_notes.md
-          echo "- \`BBoxItemEditor_ZH-Hans.zip\`: Chinese version (with NotoSans SC font file)" >> release_notes.md
-          echo "## Checksums" > release_notes.md
+          echo "### Checksums" > release_notes.md
           echo "- \`BoxItemEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_EN-US.zip.sha256)" >> release_notes.md
           echo "- \`BoxItemEditor_ZH-Hans.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_ZH-Hans.zip.sha256)" >> release_notes.md
 
       - name: Create GitHub Release
         id: create_release
         run: |
-          gh release create ${{ github.ref_name }} *.zip --title "${{ github.ref_name }} Release" --notes-file release_notes.md
+          gh release create ${{ github.event.inputs.tag || github.ref_name }} *.zip --title "${{ github.event.inputs.tag || github.ref_name }} Release" --notes-file release_notes.md
