@@ -1,7 +1,7 @@
 -- Made By Egg Targaryen
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
--- For debug & Monster Hunter: Wilds Open Beta Version
+-- For debug & Monster Hunter: Wilds
 local INTER_VERSION = "v0.4"
 local MAX_VERSION = "1.0.0.0"
 local MONEY_PTS_MAX = 99999999
