@@ -20,7 +20,7 @@ jobs:
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Create a zip of the directory for EN-US
-        run: zip -r BoxItemEditor_EN-US.zip reframework -x fonts -x "*ZH-Hans*"
+        run: zip -r BoxItemEditor_EN-US.zip reframework -x ./fonts -x "*ZH-Hans*"
 
       - name: Create a zip of the directory for ZH-Hans
         run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*"
