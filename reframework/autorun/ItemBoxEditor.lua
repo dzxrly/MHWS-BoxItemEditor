@@ -2,10 +2,13 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For debug & Monster Hunter: Wilds Open Beta Version
-local VERSION = "v0.3"
+local INTER_VERSION = "v0.4"
+local MAX_VERSION = "1.0.0.0"
 local MONEY_PTS_MAX = 99999999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
+local GAME_VER = nil
+local MAX_VER_LT_OR_EQ_GAME_VER = true
 
 local boxItemArray = nil
 local pouchItemArray = nil
@@ -75,6 +78,31 @@ local function clear()
     pointsSilderNewVal = nil
 end
 
+local function getVersion()
+    local sysService = sdk.get_native_singleton("via.SystemService")
+    local sysServiceType = sdk.find_type_definition("via.SystemService")
+    GAME_VER = sdk.call_native_func(sysService, sysServiceType, "get_ApplicationVersion"):match("Product:([^,]+)")
+end
+
+function compareVersions(version1, version2)
+    local v1Parts = {}
+    for num in version1:gmatch("%d+") do
+        table.insert(v1Parts, tonumber(num))
+    end
+    local v2Parts = {}
+    for num in version2:gmatch("%d+") do
+        table.insert(v2Parts, tonumber(num))
+    end
+    for i = 1, 4 do
+        if v1Parts[i] > v2Parts[i] then
+            return false
+        elseif v1Parts[i] < v2Parts[i] then
+            return true
+        end
+    end
+    return true
+end
+
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
@@ -83,12 +111,19 @@ local function initBoxItem()
     boxItemArray = cItemParam:get_field("_BoxItem")
     local existedShowInComboxPosIndex = 1
     for boxPosIndex = 0, #boxItemArray - 1 do
-        print("[" .. boxPosIndex .. "] Item ID:" .. boxItemArray[boxPosIndex]:get_field("ItemIdFixed") .. " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
+        print("[" ..
+            boxPosIndex ..
+            "] Item ID:" ..
+            boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
+            " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
         if boxItemArray[boxPosIndex]:get_field("Num") > 0 then
-            local comboxItem = "Item ID:" .. boxItemArray[boxPosIndex]:get_field("ItemIdFixed") .. " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num")
+            local comboxItem = "Item ID:" ..
+                boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
+                " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num")
             -- print(comboxItem)
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
-            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field("ItemIdFixed")
+            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field(
+                "ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field("Num")
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
@@ -101,7 +136,11 @@ local function initPouchItem()
     cItemParam = cUserSaveParam:get_field("_Item")
     pouchItemArray = cItemParam:get_field("_PouchItem")
     for pouchItemIndex = 0, #pouchItemArray - 1 do
-        print("[" .. pouchItemIndex .. "] Item ID:" .. pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") .. " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
+        print("[" ..
+            pouchItemIndex ..
+            "] Item ID:" ..
+            pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
+            " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
             break
@@ -160,7 +199,16 @@ end
 
 re.on_draw_ui(function()
     imgui.begin_window("ItemBox Editor", ImGuiWindowFlags_AlwaysAutoResize)
-    imgui.text_colored("Warning: Please backup your save before using this mod !!!", 0xeb4034ff)
+    getVersion()
+    MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+
+    if MAX_VER_LT_OR_EQ_GAME_VER == false then
+        imgui.text_colored("[Warning] Your game version is NOT compatible with this mod: ", 0xeb4034ff)
+        imgui.text_colored("Game Version: " .. GAME_VER .. " > Compatible Version: " .. MAX_VERSION, 0xeb4034ff)
+        imgui.new_line()
+    end
+
+    imgui.text_colored("[Warning] Please backup your save before using this mod !!!", 0xeb4034ff)
 
     if imgui.button("Read In-Game ItemBox", LARGE_BTN) then
         init()
@@ -169,12 +217,14 @@ re.on_draw_ui(function()
     imgui.new_line()
     imgui.text("Item Count Changer:")
     imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo("Change Existed Item Number", existedSelectedIndex, existedComboLabels)
+    existedComboChanged, existedSelectedIndex = imgui.combo("Change Existed Item Number", existedSelectedIndex,
+        existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int("Select Changed Num (1~9999)", existedSelectedItemNum, 1, 9999)
+    existedSliderChanged, existedSliderNewVal = imgui.slider_int("Select Changed Num (1~9999)", existedSelectedItemNum, 1,
+        9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
@@ -206,7 +256,9 @@ re.on_draw_ui(function()
     imgui.new_line()
     imgui.text("Money & Points Add:")
     imgui.begin_disabled(cBasicParam == nil)
-    moneySilderChanged, moneySilderNewVal = imgui.slider_int("Select New Money (" .. originMoney .."~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney, MONEY_PTS_MAX - originMoney)
+    moneySilderChanged, moneySilderNewVal = imgui.slider_int(
+        "Select New Money (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
+        MONEY_PTS_MAX - originMoney)
     if moneySilderChanged then
         moneyChangedDiff = moneySilderNewVal - originMoney
         moneySilderVal = moneySilderNewVal
@@ -216,7 +268,10 @@ re.on_draw_ui(function()
         clear()
         init()
     end
-    pointsSilderChange, pointsSilderNewVal = imgui.slider_int("Select New Points (" .. originPoints .."~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal, originPoints, MONEY_PTS_MAX - originPoints)
+    pointsSilderChange, pointsSilderNewVal = imgui.slider_int(
+        "Select New Points (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
+        originPoints,
+        MONEY_PTS_MAX - originPoints)
     if pointsSilderChange then
         pointsChangedDiff = pointsSilderNewVal - originPoints
         pointsSilderVal = pointsSilderNewVal
@@ -229,7 +284,14 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("Version: " .. VERSION)
+    imgui.text("Mod Version: " .. INTER_VERSION)
+    imgui.text("Game Version: ")
+    imgui.same_line()
+    if MAX_VER_LT_OR_EQ_GAME_VER then
+        imgui.text_colored(GAME_VER .. " [Compatible]", 0xff74ff33)
+    else
+        imgui.text_colored(GAME_VER .. " [NOT Compatible]", 0xeb4034ff)
+    end
 
     imgui.end_window()
 end)
