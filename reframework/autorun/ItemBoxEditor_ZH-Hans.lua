@@ -10,7 +10,7 @@ local SMALL_BTN = Vector2f.new(200, 40)
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT_NAME = "NotoSansSC-Medium.ttf"
-local FONT_SIZE = 18
+local FONT_SIZE = 24
 local CHN_GLYPH = {
     0x0020, 0xFFEE,
     0,
@@ -119,11 +119,11 @@ local function initBoxItem()
     boxItemArray = cItemParam:get_field("_BoxItem")
     local existedShowInComboxPosIndex = 1
     for boxPosIndex = 0, #boxItemArray - 1 do
-        print("[" ..
-            boxPosIndex ..
-            "] Item ID:" ..
-            boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-            " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
+        --print("[" ..
+        --    boxPosIndex ..
+        --    "] Item ID:" ..
+        --    boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
+        --    " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
         if boxItemArray[boxPosIndex]:get_field("Num") > 0 then
             local comboxItem = "Item ID:" ..
                 boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
@@ -144,11 +144,11 @@ local function initPouchItem()
     cItemParam = cUserSaveParam:get_field("_Item")
     pouchItemArray = cItemParam:get_field("_PouchItem")
     for pouchItemIndex = 0, #pouchItemArray - 1 do
-        print("[" ..
-            pouchItemIndex ..
-            "] Item ID:" ..
-            pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
-            " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
+        --print("[" ..
+        --    pouchItemIndex ..
+        --    "] Item ID:" ..
+        --    pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
+        --    " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
             break

@@ -111,11 +111,11 @@ local function initBoxItem()
     boxItemArray = cItemParam:get_field("_BoxItem")
     local existedShowInComboxPosIndex = 1
     for boxPosIndex = 0, #boxItemArray - 1 do
-        print("[" ..
-            boxPosIndex ..
-            "] Item ID:" ..
-            boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-            " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
+        --print("[" ..
+        --    boxPosIndex ..
+        --    "] Item ID:" ..
+        --    boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
+        --    " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
         if boxItemArray[boxPosIndex]:get_field("Num") > 0 then
             local comboxItem = "Item ID:" ..
                 boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
@@ -136,11 +136,11 @@ local function initPouchItem()
     cItemParam = cUserSaveParam:get_field("_Item")
     pouchItemArray = cItemParam:get_field("_PouchItem")
     for pouchItemIndex = 0, #pouchItemArray - 1 do
-        print("[" ..
-            pouchItemIndex ..
-            "] Item ID:" ..
-            pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
-            " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
+        --print("[" ..
+        --    pouchItemIndex ..
+        --    "] Item ID:" ..
+        --    pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
+        --    " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
             break
