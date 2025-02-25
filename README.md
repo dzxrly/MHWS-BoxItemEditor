@@ -33,7 +33,11 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 ## How To Use:
 1. Open REFramework menu and unfold the Script Generated UI menu item. You will find the `ItemBox Editor` window.;
 2. Click the `Load ItemBox` button to read your itembox; 
-3. Select an item you want to edit, then slide the bar to change the number. 
+3. Select an item you want to edit, then slide the bar to change the number.
+
+## About Item ID:
+
+Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item ID.
 
 ---
 
@@ -53,3 +57,7 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 1. 打开REFramework菜单，然后展开Script Generated UI. 能看到`ItemBox Editor`窗口；
 2. 点击`Load ItemBox`按钮来读取道具箱内容；
 3. 选择需要修改物品，然后拖动滑动条改变数量。 
+
+## 关于物品ID：
+
+请参考[物品ID列表](./reframework/Items_ZH-CN.txt)。

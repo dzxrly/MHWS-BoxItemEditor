@@ -25,6 +25,17 @@ jobs:
       - name: Authenticate GitHub CLI
         run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: 'Install dependencies'
+        run: python -m pip install pandas openpyxl
+
+      - name: Run res/auto_generate_item_file.py
+        run: python res/auto_generate_item_file.py
+
       - name: Create a zip of the directory for EN-US
         run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*"
 
