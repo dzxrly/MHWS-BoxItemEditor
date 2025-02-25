@@ -13,6 +13,7 @@ local I18N = {
     confirmCompatibleTip = "[Compatible]",
     notCompatibleTip = "[NOT Compatible]",
     backupSaveWarning = "[Warning] Please backup your save before using this mod !!!",
+    itemIdFileTip = "[Tips] Item ID list is in 'GameRoot/reframework/Items_EN-US.txt'",
     readItemBoxBtn = "Read In-Game ItemBox",
     changeItemNumTitle = "Item Count Changer:",
     changeItemNumCombox = "Change Existed Item Number",
@@ -35,6 +36,7 @@ local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
 local ERROR_COLOR = 0xeb4034ff
 local CHECKED_COLOR = 0xff74ff33
+local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT_NAME = "NotoSansSC-Medium.ttf"
@@ -254,6 +256,7 @@ re.on_draw_ui(function()
     end
 
     imgui.new_line()
+    imgui.text_colored(I18N.itemIdFileTip, TIPS_COLOR)
     imgui.text(I18N.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
     existedComboChanged, existedSelectedIndex = imgui.combo(I18N.changeItemNumCombox, existedSelectedIndex,
