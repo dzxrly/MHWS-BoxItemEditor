@@ -1,12 +1,41 @@
 -- Made By Egg Targaryen
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
--- For debug & Monster Hunter: Wilds
-local INTER_VERSION = "v0.7"
-local MAX_VERSION = "1.0.0.0"
+-- For Monster Hunter: Wilds
+local INTER_VERSION = "v0.8"
+local MAX_VERSION = "1.0.1.0"
+local I18N = {
+    windowTitle = "道具箱编辑器",
+    compatibleWarning = "[警告] 当前的游戏版本不兼容该MOD: ",
+    gameVersion = "游戏版本",
+    modVersion = "MOD版本",
+    maxCompatibleVersion = "MOD最高兼容版本",
+    confirmCompatibleTip = "[确认兼容]",
+    notCompatibleTip = "[不兼容]",
+    backupSaveWarning = "[警告] 使用该MOD前请务必备份存档 !!!",
+    readItemBoxBtn = "读取道具箱",
+    changeItemNumTitle = "道具数量修改:",
+    changeItemNumCombox = "修改已存在的道具的数量",
+    changeItemNumSlider = "选择新的数量 (1~9999)",
+    changeItemNumBtn = "确认修改",
+    itemName = "物品编号",
+    itemCount = "物品数量",
+    addItemToPouchTitle = "道具无中生有:",
+    addItemToPouchCombox = "输入物品ID",
+    addItemToPouchSlider = "选择无中生有数量 (1~9999)",
+    addItemToPouchBtn = "确认无中生有",
+    addItemToPouchWarning = "无中生有的道具会出现在道具袋内，请自行使用游戏内的整理功能自动将物品送回道具箱",
+    coinAndPtsEditorTitle = "金币 & 调查点数修改:",
+    coinSlider = "选择新的金币数量",
+    coinBtn = "确认金币修改",
+    ptsSlider = "选择新的调查点数",
+    ptsBtn = "确认调查点数修改",
+}
 local MONEY_PTS_MAX = 99999999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
+local ERROR_COLOR = 0xeb4034ff
+local CHECKED_COLOR = 0xff74ff33
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT_NAME = "NotoSansSC-Medium.ttf"
@@ -16,7 +45,6 @@ local CHN_GLYPH = {
     0,
 }
 local FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
-
 
 local boxItemArray = nil
 local pouchItemArray = nil
@@ -111,28 +139,36 @@ function compareVersions(version1, version2)
     return true
 end
 
+function getUIName(guid)
+    local uiName = sdk.find_type_definition("via.gui.message"):get_method("get(System.Guid)"):call(nil, guid)
+    if not uiName then
+        return tostring(guid)
+    else
+        return tostring(uiName)
+    end
+end
+
+function getItemGuid(itemIdFixed)
+    local cData = sdk.find_type_definition("app.ItemDef"):get_method("getDataByDataIndex(System.Int32)"):call(nil, itemFixedId)
+    return cData:get_field("_RawName")
+end
+
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
     print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
     cItemParam = cUserSaveParam:get_field("_Item")
-    boxItemArray = cItemParam:get_field("_BoxItem")
+    boxItemArray = cItemParam:call("get_BoxItem")
     local existedShowInComboxPosIndex = 1
     for boxPosIndex = 0, #boxItemArray - 1 do
-        --print("[" ..
-        --    boxPosIndex ..
-        --    "] Item ID:" ..
-        --    boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-        --    " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
-        if boxItemArray[boxPosIndex]:get_field("Num") > 0 then
-            local comboxItem = "Item ID:" ..
-                boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-                " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num")
-            -- print(comboxItem)
+        local boxItem = boxItemArray[boxPosIndex]
+        if boxItem:get_field("Num") > 0 then
+            -- print(boxItem:call("get_ItemId"))
+            -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+            local comboxItem = I18N.itemName .. " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
-            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field(
-                "ItemIdFixed")
-            existedComboItemNumValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field("Num")
+            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
+            existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
     end
@@ -142,13 +178,8 @@ local function initPouchItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
     cItemParam = cUserSaveParam:get_field("_Item")
-    pouchItemArray = cItemParam:get_field("_PouchItem")
+    pouchItemArray = cItemParam:call("get_PouchItem")
     for pouchItemIndex = 0, #pouchItemArray - 1 do
-        --print("[" ..
-        --    pouchItemIndex ..
-        --    "] Item ID:" ..
-        --    pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
-        --    " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
             break
@@ -207,37 +238,37 @@ end
 
 re.on_draw_ui(function()
     imgui.push_font(FONT)
-    imgui.begin_window("道具箱编辑器", ImGuiWindowFlags_AlwaysAutoResize)
+    imgui.begin_window(I18N.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
     getVersion()
     MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
     if MAX_VER_LT_OR_EQ_GAME_VER == false then
-        imgui.text_colored("[警告] 当前的游戏版本不兼容该MOD: ", 0xeb4034ff)
-        imgui.text_colored("游戏版本: " .. GAME_VER .. " > MOD兼容的最高版本: " .. MAX_VERSION, 0xeb4034ff)
+        imgui.text_colored(I18N.compatibleWarning, ERROR_COLOR)
+        imgui.text_colored(I18N.gameVersion .. GAME_VER .. " > " .. I18N.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
         imgui.new_line()
     end
 
-    imgui.text_colored("[警告] 使用该MOD前请务必备份存档 !!!", 0xeb4034ff)
+    imgui.text_colored(I18N.backupSaveWarning, ERROR_COLOR)
 
-    if imgui.button("读取道具箱", LARGE_BTN) then
+    if imgui.button(I18N.readItemBoxBtn, LARGE_BTN) then
         init()
     end
 
     imgui.new_line()
-    imgui.text("道具数量修改:")
+    imgui.text(I18N.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo("修改已存在的道具的数量", existedSelectedIndex,
+    existedComboChanged, existedSelectedIndex = imgui.combo(I18N.changeItemNumCombox, existedSelectedIndex,
         existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int("选择新的数量 (1~9999)", existedSelectedItemNum, 1,
+    existedSliderChanged, existedSliderNewVal = imgui.slider_int(I18N.changeItemNumSlider, existedSelectedItemNum, 1,
         9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
-    if imgui.button("确认修改", SMALL_BTN) then
+    if imgui.button(I18N.changeItemNumBtn, SMALL_BTN) then
         changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
         clear()
         init()
@@ -245,17 +276,18 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("道具无中生有:")
+    imgui.text(I18N.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text("输入物品ID", addNewItemId)
+    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(I18N.addItemToPouchCombox, addNewItemId)
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int("选择无中生有数量 (1~9999)", addNewItemNum, 1, 9999)
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(I18N.addItemToPouchSlider, addNewItemNum, 1, 9999)
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end
-    if imgui.button("确认无中生有", SMALL_BTN) then
+    imgui.text(I18N.addItemToPouchWarning)
+    if imgui.button(I18N.addItemToPouchBtn, SMALL_BTN) then
         addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
         clear()
         init()
@@ -263,29 +295,29 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("金币 & 调查点数修改:")
+    imgui.text(I18N.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)
     moneySilderChanged, moneySilderNewVal = imgui.slider_int(
-        "选择新的金币数量 (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
+        I18N.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
         MONEY_PTS_MAX - originMoney)
     if moneySilderChanged then
         moneyChangedDiff = moneySilderNewVal - originMoney
         moneySilderVal = moneySilderNewVal
     end
-    if imgui.button("确认金币修改", SMALL_BTN) then
+    if imgui.button(I18N.coinBtn, SMALL_BTN) then
         moneyAddFunc(cBasicParam, moneyChangedDiff)
         clear()
         init()
     end
     pointsSilderChange, pointsSilderNewVal = imgui.slider_int(
-        "选择新的调查点数 (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
+        I18N.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
         originPoints,
         MONEY_PTS_MAX - originPoints)
     if pointsSilderChange then
         pointsChangedDiff = pointsSilderNewVal - originPoints
         pointsSilderVal = pointsSilderNewVal
     end
-    if imgui.button("确认调查点数修改", SMALL_BTN) then
+    if imgui.button(I18N.ptsBtn, SMALL_BTN) then
         pointAddFunc(cBasicParam, pointsChangedDiff)
         clear()
         init()
@@ -293,13 +325,15 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("MOD版本: " .. INTER_VERSION)
-    imgui.text("游戏版本: ")
+    imgui.text(I18N.modVersion)
+    imgui.same_line()
+    imgui.text(INTER_VERSION)
+    imgui.text(I18N.gameVersion)
     imgui.same_line()
     if MAX_VER_LT_OR_EQ_GAME_VER then
-        imgui.text_colored(GAME_VER .. " [确认兼容]", 0xff74ff33)
+        imgui.text_colored(GAME_VER .. I18N.confirmCompatibleTip, CHECKED_COLOR)
     else
-        imgui.text_colored(GAME_VER .. " [不兼容]", 0xeb4034ff)
+        imgui.text_colored(GAME_VER .. I18N.notCompatibleTip, ERROR_COLOR)
     end
 
     imgui.end_window()

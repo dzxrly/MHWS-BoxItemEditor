@@ -1,14 +1,48 @@
 -- Made By Egg Targaryen
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
--- For debug & Monster Hunter: Wilds
-local INTER_VERSION = "v0.7"
-local MAX_VERSION = "1.0.0.0"
+-- For Monster Hunter: Wilds
+local INTER_VERSION = "v0.8"
+local MAX_VERSION = "1.0.1.0"
+local I18N = {
+    windowTitle = "ItemBox Editor",
+    compatibleWarning = "[Warning] Your game version is NOT compatible with this mod: ",
+    gameVersion = "Game Version",
+    modVersion = "MOD Version",
+    maxCompatibleVersion = "MOD Compatible Version",
+    confirmCompatibleTip = "[Compatible]",
+    notCompatibleTip = "[NOT Compatible]",
+    backupSaveWarning = "[Warning] Please backup your save before using this mod !!!",
+    readItemBoxBtn = "Read In-Game ItemBox",
+    changeItemNumTitle = "Item Count Changer:",
+    changeItemNumCombox = "Change Existed Item Number",
+    changeItemNumSlider = "Select Add Num (1~9999)",
+    changeItemNumBtn = "Confirm Change",
+    addItemToPouchTitle = "Item Count Add:",
+    addItemToPouchCombox = "Enter the Item ID",
+    addItemToPouchSlider = "Select Add Num (1~9999)",
+    addItemToPouchBtn = "Confirm Add",
+    addItemToPouchWarning = "Added items will appear in your POUCH, please use the in-game organizing to automatically send the items to the box",
+    coinAndPtsEditorTitle = "Money & Points Add:",
+    coinSlider = "Select New Money",
+    coinBtn = "Confirm Money Edit",
+    ptsSlider = "Select New Points",
+    ptsBtn = "Confirm Points Edit",
+}
 local MONEY_PTS_MAX = 99999999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
+local ERROR_COLOR = 0xeb4034ff
+local CHECKED_COLOR = 0xff74ff33
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
+local FONT_NAME = "NotoSansSC-Medium.ttf"
+local FONT_SIZE = 24
+local CHN_GLYPH = {
+    0x0020, 0xFFEE,
+    0,
+}
+local FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
 
 local boxItemArray = nil
 local pouchItemArray = nil
@@ -103,28 +137,36 @@ function compareVersions(version1, version2)
     return true
 end
 
+function getUIName(guid)
+    local uiName = sdk.find_type_definition("via.gui.message"):get_method("get(System.Guid)"):call(nil, guid)
+    if not uiName then
+        return tostring(guid)
+    else
+        return tostring(uiName)
+    end
+end
+
+function getItemGuid(itemIdFixed)
+    local cData = sdk.find_type_definition("app.ItemDef"):get_method("getDataByDataIndex(System.Int32)"):call(nil, itemFixedId)
+    return cData:get_field("_RawName")
+end
+
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
     print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
     cItemParam = cUserSaveParam:get_field("_Item")
-    boxItemArray = cItemParam:get_field("_BoxItem")
+    boxItemArray = cItemParam:call("get_BoxItem")
     local existedShowInComboxPosIndex = 1
     for boxPosIndex = 0, #boxItemArray - 1 do
-        --print("[" ..
-        --    boxPosIndex ..
-        --    "] Item ID:" ..
-        --    boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-        --    " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num"))
-        if boxItemArray[boxPosIndex]:get_field("Num") > 0 then
-            local comboxItem = "Item ID:" ..
-                boxItemArray[boxPosIndex]:get_field("ItemIdFixed") ..
-                " - Count: " .. boxItemArray[boxPosIndex]:get_field("Num")
-            -- print(comboxItem)
+        local boxItem = boxItemArray[boxPosIndex]
+        if boxItem:get_field("Num") > 0 then
+            -- print(boxItem:call("get_ItemId"))
+            -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+            local comboxItem = I18N.itemName .. " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
-            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field(
-                "ItemIdFixed")
-            existedComboItemNumValues[existedShowInComboxPosIndex] = boxItemArray[boxPosIndex]:get_field("Num")
+            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
+            existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
     end
@@ -134,13 +176,8 @@ local function initPouchItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
     cItemParam = cUserSaveParam:get_field("_Item")
-    pouchItemArray = cItemParam:get_field("_PouchItem")
+    pouchItemArray = cItemParam:call("get_PouchItem")
     for pouchItemIndex = 0, #pouchItemArray - 1 do
-        --print("[" ..
-        --    pouchItemIndex ..
-        --    "] Item ID:" ..
-        --    pouchItemArray[pouchItemIndex]:get_field("ItemIdFixed") ..
-        --    " - Count: " .. pouchItemArray[pouchItemIndex]:get_field("Num"))
         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
             break
@@ -198,37 +235,38 @@ local function init()
 end
 
 re.on_draw_ui(function()
-    imgui.begin_window("ItemBox Editor", ImGuiWindowFlags_AlwaysAutoResize)
+    imgui.push_font(FONT)
+    imgui.begin_window(I18N.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
     getVersion()
     MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
     if MAX_VER_LT_OR_EQ_GAME_VER == false then
-        imgui.text_colored("[Warning] Your game version is NOT compatible with this mod: ", 0xeb4034ff)
-        imgui.text_colored("Game Version: " .. GAME_VER .. " > Compatible Version: " .. MAX_VERSION, 0xeb4034ff)
+        imgui.text_colored(I18N.compatibleWarning, ERROR_COLOR)
+        imgui.text_colored(I18N.gameVersion .. GAME_VER .. " > " .. I18N.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
         imgui.new_line()
     end
 
-    imgui.text_colored("[Warning] Please backup your save before using this mod !!!", 0xeb4034ff)
+    imgui.text_colored(I18N.backupSaveWarning, ERROR_COLOR)
 
-    if imgui.button("Read In-Game ItemBox", LARGE_BTN) then
+    if imgui.button(I18N.readItemBoxBtn, LARGE_BTN) then
         init()
     end
 
     imgui.new_line()
-    imgui.text("Item Count Changer:")
+    imgui.text(I18N.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo("Change Existed Item Number", existedSelectedIndex,
+    existedComboChanged, existedSelectedIndex = imgui.combo(I18N.changeItemNumCombox, existedSelectedIndex,
         existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int("Select Changed Num (1~9999)", existedSelectedItemNum, 1,
+    existedSliderChanged, existedSliderNewVal = imgui.slider_int(I18N.changeItemNumSlider, existedSelectedItemNum, 1,
         9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
-    if imgui.button("Confirm Change", SMALL_BTN) then
+    if imgui.button(I18N.changeItemNumBtn, SMALL_BTN) then
         changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
         clear()
         init()
@@ -236,17 +274,18 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("Item Count Add:")
+    imgui.text(I18N.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text("Enter the Item ID", addNewItemId)
+    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(I18N.addItemToPouchCombox, addNewItemId)
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int("Select Add Num (1~9999)", addNewItemNum, 1, 9999)
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(I18N.addItemToPouchSlider, addNewItemNum, 1, 9999)
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end
-    if imgui.button("Confirm Add", SMALL_BTN) then
+    imgui.text(I18N.addItemToPouchWarning)
+    if imgui.button(I18N.addItemToPouchBtn, SMALL_BTN) then
         addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
         clear()
         init()
@@ -254,29 +293,29 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("Money & Points Add:")
+    imgui.text(I18N.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)
     moneySilderChanged, moneySilderNewVal = imgui.slider_int(
-        "Select New Money (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
+        I18N.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
         MONEY_PTS_MAX - originMoney)
     if moneySilderChanged then
         moneyChangedDiff = moneySilderNewVal - originMoney
         moneySilderVal = moneySilderNewVal
     end
-    if imgui.button("Confirm Money Edit", SMALL_BTN) then
+    if imgui.button(I18N.coinBtn, SMALL_BTN) then
         moneyAddFunc(cBasicParam, moneyChangedDiff)
         clear()
         init()
     end
     pointsSilderChange, pointsSilderNewVal = imgui.slider_int(
-        "Select New Points (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
+        I18N.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
         originPoints,
         MONEY_PTS_MAX - originPoints)
     if pointsSilderChange then
         pointsChangedDiff = pointsSilderNewVal - originPoints
         pointsSilderVal = pointsSilderNewVal
     end
-    if imgui.button("Confirm Points Add", SMALL_BTN) then
+    if imgui.button(I18N.ptsBtn, SMALL_BTN) then
         pointAddFunc(cBasicParam, pointsChangedDiff)
         clear()
         init()
@@ -284,13 +323,15 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text("Mod Version: " .. INTER_VERSION)
-    imgui.text("Game Version: ")
+    imgui.text(I18N.modVersion)
+    imgui.same_line()
+    imgui.text(INTER_VERSION)
+    imgui.text(I18N.gameVersion)
     imgui.same_line()
     if MAX_VER_LT_OR_EQ_GAME_VER then
-        imgui.text_colored(GAME_VER .. " [Compatible]", 0xff74ff33)
+        imgui.text_colored(GAME_VER .. I18N.confirmCompatibleTip, CHECKED_COLOR)
     else
-        imgui.text_colored(GAME_VER .. " [NOT Compatible]", 0xeb4034ff)
+        imgui.text_colored(GAME_VER .. I18N.notCompatibleTip, ERROR_COLOR)
     end
 
     imgui.end_window()
