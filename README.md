@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Fmain%2Fversion.json&query=%24.version&style=for-the-badge&label=VERSION) [![GitHub License](https://img.shields.io/github/license/dzxrly/MHWS-BoxItemEditor?style=for-the-badge)](https://github.com/dzxrly/MHWS-BoxItemEditor/blob/main/LICENSE)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Fmain%2Fversion.json&query=%24.version&style=for-the-badge&label=VERSION) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fversion.json&query=%24.max_game_version&style=for-the-badge&label=Supported%20Game%20Version%20(MAX)&color=FF5733) [![GitHub License](https://img.shields.io/github/license/dzxrly/MHWS-BoxItemEditor?style=for-the-badge)](https://github.com/dzxrly/MHWS-BoxItemEditor/blob/main/LICENSE)
 
 </div>
 
