@@ -1,655 +1,242 @@
-Special thanks to https://docs.google.com/spreadsheets/d/178o8U97P2cpb0RZbZBvGIoX4bPhUm_lPczg6elfIj9s/edit?gid=1542902078#gid=1542902078
+Data Version: V.1.0.0.0
 
-Item ID	Item Name
-0	-
-4	Potion
-5	Mega Potion
-12	Antidote
-6	Max Potion
-7	Ancient Potion
-14	Nulberry
-9	Ration
-8	Well-done Steak
+[Item ID]	[Item Name]
+1	---
+2	Potion
+3	Mega Potion
+4	Antidote
+5	Max Potion
+7	Nulberry
+8	Ration
+9	Well-done Steak
 10	Rare Steak
 11	Burnt Meat
-31	Lifepowder
-64	Raw Meat
-70	Barrel Bomb
-72	Large Barrel Bomb
-81	Flash Pod
-184	Stone
-154	Capture Net
-77	Pitfall Trap
-78	Shock Trap
-3	Whetstone
-153	Binoculars
-150	Camping Kit
-151	Portable BBQ Grill
-40	Herb
-41	Antidote Herb
-39	Honey
-91	Bitterbug Broth
-92	Flashbug Phosphor
-93	Godbug Essence
-94	Thunderbug Capacitor
-330
-329
-331
-332
-240	Beast Gem
-108	Normal Ammo
-109	Pierce Ammo
-110	Spread Ammo
-111	Sticky Ammo
-112	Cluster Bomb
-113	Flaming Ammo
-114	Water Ammo
-115	Thunder Ammo
-116	Freeze Ammo
-117	Dragon Ammo
-118	Poison Ammo
-119	Paralysis Ammo
-120	Sleep Ammo
-124	Slicing Ammo
-183	Thorngrass Pod
-199	Iron Ore
-200	Machalite Ore
-201	Dragonite Ore
-202	Carbalite Ore
-204	Earth Crystal
-213	Mystery Bone
-211	Sturdy Bone
-224
-225	Colossal Bone
-217	Dragonbone Relic
-52	Mandragora
-51	Blue Mushroom
-181	Burst Pod
-82	Screamer Pod
-179	Bleeding Pod
-83	Dung Pod
-76	Trap Tool
-57	Exciteshroom
-47	Smokenut
-46	Ivy
-63	Farcaster
-320
-319
-321
-322	Balahara Tail
-278
-277
-279
-276
-286
-287
-289
-290
-241	Wyvern Gem
-218	Herbivore Shell
-257
-259
-222
-220
-223	Acute Fang
-80	Dung
-736	#Rejected#
-79	Rolled-up Dung
-483
-484
-485
-486
-487
-56	Toadstool
-55	Parashroom
-45	Sleep Herb
-42	Fire Herb
-43	Flowfern
-44	Snow Herb
-48	Dragonfell Berry
-128	First-aid Med
-130	121: brown supply meat, cures bleed?
-142	supply flash pod?
-133	EZ Shock Trap
-134	EZ Pitfall Trap
-50	125: ivory herb?
-23	Might Seed
-27	Adamant Seed
-53	Nitroshroom
-54	129: rose mushroom?
-87	Blastnut
-89	Slashberry
-363
-364
-365
-366
-367	Rey Dau Tail
-368	Rey Dau Plate
-86	Tranq Blade
-61	Smoke Bomb
-37
-38	153: cures defense down?
-123	Wyvern Ammo
-180	Grounding Pod
-572	156: equipment accessory item?
-573	157: equipment accessory item?
-574	158: equipment accessory item?
-575
-576
-163	Ghillie Mantle
-152	Fishing Rod
-15	Energy Drink
-22
-20	Immunizer
-18	Cool Drink
-19	Hot Drink
-24	Demondrug
-26	Might Pill
-25
-28	Armourskin
-30	Adamant Pill
-29	173: cures defense down?
-13	Herbal Medicine
-33	Herbal Powder
-34	Demon Powder
-35	Hardshell Powder
-32
-16	Cleanser
-62	Poison Smoke Bomb
-60	Tranq Bomb
-2	Throwing Knife
-176	183: poison throwing knife?
-178	184: paralysis throwing knife?
-67	Drugged Meat
-185
-186	Torch Pod
-187	190: water slinger pod?
-191	191: slinger pod?
-192
-1	Paint Pod
-85	Luring Pod
-73
-129	First-aid Med+
-131	199: ivory supply pills?
-135
-137	201: cures poison?
-138
-139	203: cures defense down?
-136
-149	supply tranq bomb?
-140	206: brown supply slinger ammo?
-143	EZ Sonic Bomb
-66	Tinged Meat
-132	209: vermilion supply great barrelbomb?
-148	210: green supply smoke bomb?
-65	Poisoned Meat
-17	Deodorant
-678	Kunafa Cheese
-679
-680	Droolshroom
-681
-682	Mud Shrimp
-683
-684
-685
-686
-687
-688	Wild Herb
-689	Eastern Honey
-690	Monster Chili
-691
-692
-693	228: Unknown
-605
-606
-694	Windward Aloe
-695	Fine Windward Aloe
-696	Great Windward Aloe
-697	Sandpepper
-698	Fiery Sandpepper
-699	Fulgurite Shard
-700	Pure Fulgurite
-701	Thundering Fulgurite
-702	239: special item?
-703	240: special item?
-704	241: special item?
-705	242: special item?
-706	243: special item?
-707	244: special item?
-708	245: special item?
-709	246: special item?
-710	247: special item?
-711	248: special item?
-712	249: special item?
-713	250: special item?
-714	251: special item?
-715	252: special item?
-716	253: special item?
-717	254: special item?
-718	255: special item?
-719	256: special item?
-720	257: special item?
-721	Wylk Pebble
-722	Wylk Gem
-723	Time-honed Wylk Gem
-724	Ancient Fossil
-725	Flowing Sea Squirt
-726	Royal Sea Squirt
-727	264: special item?
-728	265: special item?
-729	Nightflower Pollen
-730	Fossilized Opal
-731	Fossilized Fire Opal
-732	Genesis Opal
-733	Wyvernsprout
-95	Whetfish Fin
-97	Sushifish Scale
-298
-299
-300
-302
-297
-743	Screamer Pod
-737	280: Unknown
-661	281: Unknown
-662	282: Unknown
-738	283: Unknown
-739	284: Unknown
-188	285: electric slinger pod?
-189	286: ice slinger pod?
-190	287: dragon slinger pod?
-744
-182	289: ice slinger pod?
-88	Dragonstrike Nut
-90	Bomberry
+12	Lifepowder
+13	Raw Meat
+14	Barrel Bomb
+15	Large Barrel Bomb
+16	Flash Pod
+17	Stone
+18	Capture Net
+19	Pitfall Trap
+20	Shock Trap
+21	Whetstone
+23	Binoculars
+24	Camping Kit
+25	Portable BBQ Grill
+26	Herb
+27	Antidote Herb
+28	Honey
+29	Bitterbug Broth
+30	Flashbug Phosphor
+31	Godbug Essence
+32	Thunderbug Capacitor
+37	Beast Gem
+38	Normal Ammo
+39	Pierce Ammo
+40	Spread Ammo
+41	Sticky Ammo
+42	Cluster Bomb
+43	Flaming Ammo
+44	Water Ammo
+45	Thunder Ammo
+46	Freeze Ammo
+47	Dragon Ammo
+48	Poison Ammo
+49	Paralysis Ammo
+50	Sleep Ammo
+51	Slicing Ammo
+52	Thorngrass Pod
+53	Iron Ore
+54	Machalite Ore
+57	Earth Crystal
+58	Mystery Bone
+59	Sturdy Bone
+61	Colossal Bone
+62	Dragonbone Relic
+66	Mandragora
+67	Blue Mushroom
+69	Burst Pod
+70	Screamer Pod
+71	Bleeding Pod
+72	Dung Pod
+73	Trap Tool
+75	Smokenut
+76	Ivy
+77	Farcaster
+83	Balahara Tail
+92	Wyvern Gem
+93	Herbivore Shell
+98	Acute Fang
+99	Dung
+100	<COLOR FF0000>#Rejected#</COLOR> Item_IT_100
+101	Rolled-up Dung
+113	Toadstool
+114	Parashroom
+115	Sleep Herb
+116	Fire Herb
+117	Flowfern
+118	Snow Herb
+119	Dragonfell Berry
+120	First-aid Med
+121	
+122	
+123	EZ Shock Trap
+124	
+126	Might Seed
+127	Adamant Seed
+128	Nitroshroom
+130	Blastnut
+131	Slashberry
+143	Rey Dau Tail
+144	Rey Dau Plate
+145	Tranq Blade
+151	Smoke Bomb
+154	Wyvern Ammo
+155	Grounding Pod
+161	Ghillie Mantle
+162	Fishing Rod
+163	Energy Drink
+165	Immunizer
+168	Demondrug
+169	Might Pill
+171	Armorskin
+172	Adamant Pill
+174	Herbal Medicine
+175	Herbal Powder
+176	Demon Powder
+177	Hardshell Powder
+180	Poison Smoke Bomb
+181	Tranq Bomb
+182	Throwing Knife
+186	Drugged Meat
+189	Torch Pod
+195	Paint Pod
+196	Luring Pod
+198	First-aid Med+
+199	
+205	
+206	
+207	EZ Sonic Bomb
+208	Tinged Meat
+209	
+210	
+211	Poisoned Meat
+213	Kunafa Cheese
+215	Droolshroom
+217	Mud Shrimp
+223	Wild Herb
+224	Eastern Honey
+225	Monster Chili
+231	Windward Aloe
+232	Fine Windward Aloe
+233	Great Windward Aloe
+234	Sandpepper
+235	Fiery Sandpepper
+236	Fulgurite Shard
+237	Pure Fulgurite
+238	Thundering Fulgurite
+258	Wylk Pebble
+259	Wylk Gem
+260	Time-honed Wylk Gem
+261	Ancient Fossil
+262	Drifting Sea Pot
+263	Royal Sea Pot
+266	Nightflower Pollen
+267	Fossilized Opal
+268	Fossilized Fire Opal
+269	Genesis Opal
+270	Wyvernsprout
+271	Whetfish Fin
+272	Sushifish Scale
+278	Screamer Pod
 280	
-281	Chatacabra Scale+
-283	Chatacabra Jaw
-282	Chatacabra Hide+
-284	Chatacabra Hardshell
-285	Chatacabra Certificate S
-470
-288
-291
-292	301: monster drop?
-293
-294	303: monster drop?
-295
-296
-303
-304
-305
-306
-308
-324
-325	Balahara Scale+
-326	Balahara Carapace
-327	Balahara Skull+
-328	Balahara Certificate S
-333
-334	Doshaguma Fur+
-335	Doshaguma Hide+
-336	Doshaguma Claw+
-337	Doshaguma Fang+
-338	Doshaguma Certificate S
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-369
-370	Rey Dau Scale+
-371	Rey Dau Carapace
-372	Rey Dau Bolthorn
-373	Rey Dau Boltwingtalon
-374	Rey Dau Boltgem
-375	Rey Dau Certificate S
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429
-430
-431
-432
-433
-434
-435
-436
-438
-439
-440
-441
-162
-443
-513
-126	Demon Ammo
-127	Armour Ammo
-122	Recover Ammo
-125	Tranq Ammo
-121	Exhaust Ammo
-252
-514
-515
-516
-517
-518
-520
-521
-444
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
+283	
+284	
+290	Dragonstrike Nut
+291	Bomberry
+293	Chatacabra Scale+
+294	Chatacabra Jaw+
+295	Chatacabra Hide+
+296	Chatacabra Carapace
+297	Chatacabra Certificate S
+312	Balahara Scale+
+313	Balahara Carapace
+314	Balahara Skull+
+315	Balahara Certificate S
+317	Doshaguma Fur+
+318	Doshaguma Hide+
+319	Doshaguma Claw+
+320	Doshaguma Fang+
+321	Doshaguma Certificate S
+347	Rey Dau Scale+
+348	Rey Dau Carapace
+349	Rey Dau Bolthorn
+350	Rey Dau Fulgurtalon
+351	Rey Dau Boltgem
+352	Rey Dau Certificate S
+413	Demon Ammo
+414	Armor Ammo
+415	Recover Ammo
+416	Tranq Ammo
+417	Exhaust Ammo
 456	
-103
-457
+457	Large Dung Pod
 458	
 459	
 460	
-461
-462
+462	
 463	
 464	
 465	
 466	
-467
-468
-469
-242
-243
-535	Arkveld Tail
-84	Large Dung Pod
-141	458: brown great supply slinger ammo?
-530	Arkveld Scale+
-531	Arkveld Armourplate
-532	White Arkveld Pelt
-533	Arkveld Calloushell
-534	Arkveld Horn+
-536	Arkveld Gem
-537	Arkveld Certificate S
-194	Heavy Blunt Pod
-195	Heavy Severing Pod
-196
-741	Basic Material
-742	Valuable Material
-607
-608
-734	Ancient Wyvern Coin
-193
-161	476: white mantle?
-58	Chillshroom
-49	478: vermilion berry?
-577
-383
-489
-490
-491
-492
-493
-494
-219
-258	Bulaqchi Carapace
-226
-227	Monster Broth
-260	Talioth Scale+
-221	Wingdrake Hide+
-261
-262
-269
-270
-271
-272
-274
-275
-309
-310
-311
-312
-313
-314
-315
-316
-317
-376
-378
-377
-379
-380
-381
-382
-384
-385
+467	Heavy Blunt Pod
+468	Heavy Slicing Pod
+470	
 471	
-472
-473
-474
-475
+474	Ancient Wyvern Coin
 476	
-477	Rubbery Hide
-478	Rubbery Hide+
-479	Gypceros Wing
-480	Gypceros Head
-481	Gypceros Tail
-482	Gypceros Certificate S
-239	Bird Wyvern Gem
-102	Dash Extract
-488
-496
-497
-498
-499
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512
-522
-523
-525
-524
-527
-526
-528
-529
-253
-267
-268
-263
-264
-265
-266
-273
-209	Lightcrystal
-210	Novacrystal
-207	580: ore?
-208	581: ore?
-203	Fucium Ore
-205	583: ore?
-495
-318
-214	586: bone?
-215	587: bone?
-216	588: bone?
-212	Quality Bone
-582
-583
-584
-232
-233
-237
-238	Torrent Sac
-234
-235
-236
-228
-229	Toxin Sac
-301
-307
-230
-231
-246
-247
-609
-610
-611
-612
-613
-615
-616
-617
-619
-569	619: weapon accessory item?
-570	620: weapon accessory item?
-571	621: weapon accessory item?
-600	Armour Sphere
-601	Armour Sphere+
-602	Advanced Armour Sphere
-603	Hard Armour Sphere
-165
-164
-166
-167
-735
-36	631: cures poison?
-21
-59	Catalyst
-68	Gunpowder
-69	Small Barrel
-71	Large Barrel
-74	Spider Web
-75	Net
-99
-100
-101
-659
-658	Golden Scale
-660	Platinum Scale
-590
-591
-593
-594
-663
-664
-665
-604	Heavy Armour Sphere
-248	Monster Keenbone
-249	Monster Hardbone
-250	Stoutbone
-251	Great Stoutbone
-254
-255
-256
-592
-595
-244
-245
-596	666: artian grind material? 10 value
-597	667: artian grind material? 20 value
-598	668: artian grind material? 25 value
-599	669: artian grind material? 50 value
-155	Common Wood Minnow
-156
-157
-158
-159
-160
-168	Close-range Coating
-169	Power Coating
-170	Pierce Coating
-172	Paralysis Coating
-171	Poison Coating
-173	Sleep Coating
-174	Blast Coating
-175	Exhaust Coating
-96
-98	685: cures bleed?
-578
-579
-580
-581
-740	690: Unknown
-206	698: ore?
-585
-586
-587
-588
-589
-323	Balahara Black Pearl
-442
-437
-519
-618
+488	Bulaqchi Carapace
+490	Monster Broth
+491	Talioth Scale+
+492	Wingdrake Hide+
+529	Rubbery Hide+
+530	Gypceros Wing
+531	Gypceros Head
+532	Gypceros Tail
+533	Gypceros Certificate S
+534	Bird Wyvern Gem
+535	Dash Extract
+578	Lightcrystal
+579	Novacrystal
+589	Quality Bone
+596	Torrent Sac
+602	Toxin Sac
+622	Armor Sphere
+623	Armor Sphere+
+624	Advanced Armor Sphere
+625	Hard Armor Sphere
+634	Catalyst
+635	Gunpowder
+636	Small Barrel
+637	Large Barrel
+638	Spider Web
+639	Net
+644	Golden Scale
+645	Platinum Scale
+654	Heavy Armor Sphere
+655	Monster Keenbone
+656	Monster Hardbone
+657	Stoutbone
+658	Great Stoutbone
+670	
+676	Close-range Coating
+677	Power Coating
+678	Pierce Coating
+679	Paralysis Coating
+680	Poison Coating
+681	Sleep Coating
+682	Blast Coating
+683	Exhaust Coating
+690	
+704	Balahara Black Pearl
