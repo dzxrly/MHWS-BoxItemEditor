@@ -69,3 +69,11 @@ jobs:
         id: create_release
         run: |
           gh release create ${{ github.event.inputs.tag || github.ref_name }} *.zip --title "${{ github.event.inputs.tag || github.ref_name }} Release" --notes-file release_notes.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "dzxrly2@gmail.com"
+          git config --local user.name "dzxrly2"
+          git add .
+          git commit -m ":truck: 更新物品ID列表"
+          git push -f
