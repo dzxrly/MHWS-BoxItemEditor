@@ -11,6 +11,7 @@ CHN_XLSX = {
     'FIXED_ID_INDEX_COL': 'Index',
     'NAME_COL': 'RawName',
     'SAVE_PATH': 'reframework/Items_ZH-Hans.txt',
+    'SAVE_TXT_HEADER': ['物品ID', '物品名'],
     'THX': '特别感谢 @Eigeen本征 提供的中文版本表格',
 }
 
@@ -20,6 +21,7 @@ ENG_CSV = {
     'ENUM_ID_COL': 'Enum ID',
     'NAME_COL': 'Name',
     'SAVE_PATH': 'reframework/Items_EN-US.txt',
+    'SAVE_TXT_HEADER': ['Item ID', 'Item Name'],
     'THX': 'Special thanks to https://docs.google.com/spreadsheets/d/178o8U97P2cpb0RZbZBvGIoX4bPhUm_lPczg6elfIj9s/edit?gid=1542902078#gid=1542902078',
 }
 
@@ -36,8 +38,8 @@ if __name__ == '__main__':
     chn_df = merge_df[[CHN_XLSX['FIXED_ID_INDEX_COL'], CHN_XLSX['NAME_COL']]]
     eng_df = merge_df[[CHN_XLSX['FIXED_ID_INDEX_COL'], ENG_CSV['NAME_COL']]]
     # save
-    chn_df.to_csv(CHN_XLSX['SAVE_PATH'], sep='\t', index=False, header=False)
-    eng_df.to_csv(ENG_CSV['SAVE_PATH'], sep='\t', index=False, header=False)
+    chn_df.to_csv(CHN_XLSX['SAVE_PATH'], sep='\t', index=False, header=CHN_XLSX['SAVE_TXT_HEADER'])
+    eng_df.to_csv(ENG_CSV['SAVE_PATH'], sep='\t', index=False, header=ENG_CSV['SAVE_TXT_HEADER'])
     # add thx at the top of the file
     with open(CHN_XLSX['SAVE_PATH'], 'r', encoding='utf-8') as f:
         content = f.read()
