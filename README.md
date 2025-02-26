@@ -60,4 +60,4 @@ Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item I
 
 ## 关于物品ID：
 
-请参考[物品ID列表](./reframework/Items_ZH-CN.txt)。
+请参考[物品ID列表](./reframework/Items_ZH-Hans.txt)。
