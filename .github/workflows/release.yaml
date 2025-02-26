@@ -76,4 +76,4 @@ jobs:
           git config --local user.name "dzxrly2"
           git add .
           git commit -m ":truck: 更新物品ID列表"
-          git push -f
+          git push -f origin main
