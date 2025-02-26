@@ -74,6 +74,6 @@ jobs:
         run: |
           git config --local user.email "dzxrly2@gmail.com"
           git config --local user.name "dzxrly2"
-          git add reframework/Items*.txt
+          git add .
           git commit -m ":truck: 更新物品ID列表"
-          git push -f
+          git push -f origin HEAD:main
