@@ -2,8 +2,8 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
-local INTER_VERSION = "v0.8"
-local MAX_VERSION = "1.0.1.0"
+local INTER_VERSION = "v0.9"
+local MAX_VERSION = "1.0.2.0"
 local I18N = {
     windowTitle = "ItemBox Editor",
     compatibleWarning = "[Warning] Your game version is NOT compatible with this mod: ",
