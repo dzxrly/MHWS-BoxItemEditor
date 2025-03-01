@@ -26,9 +26,10 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 
 ## How To Install:
 
-1. Install REFramework;
+1. Install [REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93);
 2. Download the mod;
-3. Unzip the mod to the Monster Hunter Rise root directory. So the final directory seems like `./reframework/autorun/ItemBoxEditor.lua`.
+3. Unzip the mod to the Monster Hunter Wilds root directory. So the final directory seems like
+   `./reframework/autorun/ItemBoxEditor_EN-US.lua`.
 
 ## How To Use:
 1. Open REFramework menu and unfold the Script Generated UI menu item. You will find the `ItemBox Editor` window.;
@@ -49,9 +50,10 @@ Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item I
 [https://github.com/dzxrly/MHWS-BoxItemEditor/releases/](https://github.com/dzxrly/MHWS-BoxItemEditor/releases/)
 
 ## 安装方式：
-1. 安装REFramework；
+
+1. 安装[REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93)；
 2. 下载MOD；
-3. 将MOD解压缩后存放至Monster Hunter Rise根目录，即`./reframework/autorun/ItemBoxEditor.lua`。
+3. 将MOD解压缩后存放至Monster Hunter Wilds根目录，即`./reframework/autorun/ItemBoxEditor_ZH-Hans.lua`。
 
 ## 如何使用：
 1. 打开REFramework菜单，然后展开Script Generated UI. 能看到`ItemBox Editor`窗口；
