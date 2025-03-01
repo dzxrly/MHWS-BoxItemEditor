@@ -169,7 +169,7 @@ local function initBoxItem()
             -- print(boxItem:call("get_ItemId"))
             -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             local comboxItem = I18N.itemName ..
-                " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+            " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")

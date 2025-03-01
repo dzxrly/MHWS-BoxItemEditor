@@ -20,6 +20,8 @@ local I18N = {
     changeItemNumCombox = "Change Existed Item Number",
     changeItemNumSlider = "Select Add Num (1~9999)",
     changeItemNumBtn = "Confirm Change",
+    itemName = "Item Name",
+    itemCount = "Item Count",
     addItemToPouchTitle = "Item Count Add:",
     addItemToPouchCombox = "Enter the Item ID",
     addItemToPouchSlider = "Select Add Num (1~9999)",
@@ -40,13 +42,6 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
-local FONT_NAME = "NotoSansSC-Medium.ttf"
-local FONT_SIZE = 24
-local CHN_GLYPH = {
-    0x0020, 0xFFEE,
-    0,
-}
-local FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
 
 local boxItemArray = nil
 local pouchItemArray = nil
@@ -169,7 +164,7 @@ local function initBoxItem()
             -- print(boxItem:call("get_ItemId"))
             -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             local comboxItem = I18N.itemName ..
-            " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+                " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
@@ -241,7 +236,6 @@ local function init()
 end
 
 re.on_draw_ui(function()
-    imgui.push_font(FONT)
     imgui.begin_window(I18N.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
     getVersion()
     MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
