@@ -41,5 +41,5 @@ luac.out
 
 .idea
 
-release_notes.md
+#release_notes.md
 *.sha256

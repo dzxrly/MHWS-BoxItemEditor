@@ -64,6 +64,8 @@ jobs:
           echo "### 文件校验 / Checksums" >> release_notes.md
           echo "- \`BoxItemEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_EN-US.zip.sha256)" >> release_notes.md
           echo "- \`BoxItemEditor_ZH-Hans.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_ZH-Hans.zip.sha256)" >> release_notes.md
+          echo "### 打包时间 / Build Time" >> release_notes.md
+          echo "- $(date)" >> release_notes.md
 
       - name: Create GitHub Release
         id: create_release
