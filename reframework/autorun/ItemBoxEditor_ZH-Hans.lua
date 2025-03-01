@@ -12,7 +12,7 @@ local I18N = {
     maxCompatibleVersion = "MOD最高兼容版本",
     confirmCompatibleTip = "[确认兼容]",
     notCompatibleTip = "[不兼容]",
-    backupSaveWarning = "[警告] 使用该MOD前请务必备份存档 !!!",
+    backupSaveWarning = "[警告] 使用该MOD前请务必备份存档 !!! 使用该MOD前请务必备份存档 !!! 使用该MOD前请务必备份存档 !!!",
     itemIdFileTip = "[提示] 物品ID列表位于 '游戏根目录/reframework/Items_ZH-Hans.txt' 中",
     readItemBoxBtn = "读取道具箱",
     changeItemNumTitle = "道具数量修改:",
@@ -169,7 +169,7 @@ local function initBoxItem()
             -- print(boxItem:call("get_ItemId"))
             -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             local comboxItem = I18N.itemName ..
-            " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+                " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")

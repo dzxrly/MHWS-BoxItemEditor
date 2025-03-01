@@ -12,7 +12,8 @@ local I18N = {
     maxCompatibleVersion = "MOD Compatible Version",
     confirmCompatibleTip = "[Compatible]",
     notCompatibleTip = "[NOT Compatible]",
-    backupSaveWarning = "[Warning] Please backup your save before using this mod !!!",
+    backupSaveWarning =
+    "[Warning] Please backup your save before using this mod !!! Please backup your save before using this mod !!! Please backup your save before using this mod !!!",
     itemIdFileTip = "[Tips] Item ID list is in 'GameRoot/reframework/Items_EN-US.txt'",
     readItemBoxBtn = "Read In-Game ItemBox",
     changeItemNumTitle = "Item Count Changer:",
@@ -150,7 +151,8 @@ function getUIName(guid)
 end
 
 function getItemGuid(itemIdFixed)
-    local cData = sdk.find_type_definition("app.ItemDef"):get_method("getDataByDataIndex(System.Int32)"):call(nil, itemFixedId)
+    local cData = sdk.find_type_definition("app.ItemDef"):get_method("getDataByDataIndex(System.Int32)"):call(nil,
+        itemFixedId)
     return cData:get_field("_RawName")
 end
 
@@ -166,7 +168,8 @@ local function initBoxItem()
         if boxItem:get_field("Num") > 0 then
             -- print(boxItem:call("get_ItemId"))
             -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
-            local comboxItem = I18N.itemName .. " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+            local comboxItem = I18N.itemName ..
+            " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
@@ -300,7 +303,8 @@ re.on_draw_ui(function()
     imgui.text(I18N.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)
     moneySilderChanged, moneySilderNewVal = imgui.slider_int(
-        I18N.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal, originMoney,
+        I18N.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal,
+        originMoney,
         MONEY_PTS_MAX - originMoney)
     if moneySilderChanged then
         moneyChangedDiff = moneySilderNewVal - originMoney
