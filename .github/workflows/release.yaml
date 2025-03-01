@@ -58,8 +58,8 @@ jobs:
         run: |
           echo "### 版本下载 / Release Downloads" > release_notes.md
           echo "> `reframework`目录中包含物品ID列表 / The `reframework` directory contains item ID list." >> release_notes.md
-          echo "- **[BoxItemEditor_EN-US.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_EN-US.zip)** （🇺🇸 英文版 / English Version）" >> release_notes.md
-          echo "- **[BoxItemEditor_ZH-Hans.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_ZH-Hans.zip)** （🇨🇳 简体中文版 / Simplified Chinese Version）" >> release_notes.md
+          echo "- **[BoxItemEditor_EN-US.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_EN-US.zip)** （英文版 / English Version）" >> release_notes.md
+          echo "- **[BoxItemEditor_ZH-Hans.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_ZH-Hans.zip)** （简体中文版 / Simplified Chinese Version）" >> release_notes.md
           echo "" >> release_notes.md
           echo "### 文件校验 / Checksums" >> release_notes.md
           echo "- \`BoxItemEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_EN-US.zip.sha256)" >> release_notes.md
