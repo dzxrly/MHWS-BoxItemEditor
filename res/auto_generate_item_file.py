@@ -15,7 +15,7 @@ ENG_CSV = {
 
 ITEM_DATA_JSON = os.path.join('res/ItemData.json')
 TEXT_DATA_CSV = os.path.join('res/Item.msg.23.csv')
-DATA_VER = 'V.1.0.0.0'
+DATA_VER = 'V.1.0.2.0'
 
 if __name__ == '__main__':
     # read ITEM_DATA_JSON
