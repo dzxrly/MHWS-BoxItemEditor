@@ -25,7 +25,7 @@ local I18N = {
     addItemToPouchSlider = "Select Add Num (1~9999)",
     addItemToPouchBtn = "Confirm Add",
     addItemToPouchWarning =
-    "Added items will appear in your POUCH, please use the in-game organizing to automatically send the items to the box",
+    "Added items will appear in your POUCH, please use the in-game AUTO-SORT to automatically send the items to the box",
     coinAndPtsEditorTitle = "Money & Points Add:",
     coinSlider = "Select New Money",
     coinBtn = "Confirm Money Edit",
