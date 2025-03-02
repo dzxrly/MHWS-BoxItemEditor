@@ -5,13 +5,13 @@ import pandas as pd
 
 CHN_XLSX = {
     'SAVE_PATH': 'reframework/Items_ZH-Hans.txt',
-    'JSON_PATH': 'res/ItemBoxEditor_item_dict_ZH-Hans.json',
+    'JSON_PATH': 'reframework/data/ItemBoxEditor_item_dict_ZH-Hans.json',
     'SAVE_TXT_HEADER': ['[物品ID]', '[物品名]'],
 }
 
 ENG_CSV = {
     'SAVE_PATH': 'reframework/Items_EN-US.txt',
-    'JSON_PATH': 'res/ItemBoxEditor_item_dict_EN-US.json',
+    'JSON_PATH': 'reframework/data/ItemBoxEditor_item_dict_EN-US.json',
     'SAVE_TXT_HEADER': ['[Item ID]', '[Item Name]'],
 }
 
