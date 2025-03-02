@@ -36,11 +36,17 @@ jobs:
       - name: Run res/auto_generate_item_file.py
         run: python res/auto_generate_item_file.py
 
+      - name: Move the generated item file to reframework
+        run: |
+          rm -rf reframework/data
+          mv res/ItemBoxEditor_item_dict_ZH-Hans.json reframework/data/ItemBoxEditor_item_dict_ZH-Hans.json
+          mv res/ItemBoxEditor_item_dict_EN-US.json reframework/data/ItemBoxEditor_item_dict_EN-US.json
+
       - name: Create a zip of the directory for EN-US
-        run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*"
+        run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*" "reframework/data/*ZH-Hans.json"
 
       - name: Create a zip of the directory for ZH-Hans
-        run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*"
+        run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*" "reframework/data/*EN-US.json"
 
       - name: Generate checksums
         run: |

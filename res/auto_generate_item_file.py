@@ -5,11 +5,13 @@ import pandas as pd
 
 CHN_XLSX = {
     'SAVE_PATH': 'reframework/Items_ZH-Hans.txt',
+    'JSON_PATH': 'res/ItemBoxEditor_item_dict_ZH-Hans.json',
     'SAVE_TXT_HEADER': ['[物品ID]', '[物品名]'],
 }
 
 ENG_CSV = {
     'SAVE_PATH': 'reframework/Items_EN-US.txt',
+    'JSON_PATH': 'res/ItemBoxEditor_item_dict_EN-US.json',
     'SAVE_TXT_HEADER': ['[Item ID]', '[Item Name]'],
 }
 
@@ -68,3 +70,12 @@ if __name__ == '__main__':
     with open(CHN_XLSX['SAVE_PATH'], 'w', encoding='utf-8') as f:
         f.write(f'数据版本: {DATA_VER}\n\n')
         f.write(data)
+
+    # write as json, like {item_id: item_name}
+    item_dict = dict(zip(item_df['_ItemId'], item_df['English']))
+    with open(ENG_CSV['JSON_PATH'], 'w', encoding='utf-8') as f:
+        json.dump(item_dict, f, ensure_ascii=False, indent=4)
+    item_dict = dict(zip(item_df['_ItemId'], item_df['SimplifiedChinese']))
+    with open(CHN_XLSX['JSON_PATH'], 'w', encoding='utf-8') as f:
+        json.dump(item_dict, f, ensure_ascii=False, indent=4)
+    print('Done!')

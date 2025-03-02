@@ -2,7 +2,7 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
-local INTER_VERSION = "v1.0"
+local INTER_VERSION = "v1.1"
 local MAX_VERSION = "1.0.1.0"
 local I18N = {
     windowTitle = "ItemBox Editor",
@@ -42,11 +42,13 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
+local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_EN-US.json"
 
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
+local itemNameJson = nil
 
 local existedComboLabels = {}
 local existedComboItemIdFixedValues = {}
@@ -136,6 +138,16 @@ function compareVersions(version1, version2)
     return true
 end
 
+function loadItemNameJson(jsonPath)
+    if json ~= nil then
+        local jsonFile = json.load_file(jsonPath)
+        if jsonFile then
+            itemNameJson = jsonFile
+            print(itemNameJson)
+        end
+    end
+end
+
 function getUIName(guid)
     local uiName = sdk.find_type_definition("via.gui.message"):get_method("get(System.Guid)"):call(nil, guid)
     if not uiName then
@@ -161,10 +173,13 @@ local function initBoxItem()
     for boxPosIndex = 0, #boxItemArray - 1 do
         local boxItem = boxItemArray[boxPosIndex]
         if boxItem:get_field("Num") > 0 then
-            -- print(boxItem:call("get_ItemId"))
-            -- local comboxItem = I18N.itemName .. " " .. getUIName(getItemGuid(boxItem:get_field("ItemIdFixed"))) .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
-            local comboxItem = I18N.itemName ..
-                " " .. boxItem:get_field("ItemIdFixed") .. " - " .. I18N.itemCount .. " " .. boxItem:get_field("Num")
+            local itemName = nil
+            if itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))] ~= nil then
+                itemName = itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))]
+            else
+                itemName = tostring(boxItem:get_field("ItemIdFixed"))
+            end
+            local comboxItem = itemName .. " - " .. boxItem:get_field("Num")
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
@@ -235,10 +250,12 @@ local function init()
     existedSelectedItemNum = existedComboItemNumValues[1]
 end
 
+loadItemNameJson(ITEM_NAME_JSON_PATH)
+getVersion()
+MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+
 re.on_draw_ui(function()
     imgui.begin_window(I18N.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
-    getVersion()
-    MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
     if MAX_VER_LT_OR_EQ_GAME_VER == false then
         imgui.text_colored(I18N.compatibleWarning, ERROR_COLOR)
