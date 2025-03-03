@@ -235,7 +235,9 @@ re.on_draw_ui(function()
         imgui.new_line()
     end
 
+    imgui.new_line()
     imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
+    imgui.new_line()
 
     if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
         init()
