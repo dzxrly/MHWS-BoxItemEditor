@@ -8,6 +8,8 @@
 
 [![Static Badge](https://img.shields.io/badge/Nexusmods-Item%20Box%20Editor-%23d28934?style=for-the-badge)](https://www.nexusmods.com/monsterhunterwilds/mods/102) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Fmain%2Fversion.json&query=%24.version&style=for-the-badge&label=VERSION) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fversion.json&query=%24.max&style=for-the-badge&label=Supported%20Game%20Version%20(MAX)&color=FF5733) [![GitHub License](https://img.shields.io/github/license/dzxrly/MHWS-BoxItemEditor?style=for-the-badge)](https://github.com/dzxrly/MHWS-BoxItemEditor/blob/main/LICENSE)
 
+![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fmod_info.yaml&query=%24.total_download_count&style=for-the-badge&label=total%20downloads&color=A8DADC) ![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fmod_info.yaml&query=%24.unique_download_count&style=for-the-badge&label=unique%20downloads&color=BCE784) ![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fmod_info.yaml&query=%24.views_count&style=for-the-badge&label=views%20count&color=F0E6EF)
+
 </div>
 
 > [!CAUTION]
@@ -63,3 +65,11 @@ Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item I
 ## 关于物品ID：
 
 请参考[物品ID列表](./reframework/Items_ZH-Hans.txt)。
+
+---
+
+<div align="center">
+
+<a href='https://ko-fi.com/F1F0PZH7X' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+</div>
