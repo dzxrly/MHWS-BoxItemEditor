@@ -192,7 +192,7 @@ local function initBoxItem()
 
             -- adjust the max item count in Item Add func
             addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount
-            [tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
+                [tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
 
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
