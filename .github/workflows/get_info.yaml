@@ -1,0 +1,39 @@
+name: Get Download Info
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '5 23 * * *'
+
+
+jobs:
+  update-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: 'Install dependencies'
+        run: |
+          python -m pip install --upgrade requests
+          pip install pyyaml requests
+
+      - name: Run res/get_download_count.py
+        run: |
+          python res/get_download_count.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "dzxrly2@gmail.com"
+          git config --local user.name "dzxrly2"
+          git add .
+          git commit -m ":fire: 更新下载量统计"
+          git push -f origin HEAD:main
