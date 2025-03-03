@@ -37,10 +37,10 @@ jobs:
         run: python res/auto_generate_item_file.py
 
       - name: Create a zip of the directory for EN-US
-        run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*" "reframework/data/*ZH-Hans.json"
+        run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*" "reframework/data/*ZH-Hans.json" "reframework/data/.gitkeep"
 
       - name: Create a zip of the directory for ZH-Hans
-        run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*" "reframework/data/*EN-US.json"
+        run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*" "reframework/data/*EN-US.json" "reframework/data/.gitkeep"
 
       - name: Generate checksums
         run: |
@@ -77,5 +77,5 @@ jobs:
           git config --local user.email "dzxrly2@gmail.com"
           git config --local user.name "dzxrly2"
           git add .
-          git commit -m ":truck: 更新物品ID列表"
+          git commit -m ":bookmark: 发布新版本"
           git push -f origin HEAD:main
