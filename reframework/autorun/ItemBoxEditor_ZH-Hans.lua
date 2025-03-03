@@ -4,34 +4,6 @@
 -- For Monster Hunter: Wilds
 local INTER_VERSION = "v1.1"
 local MAX_VERSION = "1.0.1.0"
-local I18N = {
-    windowTitle = "道具箱编辑器",
-    compatibleWarning = "[警告] 当前的游戏版本不兼容该MOD: ",
-    gameVersion = "游戏版本",
-    modVersion = "MOD版本",
-    maxCompatibleVersion = "MOD最高兼容版本",
-    confirmCompatibleTip = "[确认兼容]",
-    notCompatibleTip = "[不兼容]",
-    backupSaveWarning = "[警告] 使用该MOD前请务必备份存档 !!! 使用该MOD前请务必备份存档 !!! 使用该MOD前请务必备份存档 !!!",
-    itemIdFileTip = "[提示] 物品ID列表位于 '游戏根目录/reframework/Items_ZH-Hans.txt' 中",
-    readItemBoxBtn = "读取道具箱",
-    changeItemNumTitle = "道具数量修改:",
-    changeItemNumCombox = "修改已存在的道具的数量",
-    changeItemNumSlider = "选择新的数量 (1~9999)",
-    changeItemNumBtn = "确认修改",
-    itemName = "物品编号",
-    itemCount = "物品数量",
-    addItemToPouchTitle = "道具无中生有:",
-    addItemToPouchCombox = "输入物品ID",
-    addItemToPouchSlider = "选择无中生有数量 (1~9999)",
-    addItemToPouchBtn = "确认无中生有",
-    addItemToPouchWarning = "无中生有的道具会出现在[道具袋]内，请自行使用游戏内的[整理]功能自动将物品送回道具箱",
-    coinAndPtsEditorTitle = "金币 & 调查点数修改:",
-    coinSlider = "选择新的金币数量",
-    coinBtn = "确认金币修改",
-    ptsSlider = "选择新的调查点数",
-    ptsBtn = "确认调查点数修改",
-}
 local MONEY_PTS_MAX = 99999999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
@@ -40,20 +12,31 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
+-- DO NOT MODIFY THE FOLLOWING CODE
 local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_ZH-Hans.json"
-local FONT_NAME = "NotoSansSC-Medium.ttf"
-local FONT_SIZE = 24
-local CHN_GLYPH = {
-    0x0020, 0xFFEE,
-    0,
-}
-local FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
+local LANG = "ZH-Hans"
+-- DO NOT MODIFY THE ABOVE CODE
+local FONT_NAME = nil
+local FONT_SIZE = nil
+local CHN_GLYPH = nil
+local FONT = nil
+
+if LANG == "ZH-Hans" then
+    FONT_NAME = "NotoSansSC-Medium.ttf"
+    FONT_SIZE = 24
+    CHN_GLYPH = {
+        0x0020, 0xFFEE,
+        0,
+    }
+    FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
+end
 
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
 local itemNameJson = nil
+local i18n = nil
 
 local existedComboLabels = {}
 local existedComboItemIdFixedValues = {}
@@ -74,15 +57,15 @@ local addNewItemId = nil
 local addNewItemNum = nil
 
 local originMoney = 0
-local moneySilderVal = 0
+local moneySliderVal = 0
 local moneyChangedDiff = 0
 local originPoints = 0
-local pointsSilderVal = 0
+local pointsSliderVal = 0
 local pointsChangedDiff = 0
-local moneySilderChanged = nil
-local pointsSilderChange = nil
-local moneySilderNewVal = nil
-local pointsSilderNewVal = nil
+local moneySliderChanged = nil
+local pointsSliderChange = nil
+local moneySliderNewVal = nil
+local pointsSliderNewVal = nil
 
 local function clear()
     boxItemArray = nil
@@ -107,15 +90,15 @@ local function clear()
     addNewItemNum = nil
 
     originMoney = 0
-    moneySilderVal = 0
+    moneySliderVal = 0
     moneyChangedDiff = 0
     originPoints = 0
-    pointsSilderVal = 0
+    pointsSliderVal = 0
     pointsChangedDiff = 0
-    moneySilderChanged = nil
-    pointsSilderChange = nil
-    moneySilderNewVal = nil
-    pointsSilderNewVal = nil
+    moneySliderChanged = nil
+    pointsSliderChange = nil
+    moneySliderNewVal = nil
+    pointsSliderNewVal = nil
 end
 
 local function getVersion()
@@ -143,29 +126,15 @@ function compareVersions(version1, version2)
     return true
 end
 
-function loadItemNameJson(jsonPath)
+function loadI18NJson(jsonPath)
     if json ~= nil then
         local jsonFile = json.load_file(jsonPath)
         if jsonFile then
-            itemNameJson = jsonFile
+            i18n = jsonFile.I18N
+            itemNameJson = jsonFile.ItemName
             print(itemNameJson)
         end
     end
-end
-
-function getUIName(guid)
-    local uiName = sdk.find_type_definition("via.gui.message"):get_method("get(System.Guid)"):call(nil, guid)
-    if not uiName then
-        return tostring(guid)
-    else
-        return tostring(uiName)
-    end
-end
-
-function getItemGuid(itemIdFixed)
-    local cData = sdk.find_type_definition("app.ItemDef"):get_method("getDataByDataIndex(System.Int32)"):call(nil,
-        itemFixedId)
-    return cData:get_field("_RawName")
 end
 
 local function initBoxItem()
@@ -212,8 +181,8 @@ local function initHunterBasicData()
     cBasicParam = cUserSaveParam:get_field("_BasicData")
     originMoney = cBasicParam:call("getMoney")
     originPoints = cBasicParam:call("getPoint")
-    moneySilderVal = originMoney
-    pointsSilderVal = originPoints
+    moneySliderVal = originMoney
+    pointsSliderVal = originPoints
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
@@ -223,7 +192,6 @@ local function changeBoxItemNum(itemFixedId, changedNumber)
                 local itemEnumId = boxItemArray[boxPosIndex]:call("get_ItemId")
                 boxItemArray[boxPosIndex]:call("set", itemEnumId, changedNumber)
                 cItemParam:call("adjustItemOrder", itemEnumId, boxItemArray)
-                print("Changed ID: " .. itemEnumId)
             end
         end
     end
@@ -234,7 +202,6 @@ local function addNewToPouchItem(cItemWork, itemId, itemNum)
     if itemId > 0 and itemId <= 750 and itemNum > 0 then
         cItemWork:call("set_ItemId", itemId)
         cItemWork:call("set", itemId, itemNum)
-        print("Changed ID: " .. cItemWork:call("get_ItemId"))
     end
 end
 
@@ -255,44 +222,41 @@ local function init()
     existedSelectedItemNum = existedComboItemNumValues[1]
 end
 
-loadItemNameJson(ITEM_NAME_JSON_PATH)
+loadI18NJson(ITEM_NAME_JSON_PATH)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
 re.on_draw_ui(function()
-    imgui.push_font(FONT)
-    imgui.begin_window(I18N.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
-    getVersion()
-    MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+    imgui.begin_window(i18n.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
 
     if MAX_VER_LT_OR_EQ_GAME_VER == false then
-        imgui.text_colored(I18N.compatibleWarning, ERROR_COLOR)
-        imgui.text_colored(I18N.gameVersion .. GAME_VER .. " > " .. I18N.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
+        imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
+        imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
         imgui.new_line()
     end
 
-    imgui.text_colored(I18N.backupSaveWarning, ERROR_COLOR)
+    imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
 
-    if imgui.button(I18N.readItemBoxBtn, LARGE_BTN) then
+    if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
         init()
     end
 
     imgui.new_line()
-    imgui.text_colored(I18N.itemIdFileTip, TIPS_COLOR)
-    imgui.text(I18N.changeItemNumTitle)
+    imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
+    imgui.text(i18n.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo(I18N.changeItemNumCombox, existedSelectedIndex,
-        existedComboLabels)
+    existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
+            existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int(I18N.changeItemNumSlider, existedSelectedItemNum, 1,
-        9999)
+    existedSliderChanged, existedSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, existedSelectedItemNum, 1,
+            9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
-    if imgui.button(I18N.changeItemNumBtn, SMALL_BTN) then
+    if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
         changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
         clear()
         init()
@@ -300,18 +264,18 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text(I18N.addItemToPouchTitle)
+    imgui.text(i18n.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(I18N.addItemToPouchCombox, addNewItemId)
+    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchCombox, addNewItemId)
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(I18N.addItemToPouchSlider, addNewItemNum, 1, 9999)
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(i18n.addItemToPouchSlider, addNewItemNum, 1, 9999)
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end
-    imgui.text(I18N.addItemToPouchWarning)
-    if imgui.button(I18N.addItemToPouchBtn, SMALL_BTN) then
+    imgui.text(i18n.addItemToPouchWarning)
+    if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
         addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
         clear()
         init()
@@ -319,30 +283,30 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text(I18N.coinAndPtsEditorTitle)
+    imgui.text(i18n.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)
-    moneySilderChanged, moneySilderNewVal = imgui.slider_int(
-        I18N.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySilderVal,
-        originMoney,
-        MONEY_PTS_MAX - originMoney)
-    if moneySilderChanged then
-        moneyChangedDiff = moneySilderNewVal - originMoney
-        moneySilderVal = moneySilderNewVal
+    moneySliderChanged, moneySliderNewVal = imgui.slider_int(
+            i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
+            originMoney,
+            MONEY_PTS_MAX - originMoney)
+    if moneySliderChanged then
+        moneyChangedDiff = moneySliderNewVal - originMoney
+        moneySliderVal = moneySliderNewVal
     end
-    if imgui.button(I18N.coinBtn, SMALL_BTN) then
+    if imgui.button(i18n.coinBtn, SMALL_BTN) then
         moneyAddFunc(cBasicParam, moneyChangedDiff)
         clear()
         init()
     end
-    pointsSilderChange, pointsSilderNewVal = imgui.slider_int(
-        I18N.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSilderVal,
-        originPoints,
-        MONEY_PTS_MAX - originPoints)
-    if pointsSilderChange then
-        pointsChangedDiff = pointsSilderNewVal - originPoints
-        pointsSilderVal = pointsSilderNewVal
+    pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
+            i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
+            originPoints,
+            MONEY_PTS_MAX - originPoints)
+    if pointsSliderChange then
+        pointsChangedDiff = pointsSliderNewVal - originPoints
+        pointsSliderVal = pointsSliderNewVal
     end
-    if imgui.button(I18N.ptsBtn, SMALL_BTN) then
+    if imgui.button(i18n.ptsBtn, SMALL_BTN) then
         pointAddFunc(cBasicParam, pointsChangedDiff)
         clear()
         init()
@@ -350,15 +314,15 @@ re.on_draw_ui(function()
     imgui.end_disabled()
 
     imgui.new_line()
-    imgui.text(I18N.modVersion)
+    imgui.text(i18n.modVersion)
     imgui.same_line()
     imgui.text(INTER_VERSION)
-    imgui.text(I18N.gameVersion)
+    imgui.text(i18n.gameVersion)
     imgui.same_line()
     if MAX_VER_LT_OR_EQ_GAME_VER then
-        imgui.text_colored(GAME_VER .. I18N.confirmCompatibleTip, CHECKED_COLOR)
+        imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
     else
-        imgui.text_colored(GAME_VER .. I18N.notCompatibleTip, ERROR_COLOR)
+        imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
     end
 
     imgui.end_window()

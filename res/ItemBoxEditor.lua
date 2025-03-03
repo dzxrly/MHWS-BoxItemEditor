@@ -12,10 +12,10 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
--- DO NOT MODIFY THE FOLLOWING CODE
-local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_EN-US.json"
-local LANG = "EN-US"
--- DO NOT MODIFY THE ABOVE CODE
+-- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
+local ITEM_NAME_JSON_PATH = ""
+local LANG = ""
+-- !!! DO NOT MODIFY THE ABOVE CODE !!!
 local FONT_NAME = nil
 local FONT_SIZE = nil
 local CHN_GLYPH = nil
