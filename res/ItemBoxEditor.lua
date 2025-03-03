@@ -191,7 +191,8 @@ local function initBoxItem()
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
 
             -- adjust the max item count in Item Add func
-            addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
+            addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount
+                [tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
 
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
@@ -323,7 +324,9 @@ re.on_draw_ui(function()
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(i18n.addItemToPouchSlider .. tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]), addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
+    i18n.addItemToPouchSlider .. tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
+        addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end

@@ -16,7 +16,7 @@
   "itemName": "Item Name",
   "itemCount": "Item Count",
   "addItemToPouchTitle": "Item Count Add:",
-  "addItemToPouchCombox": "Select Item ID",
+  "addItemToPouchCombox": "Select Item ID [Please make sure the item can be added to the POUCH, this MOD will not check!]",
   "addItemToPouchInput": "Enter the Item ID [You can directly input the item ID]",
   "addItemToPouchSlider": "Select Add Num: MAX=",
   "addItemToPouchBtn": "Confirm Add",
