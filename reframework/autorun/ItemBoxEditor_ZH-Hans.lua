@@ -2,9 +2,10 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
-local INTER_VERSION = "v1.1"
+local INTER_VERSION = "v1.2"
 local MAX_VERSION = "1.0.1.0"
 local MONEY_PTS_MAX = 99999999
+local ITEM_COUNT_MAX = 9999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
 local ERROR_COLOR = 0xeb4034ff
@@ -12,31 +13,33 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
--- DO NOT MODIFY THE FOLLOWING CODE
+-- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_ZH-Hans.json"
 local LANG = "ZH-Hans"
--- DO NOT MODIFY THE ABOVE CODE
-local FONT_NAME = nil
-local FONT_SIZE = nil
-local CHN_GLYPH = nil
+-- !!! DO NOT MODIFY THE ABOVE CODE !!!
 local FONT = nil
 
 if LANG == "ZH-Hans" then
-    FONT_NAME = "NotoSansSC-Medium.ttf"
-    FONT_SIZE = 24
-    CHN_GLYPH = {
+    local FONT_NAME = "NotoSansSC-Medium.ttf"
+    local FONT_SIZE = 24
+    local CHN_GLYPH = {
         0x0020, 0xFFEE,
         0,
     }
     FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
 end
 
+-- NOT CHANGED VARIABLES:
+local itemNameJson = nil
+local i18n = nil
+local addNewItemFixedIDList = {}
+local addNewItemNameList = {}
+-- NOT CHANGED VARIABLES END
+
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
-local itemNameJson = nil
-local i18n = nil
 
 local existedComboLabels = {}
 local existedComboItemIdFixedValues = {}
@@ -48,6 +51,9 @@ local existedSelectedItemNum = nil
 local existedSliderChanged = nil
 local existedSliderNewVal = nil
 
+local addNewItemListMaxCount = {}
+local addNewItemComboChanged = false
+local addNewItemComboSelectedIndex = nil
 local addNewEmptyPouchItem = nil
 local addNewInputChanged = nil
 local addNewInputNewVal = nil
@@ -82,6 +88,8 @@ local function clear()
     existedSliderChanged = nil
     existedSliderNewVal = nil
 
+    addNewItemComboChanged = false
+    addNewItemComboSelectedIndex = nil
     addNewInputChanged = nil
     addNewInputNewVal = nil
     addNewSliderChanged = nil
@@ -126,13 +134,37 @@ function compareVersions(version1, version2)
     return true
 end
 
-function loadI18NJson(jsonPath)
+local function checkItemName(input)
+    if input:match("^%s*$") then
+        return false
+    end
+    if input:match("Rejected") or input:match("%-%-%-") then
+        return false
+    end
+    return true
+end
+
+local function loadI18NJson(jsonPath)
+    print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
         local jsonFile = json.load_file(jsonPath)
         if jsonFile then
             i18n = jsonFile.I18N
             itemNameJson = jsonFile.ItemName
-            print(itemNameJson)
+            local tempIndex = 1
+            local tempSortedTable = {}
+            for key, value in pairs(itemNameJson) do
+                if checkItemName(value) then
+                    table.insert(tempSortedTable, key)
+                end
+            end
+            table.sort(tempSortedTable)
+            for _, key in ipairs(tempSortedTable) do
+                addNewItemFixedIDList[tempIndex] = key
+                addNewItemNameList[tempIndex] = itemNameJson[key]
+                addNewItemListMaxCount[tostring(key)] = ITEM_COUNT_MAX
+                tempIndex = tempIndex + 1
+            end
         end
     end
 end
@@ -157,6 +189,10 @@ local function initBoxItem()
             existedComboLabels[existedShowInComboxPosIndex] = comboxItem
             existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
             existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
+
+            -- adjust the max item count in Item Add func
+            addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
+
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
     end
@@ -186,12 +222,18 @@ local function initHunterBasicData()
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
-    if changedNumber >= 0 then
+    if changedNumber > 0 then
         for boxPosIndex = 0, #boxItemArray - 1 do
             if boxItemArray[boxPosIndex]:get_field("ItemIdFixed") == itemFixedId then
                 local itemEnumId = boxItemArray[boxPosIndex]:call("get_ItemId")
                 boxItemArray[boxPosIndex]:call("set", itemEnumId, changedNumber)
-                cItemParam:call("adjustItemOrder", itemEnumId, boxItemArray)
+            end
+        end
+    else
+        for boxPosIndex = 0, #boxItemArray - 1 do
+            if boxItemArray[boxPosIndex]:get_field("ItemIdFixed") == itemFixedId then
+                boxItemArray[boxPosIndex]:call("set_ItemId", 0)
+                boxItemArray[boxPosIndex]:call("set", 0, 0)
             end
         end
     end
@@ -227,6 +269,9 @@ getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
 re.on_draw_ui(function()
+    if FONT ~= nil then
+        imgui.push_font(FONT)
+    end
     imgui.begin_window(i18n.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
 
     if MAX_VER_LT_OR_EQ_GAME_VER == false then
@@ -236,6 +281,7 @@ re.on_draw_ui(function()
     end
 
     imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
+    imgui.new_line()
 
     if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
         init()
@@ -246,13 +292,13 @@ re.on_draw_ui(function()
     imgui.text(i18n.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
     existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
-            existedComboLabels)
+        existedComboLabels)
     if existedComboChanged then
         existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
         existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
     end
     existedSliderChanged, existedSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, existedSelectedItemNum, 1,
-            9999)
+        9999)
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
@@ -266,11 +312,18 @@ re.on_draw_ui(function()
     imgui.new_line()
     imgui.text(i18n.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchCombox, addNewItemId)
+    addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
+        i18n.addItemToPouchCombox,
+        addNewItemComboSelectedIndex,
+        addNewItemNameList)
+    if addNewItemComboChanged then
+        addNewItemId = addNewItemFixedIDList[addNewItemComboSelectedIndex]
+    end
+    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchInput, addNewItemId)
     if addNewInputChanged then
         addNewItemId = addNewInputNewVal
     end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(i18n.addItemToPouchSlider, addNewItemNum, 1, 9999)
+    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(i18n.addItemToPouchSlider .. tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]), addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal
     end
@@ -286,9 +339,9 @@ re.on_draw_ui(function()
     imgui.text(i18n.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)
     moneySliderChanged, moneySliderNewVal = imgui.slider_int(
-            i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-            originMoney,
-            MONEY_PTS_MAX - originMoney)
+        i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
+        originMoney,
+        MONEY_PTS_MAX - originMoney)
     if moneySliderChanged then
         moneyChangedDiff = moneySliderNewVal - originMoney
         moneySliderVal = moneySliderNewVal
@@ -299,9 +352,9 @@ re.on_draw_ui(function()
         init()
     end
     pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
-            i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-            originPoints,
-            MONEY_PTS_MAX - originPoints)
+        i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
+        originPoints,
+        MONEY_PTS_MAX - originPoints)
     if pointsSliderChange then
         pointsChangedDiff = pointsSliderNewVal - originPoints
         pointsSliderVal = pointsSliderNewVal
