@@ -2,8 +2,17 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
+
+-- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
+local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_ZH-Hans.json"
+local LANG = "ZH-Hans"
+-- !!! DO NOT MODIFY THE ABOVE CODE !!!
+
+-- Just change here can change every VERSION setting in all files
 local INTER_VERSION = "v1.2"
 local MAX_VERSION = "1.0.1.0"
+-- Just change here can change every VERSION setting in all files END
+
 local MONEY_PTS_MAX = 99999999
 local ITEM_COUNT_MAX = 9999
 local LARGE_BTN = Vector2f.new(300, 50)
@@ -13,10 +22,6 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
--- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
-local ITEM_NAME_JSON_PATH = "ItemBoxEditor_item_dict_ZH-Hans.json"
-local LANG = "ZH-Hans"
--- !!! DO NOT MODIFY THE ABOVE CODE !!!
 local FONT = nil
 
 if LANG == "ZH-Hans" then
@@ -324,6 +329,7 @@ re.on_draw_ui(function()
     imgui.new_line()
     imgui.text(i18n.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
+    imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
     addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
         i18n.addItemToPouchCombox,
         addNewItemComboSelectedIndex,

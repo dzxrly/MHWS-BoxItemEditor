@@ -329,6 +329,7 @@ re.on_draw_ui(function()
     imgui.new_line()
     imgui.text(i18n.addItemToPouchTitle)
     imgui.begin_disabled(cItemParam == nil)
+    imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
     addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
         i18n.addItemToPouchCombox,
         addNewItemComboSelectedIndex,
