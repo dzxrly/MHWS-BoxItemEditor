@@ -37,6 +37,7 @@ end
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
 local i18n = nil
+local addNewItemFixedIDList = {}
 local addNewItemList = {}
 local addNewItemNameList = {}
 -- NOT CHANGED VARIABLES END
@@ -97,7 +98,10 @@ local function clear()
     existedSelectedItemNum = nil
     existedSliderChanged = nil
     existedSliderNewVal = nil
-
+    existedSearchInputChanged = nil
+    existedSearchInputNewVal = nil
+    existedSearchInputVal = nil
+    
     addNewItemComboChanged = false
     addNewItemComboSelectedIndex = nil
     addNewInputChanged = nil
@@ -356,6 +360,13 @@ re.on_draw_ui(function()
             existedSearchedItems, existedComboSearchedLabels = filterCombo(existedItems, existedSearchInputNewVal)
             addNewSearchedItems, addNewComboSearchedLabels = filterCombo(addNewItemList, existedSearchInputNewVal)
         end
+        if #existedSearchedItems > 0 then
+            existedSelectedItemFixedId = existedSearchedItems[1].fixedId
+            existedSelectedItemNum = existedSearchedItems[1].num
+        end
+        if #addNewSearchedItems > 0 then
+            addNewItemId = addNewSearchedItems[1].fixedId
+        end
     end
     existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
         existedComboSearchedLabels)
@@ -368,11 +379,13 @@ re.on_draw_ui(function()
     if existedSliderChanged then
         existedSelectedItemNum = existedSliderNewVal
     end
+    imgui.begin_disabled(existedSearchedItems == nil or #existedSearchedItems == 0)
     if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
         changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
         clear()
         init()
     end
+    imgui.end_disabled()
     imgui.end_disabled()
 
 
@@ -406,11 +419,13 @@ re.on_draw_ui(function()
         addNewItemNum = addNewSliderNewVal
     end
     imgui.text(i18n.addItemToPouchWarning)
+    imgui.begin_disabled(addNewSearchedItems == nil or #addNewSearchedItems == 0)
     if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
         addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
         clear()
         init()
     end
+    imgui.end_disabled()
     imgui.end_disabled()
 
 
