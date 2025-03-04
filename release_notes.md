@@ -4,7 +4,7 @@
 - **[BoxItemEditor_ZH-Hans.zip](https://github.com/dzxrly/MHWS-BoxItemEditor/releases/download/v1.2/BoxItemEditor_ZH-Hans.zip)** （简体中文版 / Simplified Chinese Version）
 
 ### 文件校验 / Checksums
-- `BoxItemEditor_EN-US.zip` SHA-256: ba6034fbc53bff3962cf1b49023d352bd7a0ba83c62d51e89f80708c74cbe864
-- `BoxItemEditor_ZH-Hans.zip` SHA-256: 814c72efb7b39a24dc1987797452ec07eddad89ecfef5f361667a331ed235f25
+- `BoxItemEditor_EN-US.zip` SHA-256: 7caee3285a76550d6fedbb55ee99c9f5d62fa71a43a0119ab5e7a98a0fbcbde6
+- `BoxItemEditor_ZH-Hans.zip` SHA-256: 7356cd62997bddb6d5a666f8b09ae5566603d596ae5e5d4470179996104dc4c4
 ### 打包时间 / Build Time
-- Tue Mar  4 05:04:17 UTC 2025
+- Tue Mar  4 10:34:56 UTC 2025
