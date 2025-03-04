@@ -187,9 +187,13 @@ local function initBoxItem()
                 itemName = tostring(boxItem:get_field("ItemIdFixed"))
             end
             local comboxItem = "[" ..
-            tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " .. boxItem:get_field("Num")
-            existedItems[existedShowInComboxPosIndex] = { name = comboxItem, fixedId = boxItem:get_field("ItemIdFixed"), num =
-            boxItem:get_field("Num") }
+                tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " .. boxItem:get_field("Num")
+            existedItems[existedShowInComboxPosIndex] = {
+                name = comboxItem,
+                fixedId = boxItem:get_field("ItemIdFixed"),
+                num =
+                    boxItem:get_field("Num")
+            }
 
             -- adjust the max item count in Item Add func
             addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount
