@@ -27,7 +27,9 @@
         "coinSlider": "选择新的金币数量",
         "coinBtn": "确认金币修改",
         "ptsSlider": "选择新的调查点数",
-        "ptsBtn": "确认调查点数修改"
+        "ptsBtn": "确认调查点数修改",
+        "unknownItem": "未知物品",
+        "searchInput":"搜索物品名称/ID/数量"
     },
     "ItemName": {
         "1": "---",
