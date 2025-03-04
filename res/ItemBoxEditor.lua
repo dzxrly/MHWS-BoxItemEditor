@@ -43,7 +43,13 @@ local addNewItemNameList = {}
 
 -- window status
 local mainWindowOpen = true
+local itemWindowOpen = true
 -- window status end
+
+-- item table window
+local searchItemTarget = nil
+local searchItemResult = {}
+-- item table window end
 
 local boxItemArray = nil
 local pouchItemArray = nil
@@ -179,6 +185,30 @@ local function loadI18NJson(jsonPath)
     end
 end
 
+local function searchItemList(target)
+    local itemIndex = 0
+    local itemMap = {}
+    for key, value in pairs(itemNameJson) do
+        if checkItemName(value) then
+            if target ~= nil then
+                if string.lower(value):match(string.lower(target)) then
+                    itemMap[itemIndex] = {key = tonumber(key), value = value}
+                    itemIndex = itemIndex + 1
+                end
+            else
+                itemMap[itemIndex] = {key = tonumber(key), value = value}
+                itemIndex = itemIndex + 1
+            end
+        end
+    end
+
+    table.sort(itemMap, function(a, b)
+        return a.key < b.key
+    end)
+
+    return itemMap
+end
+
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
@@ -285,7 +315,7 @@ local function init()
     existedSelectedItemNum = existedComboItemNumValues[1]
 end
 
-local function main() 
+local function mainWindow() 
     if imgui.begin_window(i18n.windowTitle, mainWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
         if MAX_VER_LT_OR_EQ_GAME_VER == false then
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
@@ -401,7 +431,64 @@ local function main()
     end
 end
 
+local function itemTableWindow()
+    local changed = nil
+    if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+        imgui.text(i18n.itemTableWindowTitle)
+        imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
+        imgui.table_setup_column('', 0, 2)
+        imgui.table_setup_column('', 0, 1)
+
+        imgui.table_next_column()
+        imgui.push_item_width(-1)
+        changed, searchItem = imgui.input_text('', searchItemTarget)
+        imgui.pop_item_width()
+        if changed then
+            searchItemTarget = searchItem
+        end
+
+        imgui.table_next_column()
+        if imgui.button(i18n.clearBtn, {-0.001, 0}) then
+            searchItemTarget = nil
+            searchItemResult = searchItemList(searchItemTarget)
+        end
+        imgui.end_table()
+
+        if imgui.button(i18n.searchBtn, {-0.001, 0}) then
+            searchItemResult = searchItemList(searchItemTarget)
+        end
+
+        imgui.begin_table('table', 2, 17) -- 17 is ImGuiTableFlags_Resizable | ImGuiTableFlags_NoSavedSettings
+
+        imgui.table_setup_column('', 0, 1)
+        imgui.table_setup_column('', 0, 2)
+
+        imgui.push_style_color(21, 0xff142D65)
+        imgui.push_style_color(22, 0xff142D65)
+        imgui.push_style_color(23, 0xff142D65)
+        imgui.table_next_column()
+        imgui.button(i18n.itemTableTitleID, {-0.001, 0})
+        imgui.table_next_column()
+        imgui.button(i18n.itemTableTitleName, {-0.001, 0})
+        imgui.pop_style_color(3)
+
+        for i = 1, #searchItemResult do
+            imgui.table_next_column()
+            imgui.button(searchItemResult[i].key, {-0.001, 0})
+            imgui.table_next_column()
+            imgui.button(searchItemResult[i].value, {-0.001, 0})
+        end
+
+        imgui.end_table()
+        
+        imgui.end_window()
+    else
+        itemWindowOpen = false
+    end
+end
+
 loadI18NJson(ITEM_NAME_JSON_PATH)
+searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
@@ -409,7 +496,8 @@ re.on_draw_ui(function()
     local changed = false
 
     if imgui.tree_node(i18n.title) then
-        changed, mainWindowOpen = imgui.checkbox("Open Editor", i18n.openMainWindow)
+        changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
+        changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
 
         imgui.tree_pop()
     end
@@ -423,7 +511,8 @@ re.on_frame(function()
 
     -- only display the window when REFramework is actually drawing its own UI
     if reframework:is_drawing_ui() then
-        main()
+        mainWindow()
+        itemTableWindow()
     end
 
     -- reset the font at the frame end

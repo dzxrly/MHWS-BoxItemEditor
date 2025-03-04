@@ -1,7 +1,9 @@
 {
   "title": "道具箱编辑器",
   "openMainWindow": "打开道具箱编辑器",
+  "openItemTableWindow": "打开道具表",
   "windowTitle": "道具箱编辑器",
+  "itemTableWindowTitle": "道具表",
   "compatibleWarning": "[警告] 当前的游戏版本不兼容该MOD: ",
   "gameVersion": "游戏版本",
   "modVersion": "MOD版本",
@@ -28,5 +30,9 @@
   "coinSlider": "选择新的金币数量",
   "coinBtn": "确认金币修改",
   "ptsSlider": "选择新的调查点数",
-  "ptsBtn": "确认调查点数修改"
+  "ptsBtn": "确认调查点数修改",
+  "clearBtn": "清空",
+  "searchBtn": "搜索",
+  "itemTableTitleID": "物品ID",
+  "itemTableTitleName": "物品名称"
 }

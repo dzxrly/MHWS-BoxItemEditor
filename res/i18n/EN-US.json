@@ -1,7 +1,9 @@
 {
   "title": "ItemBox Editor",
   "openMainWindow": "Open ItemBox Editor",
+  "openItemTableWindow": "Open Item Table",
   "windowTitle": "ItemBox Editor",
+  "itemTableWindowTitle": "Item Table",
   "compatibleWarning": "[Warning] Your game version is NOT compatible with this mod: ",
   "gameVersion": "Game Version",
   "modVersion": "MOD Version",
@@ -28,5 +30,9 @@
   "coinSlider": "Select New Money",
   "coinBtn": "Confirm Money Edit",
   "ptsSlider": "Select New Points",
-  "ptsBtn": "Confirm Points Edit"
+  "ptsBtn": "Confirm Points Edit",
+  "clearBtn": "Clear",
+  "searchBtn": "Search",
+  "itemTableTitleID": "Item ID",
+  "itemTableTitleName": "Item Name"
 }
