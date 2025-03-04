@@ -2,8 +2,12 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
+
+-- Just change here can change every VERSION setting in all files
 local INTER_VERSION = "v1.2"
 local MAX_VERSION = "1.0.1.0"
+-- Just change here can change every VERSION setting in all files END
+
 local MONEY_PTS_MAX = 99999999
 local ITEM_COUNT_MAX = 9999
 local LARGE_BTN = Vector2f.new(300, 50)
