@@ -427,6 +427,7 @@ local function mainWindow()
 
         imgui.end_window()
     else
+        clear()
         mainWindowOpen = false
     end
 end
