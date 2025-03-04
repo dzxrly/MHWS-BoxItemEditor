@@ -1,5 +1,6 @@
 import json
 import os.path
+import re
 
 import pandas as pd
 
@@ -25,7 +26,7 @@ JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_item_dict_'
 I18N_FILE_DIR = 'res/i18n'
 ITEM_DATA_JSON = 'res/ItemData.json'
 TEXT_DATA_CSV = 'res/Item.msg.23.csv'
-DATA_VER = 'V.1.0.1.0'
+VERSION_JSON_SAVE_PATH = 'version.json'
 
 
 def get_item_df(
@@ -67,10 +68,16 @@ def get_lua_i18n_json(
     return i18n_json
 
 
-def read_origin_lua() -> str:
+def read_origin_lua() -> (str, str, str):
     with open(ORIGIN_LUA_FIEL, 'r', encoding='utf-8') as f:
         lua_str = f.read()
-    return lua_str
+    # match local INTER_VERSION = "xxx" row and read the content in the double quotes
+    mod_ver_match = re.search(r"local INTER_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
+    mod_ver = mod_ver_match.group(1) if mod_ver_match else 'Unknown'
+    # match local MAX_VERSION = "1.0.1.0" row and read the content in the double quotes
+    max_ver_match = re.search(r"local MAX_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
+    max_ver = max_ver_match.group(1) if max_ver_match else 'Unknown'
+    return lua_str, mod_ver, max_ver
 
 
 def save_txt(
@@ -78,6 +85,7 @@ def save_txt(
         lang_tag: str,
         item_df: pd.DataFrame,
         header: list[str],
+        data_ver: str = 'Unknown',
 ) -> None:
     save_path = os.path.join(TXT_SAVE_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
     item_df = item_df[['_ItemId', lang_tag]]
@@ -86,7 +94,7 @@ def save_txt(
     with open(save_path, 'r', encoding='utf-8') as f:
         data = f.read()
     with open(save_path, 'w', encoding='utf-8') as f:
-        f.write(f'Data Version: {DATA_VER}\n\n')
+        f.write(f'Data Version: {data_ver}\n\n')
         f.write(data)
 
 
@@ -108,8 +116,8 @@ def save_json(
 
 def create_lua_by_i18n(
         tag: str,
-) -> None:
-    lua_str = read_origin_lua()
+) -> (str, str, str):
+    lua_str, mod_ver, max_support_ver = read_origin_lua()
     # match 'local ITEM_NAME_JSON_PATH = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace('local ITEM_NAME_JSON_PATH = ""',
                               f'local ITEM_NAME_JSON_PATH = "{JSON_FILE_NAME_PREFIX}{tag}.json"')
@@ -119,13 +127,23 @@ def create_lua_by_i18n(
     save_path = os.path.join(LUA_SAVE_DIR, f'ItemBoxEditor_{tag}.lua')
     with open(save_path, 'w', encoding='utf-8') as f:
         f.write(lua_str)
+    return lua_str, mod_ver, max_support_ver
 
 
 if __name__ == '__main__':
+    mod_version = 'Unknown'
+    max_support_version = 'Unknown'
     for lang in LANG_LIST:
         item_df = get_item_df(lang['item_i18n_tag'])
         lua_i18n_json = get_lua_i18n_json(lang['tag'])
-        save_txt(lang['tag'], lang['item_i18n_tag'], item_df, lang['save_txt_header'])
+        _, mod_version, max_support_version = create_lua_by_i18n(lang['tag'])
+        save_txt(lang['tag'], lang['item_i18n_tag'], item_df, lang['save_txt_header'], max_support_version)
         save_json(lang['tag'], lang['item_i18n_tag'], item_df, lua_i18n_json)
-        create_lua_by_i18n(lang['tag'])
+    # save version.json
+    version_json = {
+        'version': mod_version,
+        'max': max_support_version,
+    }
+    with open(VERSION_JSON_SAVE_PATH, 'w', encoding='utf-8') as f:
+        json.dump(version_json, f, ensure_ascii=False, indent=4)
     print('Done!')

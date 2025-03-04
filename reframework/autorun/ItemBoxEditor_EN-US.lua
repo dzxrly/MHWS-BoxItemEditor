@@ -41,6 +41,7 @@ local pouchItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
 
+local existedItems = {}
 local existedComboLabels = {}
 local existedComboItemIdFixedValues = {}
 local existedComboItemNumValues = {}
@@ -185,10 +186,10 @@ local function initBoxItem()
             else
                 itemName = tostring(boxItem:get_field("ItemIdFixed"))
             end
-            local comboxItem = itemName .. " - " .. boxItem:get_field("Num")
-            existedComboLabels[existedShowInComboxPosIndex] = comboxItem
-            existedComboItemIdFixedValues[existedShowInComboxPosIndex] = boxItem:get_field("ItemIdFixed")
-            existedComboItemNumValues[existedShowInComboxPosIndex] = boxItem:get_field("Num")
+            local comboxItem = "[" ..
+            tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " .. boxItem:get_field("Num")
+            existedItems[existedShowInComboxPosIndex] = { name = comboxItem, fixedId = boxItem:get_field("ItemIdFixed"), num =
+            boxItem:get_field("Num") }
 
             -- adjust the max item count in Item Add func
             addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount
@@ -196,6 +197,12 @@ local function initBoxItem()
 
             existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
         end
+    end
+    table.sort(existedItems, function(a, b) return a.fixedId < b.fixedId end)
+    for itemIndex = 0, #existedItems - 1 do
+        existedComboLabels[itemIndex + 1] = existedItems[itemIndex + 1].name
+        existedComboItemIdFixedValues[itemIndex + 1] = existedItems[itemIndex + 1].fixedId
+        existedComboItemNumValues[itemIndex + 1] = existedItems[itemIndex + 1].num
     end
 end
 
@@ -325,7 +332,8 @@ re.on_draw_ui(function()
         addNewItemId = addNewInputNewVal
     end
     addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
-    i18n.addItemToPouchSlider .. tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
+        i18n.addItemToPouchSlider ..
+        tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
         addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
     if addNewSliderChanged then
         addNewItemNum = addNewSliderNewVal

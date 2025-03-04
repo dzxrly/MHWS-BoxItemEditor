@@ -1,4 +1,4 @@
-Data Version: V.1.0.1.0
+Data Version: 1.0.1.0
 
 [物品ID]	[物品名]
 1	---
