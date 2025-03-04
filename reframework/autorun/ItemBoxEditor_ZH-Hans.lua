@@ -37,36 +37,39 @@ end
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
 local i18n = nil
-local addNewItemFixedIDList = {}
-local addNewItemNameList = {}
+
 -- NOT CHANGED VARIABLES END
 
+local itemBoxList = {}
 local boxItemArray = nil
-local pouchItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
 
-local existedItems = {}
-local existedComboLabels = {}
-local existedComboItemIdFixedValues = {}
-local existedComboItemNumValues = {}
-local existedComboChanged = false
-local existedSelectedIndex = nil
-local existedSelectedItemFixedId = nil
-local existedSelectedItemNum = nil
-local existedSliderChanged = nil
-local existedSliderNewVal = nil
+local itemBoxLabels = {}
+local itemBoxComboChanged = false
+local itemBoxComboIndex = nil
+local itemBoxSelectedItemFixedId = nil
+local itemBoxSelectedItemNum = nil
+local itemBoxSliderChanged = nil
+local itemBoxSliderNewVal = nil
+local itemBoxSearchedItems = {}
+local itemBoxSearchedLabels = {}
+local itemBoxInputChanged = nil
+local itemBoxInputNewVal = nil
+local itemBoxInputVal = nil
 
-local addNewItemListMaxCount = {}
-local addNewItemComboChanged = false
-local addNewItemComboSelectedIndex = nil
-local addNewEmptyPouchItem = nil
-local addNewInputChanged = nil
-local addNewInputNewVal = nil
-local addNewSliderChanged = nil
-local addNewSliderNewVal = nil
-local addNewItemId = nil
-local addNewItemNum = nil
+-- local addNewEmptyBoxItem = nil
+-- local addNewItemComboChanged = false
+-- local addNewItemComboSelectedIndex = nil
+-- local addNewEmptyPouchItem = nil
+-- local addNewInputChanged = nil
+-- local addNewInputNewVal = nil
+-- local addNewSliderChanged = nil
+-- local addNewSliderNewVal = nil
+-- local addNewItemId = nil
+-- local addNewItemNum = nil
+-- local addNewSearchedItems = nil
+-- local addNewComboSearchedLabels = nil
 
 local originMoney = 0
 local moneySliderVal = 0
@@ -84,24 +87,25 @@ local function clear()
     cItemParam = nil
     cBasicParam = nil
 
-    existedComboLabels = {}
-    existedComboItemIdFixedValues = {}
-    existedComboItemNumValues = {}
-    existedComboChanged = false
-    existedSelectedIndex = nil
-    existedSelectedItemFixedId = nil
-    existedSelectedItemNum = nil
-    existedSliderChanged = nil
-    existedSliderNewVal = nil
+    itemBoxLabels = {}
+    itemBoxComboChanged = false
+    itemBoxComboIndex = nil
+    itemBoxSelectedItemFixedId = nil
+    itemBoxSelectedItemNum = nil
+    itemBoxSliderChanged = nil
+    itemBoxSliderNewVal = nil
+    itemBoxInputChanged = nil
+    itemBoxInputNewVal = nil
+    itemBoxInputVal = nil
 
-    addNewItemComboChanged = false
-    addNewItemComboSelectedIndex = nil
-    addNewInputChanged = nil
-    addNewInputNewVal = nil
-    addNewSliderChanged = nil
-    addNewSliderNewVal = nil
-    addNewItemId = nil
-    addNewItemNum = nil
+    -- addNewItemComboChanged = false
+    -- addNewItemComboSelectedIndex = nil
+    -- addNewInputChanged = nil
+    -- addNewInputNewVal = nil
+    -- addNewSliderChanged = nil
+    -- addNewSliderNewVal = nil
+    -- addNewItemId = nil
+    -- addNewItemNum = nil
 
     originMoney = 0
     moneySliderVal = 0
@@ -158,19 +162,20 @@ local function loadI18NJson(jsonPath)
             i18n = jsonFile.I18N
             itemNameJson = jsonFile.ItemName
             local tempIndex = 1
-            local tempSortedTable = {}
+            itemBoxList = {}
             for key, value in pairs(itemNameJson) do
                 if checkItemName(value) then
-                    table.insert(tempSortedTable, key)
+                    itemBoxList[tempIndex] = {
+                        name = "[" .. key .. "]" .. value .. " - 0",
+                        fixedId = tonumber(key),
+                        num = 0,
+                    }
+                    tempIndex = tempIndex + 1
                 end
             end
-            table.sort(tempSortedTable)
-            for _, key in ipairs(tempSortedTable) do
-                addNewItemFixedIDList[tempIndex] = key
-                addNewItemNameList[tempIndex] = itemNameJson[key]
-                addNewItemListMaxCount[tostring(key)] = ITEM_COUNT_MAX
-                tempIndex = tempIndex + 1
-            end
+            table.sort(itemBoxList, function(a, b)
+                return a.fixedId < b.fixedId
+            end)
         end
     end
 end
@@ -181,52 +186,63 @@ local function initBoxItem()
     print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
     cItemParam = cUserSaveParam:get_field("_Item")
     boxItemArray = cItemParam:call("get_BoxItem")
-    local existedShowInComboxPosIndex = 1
+
     for boxPosIndex = 0, #boxItemArray - 1 do
         local boxItem = boxItemArray[boxPosIndex]
+        local isNotInList = true
         if boxItem:get_field("Num") > 0 then
             local itemName = nil
             if itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))] ~= nil then
                 itemName = itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))]
             else
-                itemName = tostring(boxItem:get_field("ItemIdFixed"))
+                itemName = i18n.unknownItem
             end
+
             local comboxItem = "[" ..
                 tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " .. boxItem:get_field("Num")
-            existedItems[existedShowInComboxPosIndex] = {
+            local itemInfo = {
                 name = comboxItem,
                 fixedId = boxItem:get_field("ItemIdFixed"),
-                num =
-                    boxItem:get_field("Num")
+                num = boxItem:get_field("Num")
             }
+            for tempIndex = 1, #itemBoxList do
+                if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
+                    itemBoxList[tempIndex] = itemInfo
+                    isNotInList = false
+                    break
+                end
+            end
+            if isNotInList then
+                table.insert(itemBoxList, itemInfo)
+            end
 
             -- adjust the max item count in Item Add func
-            addNewItemListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = addNewItemListMaxCount
-                [tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
-
-            existedShowInComboxPosIndex = existedShowInComboxPosIndex + 1
+            -- itemBoxListMaxCount[tostring(boxItem:get_field("ItemIdFixed"))] = itemBoxListMaxCount
+            --     [tostring(boxItem:get_field("ItemIdFixed"))] - tonumber(boxItem:get_field("Num"))
         end
     end
-    table.sort(existedItems, function(a, b) return a.fixedId < b.fixedId end)
-    for itemIndex = 0, #existedItems - 1 do
-        existedComboLabels[itemIndex + 1] = existedItems[itemIndex + 1].name
-        existedComboItemIdFixedValues[itemIndex + 1] = existedItems[itemIndex + 1].fixedId
-        existedComboItemNumValues[itemIndex + 1] = existedItems[itemIndex + 1].num
+    table.sort(itemBoxList, function(a, b)
+        return a.fixedId < b.fixedId
+    end)
+    for itemIndex = 1, #itemBoxList do
+        itemBoxLabels[itemIndex] = itemBoxList[itemIndex].name
     end
+    itemBoxSearchedLabels = itemBoxLabels
+    itemBoxSearchedItems = itemBoxList
 end
 
-local function initPouchItem()
-    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
-    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
-    cItemParam = cUserSaveParam:get_field("_Item")
-    pouchItemArray = cItemParam:call("get_PouchItem")
-    for pouchItemIndex = 0, #pouchItemArray - 1 do
-        if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
-            addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
-            break
-        end
-    end
-end
+-- local function initPouchItem()
+--     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
+--     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+--     cItemParam = cUserSaveParam:get_field("_Item")
+--     pouchItemArray = cItemParam:call("get_PouchItem")
+--     for pouchItemIndex = 0, #pouchItemArray - 1 do
+--         if pouchItemArray[pouchItemIndex]:get_field("Num") == 0 then
+--             addNewEmptyPouchItem = pouchItemArray[pouchItemIndex]
+--             break
+--         end
+--     end
+-- end
 
 local function initHunterBasicData()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
@@ -239,30 +255,31 @@ local function initHunterBasicData()
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
-    if changedNumber > 0 then
-        for boxPosIndex = 0, #boxItemArray - 1 do
-            if boxItemArray[boxPosIndex]:get_field("ItemIdFixed") == itemFixedId then
-                local itemEnumId = boxItemArray[boxPosIndex]:call("get_ItemId")
-                boxItemArray[boxPosIndex]:call("set", itemEnumId, changedNumber)
-            end
-        end
+    -- if changedNumber > 0 then
+    local boxItem = cItemParam:call("getBoxItem", itemFixedId - 1)
+    if boxItem == nil then
+        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber)
     else
-        for boxPosIndex = 0, #boxItemArray - 1 do
-            if boxItemArray[boxPosIndex]:get_field("ItemIdFixed") == itemFixedId then
-                boxItemArray[boxPosIndex]:call("set_ItemId", 0)
-                boxItemArray[boxPosIndex]:call("set", 0, 0)
-            end
-        end
+        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber - boxItem:get_field("Num"))
     end
+    -- else
+    --     for boxPosIndex = 0, #boxItemArray - 1 do
+    --         if boxItemArray[boxPosIndex]:get_field("ItemIdFixed") == itemFixedId then
+    --             boxItemArray[boxPosIndex]:call("set_ItemId", 0)
+    --             boxItemArray[boxPosIndex]:call("set", 0, 0)
+    --         end
+    --     end
+    -- end
 end
 
-local function addNewToPouchItem(cItemWork, itemId, itemNum)
-    itemId = tonumber(itemId) - 1
-    if itemId > 0 and itemId <= 750 and itemNum > 0 then
-        cItemWork:call("set_ItemId", itemId)
-        cItemWork:call("set", itemId, itemNum)
-    end
-end
+-- local function addNewToPouchItem(cItemWork, itemId, itemNum)
+--     itemId = tonumber(itemId) - 1
+--     if itemId > 0 and itemId <= 750 and itemNum > 0 then
+--         cItemWork:call("set_ItemId", itemId)
+--         cItemWork:call("set", itemId, itemNum)
+--     end
+-- end
+
 
 local function moneyAddFunc(cBasicData, newMoney)
     cBasicData:call("addMoney", newMoney, false)
@@ -272,13 +289,26 @@ local function pointAddFunc(cBasicData, newPoint)
     cBasicData:call("addPoint", newPoint, false)
 end
 
+local function filterCombo(array, searchStr)
+    local filteredArray = {}
+    local filteredArrayLabel = {}
+    for index = 1, #array do
+        if array[index].name:find(searchStr, 1, true) then
+            table.insert(filteredArray, array[index])
+            table.insert(filteredArrayLabel, array[index].name)
+        end
+    end
+    return filteredArray, filteredArrayLabel
+end
+
+
 local function init()
     initBoxItem()
-    initPouchItem()
+    -- initPouchItem()
     initHunterBasicData()
 
-    existedSelectedItemFixedId = existedComboItemIdFixedValues[1]
-    existedSelectedItemNum = existedComboItemNumValues[1]
+    -- itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+    -- itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
 end
 
 loadI18NJson(ITEM_NAME_JSON_PATH)
@@ -303,59 +333,92 @@ re.on_draw_ui(function()
     if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
         init()
     end
-
+    ------------------- existed item change -----------------
     imgui.new_line()
     imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
     imgui.text(i18n.changeItemNumTitle)
     imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
-        existedComboLabels)
-    if existedComboChanged then
-        existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
-        existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
+    itemBoxInputChanged, itemBoxInputNewVal = imgui.input_text(i18n.searchInput, itemBoxInputVal)
+    if itemBoxInputChanged then
+        itemBoxInputVal = itemBoxInputNewVal
+        itemBoxComboIndex = nil
+        if itemBoxInputNewVal == "" then
+
+            itemBoxSearchedLabels = itemBoxLabels
+            itemBoxSearchedItems = itemBoxList
+        else
+            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, itemBoxInputNewVal)
+        end
+        if #itemBoxSearchedItems > 0 then
+            itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+            itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+        end
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, existedSelectedItemNum, 1,
+    itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
+        itemBoxSearchedLabels)
+    if itemBoxComboChanged then
+        itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
+        itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
+    end
+    itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
         9999)
-    if existedSliderChanged then
-        existedSelectedItemNum = existedSliderNewVal
+    if itemBoxSliderChanged then
+        itemBoxSelectedItemNum = itemBoxSliderNewVal
     end
+    imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0)
     if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
-        changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
+        changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
         clear()
         init()
     end
     imgui.end_disabled()
-
-    imgui.new_line()
-    imgui.text(i18n.addItemToPouchTitle)
-    imgui.begin_disabled(cItemParam == nil)
-    imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
-    addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
-        i18n.addItemToPouchCombox,
-        addNewItemComboSelectedIndex,
-        addNewItemNameList)
-    if addNewItemComboChanged then
-        addNewItemId = addNewItemFixedIDList[addNewItemComboSelectedIndex]
-    end
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchInput, addNewItemId)
-    if addNewInputChanged then
-        addNewItemId = addNewInputNewVal
-    end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
-        i18n.addItemToPouchSlider ..
-        tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
-        addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
-    if addNewSliderChanged then
-        addNewItemNum = addNewSliderNewVal
-    end
-    imgui.text(i18n.addItemToPouchWarning)
-    if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
-        addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
-        clear()
-        init()
-    end
     imgui.end_disabled()
 
+
+    -- ------------------- add new item -----------------
+    -- imgui.new_line()
+    -- imgui.text(i18n.addItemToPouchTitle)
+    -- imgui.begin_disabled(cItemParam == nil)
+    -- imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
+
+    -- addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
+    --     i18n.addItemToPouchCombox,
+    --     addNewItemComboSelectedIndex,
+    --     addNewComboSearchedLabels)
+    -- if addNewItemComboChanged then
+    --     addNewItemId = addNewSearchedItems[addNewItemComboSelectedIndex].fixedId
+    -- end
+    -- addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchInput, addNewItemId)
+    -- if addNewInputChanged then
+    --     addNewItemId = addNewInputNewVal
+    -- end
+    -- local textSlider
+    -- if addNewItemComboSelectedIndex == nil then
+    --     textSlider = "9999"
+    -- else
+    --     textSlider = tostring(addNewSearchedItems[addNewItemComboSelectedIndex].maxNum)
+    -- end
+    -- addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
+    --     i18n.addItemToPouchSlider .. textSlider,
+    --     addNewItemNum, 1, tonumber(textSlider))
+    -- if addNewSliderChanged then
+    --     addNewItemNum = addNewSliderNewVal
+    -- end
+    -- imgui.text(i18n.addItemToPouchWarning)
+    -- imgui.begin_disabled(addNewSearchedItems == nil or #addNewSearchedItems == 0)
+    -- if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
+    --     addNewToBoxItem(addNewItemId, addNewItemNum)
+    --     --addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
+    --     --addNewToPouchItem(addNewEmptyBoxItem, addNewItemId, addNewItemNum)
+    --     clear()
+    --     init()
+    -- end
+    -- imgui.end_disabled()
+    -- imgui.end_disabled()
+
+
+
+    ------------------- user data change -----------------
     imgui.new_line()
     imgui.text(i18n.coinAndPtsEditorTitle)
     imgui.begin_disabled(cBasicParam == nil)

@@ -27,7 +27,9 @@
         "coinSlider": "Select New Money",
         "coinBtn": "Confirm Money Edit",
         "ptsSlider": "Select New Points",
-        "ptsBtn": "Confirm Points Edit"
+        "ptsBtn": "Confirm Points Edit",
+        "unknownItem": "Unknown Item",
+        "searchInput":"Search Item With Name/ID/Amount"
     },
     "ItemName": {
         "1": "---",
