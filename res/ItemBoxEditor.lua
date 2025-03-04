@@ -3,6 +3,11 @@
 -- MIT License
 -- For Monster Hunter: Wilds
 
+-- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
+local ITEM_NAME_JSON_PATH = ""
+local LANG = ""
+-- !!! DO NOT MODIFY THE ABOVE CODE !!!
+
 -- Just change here can change every VERSION setting in all files
 local INTER_VERSION = "v1.2"
 local MAX_VERSION = "1.0.1.0"
@@ -17,10 +22,6 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
--- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
-local ITEM_NAME_JSON_PATH = ""
-local LANG = ""
--- !!! DO NOT MODIFY THE ABOVE CODE !!!
 local FONT = nil
 
 if LANG == "ZH-Hans" then
