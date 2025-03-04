@@ -1,4 +1,6 @@
 {
+  "title": "ItemBox Editor",
+  "openMainWindow": "Open ItemBox Editor",
   "windowTitle": "ItemBox Editor",
   "compatibleWarning": "[Warning] Your game version is NOT compatible with this mod: ",
   "gameVersion": "Game Version",

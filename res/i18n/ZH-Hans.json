@@ -1,4 +1,6 @@
 {
+  "title": "道具箱编辑器",
+  "openMainWindow": "打开道具箱编辑器",
   "windowTitle": "道具箱编辑器",
   "compatibleWarning": "[警告] 当前的游戏版本不兼容该MOD: ",
   "gameVersion": "游戏版本",
