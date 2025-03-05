@@ -41,6 +41,16 @@ local addNewItemFixedIDList = {}
 local addNewItemNameList = {}
 -- NOT CHANGED VARIABLES END
 
+-- window status
+local mainWindowOpen = true
+local itemWindowOpen = true
+-- window status end
+
+-- item table window
+local searchItemTarget = nil
+local searchItemResult = {}
+-- item table window end
+
 local boxItemArray = nil
 local pouchItemArray = nil
 local cItemParam = nil
@@ -175,6 +185,30 @@ local function loadI18NJson(jsonPath)
     end
 end
 
+local function searchItemList(target)
+    local itemIndex = 0
+    local itemMap = {}
+    for key, value in pairs(itemNameJson) do
+        if checkItemName(value) then
+            if target ~= nil then
+                if string.lower(value):match(string.lower(target)) then
+                    itemMap[itemIndex] = {key = tonumber(key), value = value}
+                    itemIndex = itemIndex + 1
+                end
+            else
+                itemMap[itemIndex] = {key = tonumber(key), value = value}
+                itemIndex = itemIndex + 1
+            end
+        end
+    end
+
+    table.sort(itemMap, function(a, b)
+        return a.key < b.key
+    end)
+
+    return itemMap
+end
+
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
     local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
@@ -281,123 +315,209 @@ local function init()
     existedSelectedItemNum = existedComboItemNumValues[1]
 end
 
+local function mainWindow() 
+    if imgui.begin_window(i18n.windowTitle, mainWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+        if MAX_VER_LT_OR_EQ_GAME_VER == false then
+            imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
+            imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
+            imgui.new_line()
+        end
+    
+        imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
+        imgui.new_line()
+    
+        if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
+            init()
+        end
+    
+        imgui.new_line()
+        imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
+        imgui.text(i18n.changeItemNumTitle)
+        imgui.begin_disabled(cItemParam == nil)
+        existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
+            existedComboLabels)
+        if existedComboChanged then
+            existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
+            existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
+        end
+        existedSliderChanged, existedSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, existedSelectedItemNum, 1,
+            9999)
+        if existedSliderChanged then
+            existedSelectedItemNum = existedSliderNewVal
+        end
+        if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
+            changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
+            clear()
+            init()
+        end
+        imgui.end_disabled()
+    
+        imgui.new_line()
+        imgui.text(i18n.addItemToPouchTitle)
+        imgui.begin_disabled(cItemParam == nil)
+        imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
+        addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
+            i18n.addItemToPouchCombox,
+            addNewItemComboSelectedIndex,
+            addNewItemNameList)
+        if addNewItemComboChanged then
+            addNewItemId = addNewItemFixedIDList[addNewItemComboSelectedIndex]
+        end
+        addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchInput, addNewItemId)
+        if addNewInputChanged then
+            addNewItemId = addNewInputNewVal
+        end
+        addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
+            i18n.addItemToPouchSlider ..
+            tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
+            addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
+        if addNewSliderChanged then
+            addNewItemNum = addNewSliderNewVal
+        end
+        imgui.text(i18n.addItemToPouchWarning)
+        if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
+            addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
+            clear()
+            init()
+        end
+        imgui.end_disabled()
+    
+        imgui.new_line()
+        imgui.text(i18n.coinAndPtsEditorTitle)
+        imgui.begin_disabled(cBasicParam == nil)
+        moneySliderChanged, moneySliderNewVal = imgui.slider_int(
+            i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
+            originMoney,
+            MONEY_PTS_MAX - originMoney)
+        if moneySliderChanged then
+            moneyChangedDiff = moneySliderNewVal - originMoney
+            moneySliderVal = moneySliderNewVal
+        end
+        if imgui.button(i18n.coinBtn, SMALL_BTN) then
+            moneyAddFunc(cBasicParam, moneyChangedDiff)
+            clear()
+            init()
+        end
+        pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
+            i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
+            originPoints,
+            MONEY_PTS_MAX - originPoints)
+        if pointsSliderChange then
+            pointsChangedDiff = pointsSliderNewVal - originPoints
+            pointsSliderVal = pointsSliderNewVal
+        end
+        if imgui.button(i18n.ptsBtn, SMALL_BTN) then
+            pointAddFunc(cBasicParam, pointsChangedDiff)
+            clear()
+            init()
+        end
+        imgui.end_disabled()
+    
+        imgui.new_line()
+        imgui.text(i18n.modVersion)
+        imgui.same_line()
+        imgui.text(INTER_VERSION)
+        imgui.text(i18n.gameVersion)
+        imgui.same_line()
+        if MAX_VER_LT_OR_EQ_GAME_VER then
+            imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
+        else
+            imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
+        end    
+
+        imgui.end_window()
+    else
+        clear()
+        mainWindowOpen = false
+    end
+end
+
+local function itemTableWindow()
+    local changed = nil
+    if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+        imgui.text(i18n.itemTableWindowTitle)
+        imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
+        imgui.table_setup_column('', 0, 2)
+        imgui.table_setup_column('', 0, 1)
+
+        imgui.table_next_column()
+        imgui.push_item_width(-1)
+        changed, searchItem = imgui.input_text('', searchItemTarget)
+        imgui.pop_item_width()
+        if changed then
+            searchItemTarget = searchItem
+        end
+
+        imgui.table_next_column()
+        if imgui.button(i18n.clearBtn, {-0.001, 0}) then
+            searchItemTarget = nil
+            searchItemResult = searchItemList(searchItemTarget)
+        end
+        imgui.end_table()
+
+        if imgui.button(i18n.searchBtn, {-0.001, 0}) then
+            searchItemResult = searchItemList(searchItemTarget)
+        end
+
+        imgui.begin_table('table', 2, 17) -- 17 is ImGuiTableFlags_Resizable | ImGuiTableFlags_NoSavedSettings
+
+        imgui.table_setup_column('', 0, 1)
+        imgui.table_setup_column('', 0, 2)
+
+        imgui.push_style_color(21, 0xff142D65)
+        imgui.push_style_color(22, 0xff142D65)
+        imgui.push_style_color(23, 0xff142D65)
+        imgui.table_next_column()
+        imgui.button(i18n.itemTableTitleID, {-0.001, 0})
+        imgui.table_next_column()
+        imgui.button(i18n.itemTableTitleName, {-0.001, 0})
+        imgui.pop_style_color(3)
+
+        for i = 1, #searchItemResult do
+            imgui.table_next_column()
+            imgui.button(searchItemResult[i].key, {-0.001, 0})
+            imgui.table_next_column()
+            imgui.button(searchItemResult[i].value, {-0.001, 0})
+        end
+
+        imgui.end_table()
+        
+        imgui.end_window()
+    else
+        itemWindowOpen = false
+    end
+end
+
 loadI18NJson(ITEM_NAME_JSON_PATH)
+searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
 re.on_draw_ui(function()
+    local changed = false
+
+    if imgui.tree_node(i18n.title) then
+        changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
+        changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
+
+        imgui.tree_pop()
+    end
+end)
+
+re.on_frame(function()
+    -- set the font
     if FONT ~= nil then
         imgui.push_font(FONT)
     end
-    imgui.begin_window(i18n.windowTitle, ImGuiWindowFlags_AlwaysAutoResize)
 
-    if MAX_VER_LT_OR_EQ_GAME_VER == false then
-        imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
-        imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
-        imgui.new_line()
-    end
-
-    imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
-    imgui.new_line()
-
-    if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
-        init()
+    -- only display the window when REFramework is actually drawing its own UI
+    if reframework:is_drawing_ui() then
+        mainWindow()
+        itemTableWindow()
     end
 
-    imgui.new_line()
-    imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
-    imgui.text(i18n.changeItemNumTitle)
-    imgui.begin_disabled(cItemParam == nil)
-    existedComboChanged, existedSelectedIndex = imgui.combo(i18n.changeItemNumCombox, existedSelectedIndex,
-        existedComboLabels)
-    if existedComboChanged then
-        existedSelectedItemFixedId = existedComboItemIdFixedValues[existedSelectedIndex]
-        existedSelectedItemNum = existedComboItemNumValues[existedSelectedIndex]
+    -- reset the font at the frame end
+    if FONT ~= nil then
+        imgui.pop_font()
     end
-    existedSliderChanged, existedSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, existedSelectedItemNum, 1,
-        9999)
-    if existedSliderChanged then
-        existedSelectedItemNum = existedSliderNewVal
-    end
-    if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
-        changeBoxItemNum(existedSelectedItemFixedId, existedSelectedItemNum)
-        clear()
-        init()
-    end
-    imgui.end_disabled()
-
-    imgui.new_line()
-    imgui.text(i18n.addItemToPouchTitle)
-    imgui.begin_disabled(cItemParam == nil)
-    imgui.text_colored(i18n.addItemToPouchComboxWarning, ERROR_COLOR)
-    addNewItemComboChanged, addNewItemComboSelectedIndex = imgui.combo(
-        i18n.addItemToPouchCombox,
-        addNewItemComboSelectedIndex,
-        addNewItemNameList)
-    if addNewItemComboChanged then
-        addNewItemId = addNewItemFixedIDList[addNewItemComboSelectedIndex]
-    end
-    addNewInputChanged, addNewInputNewVal, start = imgui.input_text(i18n.addItemToPouchInput, addNewItemId)
-    if addNewInputChanged then
-        addNewItemId = addNewInputNewVal
-    end
-    addNewSliderChanged, addNewSliderNewVal = imgui.slider_int(
-        i18n.addItemToPouchSlider ..
-        tostring(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]),
-        addNewItemNum, 1, tonumber(addNewItemListMaxCount[addNewItemFixedIDList[addNewItemComboSelectedIndex]]))
-    if addNewSliderChanged then
-        addNewItemNum = addNewSliderNewVal
-    end
-    imgui.text(i18n.addItemToPouchWarning)
-    if imgui.button(i18n.addItemToPouchBtn, SMALL_BTN) then
-        addNewToPouchItem(addNewEmptyPouchItem, addNewItemId, addNewItemNum)
-        clear()
-        init()
-    end
-    imgui.end_disabled()
-
-    imgui.new_line()
-    imgui.text(i18n.coinAndPtsEditorTitle)
-    imgui.begin_disabled(cBasicParam == nil)
-    moneySliderChanged, moneySliderNewVal = imgui.slider_int(
-        i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-        originMoney,
-        MONEY_PTS_MAX - originMoney)
-    if moneySliderChanged then
-        moneyChangedDiff = moneySliderNewVal - originMoney
-        moneySliderVal = moneySliderNewVal
-    end
-    if imgui.button(i18n.coinBtn, SMALL_BTN) then
-        moneyAddFunc(cBasicParam, moneyChangedDiff)
-        clear()
-        init()
-    end
-    pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
-        i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-        originPoints,
-        MONEY_PTS_MAX - originPoints)
-    if pointsSliderChange then
-        pointsChangedDiff = pointsSliderNewVal - originPoints
-        pointsSliderVal = pointsSliderNewVal
-    end
-    if imgui.button(i18n.ptsBtn, SMALL_BTN) then
-        pointAddFunc(cBasicParam, pointsChangedDiff)
-        clear()
-        init()
-    end
-    imgui.end_disabled()
-
-    imgui.new_line()
-    imgui.text(i18n.modVersion)
-    imgui.same_line()
-    imgui.text(INTER_VERSION)
-    imgui.text(i18n.gameVersion)
-    imgui.same_line()
-    if MAX_VER_LT_OR_EQ_GAME_VER then
-        imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
-    else
-        imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
-    end
-
-    imgui.end_window()
 end)
