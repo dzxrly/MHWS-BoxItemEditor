@@ -435,8 +435,8 @@ end
 
 local function itemTableWindow()
     local changed = nil
+    imgui.set_next_window_size({ 480, 640 }, 4) -- 4 is ImGuiCond_FirstUseEver
     if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
-        imgui.text(i18n.itemTableWindowTitle)
         imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
         imgui.table_setup_column('', 0, 2)
         imgui.table_setup_column('', 0, 1)
