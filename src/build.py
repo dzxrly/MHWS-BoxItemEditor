@@ -2,6 +2,7 @@ import json
 import os
 import re
 import shutil
+from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
@@ -159,6 +160,8 @@ if __name__ == '__main__':
     version_json = {
         'version': mod_version,
         'max': max_support_version,
+        # set UTC +8 timezone date
+        'build_date': (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')
     }
     with open(VERSION_JSON_SAVE_PATH, 'w', encoding='utf-8') as f:
         json.dump(version_json, f, ensure_ascii=False, indent=4)
