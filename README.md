@@ -66,20 +66,13 @@ Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item I
 
 请参考[物品ID列表](./reframework/Items_ZH-Hans.txt)。
 
----
 
 <div align="center">
+
+## Contributors
 
 <a href="https://github.com/dzxrly/MHWS-BoxItemEditor/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=dzxrly/MHWS-BoxItemEditor" />
 </a>
-
-</div>
-
----
-
-<div align="center">
-
-<a href='https://ko-fi.com/F1F0PZH7X' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 </div>
