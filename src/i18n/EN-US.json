@@ -34,5 +34,7 @@
   "clearBtn": "Clear",
   "searchBtn": "Search",
   "itemTableTitleID": "Item ID",
-  "itemTableTitleName": "Item Name"
+  "itemTableTitleName": "Item Name",
+  "unknownItem":"Unknown Item",
+  "searchInput":"Search Item with Name/ID/Num"
 }

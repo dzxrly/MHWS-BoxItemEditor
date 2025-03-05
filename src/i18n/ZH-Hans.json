@@ -34,5 +34,7 @@
   "clearBtn": "清空",
   "searchBtn": "搜索",
   "itemTableTitleID": "物品ID",
-  "itemTableTitleName": "物品名称"
+  "itemTableTitleName": "物品名称",
+  "unknownItem":"未知物品",
+  "searchInput":"搜索物品名称/ID/数量"
 }
