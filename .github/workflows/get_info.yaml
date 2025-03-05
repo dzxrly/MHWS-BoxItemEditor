@@ -1,9 +1,9 @@
 name: Get Download Info
 
 on:
-  push:
-    branches:
-      - main
+  #  push:
+  #    branches:
+  #      - main
   schedule:
     - cron: '0 0 3,6,9,12,15,18,21,24,27,30 * *'
 
@@ -26,7 +26,7 @@ jobs:
           python -m pip install --upgrade requests
           pip install pyyaml requests
 
-      - name: Run res/get_download_count.py
+      - name: Run src/get_download_count.py
         run: |
           python res/get_download_count.py
 

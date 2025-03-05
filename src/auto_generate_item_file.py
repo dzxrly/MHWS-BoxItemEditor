@@ -1,6 +1,7 @@
 import json
-import os.path
+import os
 import re
+import shutil
 
 import pandas as pd
 
@@ -9,6 +10,7 @@ LANG_LIST = [
         'tag': 'ZH-Hans',
         'item_i18n_tag': 'SimplifiedChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
+        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
     },
     {
         'tag': 'EN-US',
@@ -17,15 +19,16 @@ LANG_LIST = [
     }
 ]
 
-ORIGIN_LUA_FIEL = 'res/ItemBoxEditor.lua'
+ORIGIN_LUA_FIEL = 'src/ItemBoxEditor.lua'
 LUA_SAVE_DIR = 'reframework/autorun'
 TXT_SAVE_DIR = 'reframework'
 TXT_SAVE_PREFIX = 'Items_'
 JSON_SAVE_DIR = 'reframework/data'
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_item_dict_'
-I18N_FILE_DIR = 'res/i18n'
-ITEM_DATA_JSON = 'res/ItemData.json'
-TEXT_DATA_CSV = 'res/Item.msg.23.csv'
+FONTS_SAVE_DIR = 'reframework/fonts'
+I18N_FILE_DIR = 'src/i18n'
+ITEM_DATA_JSON = 'src/data/ItemData.json'
+TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
 VERSION_JSON_SAVE_PATH = 'version.json'
 
 
@@ -130,7 +133,17 @@ def create_lua_by_i18n(
     return lua_str, mod_ver, max_support_ver
 
 
+def create_dir(path: str):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+
 if __name__ == '__main__':
+    create_dir('reframework')
+    create_dir('reframework/autorun')
+    create_dir('reframework/data')
+    create_dir('reframework/fonts')
+
     mod_version = 'Unknown'
     max_support_version = 'Unknown'
     for lang in LANG_LIST:
@@ -139,6 +152,9 @@ if __name__ == '__main__':
         _, mod_version, max_support_version = create_lua_by_i18n(lang['tag'])
         save_txt(lang['tag'], lang['item_i18n_tag'], item_df, lang['save_txt_header'], max_support_version)
         save_json(lang['tag'], lang['item_i18n_tag'], item_df, lua_i18n_json)
+        # cp fonts to FONTS_SAVE_DIR
+        if 'fonts' in lang.keys() and lang['fonts'] is not None and lang['fonts'] != '':
+            shutil.copyfile(lang['fonts'], os.path.join(FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
     # save version.json
     version_json = {
         'version': mod_version,
