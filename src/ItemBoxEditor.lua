@@ -14,7 +14,6 @@ local MAX_VERSION = "1.0.1.0"
 -- Just change here can change every VERSION setting in all files END
 
 local MONEY_PTS_MAX = 99999999
-local ITEM_COUNT_MAX = 9999
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
 local ERROR_COLOR = 0xeb4034ff
@@ -333,6 +332,8 @@ local function mainWindow()
         if itemBoxSliderChanged then
             itemBoxSelectedItemNum = itemBoxSliderNewVal
         end
+        imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
+        imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
         imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
