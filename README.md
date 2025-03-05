@@ -20,7 +20,7 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 ---
 
 ## Requirements:
-- [REFramework - Nightly Dev Build](https://github.com/praydog/REFramework-nightly/releases)
+- [REFramework](https://github.com/praydog/REFramework/releases)
 
 ## Mod Download:
 
@@ -45,7 +45,7 @@ Please refer to the [Item ID List](./reframework/Items_EN-US.txt) for the item I
 ---
 
 ## 前置：
-- [REFramework - Nightly Dev Build](https://github.com/praydog/REFramework-nightly/releases)
+- [REFramework](https://github.com/praydog/REFramework/releases)
 
 ## MOD下载:
 
