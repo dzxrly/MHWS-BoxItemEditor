@@ -192,11 +192,11 @@ local function searchItemList(target)
         if checkItemName(value) then
             if target ~= nil then
                 if string.lower(value):match(string.lower(target)) then
-                    itemMap[itemIndex] = {key = tonumber(key), value = value}
+                    itemMap[itemIndex] = { key = tonumber(key), value = value }
                     itemIndex = itemIndex + 1
                 end
             else
-                itemMap[itemIndex] = {key = tonumber(key), value = value}
+                itemMap[itemIndex] = { key = tonumber(key), value = value }
                 itemIndex = itemIndex + 1
             end
         end
@@ -315,21 +315,22 @@ local function init()
     existedSelectedItemNum = existedComboItemNumValues[1]
 end
 
-local function mainWindow() 
+local function mainWindow()
     if imgui.begin_window(i18n.windowTitle, mainWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
         if MAX_VER_LT_OR_EQ_GAME_VER == false then
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
-            imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION, ERROR_COLOR)
+            imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
+                ERROR_COLOR)
             imgui.new_line()
         end
-    
+
         imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
         imgui.new_line()
-    
+
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
         end
-    
+
         imgui.new_line()
         imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
@@ -351,7 +352,7 @@ local function mainWindow()
             init()
         end
         imgui.end_disabled()
-    
+
         imgui.new_line()
         imgui.text(i18n.addItemToPouchTitle)
         imgui.begin_disabled(cItemParam == nil)
@@ -381,7 +382,7 @@ local function mainWindow()
             init()
         end
         imgui.end_disabled()
-    
+
         imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
         imgui.begin_disabled(cBasicParam == nil)
@@ -412,7 +413,7 @@ local function mainWindow()
             init()
         end
         imgui.end_disabled()
-    
+
         imgui.new_line()
         imgui.text(i18n.modVersion)
         imgui.same_line()
@@ -423,7 +424,7 @@ local function mainWindow()
             imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
         else
             imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
-        end    
+        end
 
         imgui.end_window()
     else
@@ -449,13 +450,13 @@ local function itemTableWindow()
         end
 
         imgui.table_next_column()
-        if imgui.button(i18n.clearBtn, {-0.001, 0}) then
+        if imgui.button(i18n.clearBtn, { -0.001, 0 }) then
             searchItemTarget = nil
             searchItemResult = searchItemList(searchItemTarget)
         end
         imgui.end_table()
 
-        if imgui.button(i18n.searchBtn, {-0.001, 0}) then
+        if imgui.button(i18n.searchBtn, { -0.001, 0 }) then
             searchItemResult = searchItemList(searchItemTarget)
         end
 
@@ -468,20 +469,20 @@ local function itemTableWindow()
         imgui.push_style_color(22, 0xff142D65)
         imgui.push_style_color(23, 0xff142D65)
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleID, {-0.001, 0})
+        imgui.button(i18n.itemTableTitleID, { -0.001, 0 })
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleName, {-0.001, 0})
+        imgui.button(i18n.itemTableTitleName, { -0.001, 0 })
         imgui.pop_style_color(3)
 
         for i = 1, #searchItemResult do
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].key, {-0.001, 0})
+            imgui.button(searchItemResult[i].key, { -0.001, 0 })
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].value, {-0.001, 0})
+            imgui.button(searchItemResult[i].value, { -0.001, 0 })
         end
 
         imgui.end_table()
-        
+
         imgui.end_window()
     else
         itemWindowOpen = false
@@ -495,12 +496,21 @@ MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
 re.on_draw_ui(function()
     local changed = false
+    -- set the font
+    if FONT ~= nil then
+        imgui.push_font(FONT)
+    end
 
     if imgui.tree_node(i18n.title) then
         changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
         changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
 
         imgui.tree_pop()
+    end
+
+    -- reset the font at the frame end
+    if FONT ~= nil then
+        imgui.pop_font()
     end
 end)
 
