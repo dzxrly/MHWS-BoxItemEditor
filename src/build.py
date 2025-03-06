@@ -37,6 +37,7 @@ I18N_FILE_DIR = 'src/i18n'
 ITEM_DATA_JSON = 'src/data/ItemData.json'
 TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
 VERSION_JSON_SAVE_PATH = 'version.json'
+ZIP_FILE_PREFIX = 'BoxItemEditor_'
 
 
 def get_item_df(
@@ -140,20 +141,36 @@ def create_lua_by_i18n(
     return lua_str, mod_ver, max_support_ver
 
 
-def create_dir(path: str):
+def create_dir(path: str) -> None:
     if not os.path.exists(path):
         os.mkdir(path)
 
 
-if __name__ == '__main__':
+def init_dir() -> None:
     create_dir('reframework')
     create_dir('reframework/autorun')
     create_dir('reframework/data')
     create_dir('reframework/fonts')
 
+
+def force_del_dir(path: str) -> None:
+    if os.path.exists(path):
+        shutil.rmtree(path)
+
+
+def create_zip(
+        tag: str,
+        src_dir: str,
+        file_name_prefix: str,
+) -> None:
+    shutil.make_archive('{}_{}'.format(file_name_prefix, tag), 'zip', src_dir)
+
+
+if __name__ == '__main__':
     mod_version = 'Unknown'
     max_support_version = 'Unknown'
     for lang in LANG_LIST:
+        init_dir()
         item_df = get_item_df(lang['item_i18n_tag'])
         lua_i18n_json = get_lua_i18n_json(lang['tag'])
         _, mod_version, max_support_version = create_lua_by_i18n(lang['tag'])
@@ -162,6 +179,10 @@ if __name__ == '__main__':
         # cp fonts to FONTS_SAVE_DIR
         if 'fonts' in lang.keys() and lang['fonts'] is not None and lang['fonts'] != '':
             shutil.copyfile(lang['fonts'], os.path.join(FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
+        # create zip
+        create_zip(lang['tag'], 'reframework', ZIP_FILE_PREFIX)
+        # del dir
+        force_del_dir('reframework')
     # save version.json
     version_json = {
         'version': mod_version,
