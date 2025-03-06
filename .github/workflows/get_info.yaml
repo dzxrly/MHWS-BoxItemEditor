@@ -28,7 +28,7 @@ jobs:
 
       - name: Run src/get_download_count.py
         run: |
-          python res/get_download_count.py
+          python src/get_download_count.py
 
       - name: Commit changes
         run: |
