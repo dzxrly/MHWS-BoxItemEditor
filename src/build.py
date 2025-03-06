@@ -163,7 +163,7 @@ def create_zip(
         src_dir: str,
         file_name_prefix: str,
 ) -> None:
-    shutil.make_archive('{}_{}'.format(file_name_prefix, tag), 'zip', src_dir)
+    shutil.make_archive('{}{}'.format(file_name_prefix, tag), 'zip', src_dir)
 
 
 if __name__ == '__main__':
