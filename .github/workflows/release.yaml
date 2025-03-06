@@ -37,13 +37,13 @@ jobs:
         run: python src/build.py
 
       - name: Create a zip of the directory for EN-US
-        run: zip BoxItemEditor_EN-US.zip reframework/autorun/*EU-US* reframework/data/*EU-US* *EN-US.txt
+        run: zip BoxItemEditor_EN-US.zip reframework/autorun/*EU-US.lua reframework/data/*EU-US.json *EN-US.txt
 
       - name: Create a zip of the directory for ZH-Hans
-        run: zip BoxItemEditor_ZH-Hans.zip reframework/autorun/*ZH-Hans* reframework/data/*ZH-Hans* reframework/fonts/*.ttf *ZH-Hans.txt
+        run: zip BoxItemEditor_ZH-Hans.zip reframework/autorun/*ZH-Hans.lua reframework/data/*ZH-Hans.json reframework/fonts/*.ttf *ZH-Hans.txt
 
       - name: Create a zip of the directory for ZH-Hant
-        run: zip BoxItemEditor_ZH-Hant.zip reframework/autorun/*ZH-Hant* reframework/data/*ZH-Hant* reframework/fonts/*.ttf *ZH-Hant.txt
+        run: zip BoxItemEditor_ZH-Hant.zip reframework/autorun/*ZH-Hant.lua reframework/data/*ZH-Hant.json reframework/fonts/*.ttf *ZH-Hant.txt
 
       - name: Generate checksums
         run: |
