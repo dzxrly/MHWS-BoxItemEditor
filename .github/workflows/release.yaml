@@ -37,10 +37,13 @@ jobs:
         run: python src/build.py
 
       - name: Create a zip of the directory for EN-US
-        run: zip -r BoxItemEditor_EN-US.zip reframework -x "reframework/fonts/*" "*ZH-Hans*" "reframework/data/*ZH-Hans.json" "reframework/data/.gitkeep"
+        run: zip BoxItemEditor_EN-US.zip reframework/autorun/*EU-US* reframework/data/*EU-US* *EN-US.txt
 
       - name: Create a zip of the directory for ZH-Hans
-        run: zip -r BoxItemEditor_ZH-Hans.zip reframework -x "*EN-US*" "reframework/data/*EN-US.json" "reframework/data/.gitkeep"
+        run: zip BoxItemEditor_ZH-Hans.zip reframework/autorun/*ZH-Hans* reframework/data/*ZH-Hans* reframework/fonts/*.ttf *ZH-Hans.txt
+
+      - name: Create a zip of the directory for ZH-Hant
+        run: zip BoxItemEditor_ZH-Hant.zip reframework/autorun/*ZH-Hant* reframework/data/*ZH-Hant* reframework/fonts/*.ttf *ZH-Hant.txt
 
       - name: Generate checksums
         run: |

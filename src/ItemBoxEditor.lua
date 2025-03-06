@@ -23,7 +23,7 @@ local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT = nil
 
-if LANG == "ZH-Hans" then
+if LANG ~= "EN-US" then
     local FONT_NAME = "NotoSansSC-Medium.ttf"
     local FONT_SIZE = 24
     local CHN_GLYPH = {

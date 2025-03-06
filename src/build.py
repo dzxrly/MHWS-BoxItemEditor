@@ -14,6 +14,12 @@ LANG_LIST = [
         'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
     },
     {
+        'tag': 'ZH-Hant',
+        'item_i18n_tag': 'TraditionalChinese',
+        'save_txt_header': ['[物品ID]', '[物品名]'],
+        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+    },
+    {
         'tag': 'EN-US',
         'item_i18n_tag': 'English',
         'save_txt_header': ['[Item ID]', '[Item Name]'],
