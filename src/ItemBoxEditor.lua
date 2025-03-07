@@ -33,9 +33,10 @@ if LANG ~= "EN-US" then
     FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
 end
 
+
+
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
-local itemBoxList = {}
 local i18n = nil
 -- NOT CHANGED VARIABLES END
 
@@ -48,7 +49,7 @@ local itemWindowOpen = true
 local searchItemTarget = nil
 local searchItemResult = {}
 -- item table window end
-
+local itemBoxList = {}
 local boxItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
@@ -66,6 +67,11 @@ local itemBoxInputChanged = nil
 local itemBoxInputNewVal = nil
 local itemBoxInputVal = nil
 
+local rareFilterComboChanged = nil 
+local typeFilterComboChanged = nil
+local filterSetting = { searchStr = "", filterIndex = 1, rareIndex = 1 }
+local typeFilterLabel = {}
+local rareFilterLabel = {}
 
 local originMoney = 0
 local moneySliderVal = 0
@@ -131,11 +137,8 @@ function compareVersions(version1, version2)
     return true
 end
 
-local function checkItemName(input)
-    if input:match("^%s*$") then
-        return false
-    end
-    if input:match("Rejected") or input:match("%-%-%-") then
+local function checkItem(input)
+    if input["_OutBox"] then
         return false
     end
     return true
@@ -150,35 +153,44 @@ local function loadI18NJson(jsonPath)
             itemNameJson = jsonFile.ItemName
             local tempIndex = 1
             itemBoxList = {}
-            for key, value in pairs(itemNameJson) do
-                if checkItemName(value) then
-                    itemBoxList[tempIndex] = {
-                        name = "[" .. key .. "]" .. value .. " - 0",
-                        fixedId = tonumber(key),
-                        num = 0,
-                    }
+            print(itemNameJson[1]["_Name"])
+            for index = 1, #itemNameJson do
+                if checkItem(itemNameJson[index]) then
+                    itemBoxList[tempIndex] = itemNameJson[index]
+                    itemBoxList[tempIndex]["name"] = "[" ..
+                        itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
+                    itemBoxList[tempIndex]["num"] = 0
+                    itemBoxList[tempIndex]["isUnknown"] = false
                     tempIndex = tempIndex + 1
                 end
             end
             table.sort(itemBoxList, function(a, b)
-                return a.fixedId < b.fixedId
+                return a._SortId < b._SortId
             end)
         end
     end
+    typeFilterLabel = i18n.typeFilterComboLabel
+    table.insert(typeFilterLabel,1,i18n.filterNoLimitTitle)
+    rareFilterLabel = {"1", "2", "3", "4", "5", "6", "7", "8" }
+    table.insert(rareFilterLabel,1,i18n.filterNoLimitTitle)
 end
 
 local function searchItemList(target)
     local itemIndex = 0
     local itemMap = {}
-    for key, value in pairs(itemNameJson) do
-        if checkItemName(value) then
+    for index = 1, #itemNameJson do
+        if checkItem(itemNameJson[index]) then
             if target ~= nil then
-                if string.lower(value):match(string.lower(target)) then
-                    itemMap[itemIndex] = { key = tonumber(key), value = value }
+                if string.lower(itemNameJson[index]._Name):match(string.lower(target)) then
+                    itemMap[itemIndex] = {
+                        key = tonumber(itemNameJson[index].fixedId),
+                        value = itemNameJson[index]
+                            ._Name
+                    }
                     itemIndex = itemIndex + 1
                 end
             else
-                itemMap[itemIndex] = { key = tonumber(key), value = value }
+                itemMap[itemIndex] = { key = tonumber(itemNameJson[index].fixedId), value = itemNameJson[index]._Name }
                 itemIndex = itemIndex + 1
             end
         end
@@ -203,33 +215,42 @@ local function initBoxItem()
         local isNotInList = true
         if boxItem:get_field("Num") > 0 then
             local itemName = nil
-            if itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))] ~= nil then
-                itemName = itemNameJson[tostring(boxItem:get_field("ItemIdFixed"))]
-            else
-                itemName = i18n.unknownItem
-            end
 
-            local comboxItem = "[" ..
-                tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " .. boxItem:get_field("Num")
-            local itemInfo = {
-                name = comboxItem,
-                fixedId = boxItem:get_field("ItemIdFixed"),
-                num = boxItem:get_field("Num")
-            }
-            for tempIndex = 1, #itemBoxList do
-                if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
-                    itemBoxList[tempIndex] = itemInfo
+            for index = 1, #itemNameJson do
+                if itemNameJson[index].fixedId == boxItem:get_field("ItemIdFixed") then
                     isNotInList = false
-                    break
+                    itemName = itemNameJson[index]._Name
                 end
             end
+
+
             if isNotInList then
+                itemName = i18n.unknownItem
+                local itemInfo = {
+                    name = "[" ..
+                        tostring(boxItem:get_field("ItemIdFixed")) ..
+                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
+                    fixedId = boxItem:get_field("ItemIdFixed"),
+                    num = boxItem:get_field("Num"),
+                    _SortId = 99999,
+                    isUnknown = true
+                }
                 table.insert(itemBoxList, itemInfo)
+            else
+                for tempIndex = 1, #itemBoxList do
+                    if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
+                        itemBoxList[tempIndex].name = "[" ..
+                            tostring(boxItem:get_field("ItemIdFixed")) ..
+                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
+                        itemBoxList[tempIndex].num = boxItem:get_field("Num")
+                        break
+                    end
+                end
             end
         end
     end
     table.sort(itemBoxList, function(a, b)
-        return a.fixedId < b.fixedId
+        return a._SortId < b._SortId
     end)
     for itemIndex = 1, #itemBoxList do
         itemBoxLabels[itemIndex] = itemBoxList[itemIndex].name
@@ -267,11 +288,72 @@ local function pointAddFunc(cBasicData, newPoint)
     cBasicData:call("addPoint", newPoint, false)
 end
 
-local function filterCombo(array, searchStr)
+local function filterCombo(array, filterSetting)
     local filteredArray = {}
     local filteredArrayLabel = {}
+    local category = { _Type = nil, _Heal = false, _Battle = false, _OutBox = false }
+    local tempArray = {}
+    local switch = {
+        -- { "无筛选条件", "治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材" }
+        function()
+            return
+        end,
+        function()
+            category._Type = 0
+            category._Heal = true
+        end,
+        function()
+            category._Type = 0
+            category._Battle = true
+        end,
+        function()
+            category._Type = 0
+        end,
+        function()
+            category._Type = 2
+        end,
+        function()
+            category._Type = 3
+        end,
+        function()
+            category._Type = 5
+        end,
+        function()
+            category._Type = 2
+            category._ForMoney = true
+        end
+    }
+    switch[filterSetting.filterIndex]()
+    if category._Type ~= nil then
+        tempArray = {}
+        for index = 1, #array do
+            local isMatched = true
+            for key, value in pairs(category) do
+                if array[index][key] ~= value then
+                    isMatched = false
+                end
+            end
+            if isMatched then
+                table.insert(tempArray, array[index])
+            end
+        end
+        array = tempArray
+    end
+
+    if filterSetting.rareIndex > 1 then
+        tempArray = {}
+        local rare = 20 - filterSetting.rareIndex
+        for index = 1, #array do
+            if array[index]._Rare == rare then
+                table.insert(tempArray, array[index])
+            end
+        end
+        array = tempArray
+    end
+
+
     for index = 1, #array do
-        if array[index].name:find(searchStr, 1, true) then
+        if filterSetting.searchStr == "" or array[index].name:find(filterSetting.searchStr, 1, true) then
             table.insert(filteredArray, array[index])
             table.insert(filteredArrayLabel, array[index].name)
         end
@@ -306,27 +388,42 @@ local function mainWindow()
         imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
         imgui.begin_disabled(cItemParam == nil)
-        itemBoxInputChanged, itemBoxInputNewVal = imgui.input_text(i18n.searchInput, itemBoxInputVal)
-        if itemBoxInputChanged then
-            itemBoxInputVal = itemBoxInputNewVal
+
+        imgui.set_next_item_width(200)
+        typeFilterComboChanged, filterSetting.filterIndex = imgui.combo("物品类型", filterSetting.filterIndex,typeFilterLabel); imgui.same_line()
+        imgui.set_next_item_width(100)
+        rareFilterComboChanged, filterSetting.rareIndex = imgui.combo("稀有度", filterSetting.rareIndex,rareFilterLabel)
+
+        itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
+
+        if rareFilterComboChanged then
             itemBoxComboIndex = nil
-            if itemBoxInputNewVal == "" then
-                itemBoxSearchedLabels = itemBoxLabels
-                itemBoxSearchedItems = itemBoxList
-            else
-                itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, itemBoxInputNewVal)
-            end
-            if #itemBoxSearchedItems > 0 then
-                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
-                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
-            end
+            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
         end
+
+        if typeFilterComboChanged then
+            itemBoxComboIndex = nil
+            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+        end
+
+        if itemBoxInputChanged then
+            itemBoxComboIndex = nil
+            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+        end
+
+        if #itemBoxSearchedItems > 0 then
+            itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+            itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+        end
+
         itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
             itemBoxSearchedLabels)
+
         if itemBoxComboChanged then
             itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
             itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
         end
+
         itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
             9999)
         if itemBoxSliderChanged then
