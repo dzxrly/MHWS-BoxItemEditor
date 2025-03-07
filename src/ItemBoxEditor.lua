@@ -399,22 +399,31 @@ local function mainWindow()
         if rareFilterComboChanged then
             itemBoxComboIndex = nil
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+            if #itemBoxSearchedItems > 0 then
+                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+            end
         end
 
         if typeFilterComboChanged then
             itemBoxComboIndex = nil
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+            if #itemBoxSearchedItems > 0 then
+                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+            end
         end
 
         if itemBoxInputChanged then
             itemBoxComboIndex = nil
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+            if #itemBoxSearchedItems > 0 then
+                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+            end
         end
 
-        if #itemBoxSearchedItems > 0 then
-            itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
-            itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
-        end
+        
 
         itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
             itemBoxSearchedLabels)
