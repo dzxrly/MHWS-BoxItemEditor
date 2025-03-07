@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import re
@@ -153,8 +154,11 @@ def init_dir() -> None:
     create_dir('reframework/fonts')
 
 
-def force_del_dir(path: str) -> None:
-    if os.path.exists(path):
+def force_del_dir(
+        path: str,
+        debug_mode: bool = False,
+) -> None:
+    if os.path.exists(path) and not debug_mode:
         shutil.rmtree(path)
 
 
@@ -167,6 +171,12 @@ def create_zip(
 
 
 if __name__ == '__main__':
+    args = argparse.ArgumentParser()
+    args.add_argument('-d', '--debug', action='store_true', help='Debug mode (Keep reframework dir)',
+                      default=False)
+    args = args.parse_args()
+    enable_debug = args.debug
+
     mod_version = 'Unknown'
     max_support_version = 'Unknown'
     for lang in LANG_LIST:
@@ -182,7 +192,7 @@ if __name__ == '__main__':
         # create zip
         create_zip(lang['tag'], 'reframework', ZIP_FILE_PREFIX)
         # del dir
-        force_del_dir('reframework')
+        force_del_dir('reframework', enable_debug)
     # save version.json
     version_json = {
         'version': mod_version,

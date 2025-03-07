@@ -18,6 +18,10 @@
   "changeItemNumTitle": "道具数量修改:",
   "changeItemNumCombox": "修改道具数量",
   "changeItemNumSlider": "选择新的数量：0~9999（0表示移除）",
+  "changeItemNumInput": "请输入新的数量：0~9999（0表示移除）",
+  "changeItemNumMinBtn": "设为0",
+  "changeItemNumMaxBtn": "设为9999",
+  "changeItemNumInputError": "[错误] 请输入0~9999之间的整数",
   "changeItemNumBtn": "确认修改",
   "itemName": "物品编号",
   "itemCount": "物品数量",
@@ -30,6 +34,6 @@
   "searchBtn": "搜索",
   "itemTableTitleID": "物品ID",
   "itemTableTitleName": "物品名称",
-  "unknownItem":"未知物品",
-  "searchInput":"搜索物品名称/ID/数量"
+  "unknownItem": "未知物品",
+  "searchInput": "搜索物品名称/ID/数量"
 }

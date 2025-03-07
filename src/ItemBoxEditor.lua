@@ -65,6 +65,9 @@ local itemBoxSearchedLabels = {}
 local itemBoxInputChanged = nil
 local itemBoxInputNewVal = nil
 local itemBoxInputVal = nil
+local itemBoxInputCountChanged = nil
+local itemBoxInputCountNewVal = nil
+local itemBoxConfirmBtnEnabled = true
 
 
 local originMoney = 0
@@ -93,6 +96,9 @@ local function clear()
     itemBoxInputChanged = nil
     itemBoxInputNewVal = nil
     itemBoxInputVal = nil
+    itemBoxInputCountChanged = nil
+    itemBoxInputCountNewVal = nil
+    itemBoxConfirmBtnEnabled = true
 
     originMoney = 0
     moneySliderVal = 0
@@ -139,6 +145,14 @@ local function checkItemName(input)
         return false
     end
     return true
+end
+
+local function checkIntegerInRange(input_str, min_val, max_val)
+    local num = tonumber(input_str)
+    if num and num == math.floor(num) and num >= min_val and num <= max_val then
+        return num
+    end
+    return nil
 end
 
 local function loadI18NJson(jsonPath)
@@ -331,17 +345,53 @@ local function mainWindow()
             9999)
         if itemBoxSliderChanged then
             itemBoxSelectedItemNum = itemBoxSliderNewVal
+            itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
+            if checkIntegerInRange(itemBoxSliderNewVal, 0, 9999) then
+                itemBoxConfirmBtnEnabled = true
+            else
+                itemBoxConfirmBtnEnabled = false
+            end
+        end
+        if imgui.button(i18n.changeItemNumMinBtn, SMALL_BTN) then
+            itemBoxSelectedItemNum = 0
+            itemBoxInputCountNewVal = "0"
+        end
+        imgui.same_line()
+        if imgui.button(i18n.changeItemNumMaxBtn, SMALL_BTN) then
+            itemBoxSelectedItemNum = 9999
+            itemBoxInputCountNewVal = "9999"
+        end
+        itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
+            itemBoxInputCountNewVal)
+        if itemBoxInputCountChanged then
+            local num = checkIntegerInRange(itemBoxInputCountNewVal, 0, 9999)
+            if num then
+                itemBoxConfirmBtnEnabled = true
+                itemBoxSelectedItemNum = num
+                itemBoxSliderNewVal = num
+            else
+                itemBoxConfirmBtnEnabled = false
+            end
         end
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
-        imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0)
+        imgui.begin_disabled(itemBoxSearchedItems == nil or
+            #itemBoxSearchedItems == 0 or
+            itemBoxSelectedItemFixedId == nil or
+            not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
             clear()
             init()
         end
         imgui.end_disabled()
-        imgui.end_disabled()
+        local errDisplay = ""
+        if not itemBoxConfirmBtnEnabled then
+            errDisplay = i18n.changeItemNumInputError
+        else
+            errDisplay = ""
+        end
+        imgui.text_colored(errDisplay, ERROR_COLOR)
 
         imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
