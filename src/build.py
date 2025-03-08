@@ -48,18 +48,21 @@ def get_item_df(
     with open(ITEM_DATA_JSON, 'r', encoding='utf-8') as f:
         item_data_json = json.load(f)
     item_data = []
-    item_header = ['_ItemId', '_RawName']
+    # _ItemId Item Id
+    # _RawName Item Name
+    # _SortId Sort Index
+    # _Type Item Type : 0 消耗品、调和用品; 1
+    item_header = ['_ItemId', '_RawName', '_SortId', '_Type', '_Rare', '_Fix',
+                   '_Shikyu', '_Infinit', '_Heal', '_Battle', '_Special', '_ForMoney', '_OutBox']
     for item in item_data_json[0]['fields'][0]['value']:
         item_info = item['fields']
         _item_id = None
         _raw_name = None
+        _item_data = []
         for _field in item_info:
-            if _field['name'] == '_ItemId':
-                _item_id = _field['value']
-            if _field['name'] == '_RawName':
-                _raw_name = _field['value']
-        item_data.append([_item_id, _raw_name])
-    # to DataFrame
+            if _field['name'] in item_header:
+                _item_data.append(_field['value'])
+        item_data.append(_item_data)
     item_df = pd.DataFrame(item_data, columns=item_header)
     # read TEXT_DATA_CSV
     text_data = pd.read_csv(TEXT_DATA_CSV, header=0, encoding='utf-8',
@@ -67,7 +70,8 @@ def get_item_df(
     # remove 'entry name' contains 'EXP' keyword
     text_data = text_data[~text_data['entry name'].str.contains('EXP')]
     # merge text_data to item_df
-    item_df = item_df.merge(text_data, left_on='_RawName', right_on='guid', how='left')
+    item_df = item_df.merge(text_data, left_on='_RawName',
+                            right_on='guid', how='left')
     print(item_df)
     return item_df
 
@@ -84,10 +88,12 @@ def read_origin_lua() -> (str, str, str):
     with open(ORIGIN_LUA_FIEL, 'r', encoding='utf-8') as f:
         lua_str = f.read()
     # match local INTER_VERSION = "xxx" row and read the content in the double quotes
-    mod_ver_match = re.search(r"local INTER_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
+    mod_ver_match = re.search(
+        r"local INTER_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
     mod_ver = mod_ver_match.group(1) if mod_ver_match else 'Unknown'
     # match local MAX_VERSION = "1.0.1.0" row and read the content in the double quotes
-    max_ver_match = re.search(r"local MAX_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
+    max_ver_match = re.search(
+        r"local MAX_VERSION\s*=\s*['\"]([^'\"]+)['\"]", lua_str)
     max_ver = max_ver_match.group(1) if max_ver_match else 'Unknown'
     return lua_str, mod_ver, max_ver
 
@@ -101,7 +107,8 @@ def save_txt(
 ) -> None:
     save_path = os.path.join(TXT_SAVE_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
     item_df = item_df[['_ItemId', lang_tag]]
-    item_df.to_csv(save_path, sep='\t', header=header, index=False, encoding='utf-8')
+    item_df.to_csv(save_path, sep='\t', header=header,
+                   index=False, encoding='utf-8')
     # write data version to file at the top
     with open(save_path, 'r', encoding='utf-8') as f:
         data = f.read()
@@ -116,12 +123,15 @@ def save_json(
         item_df: pd.DataFrame,
         lua_i18n_json: dict,
 ) -> None:
-    item_dict = dict(zip(item_df['_ItemId'], item_df[lang_tag]))
+
+    item_dict = item_df.rename(columns={lang_tag: '_Name', "_ItemId": "fixedId"}).drop(
+        columns=['_RawName', 'guid', 'entry name']).to_dict(orient='records')
     final_json = {
         'I18N': lua_i18n_json,
         'ItemName': item_dict,
     }
-    save_path = os.path.join(JSON_SAVE_DIR, f'{JSON_FILE_NAME_PREFIX}{tag}.json')
+    save_path = os.path.join(
+        JSON_SAVE_DIR, f'{JSON_FILE_NAME_PREFIX}{tag}.json')
     with open(save_path, 'w', encoding='utf-8') as f:
         json.dump(final_json, f, ensure_ascii=False, indent=4)
 
@@ -184,11 +194,13 @@ if __name__ == '__main__':
         item_df = get_item_df(lang['item_i18n_tag'])
         lua_i18n_json = get_lua_i18n_json(lang['tag'])
         _, mod_version, max_support_version = create_lua_by_i18n(lang['tag'])
-        save_txt(lang['tag'], lang['item_i18n_tag'], item_df, lang['save_txt_header'], max_support_version)
+        save_txt(lang['tag'], lang['item_i18n_tag'], item_df,
+                 lang['save_txt_header'], max_support_version)
         save_json(lang['tag'], lang['item_i18n_tag'], item_df, lua_i18n_json)
         # cp fonts to FONTS_SAVE_DIR
         if 'fonts' in lang.keys() and lang['fonts'] is not None and lang['fonts'] != '':
-            shutil.copyfile(lang['fonts'], os.path.join(FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
+            shutil.copyfile(lang['fonts'], os.path.join(
+                FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
         # create zip
         create_zip(lang['tag'], 'reframework', ZIP_FILE_PREFIX)
         # del dir

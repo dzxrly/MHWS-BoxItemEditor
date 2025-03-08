@@ -35,5 +35,9 @@
   "itemTableTitleID": "物品ID",
   "itemTableTitleName": "物品名稱",
   "unknownItem": "未知物品",
-  "searchInput": "搜索物品名稱/ID/數量"
+  "searchInput": "搜索物品名稱/ID/數量",
+  "typeFilterComboLabel":["治療道具", "戰鬥道具", "調和素材", "製造材料", "弩炮彈藥", "特產", "換金素材"],
+  "typeFilterComboName":"物品類型",
+  "rareFilterComboName":"稀有度",
+  "filterNoLimitTitle":"不限"
 }

@@ -34,6 +34,10 @@
   "searchBtn": "Search",
   "itemTableTitleID": "Item ID",
   "itemTableTitleName": "Item Name",
-  "unknownItem": "Unknown Item",
-  "searchInput": "Search Item with Name/ID/Num"
+  "unknownItem":"Unknown Item",
+  "searchInput":"Search Item with Name/ID/Num",
+  "typeFilterComboLabel":["Healing", "Battle", "Crafting Materials", "Manufacturing Materials", "Ammunition", "Special Product", "Exchange Materials"],
+  "typeFilterComboName":"Item Type",
+  "rareFilterComboName":"RARE",
+  "filterNoLimitTitle":"Any"
 }
