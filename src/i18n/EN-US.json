@@ -47,7 +47,5 @@
     "Special Product",
     "Exchange Materials"
   ],
-  "typeFilterComboName": "Item Type",
-  "rareFilterComboName": "RARE",
   "filterNoLimitTitle": "Any"
 }
