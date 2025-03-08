@@ -16,6 +16,8 @@
   "changeItemTip": "[提示] 修改后请关闭道具箱界面再打开，以刷新道具箱内容 !",
   "changeItemWarning": "[警告]\n本MOD不对道具进行合法性检测，请务必确认修改的道具能放入道具箱 !",
   "changeItemNumTitle": "道具数量修改:",
+  "changeItemNumFilterItemType": "物品类型",
+  "changeItemNumFilterItemRare": "稀有度",
   "changeItemNumCombox": "修改道具数量",
   "changeItemNumSlider": "选择新的数量：0~9999（0表示移除）",
   "changeItemNumInput": "请输入新的数量：0~9999（0表示移除）",

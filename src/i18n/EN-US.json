@@ -16,6 +16,8 @@
   "changeItemTip": "[Tips] After change, please close and reopen the ItemBox to refresh !",
   "changeItemWarning": "[Warning]\nThis MOD does NOT check the legality, please make sure the item you modified can be put into the ItemBox !",
   "changeItemNumTitle": "Item Count Changer:",
+  "changeItemNumFilterItemType": "Item Type",
+  "changeItemNumFilterItemRare": "RARE",
   "changeItemNumCombox": "Change Item Count",
   "changeItemNumSlider": "Select Changed Num (0~9999, 0 for remove)",
   "changeItemNumInput": "Input New Num (0~9999, 0 for remove)",
@@ -34,10 +36,18 @@
   "searchBtn": "Search",
   "itemTableTitleID": "Item ID",
   "itemTableTitleName": "Item Name",
-  "unknownItem":"Unknown Item",
-  "searchInput":"Search Item with Name/ID/Num",
-  "typeFilterComboLabel":["Healing", "Battle", "Crafting Materials", "Manufacturing Materials", "Ammunition", "Special Product", "Exchange Materials"],
-  "typeFilterComboName":"Item Type",
-  "rareFilterComboName":"RARE",
-  "filterNoLimitTitle":"Any"
+  "unknownItem": "Unknown Item",
+  "searchInput": "Search Item with Name/ID/Num",
+  "typeFilterComboLabel": [
+    "Healing",
+    "Battle",
+    "Crafting Materials",
+    "Manufacturing Materials",
+    "Ammunition",
+    "Special Product",
+    "Exchange Materials"
+  ],
+  "typeFilterComboName": "Item Type",
+  "rareFilterComboName": "RARE",
+  "filterNoLimitTitle": "Any"
 }

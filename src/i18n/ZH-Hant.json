@@ -16,6 +16,8 @@
   "changeItemTip": "[提示] 修改後請關閉道具箱介面再打開，以刷新道具箱內容 !",
   "changeItemWarning": "[警告]\n本MOD不對道具進行合法性檢測，請務必確認修改的道具能放入道具箱 !",
   "changeItemNumTitle": "道具數量修改:",
+  "changeItemNumFilterItemType": "物品類型",
+  "changeItemNumFilterItemRare": "稀有度",
   "changeItemNumCombox": "修改道具數量",
   "changeItemNumSlider": "選擇新的數量：0~9999（0表示移除）",
   "changeItemNumInput": "請輸入新的數量：0~9999（0表示移除）",
@@ -36,8 +38,16 @@
   "itemTableTitleName": "物品名稱",
   "unknownItem": "未知物品",
   "searchInput": "搜索物品名稱/ID/數量",
-  "typeFilterComboLabel":["治療道具", "戰鬥道具", "調和素材", "製造材料", "弩炮彈藥", "特產", "換金素材"],
-  "typeFilterComboName":"物品類型",
-  "rareFilterComboName":"稀有度",
-  "filterNoLimitTitle":"不限"
+  "typeFilterComboLabel": [
+    "治療道具",
+    "戰鬥道具",
+    "調和素材",
+    "製造材料",
+    "弩炮彈藥",
+    "特產",
+    "換金素材"
+  ],
+  "typeFilterComboName": "物品類型",
+  "rareFilterComboName": "稀有度",
+  "filterNoLimitTitle": "不限"
 }
