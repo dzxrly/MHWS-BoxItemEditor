@@ -27,16 +27,18 @@ LANG_LIST = [
     }
 ]
 
+# source file settings
 ORIGIN_LUA_FIEL = 'src/ItemBoxEditor.lua'
+I18N_FILE_DIR = 'src/i18n'
+ITEM_DATA_JSON = 'src/data/ItemData.json'
+TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
+# save settings
 LUA_SAVE_DIR = 'reframework/autorun'
 TXT_SAVE_DIR = 'reframework'
 TXT_SAVE_PREFIX = 'Items_'
 JSON_SAVE_DIR = 'reframework/data'
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_item_dict_'
 FONTS_SAVE_DIR = 'reframework/fonts'
-I18N_FILE_DIR = 'src/i18n'
-ITEM_DATA_JSON = 'src/data/ItemData.json'
-TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
 VERSION_JSON_SAVE_PATH = 'version.json'
 ZIP_FILE_PREFIX = 'BoxItemEditor_'
 
@@ -176,7 +178,7 @@ def create_zip(
         src_dir: str,
         file_name_prefix: str,
 ) -> None:
-    shutil.make_archive('{}{}'.format(file_name_prefix, tag), 'zip', src_dir)
+    shutil.make_archive('{}{}'.format(file_name_prefix, tag), 'zip', root_dir='.', base_dir=src_dir)
 
 
 if __name__ == '__main__':
