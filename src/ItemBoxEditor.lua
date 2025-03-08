@@ -69,7 +69,7 @@ local itemBoxInputCountChanged = nil
 local itemBoxInputCountNewVal = nil
 local itemBoxConfirmBtnEnabled = true
 
-local rareFilterComboChanged = nil 
+local rareFilterComboChanged = nil
 local typeFilterComboChanged = nil
 local filterSetting = { searchStr = "", filterIndex = 1, rareIndex = 1 }
 local typeFilterLabel = {}
@@ -171,7 +171,7 @@ local function loadI18NJson(jsonPath)
                 if checkItem(itemNameJson[index]) then
                     itemBoxList[tempIndex] = itemNameJson[index]
                     itemBoxList[tempIndex]["name"] = "[" ..
-                        itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
+                            itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
                     itemBoxList[tempIndex]["num"] = 0
                     itemBoxList[tempIndex]["isUnknown"] = false
                     tempIndex = tempIndex + 1
@@ -183,9 +183,9 @@ local function loadI18NJson(jsonPath)
         end
     end
     typeFilterLabel = i18n.typeFilterComboLabel
-    table.insert(typeFilterLabel,1,i18n.filterNoLimitTitle)
-    rareFilterLabel = {"1", "2", "3", "4", "5", "6", "7", "8" }
-    table.insert(rareFilterLabel,1,i18n.filterNoLimitTitle)
+    table.insert(typeFilterLabel, 1, i18n.filterNoLimitTitle)
+    rareFilterLabel = { "1", "2", "3", "4", "5", "6", "7", "8" }
+    table.insert(rareFilterLabel, 1, i18n.filterNoLimitTitle)
 end
 
 local function searchItemList(target)
@@ -198,7 +198,7 @@ local function searchItemList(target)
                     itemMap[itemIndex] = {
                         key = tonumber(itemNameJson[index].fixedId),
                         value = itemNameJson[index]
-                            ._Name
+                                ._Name
                     }
                     itemIndex = itemIndex + 1
                 end
@@ -236,13 +236,12 @@ local function initBoxItem()
                 end
             end
 
-
             if isNotInList then
                 itemName = i18n.unknownItem
                 local itemInfo = {
                     name = "[" ..
-                        tostring(boxItem:get_field("ItemIdFixed")) ..
-                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
+                            tostring(boxItem:get_field("ItemIdFixed")) ..
+                            "]" .. itemName .. " - " .. boxItem:get_field("Num"),
                     fixedId = boxItem:get_field("ItemIdFixed"),
                     num = boxItem:get_field("Num"),
                     _SortId = 99999,
@@ -253,8 +252,8 @@ local function initBoxItem()
                 for tempIndex = 1, #itemBoxList do
                     if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
                         itemBoxList[tempIndex].name = "[" ..
-                            tostring(boxItem:get_field("ItemIdFixed")) ..
-                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
+                                tostring(boxItem:get_field("ItemIdFixed")) ..
+                                "]" .. itemName .. " - " .. boxItem:get_field("Num")
                         itemBoxList[tempIndex].num = boxItem:get_field("Num")
                         break
                     end
@@ -271,7 +270,6 @@ local function initBoxItem()
     itemBoxSearchedLabels = itemBoxLabels
     itemBoxSearchedItems = itemBoxList
 end
-
 
 local function initHunterBasicData()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
@@ -291,7 +289,6 @@ local function changeBoxItemNum(itemFixedId, changedNumber)
         cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber - boxItem:get_field("Num"))
     end
 end
-
 
 local function moneyAddFunc(cBasicData, newMoney)
     cBasicData:call("addMoney", newMoney, false)
@@ -364,7 +361,6 @@ local function filterCombo(array, filterSetting)
         array = tempArray
     end
 
-
     for index = 1, #array do
         if filterSetting.searchStr == "" or array[index].name:find(filterSetting.searchStr, 1, true) then
             table.insert(filteredArray, array[index])
@@ -374,19 +370,17 @@ local function filterCombo(array, filterSetting)
     return filteredArray, filteredArrayLabel
 end
 
-
 local function init()
     initBoxItem()
     initHunterBasicData()
 end
-
 
 local function mainWindow()
     if imgui.begin_window(i18n.windowTitle, mainWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
         if MAX_VER_LT_OR_EQ_GAME_VER == false then
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
             imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
-                ERROR_COLOR)
+                    ERROR_COLOR)
             imgui.new_line()
         end
 
@@ -403,9 +397,10 @@ local function mainWindow()
         imgui.begin_disabled(cItemParam == nil)
 
         imgui.set_next_item_width(200)
-        typeFilterComboChanged, filterSetting.filterIndex = imgui.combo("物品类型", filterSetting.filterIndex,typeFilterLabel); imgui.same_line()
+        typeFilterComboChanged, filterSetting.filterIndex = imgui.combo("物品类型", filterSetting.filterIndex, typeFilterLabel);
+        imgui.same_line()
         imgui.set_next_item_width(100)
-        rareFilterComboChanged, filterSetting.rareIndex = imgui.combo("稀有度", filterSetting.rareIndex,rareFilterLabel)
+        rareFilterComboChanged, filterSetting.rareIndex = imgui.combo("稀有度", filterSetting.rareIndex, rareFilterLabel)
 
         itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
 
@@ -436,10 +431,8 @@ local function mainWindow()
             end
         end
 
-        
-
         itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
-            itemBoxSearchedLabels)
+                itemBoxSearchedLabels)
 
         if itemBoxComboChanged then
             itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
@@ -447,7 +440,7 @@ local function mainWindow()
         end
 
         itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
-            9999)
+                9999)
         if itemBoxSliderChanged then
             itemBoxSelectedItemNum = itemBoxSliderNewVal
             itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
@@ -467,7 +460,7 @@ local function mainWindow()
             itemBoxInputCountNewVal = "9999"
         end
         itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
-            itemBoxInputCountNewVal)
+                itemBoxInputCountNewVal)
         if itemBoxInputCountChanged then
             local num = checkIntegerInRange(itemBoxInputCountNewVal, 0, 9999)
             if num then
@@ -481,9 +474,9 @@ local function mainWindow()
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
         imgui.begin_disabled(itemBoxSearchedItems == nil or
-            #itemBoxSearchedItems == 0 or
-            itemBoxSelectedItemFixedId == nil or
-            not itemBoxConfirmBtnEnabled)
+                #itemBoxSearchedItems == 0 or
+                itemBoxSelectedItemFixedId == nil or
+                not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
             clear()
@@ -502,9 +495,9 @@ local function mainWindow()
         imgui.text(i18n.coinAndPtsEditorTitle)
         imgui.begin_disabled(cBasicParam == nil)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
-            i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-            originMoney,
-            MONEY_PTS_MAX - originMoney)
+                i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
+                originMoney,
+                MONEY_PTS_MAX - originMoney)
         if moneySliderChanged then
             moneyChangedDiff = moneySliderNewVal - originMoney
             moneySliderVal = moneySliderNewVal
@@ -515,9 +508,9 @@ local function mainWindow()
             init()
         end
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
-            i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-            originPoints,
-            MONEY_PTS_MAX - originPoints)
+                i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
+                originPoints,
+                MONEY_PTS_MAX - originPoints)
         if pointsSliderChange then
             pointsChangedDiff = pointsSliderNewVal - originPoints
             pointsSliderVal = pointsSliderNewVal
