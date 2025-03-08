@@ -123,7 +123,6 @@ def save_json(
         item_df: pd.DataFrame,
         lua_i18n_json: dict,
 ) -> None:
-
     item_dict = item_df.rename(columns={lang_tag: '_Name', "_ItemId": "fixedId"}).drop(
         columns=['_RawName', 'guid', 'entry name']).to_dict(orient='records')
     final_json = {
@@ -205,14 +204,15 @@ if __name__ == '__main__':
         create_zip(lang['tag'], 'reframework', ZIP_FILE_PREFIX)
         # del dir
         force_del_dir('reframework', enable_debug)
-    # save version.json
-    version_json = {
-        'version': mod_version,
-        'max': max_support_version,
-        # set UTC +8 timezone date
-        'build_date': '{} (UTC+8)'.format(
-            (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S'))
-    }
-    with open(VERSION_JSON_SAVE_PATH, 'w', encoding='utf-8') as f:
-        json.dump(version_json, f, ensure_ascii=False, indent=4)
-    print('Done!')
+    if not enable_debug:
+        # save version.json
+        version_json = {
+            'version': mod_version,
+            'max': max_support_version,
+            # set UTC +8 timezone date
+            'build_date': '{} (UTC+8)'.format(
+                (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S'))
+        }
+        with open(VERSION_JSON_SAVE_PATH, 'w', encoding='utf-8') as f:
+            json.dump(version_json, f, ensure_ascii=False, indent=4)
+        print('Done!')
