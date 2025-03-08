@@ -55,7 +55,7 @@ local cBasicParam = nil
 
 local itemBoxLabels = {}
 local itemBoxComboChanged = false
-local itemBoxComboIndex = nil
+local itemBoxComboIndex = 1
 local itemBoxSelectedItemFixedId = nil
 local itemBoxSelectedItemNum = nil
 local itemBoxSliderChanged = nil
@@ -93,7 +93,7 @@ local function clear()
 
     itemBoxLabels = {}
     itemBoxComboChanged = false
-    itemBoxComboIndex = nil
+    itemBoxComboIndex = 1
     itemBoxSelectedItemFixedId = nil
     itemBoxSelectedItemNum = nil
     itemBoxSliderChanged = nil
@@ -216,88 +216,6 @@ local function searchItemList(target)
     return itemMap
 end
 
-local function initBoxItem()
-    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
-    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
-    print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
-    cItemParam = cUserSaveParam:get_field("_Item")
-    boxItemArray = cItemParam:call("get_BoxItem")
-
-    for boxPosIndex = 0, #boxItemArray - 1 do
-        local boxItem = boxItemArray[boxPosIndex]
-        local isNotInList = true
-        if boxItem:get_field("Num") > 0 then
-            local itemName = nil
-
-            for index = 1, #itemNameJson do
-                if itemNameJson[index].fixedId == boxItem:get_field("ItemIdFixed") then
-                    isNotInList = false
-                    itemName = itemNameJson[index]._Name
-                end
-            end
-
-            if isNotInList then
-                itemName = i18n.unknownItem
-                local itemInfo = {
-                    name = "[" ..
-                        tostring(boxItem:get_field("ItemIdFixed")) ..
-                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
-                    fixedId = boxItem:get_field("ItemIdFixed"),
-                    num = boxItem:get_field("Num"),
-                    _SortId = 99999,
-                    isUnknown = true
-                }
-                table.insert(itemBoxList, itemInfo)
-            else
-                for tempIndex = 1, #itemBoxList do
-                    if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
-                        itemBoxList[tempIndex].name = "[" ..
-                            tostring(boxItem:get_field("ItemIdFixed")) ..
-                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
-                        itemBoxList[tempIndex].num = boxItem:get_field("Num")
-                        break
-                    end
-                end
-            end
-        end
-    end
-    table.sort(itemBoxList, function(a, b)
-        return a._SortId < b._SortId
-    end)
-    for itemIndex = 1, #itemBoxList do
-        itemBoxLabels[itemIndex] = itemBoxList[itemIndex].name
-    end
-    itemBoxSearchedLabels = itemBoxLabels
-    itemBoxSearchedItems = itemBoxList
-end
-
-local function initHunterBasicData()
-    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
-    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
-    cBasicParam = cUserSaveParam:get_field("_BasicData")
-    originMoney = cBasicParam:call("getMoney")
-    originPoints = cBasicParam:call("getPoint")
-    moneySliderVal = originMoney
-    pointsSliderVal = originPoints
-end
-
-local function changeBoxItemNum(itemFixedId, changedNumber)
-    local boxItem = cItemParam:call("getBoxItem", itemFixedId - 1)
-    if boxItem == nil then
-        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber)
-    else
-        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber - boxItem:get_field("Num"))
-    end
-end
-
-local function moneyAddFunc(cBasicData, newMoney)
-    cBasicData:call("addMoney", newMoney, false)
-end
-
-local function pointAddFunc(cBasicData, newPoint)
-    cBasicData:call("addPoint", newPoint, false)
-end
-
 local function filterCombo(array, filterSetting)
     local filteredArray = {}
     local filteredArrayLabel = {}
@@ -370,6 +288,100 @@ local function filterCombo(array, filterSetting)
     return filteredArray, filteredArrayLabel
 end
 
+local function initBoxItem()
+    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
+    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+    print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
+    cItemParam = cUserSaveParam:get_field("_Item")
+    boxItemArray = cItemParam:call("get_BoxItem")
+    for boxPosIndex = 0, #boxItemArray - 1 do
+        local boxItem = boxItemArray[boxPosIndex]
+        local isNotInList = true
+        if boxItem:get_field("Num") > 0 then
+            local itemName = nil
+
+            for index = 1, #itemNameJson do
+                if itemNameJson[index].fixedId == boxItem:get_field("ItemIdFixed") then
+                    isNotInList = false
+                    itemName = itemNameJson[index]._Name
+                end
+            end
+
+            if isNotInList then
+                itemName = i18n.unknownItem
+                local itemInfo = {
+                    name = "[" ..
+                        tostring(boxItem:get_field("ItemIdFixed")) ..
+                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
+                    fixedId = boxItem:get_field("ItemIdFixed"),
+                    num = boxItem:get_field("Num"),
+                    _SortId = 99999,
+                    isUnknown = true
+                }
+                table.insert(itemBoxList, itemInfo)
+            else
+                for tempIndex = 1, #itemBoxList do
+                    if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
+                        itemBoxList[tempIndex].name = "[" ..
+                            tostring(boxItem:get_field("ItemIdFixed")) ..
+                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
+                        itemBoxList[tempIndex].num = boxItem:get_field("Num")
+                        break
+                    end
+                end
+            end
+        end
+    end
+    table.sort(itemBoxList, function(a, b)
+        return a._SortId < b._SortId
+    end)
+    for itemIndex = 1, #itemBoxList do
+        itemBoxLabels[itemIndex] = itemBoxList[itemIndex].name
+    end
+    itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+    itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
+    itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
+    itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
+end
+
+local function initHunterBasicData()
+    local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
+    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+    cBasicParam = cUserSaveParam:get_field("_BasicData")
+    originMoney = cBasicParam:call("getMoney")
+    originPoints = cBasicParam:call("getPoint")
+    moneySliderVal = originMoney
+    pointsSliderVal = originPoints
+end
+
+local function changeBoxItemNum(itemFixedId, changedNumber)
+    local boxItem = cItemParam:call("getBoxItem", itemFixedId - 1)
+    if boxItem == nil then
+        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber)
+    else
+        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber - boxItem:get_field("Num"))
+    end
+    if changedNumber == 0 then
+        for index = 1, #itemBoxList do
+            if itemBoxList[index].fixedId == itemFixedId then
+                itemBoxList[index]["name"] = "[" ..
+                    itemBoxList[index]["fixedId"] .. "]" .. itemBoxList[index]["_Name"] .. " - 0"
+                itemBoxList[index]["num"] = 0
+            end
+        end
+    end
+end
+
+local function moneyAddFunc(cBasicData, newMoney)
+    cBasicData:call("addMoney", newMoney, false)
+end
+
+local function pointAddFunc(cBasicData, newPoint)
+    cBasicData:call("addPoint", newPoint, false)
+end
+
+
+
 local function init()
     initBoxItem()
     initHunterBasicData()
@@ -407,7 +419,7 @@ local function mainWindow()
         itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
 
         if rareFilterComboChanged then
-            itemBoxComboIndex = nil
+            itemBoxComboIndex = 1
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
             if #itemBoxSearchedItems > 0 then
                 itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
@@ -416,7 +428,7 @@ local function mainWindow()
         end
 
         if typeFilterComboChanged then
-            itemBoxComboIndex = nil
+            itemBoxComboIndex = 1
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
             if #itemBoxSearchedItems > 0 then
                 itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
@@ -425,7 +437,7 @@ local function mainWindow()
         end
 
         if itemBoxInputChanged then
-            itemBoxComboIndex = nil
+            itemBoxComboIndex = 1
             itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
             if #itemBoxSearchedItems > 0 then
                 itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
@@ -439,6 +451,7 @@ local function mainWindow()
         if itemBoxComboChanged then
             itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
             itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
+            itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
         end
 
         itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
@@ -481,7 +494,7 @@ local function mainWindow()
             not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
-            clear()
+            --clear()
             init()
         end
         imgui.end_disabled()
@@ -506,7 +519,7 @@ local function mainWindow()
         end
         if imgui.button(i18n.coinBtn, SMALL_BTN) then
             moneyAddFunc(cBasicParam, moneyChangedDiff)
-            clear()
+            --clear()
             init()
         end
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
@@ -519,7 +532,7 @@ local function mainWindow()
         end
         if imgui.button(i18n.ptsBtn, SMALL_BTN) then
             pointAddFunc(cBasicParam, pointsChangedDiff)
-            clear()
+            --clear()
             init()
         end
         imgui.end_disabled()
