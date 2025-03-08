@@ -1,4 +1,3 @@
--- Made By Egg Targaryen
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
