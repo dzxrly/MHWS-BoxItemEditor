@@ -24,6 +24,18 @@ LANG_LIST = [
         'tag': 'EN-US',
         'item_i18n_tag': 'English',
         'save_txt_header': ['[Item ID]', '[Item Name]'],
+    },
+    {
+        'tag': 'JP-JP',
+        'item_i18n_tag': 'Japanese',
+        'save_txt_header': ['[アイテムID]', '[アイテム名]'],
+        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+    },
+    {
+        'tag': 'KR-KR',
+        'item_i18n_tag': 'Korean',
+        'save_txt_header': ['[아이템ID]', '[아이템명]'],
+        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
     }
 ]
 

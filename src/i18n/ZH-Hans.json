@@ -36,8 +36,16 @@
   "searchBtn": "搜索",
   "itemTableTitleID": "物品ID",
   "itemTableTitleName": "物品名称",
-  "unknownItem":"未知物品",
-  "searchInput":"搜索物品名称/ID/数量",
-  "typeFilterComboLabel":["治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材"],
-  "filterNoLimitTitle":"不限"
+  "unknownItem": "未知物品",
+  "searchInput": "搜索物品名称/ID/数量",
+  "typeFilterComboLabel": [
+    "治疗道具",
+    "战斗道具",
+    "调和素材",
+    "制造材料",
+    "弩炮弹药",
+    "特产",
+    "换金素材"
+  ],
+  "filterNoLimitTitle": "不限"
 }
