@@ -59,7 +59,7 @@ jobs:
           echo "- **[BoxItemEditor_ZH-Hans.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_ZH-Hans.zip)** （简体中文版 / Simplified Chinese Version）" >> release_notes.md
           echo "- **[BoxItemEditor_ZH-Hant.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_ZH-Hant.zip)** （繁體中文版 / Traditional Chinese Version）" >> release_notes.md
           echo "- **[BoxItemEditor_JA-JP.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_JA-JP.zip)** （日本語 / Japanese Version）" >> release_notes.md
-          echo "- **[BoxItemEditor_KO-KR.zip]((https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_KO-KR.zip)** （한국인 / Korean Version）" >> release_notes.md
+          echo "- **[BoxItemEditor_KO-KR.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/BoxItemEditor_KO-KR.zip)** （한국인 / Korean Version）" >> release_notes.md
           echo "" >> release_notes.md
           echo "### 文件校验 / Checksums" >> release_notes.md
           echo "- \`BoxItemEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 BoxItemEditor_EN-US.zip.sha256)" >> release_notes.md
