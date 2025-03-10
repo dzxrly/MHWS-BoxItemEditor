@@ -11,7 +11,7 @@
   "confirmCompatibleTip": "[互換性を確認]",
   "notCompatibleTip": "[非互換]",
   "backupSaveWarning": "[警告]\nこのMODを使用する前に必ずセーブデータをバックアップしてください !!!\nこのMODを使用する前に必ずセーブデータをバックアップしてください !!!\nこのMODを使用する前に必ずセーブデータをバックアップしてください !!!",
-  "itemIdFileTip": "[ヒント] アイテムIDリストは 'ゲームのルートディレクトリ/reframework/Items_JP.txt' にあります",
+  "itemIdFileTip": "[ヒント] アイテムIDリストは 'ゲームのルートディレクトリ/reframework/Items_JA-JP.txt' にあります",
   "readItemBoxBtn": "アイテム BOX を読み込む",
   "changeItemTip": "[ヒント] 変更後、アイテム BOX の画面を閉じて再度開いてください。内容が更新されます!",
   "changeItemWarning": "[警告]\nこのMODはアイテムの合法性チェックを行いません。必ずアイテム BOX に収納できるアイテムか確認してください!",
