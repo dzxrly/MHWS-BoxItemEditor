@@ -12,13 +12,13 @@ LANG_LIST = [
         'tag': 'ZH-Hans',
         'item_i18n_tag': 'SimplifiedChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
     },
     {
         'tag': 'ZH-Hant',
         'item_i18n_tag': 'TraditionalChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
     },
     {
         'tag': 'EN-US',
@@ -29,13 +29,13 @@ LANG_LIST = [
         'tag': 'JA-JP',
         'item_i18n_tag': 'Japanese',
         'save_txt_header': ['[アイテムID]', '[アイテム名]'],
-        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
     },
     {
         'tag': 'KO-KR',
         'item_i18n_tag': 'Korean',
         'save_txt_header': ['[아이템ID]', '[아이템명]'],
-        'fonts': 'src/fonts/NotoSansSC-Medium.ttf'
+        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
     }
 ]
 
@@ -45,12 +45,12 @@ I18N_FILE_DIR = 'src/i18n'
 ITEM_DATA_JSON = 'src/data/ItemData.json'
 TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
 # save settings
-LUA_SAVE_DIR = 'reframework/autorun'
-TXT_SAVE_DIR = 'reframework'
+MOD_ROOT_DIR = 'reframework'
+LUA_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'autorun')
 TXT_SAVE_PREFIX = 'Items_'
-JSON_SAVE_DIR = 'reframework/data'
-JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_item_dict_'
-FONTS_SAVE_DIR = 'reframework/fonts'
+JSON_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'data', 'ItemBoxEditor')
+JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
+FONTS_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'fonts', 'ItemBoxEditor')
 VERSION_JSON_SAVE_PATH = 'version.json'
 ZIP_FILE_PREFIX = 'BoxItemEditor_'
 
@@ -119,7 +119,7 @@ def save_txt(
         header: list[str],
         data_ver: str = 'Unknown',
 ) -> None:
-    save_path = os.path.join(TXT_SAVE_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
+    save_path = os.path.join(MOD_ROOT_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
     item_df = item_df[['_ItemId', lang_tag]]
     item_df.to_csv(save_path, sep='\t', header=header,
                    index=False, encoding='utf-8')
@@ -167,14 +167,14 @@ def create_lua_by_i18n(
 
 def create_dir(path: str) -> None:
     if not os.path.exists(path):
-        os.mkdir(path)
+        os.makedirs(path, exist_ok=True)
 
 
 def init_dir() -> None:
-    create_dir('reframework')
-    create_dir('reframework/autorun')
-    create_dir('reframework/data')
-    create_dir('reframework/fonts')
+    create_dir(MOD_ROOT_DIR)
+    create_dir(LUA_SAVE_DIR)
+    create_dir(JSON_SAVE_DIR)
+    create_dir(FONTS_SAVE_DIR)
 
 
 def force_del_dir(
@@ -215,9 +215,9 @@ if __name__ == '__main__':
             shutil.copyfile(lang['fonts'], os.path.join(
                 FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
         # create zip
-        create_zip(lang['tag'], 'reframework', ZIP_FILE_PREFIX)
+        create_zip(lang['tag'], MOD_ROOT_DIR, ZIP_FILE_PREFIX)
         # del dir
-        force_del_dir('reframework', enable_debug)
+        force_del_dir(MOD_ROOT_DIR, enable_debug)
     if not enable_debug:
         # save version.json
         version_json = {

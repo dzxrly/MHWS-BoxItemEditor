@@ -8,7 +8,7 @@ local LANG = ""
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.6.3"
+local INTER_VERSION = "v1.7"
 local MAX_VERSION = "1.0.1.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -23,13 +23,13 @@ local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT = nil
 
 if LANG ~= "EN-US" then
-    local FONT_NAME = "NotoSansSC-Medium.ttf"
+    local FONT_NAME = "ItemBoxEditor/ItemBoxEditor_NotoSans_Medium.ttf"
     local FONT_SIZE = 24
-    local CHN_GLYPH = {
+    local FONT_GLYPH = {
         0x0020, 0xFFEE,
         0,
     }
-    FONT = imgui.load_font(FONT_NAME, FONT_SIZE, CHN_GLYPH)
+    FONT = imgui.load_font(FONT_NAME, FONT_SIZE, FONT_GLYPH)
 end
 
 
