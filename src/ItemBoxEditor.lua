@@ -23,7 +23,7 @@ local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT = nil
 
 if LANG ~= "EN-US" then
-    local FONT_NAME = "ItemBoxEditor/ItemBoxEditor_NotoSans_Medium.ttf"
+    local FONT_NAME = "ItemBoxEditor_NotoSans_Medium.ttf"
     local FONT_SIZE = 24
     local FONT_GLYPH = {
         0x0020, 0xFFEE,

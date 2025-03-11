@@ -46,11 +46,12 @@ ITEM_DATA_JSON = 'src/data/ItemData.json'
 TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
 # save settings
 MOD_ROOT_DIR = 'reframework'
-LUA_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'autorun')
+MOD_NAME = 'ItemBoxEditor'
+LUA_SAVE_DIR = '{}/{}'.format(MOD_ROOT_DIR, 'autorun')
 TXT_SAVE_PREFIX = 'Items_'
-JSON_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'data', 'ItemBoxEditor')
+JSON_SAVE_DIR = '{}/{}/{}'.format(MOD_ROOT_DIR, 'data', MOD_NAME)
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
-FONTS_SAVE_DIR = os.path.join(MOD_ROOT_DIR, 'fonts', 'ItemBoxEditor')
+FONTS_SAVE_DIR = '{}/{}'.format(MOD_ROOT_DIR, 'fonts')
 VERSION_JSON_SAVE_PATH = 'version.json'
 ZIP_FILE_PREFIX = 'BoxItemEditor_'
 
@@ -155,7 +156,7 @@ def create_lua_by_i18n(
     lua_str, mod_ver, max_support_ver = read_origin_lua()
     # match 'local ITEM_NAME_JSON_PATH = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace('local ITEM_NAME_JSON_PATH = ""',
-                              f'local ITEM_NAME_JSON_PATH = "{JSON_FILE_NAME_PREFIX}{tag}.json"')
+                              f'local ITEM_NAME_JSON_PATH = "{MOD_NAME}/{JSON_FILE_NAME_PREFIX}{tag}.json"')
     # match 'local LANG = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace('local LANG = ""', f'local LANG = "{tag}"')
     # save lua file
