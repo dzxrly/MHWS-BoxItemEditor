@@ -197,6 +197,8 @@ if __name__ == '__main__':
     args = argparse.ArgumentParser()
     args.add_argument('-d', '--debug', action='store_true', help='Debug mode (Keep reframework dir)',
                       default=False)
+    args.add_argument('-v', '--create_version_json', action='store_true', help='Create version.json',
+                      default=False)
     args = args.parse_args()
     enable_debug = args.debug
 
@@ -218,7 +220,7 @@ if __name__ == '__main__':
         create_zip(lang['tag'], MOD_ROOT_DIR, ZIP_FILE_PREFIX)
         # del dir
         force_del_dir(MOD_ROOT_DIR, enable_debug)
-    if not enable_debug:
+    if not enable_debug and args.create_version_json:
         # save version.json
         version_json = {
             'version': mod_version,
