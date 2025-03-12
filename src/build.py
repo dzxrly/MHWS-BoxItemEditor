@@ -12,13 +12,13 @@ LANG_LIST = [
         'tag': 'ZH-Hans',
         'item_i18n_tag': 'SimplifiedChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf'
     },
     {
         'tag': 'ZH-Hant',
         'item_i18n_tag': 'TraditionalChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf'
     },
     {
         'tag': 'EN-US',
@@ -29,13 +29,13 @@ LANG_LIST = [
         'tag': 'JA-JP',
         'item_i18n_tag': 'Japanese',
         'save_txt_header': ['[アイテムID]', '[アイテム名]'],
-        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf'
     },
     {
         'tag': 'KO-KR',
         'item_i18n_tag': 'Korean',
         'save_txt_header': ['[아이템ID]', '[아이템명]'],
-        'fonts': 'src/fonts/ItemBoxEditor_NotoSans_Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf'
     }
 ]
 
@@ -52,6 +52,7 @@ TXT_SAVE_PREFIX = 'Items_'
 JSON_SAVE_DIR = '{}/{}/{}'.format(MOD_ROOT_DIR, 'data', MOD_NAME)
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
 FONTS_SAVE_DIR = '{}/{}'.format(MOD_ROOT_DIR, 'fonts')
+FONTS_FILE_NAME = 'ItemBoxEditor_Fonts_NotoSans'
 VERSION_JSON_SAVE_PATH = 'version.json'
 ZIP_FILE_PREFIX = 'BoxItemEditor_'
 
@@ -152,6 +153,7 @@ def save_json(
 
 def create_lua_by_i18n(
         tag: str,
+        font_path: str = None,
 ) -> (str, str, str):
     lua_str, mod_ver, max_support_ver = read_origin_lua()
     # match 'local ITEM_NAME_JSON_PATH = ""' row and replace the content in the double quotes
@@ -159,6 +161,10 @@ def create_lua_by_i18n(
                               f'local ITEM_NAME_JSON_PATH = "{MOD_NAME}/{JSON_FILE_NAME_PREFIX}{tag}.json"')
     # match 'local LANG = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace('local LANG = ""', f'local LANG = "{tag}"')
+    # match 'local FONT_NAME = ""' row and replace the content in the double quotes
+    if font_path is not None:
+        lua_str = lua_str.replace('local FONT_NAME = ""',
+                                  f'local FONT_NAME = "{font_path}"')
     # save lua file
     save_path = os.path.join(LUA_SAVE_DIR, f'ItemBoxEditor_{tag}.lua')
     with open(save_path, 'w', encoding='utf-8') as f:
@@ -209,14 +215,21 @@ if __name__ == '__main__':
         init_dir()
         item_df = get_item_df(lang['item_i18n_tag'])
         lua_i18n_json = get_lua_i18n_json(lang['tag'])
-        _, mod_version, max_support_version = create_lua_by_i18n(lang['tag'])
+        _, mod_version, max_support_version = create_lua_by_i18n(
+            lang['tag'],
+            '{}.{}'.format(
+                FONTS_FILE_NAME, os.path.splitext(lang['fonts'])[-1].split('.')[-1]
+            ) if 'fonts' in lang.keys() and lang['fonts'] is not None and lang['fonts'] != '' else None
+        )
         save_txt(lang['tag'], lang['item_i18n_tag'], item_df,
                  lang['save_txt_header'], max_support_version)
         save_json(lang['tag'], lang['item_i18n_tag'], item_df, lua_i18n_json)
         # cp fonts to FONTS_SAVE_DIR
         if 'fonts' in lang.keys() and lang['fonts'] is not None and lang['fonts'] != '':
             shutil.copyfile(lang['fonts'], os.path.join(
-                FONTS_SAVE_DIR, lang['fonts'].split('/')[-1]))
+                FONTS_SAVE_DIR, '{}.{}'.format(
+                    FONTS_FILE_NAME, os.path.splitext(lang['fonts'])[-1].split('.')[-1]
+                )))
         # create zip
         create_zip(lang['tag'], MOD_ROOT_DIR, ZIP_FILE_PREFIX)
         # del dir

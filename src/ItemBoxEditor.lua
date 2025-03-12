@@ -5,10 +5,16 @@
 -- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = ""
 local LANG = ""
+local FONT_NAME = ""
+local FONT_SIZE = 24
+local FONT_GLYPH = {
+    0x0020, 0xFFEE,
+    0,
+}
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.7"
+local INTER_VERSION = "v1.7.1"
 local MAX_VERSION = "1.0.4.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -23,12 +29,6 @@ local MAX_VER_LT_OR_EQ_GAME_VER = true
 local FONT = nil
 
 if LANG ~= "EN-US" then
-    local FONT_NAME = "ItemBoxEditor_NotoSans_Medium.ttf"
-    local FONT_SIZE = 24
-    local FONT_GLYPH = {
-        0x0020, 0xFFEE,
-        0,
-    }
     FONT = imgui.load_font(FONT_NAME, FONT_SIZE, FONT_GLYPH)
 end
 
