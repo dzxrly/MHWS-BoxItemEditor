@@ -41,11 +41,11 @@
   "typeFilterComboLabel": [
     "Healing",
     "Battle",
-    "Crafting Materials",
-    "Manufacturing Materials",
-    "Ammunition",
-    "Special Product",
-    "Exchange Materials"
+    "Ingredients",
+    "Equipment Materials",
+    "Bowgun Ammo",
+    "Special Items/Other",
+    "Trade-in Materials"
   ],
   "filterNoLimitTitle": "Any"
 }
