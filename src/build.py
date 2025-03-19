@@ -288,7 +288,6 @@ if __name__ == '__main__':
         )
         # create zip
         create_zip(lang['tag'], MOD_ROOT_DIR, ZIP_FILE_PREFIX)
-        exit()
         # del dir
         force_del_dir(WORK_TEMP_DIR, enable_debug)
     if not enable_debug and args.create_version_json:
