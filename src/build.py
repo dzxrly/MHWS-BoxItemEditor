@@ -12,30 +12,60 @@ LANG_LIST = [
         'tag': 'ZH-Hans',
         'item_i18n_tag': 'SimplifiedChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf',
+        'fmm_config': {
+            'name': '道具箱编辑器',
+            'description': '道具箱编辑器',
+            'author': 'Egg Targaryen',
+            'screenshot': 'src/assets/screenshot_ZH-Hans.png',
+        },
     },
     {
         'tag': 'ZH-Hant',
         'item_i18n_tag': 'TraditionalChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf',
+        'fmm_config': {
+            'name': '道具箱編輯器',
+            'description': '道具箱編輯器',
+            'author': 'Egg Targaryen',
+            'screenshot': 'src/assets/screenshot_ZH-Hant.png',
+        },
     },
     {
         'tag': 'EN-US',
         'item_i18n_tag': 'English',
         'save_txt_header': ['[Item ID]', '[Item Name]'],
+        'fmm_config': {
+            'name': 'Item Box Editor',
+            'description': 'Item Box Editor',
+            'author': 'Egg Targaryen',
+            'screenshot': 'src/assets/screenshot_EN-US.png',
+        },
     },
     {
         'tag': 'JA-JP',
         'item_i18n_tag': 'Japanese',
         'save_txt_header': ['[アイテムID]', '[アイテム名]'],
-        'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf',
+        'fmm_config': {
+            'name': 'アイテム BOX エディター',
+            'description': 'アイテム BOX エディター',
+            'author': 'Egg Targaryen',
+            'screenshot': 'src/assets/screenshot_JA-JP.png',
+        },
     },
     {
         'tag': 'KO-KR',
         'item_i18n_tag': 'Korean',
         'save_txt_header': ['[아이템ID]', '[아이템명]'],
-        'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf'
+        'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf',
+        'fmm_config': {
+            'name': '아이템 BOX 편집기',
+            'description': '아이템 BOX 편집기',
+            'author': 'Egg Targaryen',
+            'screenshot': 'src/assets/screenshot_KO-KR.png',
+        },
     }
 ]
 
@@ -44,17 +74,22 @@ ORIGIN_LUA_FIEL = 'src/ItemBoxEditor.lua'
 I18N_FILE_DIR = 'src/i18n'
 ITEM_DATA_JSON = 'src/data/ItemData.json'
 TEXT_DATA_CSV = 'src/data/Item.msg.23.csv'
+# action settings
+WORK_TEMP_DIR = '.temp'
 # save settings
 MOD_ROOT_DIR = 'reframework'
 MOD_NAME = 'ItemBoxEditor'
-LUA_SAVE_DIR = '{}/{}'.format(MOD_ROOT_DIR, 'autorun')
+LUA_SAVE_DIR = '{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'autorun')
 TXT_SAVE_PREFIX = 'Items_'
-JSON_SAVE_DIR = '{}/{}/{}'.format(MOD_ROOT_DIR, 'data', MOD_NAME)
+JSON_SAVE_DIR = '{}/{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'data', MOD_NAME)
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
-FONTS_SAVE_DIR = '{}/{}'.format(MOD_ROOT_DIR, 'fonts')
+FONTS_SAVE_DIR = '{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'fonts')
 FONTS_FILE_NAME = 'ItemBoxEditor_Fonts_NotoSans'
 VERSION_JSON_SAVE_PATH = 'version.json'
 ZIP_FILE_PREFIX = 'BoxItemEditor_'
+# fmm settings
+COVER_FILE_NAME = 'cover.png'
+INI_FILE_NAME = 'modinfo.ini'
 
 
 def get_item_df(
@@ -121,7 +156,7 @@ def save_txt(
         header: list[str],
         data_ver: str = 'Unknown',
 ) -> None:
-    save_path = os.path.join(MOD_ROOT_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
+    save_path = os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR, f'{TXT_SAVE_PREFIX}{tag}.txt')
     item_df = item_df[['_ItemId', lang_tag]]
     item_df.to_csv(save_path, sep='\t', header=header,
                    index=False, encoding='utf-8')
@@ -145,8 +180,7 @@ def save_json(
         'I18N': lua_i18n_json,
         'ItemName': item_dict,
     }
-    save_path = os.path.join(
-        JSON_SAVE_DIR, f'{JSON_FILE_NAME_PREFIX}{tag}.json')
+    save_path = os.path.join(JSON_SAVE_DIR, f'{JSON_FILE_NAME_PREFIX}{tag}.json')
     with open(save_path, 'w', encoding='utf-8') as f:
         json.dump(final_json, f, ensure_ascii=False, indent=4)
 
@@ -172,13 +206,30 @@ def create_lua_by_i18n(
     return lua_str, mod_ver, max_support_ver
 
 
+def create_fmm_config(
+        version: str,
+        fmm_config: dict,
+        save_dir: str,
+) -> None:
+    # cp cover.png to save_dir
+    shutil.copyfile(fmm_config['screenshot'], os.path.join(
+        save_dir, COVER_FILE_NAME))
+    # create modinfo.ini
+    with open(os.path.join(save_dir, INI_FILE_NAME), 'w', encoding='utf-8') as f:
+        f.write('name={}\n'.format(fmm_config['name']))
+        f.write('description={}\n'.format(fmm_config['description']))
+        f.write('author={}\n'.format(fmm_config['author']))
+        f.write('version={}\n'.format(version))
+        f.write('screenshot={}\n'.format(COVER_FILE_NAME))
+
+
 def create_dir(path: str) -> None:
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
 
 
 def init_dir() -> None:
-    create_dir(MOD_ROOT_DIR)
+    create_dir(os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR))
     create_dir(LUA_SAVE_DIR)
     create_dir(JSON_SAVE_DIR)
     create_dir(FONTS_SAVE_DIR)
@@ -197,7 +248,7 @@ def create_zip(
         src_dir: str,
         file_name_prefix: str,
 ) -> None:
-    shutil.make_archive('{}{}'.format(file_name_prefix, tag), 'zip', root_dir='.', base_dir=src_dir)
+    shutil.make_archive('{}{}'.format(file_name_prefix, tag), 'zip', root_dir=WORK_TEMP_DIR, base_dir='.')
 
 
 if __name__ == '__main__':
@@ -230,10 +281,16 @@ if __name__ == '__main__':
                 FONTS_SAVE_DIR, '{}.{}'.format(
                     FONTS_FILE_NAME, os.path.splitext(lang['fonts'])[-1].split('.')[-1]
                 )))
+        create_fmm_config(
+            mod_version,
+            lang['fmm_config'],
+            WORK_TEMP_DIR
+        )
         # create zip
         create_zip(lang['tag'], MOD_ROOT_DIR, ZIP_FILE_PREFIX)
+        exit()
         # del dir
-        force_del_dir(MOD_ROOT_DIR, enable_debug)
+        force_del_dir(WORK_TEMP_DIR, enable_debug)
     if not enable_debug and args.create_version_json:
         # save version.json
         version_json = {
