@@ -102,7 +102,7 @@ JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
 FONTS_SAVE_DIR = '{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'fonts')
 FONTS_FILE_NAME = 'ItemBoxEditor_Fonts_NotoSans'
 VERSION_JSON_SAVE_PATH = 'version.json'
-ZIP_FILE_PREFIX = 'BoxItemEditor_'
+ZIP_FILE_PREFIX = 'ItemBoxEditor_'
 # fmm settings
 COVER_FILE_NAME = 'cover.png'
 INI_FILE_NAME = 'modinfo.ini'
