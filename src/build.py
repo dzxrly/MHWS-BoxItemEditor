@@ -233,7 +233,10 @@ def create_fmm_config(
     # create modinfo.ini
     with open(os.path.join(save_dir, INI_FILE_NAME), 'w', encoding='utf-8') as f:
         for key, value in fmm_config.items():
-            f.write(f'{key}={value}\n')
+            if key == 'screenshot':
+                f.write(f'{key}={COVER_FILE_NAME}\n')
+            else:
+                f.write(f'{key}={value}\n')
         f.write(f'version={version}\n')
 
 
