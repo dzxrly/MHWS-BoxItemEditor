@@ -7,6 +7,12 @@ from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
+CONTRIBUTORS = [
+    'Egg Targaryen',
+    'TinyStick',
+    'RabbitFeet',
+]
+
 LANG_LIST = [
     {
         'tag': 'ZH-Hans',
@@ -14,10 +20,12 @@ LANG_LIST = [
         'save_txt_header': ['[物品ID]', '[物品名]'],
         'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf',
         'fmm_config': {
-            'name': '道具箱编辑器',
-            'description': '道具箱编辑器',
-            'author': 'Egg Targaryen',
+            'name': 'Item Box Editor',
+            'description': 'Item Box Editor',
+            'author': ', '.join(CONTRIBUTORS),
             'screenshot': 'src/assets/screenshot_ZH-Hans.png',
+            'category': 'Gameplay',
+            'homepage': 'https://www.nexusmods.com/monsterhunterwilds/mods/102',
         },
     },
     {
@@ -26,10 +34,12 @@ LANG_LIST = [
         'save_txt_header': ['[物品ID]', '[物品名]'],
         'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf',
         'fmm_config': {
-            'name': '道具箱編輯器',
-            'description': '道具箱編輯器',
-            'author': 'Egg Targaryen',
+            'name': 'Item Box Editor',
+            'description': 'Item Box Editor',
+            'author': ', '.join(CONTRIBUTORS),
             'screenshot': 'src/assets/screenshot_ZH-Hant.png',
+            'category': 'Gameplay',
+            'homepage': 'https://www.nexusmods.com/monsterhunterwilds/mods/102',
         },
     },
     {
@@ -39,8 +49,10 @@ LANG_LIST = [
         'fmm_config': {
             'name': 'Item Box Editor',
             'description': 'Item Box Editor',
-            'author': 'Egg Targaryen',
+            'author': ', '.join(CONTRIBUTORS),
             'screenshot': 'src/assets/screenshot_EN-US.png',
+            'category': 'Gameplay',
+            'homepage': 'https://www.nexusmods.com/monsterhunterwilds/mods/102',
         },
     },
     {
@@ -49,10 +61,12 @@ LANG_LIST = [
         'save_txt_header': ['[アイテムID]', '[アイテム名]'],
         'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf',
         'fmm_config': {
-            'name': 'アイテム BOX エディター',
-            'description': 'アイテム BOX エディター',
-            'author': 'Egg Targaryen',
+            'name': 'Item Box Editor',
+            'description': 'Item Box Editor',
+            'author': ', '.join(CONTRIBUTORS),
             'screenshot': 'src/assets/screenshot_JA-JP.png',
+            'category': 'Gameplay',
+            'homepage': 'https://www.nexusmods.com/monsterhunterwilds/mods/102',
         },
     },
     {
@@ -61,10 +75,12 @@ LANG_LIST = [
         'save_txt_header': ['[아이템ID]', '[아이템명]'],
         'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf',
         'fmm_config': {
-            'name': '아이템 BOX 편집기',
-            'description': '아이템 BOX 편집기',
-            'author': 'Egg Targaryen',
+            'name': 'Item Box Editor',
+            'description': 'Item Box Editor',
+            'author': ', '.join(CONTRIBUTORS),
             'screenshot': 'src/assets/screenshot_KO-KR.png',
+            'category': 'Gameplay',
+            'homepage': 'https://www.nexusmods.com/monsterhunterwilds/mods/102',
         },
     }
 ]
@@ -216,11 +232,9 @@ def create_fmm_config(
         save_dir, COVER_FILE_NAME))
     # create modinfo.ini
     with open(os.path.join(save_dir, INI_FILE_NAME), 'w', encoding='utf-8') as f:
-        f.write('name={}\n'.format(fmm_config['name']))
-        f.write('description={}\n'.format(fmm_config['description']))
-        f.write('author={}\n'.format(fmm_config['author']))
-        f.write('version={}\n'.format(version))
-        f.write('screenshot={}\n'.format(COVER_FILE_NAME))
+        for key, value in fmm_config.items():
+            f.write(f'{key}={value}\n')
+        f.write(f'version={version}\n')
 
 
 def create_dir(path: str) -> None:
