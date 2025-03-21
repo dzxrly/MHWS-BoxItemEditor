@@ -80,5 +80,5 @@ jobs:
           git config --local user.email "dzxrly2@gmail.com"
           git config --local user.name "dzxrly2"
           git add .
-          git commit -m ":bookmark: 发布新版本"
+          git commit -m ":bookmark: 从 Github Action 构建并推送更新"
           git push -f origin HEAD:main
