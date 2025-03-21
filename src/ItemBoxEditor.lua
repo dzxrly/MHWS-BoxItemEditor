@@ -14,7 +14,7 @@ local FONT_GLYPH = {
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.7.3"
+local INTER_VERSION = "v1.7.4"
 local MAX_VERSION = "1.0.4.0"
 -- Just change here can change every VERSION setting in all files END
 
