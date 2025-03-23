@@ -40,6 +40,28 @@ def get_content_by_requests(
     return content
 
 
+def number_formatter(
+        number: int,
+) -> str:
+    """
+    format number int to str,
+    if number >= 1000, add K to the end of number,
+    elif number >= 1000000, add M to the end of number,
+    elif number >= 1000000000, add B to the end of number,
+    else return number as str (keep 1 decimal place)
+    :param number:
+    :return:
+    """
+    if number >= 1000000000:
+        return '{:.1f}B'.format(number / 1000000000)
+    elif number >= 1000000:
+        return '{:.1f}M'.format(number / 1000000)
+    elif number >= 1000:
+        return '{:.1f}K'.format(number / 1000)
+    else:
+        return str(number)
+
+
 if __name__ == '__main__':
     try:
         response = get_content_by_requests(
@@ -55,9 +77,9 @@ if __name__ == '__main__':
                 break
         with open('mod_info.yaml', 'w', encoding='utf-8') as f:
             yaml.safe_dump({
-                'total_download_count': int(total_download_count),
-                'unique_download_count': int(unique_download_count),
-                'views_count': int(views_count),
+                'total_download_count': number_formatter(int(total_download_count)),
+                'unique_download_count': number_formatter(int(unique_download_count)),
+                'views_count': number_formatter(int(views_count)),
                 'id': int(MOD_INDEX),
                 'update_time': datetime.utcnow().astimezone(
                     timezone(timedelta(hours=8))
