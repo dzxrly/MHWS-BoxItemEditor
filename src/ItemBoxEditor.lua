@@ -485,7 +485,6 @@ local function mainWindow()
         end
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
-        imgui.end_disabled()
         imgui.begin_disabled(itemBoxSearchedItems == nil or
                 #itemBoxSearchedItems == 0 or
                 itemBoxSelectedItemFixedId == nil or
@@ -503,6 +502,7 @@ local function mainWindow()
             errDisplay = ""
         end
         imgui.text_colored(errDisplay, ERROR_COLOR)
+        imgui.end_disabled()
 
         imgui.begin_disabled(cBasicParam == nil)
         imgui.new_line()
