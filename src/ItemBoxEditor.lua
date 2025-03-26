@@ -517,7 +517,6 @@ local function mainWindow()
         end
         if imgui.button(i18n.coinBtn, SMALL_BTN) then
             moneyAddFunc(cBasicParam, moneyChangedDiff)
-            --clear()
             init()
         end
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
@@ -530,7 +529,6 @@ local function mainWindow()
         end
         if imgui.button(i18n.ptsBtn, SMALL_BTN) then
             pointAddFunc(cBasicParam, pointsChangedDiff)
-            --clear()
             init()
         end
         imgui.end_disabled()
