@@ -401,11 +401,10 @@ local function mainWindow()
             init()
         end
         ------------------- existed item change -----------------
+        imgui.begin_disabled(cItemParam == nil)
         imgui.new_line()
         imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
-        imgui.begin_disabled(cItemParam == nil)
-
         imgui.set_next_item_width(200)
         typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
                 filterSetting.filterIndex, typeFilterLabel);
@@ -486,6 +485,7 @@ local function mainWindow()
         end
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
+        imgui.end_disabled()
         imgui.begin_disabled(itemBoxSearchedItems == nil or
                 #itemBoxSearchedItems == 0 or
                 itemBoxSelectedItemFixedId == nil or
@@ -504,9 +504,9 @@ local function mainWindow()
         end
         imgui.text_colored(errDisplay, ERROR_COLOR)
 
+        imgui.begin_disabled(cBasicParam == nil)
         imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
-        imgui.begin_disabled(cBasicParam == nil)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
                 i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
                 originMoney,
