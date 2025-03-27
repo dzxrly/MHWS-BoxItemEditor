@@ -512,21 +512,21 @@ local function mainWindow()
         imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
         imgui.begin_disabled(originMoney + ADD_1E4 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_1E4), SMALL_BTN) then
+        if imgui.button("Money: +" .. tostring(ADD_1E4), SMALL_BTN) then
             moneySliderVal = originMoney + ADD_1E4
             moneyChangedDiff = ADD_1E4
         end
         imgui.end_disabled()
         imgui.same_line()
         imgui.begin_disabled(originMoney + ADD_5E4 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_5E4), SMALL_BTN) then
+        if imgui.button("Money: +" .. tostring(ADD_5E4), SMALL_BTN) then
             moneySliderVal = originMoney + ADD_5E4
             moneyChangedDiff = ADD_5E4
         end
         imgui.end_disabled()
         imgui.same_line()
         imgui.begin_disabled(originMoney + ADD_1E5 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_1E5), SMALL_BTN) then
+        if imgui.button("Money: +" .. tostring(ADD_1E5), SMALL_BTN) then
             moneySliderVal = originMoney + ADD_1E5
             moneyChangedDiff = ADD_1E5
         end
@@ -546,21 +546,21 @@ local function mainWindow()
         end
 
         imgui.begin_disabled(originPoints + ADD_1E4 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_1E4), SMALL_BTN) then
+        if imgui.button("PTS: +" .. tostring(ADD_1E4), SMALL_BTN) then
             pointsSliderVal = originPoints + ADD_1E4
             pointsChangedDiff = ADD_1E4
         end
         imgui.end_disabled()
         imgui.same_line()
         imgui.begin_disabled(originPoints + ADD_5E4 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_5E4), SMALL_BTN) then
+        if imgui.button("PTS: +" .. tostring(ADD_5E4), SMALL_BTN) then
             pointsSliderVal = originPoints + ADD_5E4
             pointsChangedDiff = ADD_5E4
         end
         imgui.end_disabled()
         imgui.same_line()
         imgui.begin_disabled(originPoints + ADD_1E5 > MONEY_PTS_MAX)
-        if imgui.button("+" .. tostring(ADD_1E5), SMALL_BTN) then
+        if imgui.button("PTS: +" .. tostring(ADD_1E5), SMALL_BTN) then
             pointsSliderVal = originPoints + ADD_1E5
             pointsChangedDiff = ADD_1E5
         end
