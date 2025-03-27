@@ -14,11 +14,14 @@ local FONT_GLYPH = {
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.7.5"
+local INTER_VERSION = "v1.8.0"
 local MAX_VERSION = "1.0.4.0"
 -- Just change here can change every VERSION setting in all files END
 
 local MONEY_PTS_MAX = 99999999
+local ADD_1E4 = 10000
+local ADD_5E4 = 50000
+local ADD_1E5 = 100000
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
 local ERROR_COLOR = 0xeb4034ff
@@ -508,6 +511,26 @@ local function mainWindow()
         imgui.begin_disabled(cBasicParam == nil)
         imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
+        if originMoney + ADD_1E4 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_1E4), SMALL_BTN) then
+                moneySliderVal = originMoney + ADD_1E4
+                moneyChangedDiff = ADD_1E4
+            end
+        end
+        imgui.same_line()
+        if originMoney + ADD_5E4 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_5E4), SMALL_BTN) then
+                moneySliderVal = originMoney + ADD_5E4
+                moneyChangedDiff = ADD_5E4
+            end
+        end
+        imgui.same_line()
+        if originMoney + ADD_1E5 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_1E5), SMALL_BTN) then
+                moneySliderVal = originMoney + ADD_1E5
+                moneyChangedDiff = ADD_1E5
+            end
+        end
         imgui.set_next_item_width(300)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
             i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
@@ -520,6 +543,27 @@ local function mainWindow()
         if imgui.button(i18n.coinBtn, SMALL_BTN) then
             moneyAddFunc(cBasicParam, moneyChangedDiff)
             init()
+        end
+
+        if originPoints + ADD_1E4 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_1E4), SMALL_BTN) then
+                pointsSliderVal = originPoints + ADD_1E4
+                pointsChangedDiff = ADD_1E4
+            end
+        end
+        imgui.same_line()
+        if originPoints + ADD_5E4 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_5E4), SMALL_BTN) then
+                pointsSliderVal = originPoints + ADD_5E4
+                pointsChangedDiff = ADD_5E4
+            end
+        end
+        imgui.same_line()
+        if originPoints + ADD_1E5 <= MONEY_PTS_MAX then
+            if imgui.button("+" .. tostring(ADD_1E5), SMALL_BTN) then
+                pointsSliderVal = originPoints + ADD_1E5
+                pointsChangedDiff = ADD_1E5
+            end
         end
         imgui.set_next_item_width(300)
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
