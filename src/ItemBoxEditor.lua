@@ -24,6 +24,8 @@ local ADD_5E4 = 50000
 local ADD_1E5 = 100000
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
+local WINDOW_WIDTH_M = 300
+local WINDOW_WIDTH_S = 150
 local ERROR_COLOR = 0xeb4034ff
 local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
@@ -44,7 +46,8 @@ local i18n = nil
 
 -- window status
 local mainWindowOpen = true
-local itemWindowOpen = true
+local itemWindowOpen = false
+local aboutWindowOpen = false
 -- window status end
 
 -- item table window
@@ -394,11 +397,11 @@ local function mainWindow()
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
             imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
                     ERROR_COLOR)
-            imgui.new_line()
+            imgui.spacing()
         end
 
         imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
-        imgui.new_line()
+        imgui.spacing()
 
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
@@ -408,14 +411,14 @@ local function mainWindow()
         imgui.new_line()
         imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
-        imgui.set_next_item_width(200)
+        imgui.set_next_item_width(WINDOW_WIDTH_S)
         typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
                 filterSetting.filterIndex, typeFilterLabel);
         imgui.same_line()
-        imgui.set_next_item_width(100)
+        imgui.set_next_item_width(WINDOW_WIDTH_S)
         rareFilterComboChanged, filterSetting.rareIndex = imgui.combo(i18n.changeItemNumFilterItemRare,
                 filterSetting.rareIndex, rareFilterLabel)
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
 
         if rareFilterComboChanged then
@@ -445,7 +448,7 @@ local function mainWindow()
             end
         end
 
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
                 itemBoxSearchedLabels)
         if itemBoxComboChanged then
@@ -453,7 +456,7 @@ local function mainWindow()
             itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
             itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
         end
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
                 9999)
         if itemBoxSliderChanged then
@@ -474,7 +477,7 @@ local function mainWindow()
             itemBoxSelectedItemNum = 9999
             itemBoxInputCountNewVal = "9999"
         end
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
                 itemBoxInputCountNewVal)
         if itemBoxInputCountChanged then
@@ -508,8 +511,8 @@ local function mainWindow()
         imgui.text_colored(errDisplay, ERROR_COLOR)
         imgui.end_disabled()
 
+        imgui.spacing()
         imgui.begin_disabled(cBasicParam == nil)
-        imgui.new_line()
         imgui.text(i18n.coinAndPtsEditorTitle)
         imgui.begin_disabled(originMoney + ADD_1E4 > MONEY_PTS_MAX)
         if imgui.button("Money: +" .. tostring(ADD_1E4), SMALL_BTN) then
@@ -531,7 +534,7 @@ local function mainWindow()
             moneyChangedDiff = ADD_1E5
         end
         imgui.end_disabled()
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
                 i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
                 originMoney,
@@ -565,7 +568,7 @@ local function mainWindow()
             pointsChangedDiff = ADD_1E5
         end
         imgui.end_disabled()
-        imgui.set_next_item_width(300)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
                 i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
                 originPoints,
@@ -580,7 +583,7 @@ local function mainWindow()
         end
         imgui.end_disabled()
 
-        imgui.new_line()
+        imgui.spacing()
         imgui.text(i18n.modVersion)
         imgui.same_line()
         imgui.text(INTER_VERSION)
@@ -655,6 +658,27 @@ local function itemTableWindow()
     end
 end
 
+local function aboutWindows()
+    if imgui.begin_window(i18n.aboutWindowsTitle, aboutWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+        imgui.text(i18n.modContributorTitle)
+        local contributorsStr = ""
+        for i = 1, #i18n.modContributors do
+            contributorsStr = contributorsStr .. i18n.modContributors[i]
+            if i ~= #i18n.modContributors then
+                contributorsStr = contributorsStr .. ", "
+            end
+        end
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.text(contributorsStr)
+        imgui.spacing()
+        imgui.text(i18n.modLicenseTitle)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.text(i18n.modLicenseContent)
+    else
+        aboutWindowOpen = false
+    end
+end
+
 loadI18NJson(ITEM_NAME_JSON_PATH)
 searchItemResult = searchItemList(searchItemTarget)
 getVersion()
@@ -670,7 +694,10 @@ re.on_draw_ui(function()
     if imgui.tree_node(i18n.title) then
         changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
         changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
-
+        imgui.spacing()
+        if imgui.button(i18n.aboutWindowsTitle, SMALL_BTN) then
+            aboutWindowOpen = not aboutWindowOpen
+        end
         imgui.tree_pop()
     end
 
