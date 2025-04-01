@@ -717,6 +717,7 @@ re.on_frame(function()
     if reframework:is_drawing_ui() then
         mainWindow()
         itemTableWindow()
+        aboutWindows()
     end
 
     -- reset the font at the frame end
