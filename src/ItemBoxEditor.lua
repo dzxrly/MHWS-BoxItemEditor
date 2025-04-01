@@ -177,7 +177,7 @@ local function loadI18NJson(jsonPath)
                 if checkItem(itemNameJson[index]) then
                     itemBoxList[tempIndex] = itemNameJson[index]
                     itemBoxList[tempIndex]["name"] = "[" ..
-                            itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
+                        itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
                     itemBoxList[tempIndex]["num"] = 0
                     itemBoxList[tempIndex]["isUnknown"] = false
                     tempIndex = tempIndex + 1
@@ -204,7 +204,7 @@ local function searchItemList(target)
                     itemMap[itemIndex] = {
                         key = tonumber(itemNameJson[index].fixedId),
                         value = itemNameJson[index]
-                                ._Name
+                            ._Name
                     }
                     itemIndex = itemIndex + 1
                 end
@@ -317,8 +317,8 @@ local function initBoxItem()
                 itemName = i18n.unknownItem
                 local itemInfo = {
                     name = "[" ..
-                            tostring(boxItem:get_field("ItemIdFixed")) ..
-                            "]" .. itemName .. " - " .. boxItem:get_field("Num"),
+                        tostring(boxItem:get_field("ItemIdFixed")) ..
+                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
                     fixedId = boxItem:get_field("ItemIdFixed"),
                     num = boxItem:get_field("Num"),
                     _SortId = 99999,
@@ -329,8 +329,8 @@ local function initBoxItem()
                 for tempIndex = 1, #itemBoxList do
                     if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
                         itemBoxList[tempIndex].name = "[" ..
-                                tostring(boxItem:get_field("ItemIdFixed")) ..
-                                "]" .. itemName .. " - " .. boxItem:get_field("Num")
+                            tostring(boxItem:get_field("ItemIdFixed")) ..
+                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
                         itemBoxList[tempIndex].num = boxItem:get_field("Num")
                         break
                     end
@@ -371,7 +371,7 @@ local function changeBoxItemNum(itemFixedId, changedNumber)
         for index = 1, #itemBoxList do
             if itemBoxList[index].fixedId == itemFixedId then
                 itemBoxList[index]["name"] = "[" ..
-                        itemBoxList[index]["fixedId"] .. "]" .. itemBoxList[index]["_Name"] .. " - 0"
+                    itemBoxList[index]["fixedId"] .. "]" .. itemBoxList[index]["_Name"] .. " - 0"
                 itemBoxList[index]["num"] = 0
             end
         end
@@ -396,12 +396,12 @@ local function mainWindow()
         if MAX_VER_LT_OR_EQ_GAME_VER == false then
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
             imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
-                    ERROR_COLOR)
-            imgui.spacing()
+                ERROR_COLOR)
+            imgui.new_line()
         end
 
         imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
-        imgui.spacing()
+        imgui.new_line()
 
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
@@ -413,11 +413,11 @@ local function mainWindow()
         imgui.text(i18n.changeItemNumTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_S)
         typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
-                filterSetting.filterIndex, typeFilterLabel);
+            filterSetting.filterIndex, typeFilterLabel);
         imgui.same_line()
         imgui.set_next_item_width(WINDOW_WIDTH_S)
         rareFilterComboChanged, filterSetting.rareIndex = imgui.combo(i18n.changeItemNumFilterItemRare,
-                filterSetting.rareIndex, rareFilterLabel)
+            filterSetting.rareIndex, rareFilterLabel)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
 
@@ -450,7 +450,7 @@ local function mainWindow()
 
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
-                itemBoxSearchedLabels)
+            itemBoxSearchedLabels)
         if itemBoxComboChanged then
             itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
             itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
@@ -458,7 +458,7 @@ local function mainWindow()
         end
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
-                9999)
+            9999)
         if itemBoxSliderChanged then
             itemBoxSelectedItemNum = itemBoxSliderNewVal
             itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
@@ -479,7 +479,7 @@ local function mainWindow()
         end
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
-                itemBoxInputCountNewVal)
+            itemBoxInputCountNewVal)
         if itemBoxInputCountChanged then
             local num = checkIntegerInRange(itemBoxInputCountNewVal, 0, 9999)
             if num then
@@ -493,9 +493,9 @@ local function mainWindow()
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
         imgui.begin_disabled(itemBoxSearchedItems == nil or
-                #itemBoxSearchedItems == 0 or
-                itemBoxSelectedItemFixedId == nil or
-                not itemBoxConfirmBtnEnabled)
+            #itemBoxSearchedItems == 0 or
+            itemBoxSelectedItemFixedId == nil or
+            not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
             --clear()
@@ -511,7 +511,7 @@ local function mainWindow()
         imgui.text_colored(errDisplay, ERROR_COLOR)
         imgui.end_disabled()
 
-        imgui.spacing()
+        imgui.new_line()
         imgui.begin_disabled(cBasicParam == nil)
         imgui.text(i18n.coinAndPtsEditorTitle)
         imgui.begin_disabled(originMoney + ADD_1E4 > MONEY_PTS_MAX)
@@ -536,9 +536,9 @@ local function mainWindow()
         imgui.end_disabled()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
-                i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-                originMoney,
-                MONEY_PTS_MAX - originMoney)
+            i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
+            originMoney,
+            MONEY_PTS_MAX - originMoney)
         if moneySliderChanged then
             moneyChangedDiff = moneySliderNewVal - originMoney
             moneySliderVal = moneySliderNewVal
@@ -570,9 +570,9 @@ local function mainWindow()
         imgui.end_disabled()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
-                i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-                originPoints,
-                MONEY_PTS_MAX - originPoints)
+            i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
+            originPoints,
+            MONEY_PTS_MAX - originPoints)
         if pointsSliderChange then
             pointsChangedDiff = pointsSliderNewVal - originPoints
             pointsSliderVal = pointsSliderNewVal
@@ -583,7 +583,7 @@ local function mainWindow()
         end
         imgui.end_disabled()
 
-        imgui.spacing()
+        imgui.new_line()
         imgui.text(i18n.modVersion)
         imgui.same_line()
         imgui.text(INTER_VERSION)
@@ -670,10 +670,18 @@ local function aboutWindows()
         end
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(contributorsStr)
-        imgui.spacing()
+
+        imgui.new_line()
         imgui.text(i18n.modLicenseTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(i18n.modLicenseContent)
+
+        imgui.new_line()
+        imgui.text(i18n.modRepoTitle)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.text(i18n.modRepo)
+
+        imgui.end_window()
     else
         aboutWindowOpen = false
     end
@@ -694,7 +702,6 @@ re.on_draw_ui(function()
     if imgui.tree_node(i18n.title) then
         changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
         changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
-        imgui.spacing()
         if imgui.button(i18n.aboutWindowsTitle, SMALL_BTN) then
             aboutWindowOpen = not aboutWindowOpen
         end
