@@ -658,7 +658,7 @@ local function itemTableWindow()
     end
 end
 
-local function aboutWindows()
+local function aboutWindow()
     if imgui.begin_window(i18n.aboutWindowsTitle, aboutWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
         imgui.text(i18n.modContributorTitle)
         local contributorsStr = ""
@@ -724,7 +724,7 @@ re.on_frame(function()
     if reframework:is_drawing_ui() then
         mainWindow()
         itemTableWindow()
-        aboutWindows()
+        aboutWindow()
     end
 
     -- reset the font at the frame end
