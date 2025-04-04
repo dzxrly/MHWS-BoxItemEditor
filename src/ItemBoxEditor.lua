@@ -11,6 +11,7 @@ local FONT_GLYPH = {
     0x0020, 0xFFEE,
     0,
 }
+local ITEM_ID_MAX = 824
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
@@ -37,8 +38,6 @@ if LANG ~= "EN-US" then
     FONT = imgui.load_font(FONT_NAME, FONT_SIZE, FONT_GLYPH)
 end
 
-
-
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
 local i18n = nil
@@ -55,6 +54,7 @@ local searchItemTarget = nil
 local searchItemResult = {}
 -- item table window end
 local itemBoxList = {}
+local itemIDAndFixedIDProjection = {} -- fixedId -> itemId
 local boxItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
@@ -163,6 +163,16 @@ local function checkIntegerInRange(input_str, min_val, max_val)
     return nil
 end
 
+local function initIDAndFixedIDProjection()
+    local getFixedFromID = sdk.find_type_definition("app.ItemDef"):get_method("ItemId(app.ItemDef.ID)")
+    for index = 1, ITEM_ID_MAX do
+        local fixedID = getFixedFromID(nil, index)
+        if fixedID ~= nil then
+            itemIDAndFixedIDProjection[fixedID] = index
+        end
+    end
+end
+
 local function loadI18NJson(jsonPath)
     print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
@@ -180,6 +190,8 @@ local function loadI18NJson(jsonPath)
                         itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
                     itemBoxList[tempIndex]["num"] = 0
                     itemBoxList[tempIndex]["isUnknown"] = false
+                    itemBoxList[tempIndex]["id"] = itemIDAndFixedIDProjection[itemNameJson[index]["fixedId"]]
+                    print("Fixed ID: " .. itemBoxList[tempIndex]["fixedId"] .. " ID: " .. itemBoxList[tempIndex]["id"])
                     tempIndex = tempIndex + 1
                 end
             end
@@ -361,11 +373,12 @@ local function initHunterBasicData()
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
-    local boxItem = cItemParam:call("getBoxItem", itemFixedId - 1)
+    local itemID = itemIDAndFixedIDProjection[itemFixedId]
+    local boxItem = cItemParam:call("getBoxItem", itemID)
     if boxItem == nil then
-        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber)
+        cItemParam:call("changeItemBoxNum", itemID, changedNumber)
     else
-        cItemParam:call("changeItemBoxNum", itemFixedId - 1, changedNumber - boxItem:get_field("Num"))
+        cItemParam:call("changeItemBoxNum", itemID, changedNumber - boxItem:get_field("Num"))
     end
     if changedNumber == 0 then
         for index = 1, #itemBoxList do
@@ -687,6 +700,7 @@ local function aboutWindow()
     end
 end
 
+initIDAndFixedIDProjection()
 loadI18NJson(ITEM_NAME_JSON_PATH)
 searchItemResult = searchItemList(searchItemTarget)
 getVersion()
