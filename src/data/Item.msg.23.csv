@@ -1858,8 +1858,8 @@ de cabeza en la arena.","Череп балахары. Очень
 резкие удары о песок.","Skorupa czaszki Balahary. Jest
 bardzo trwała i może wytrzymać
 gwałtowne nurkowanie w piasku.",,,"O crânio de um Balahara.
-Mais forte do que a maioria
- ele suporta mergulhos bruscos.","발하라라의 머리 껍데기.
+Mais forte do que a maioria,
+ele suporta mergulhos bruscos.","발하라라의 머리 껍데기.
 모래 깊숙이 들어갈 수 있을 만큼
 튼튼해, 다른 껍데기보다 단단하다.","沙海龍頭部的外殼。能承受潛進沙地
 時的劇烈動作，比其他甲殼更堅硬。","沙海龙头部的外壳。其强度足以承
@@ -2784,9 +2784,9 @@ Beruhigungsbomben verarbeitet.","Hongo con un efecto paralizante.
 Se usa en munición parálisis
 y bombas tranquilizantes.","Гриб, вызывающий паралич. Нужен
 для изготовления парализующих
-снарядов и снотворных бомб.","Grzyb powodujący paraliż.
-Niezbędny do wytwarzania
-amunicji paraliżującej i bomb uspokajających.",,,"Cogumelo que induz paralisia.
+снарядов и снотворных бомб.","Grzyb powodujący paraliż. Niezbędny
+do wytwarzania amunicji
+paraliżującej i bomb uspokajających.",,,"Cogumelo que induz paralisia.
 Usado na criação de bombas
 sedativas e munição paralisante.","마비 작용을 하는 버섯.
 마비탄과 포획용마취옥
@@ -2813,8 +2813,8 @@ Se usa para fabricar munición sueño
 y bombas tranquilizantes.","Растение со снотворным эффектом.
 Используется для изготовления
 усыпляющих снарядов и бомб.","Roślina z sokiem usypiającym.
-Niezbędna do wytwarzania amunicji usypiającej i
-bomb uspokajających.",,,"Contém compostos soníferos.
+Niezbędna do wytwarzania amunicji
+usypiającej i bomb uspokajających.",,,"Contém compostos soníferos.
 É usada para produzir munição
 sonífera e bombas sedativas.","수면 작용을 하는 풀.
 수면탄과 포획용마취옥
@@ -3243,9 +3243,9 @@ munição cortante.","껍데기가 예리하게 부서지는
 的核心素材。","外壳碎片十分锋利的树果。是制作
 斩裂弹的素材。",,,,,,,,"توت يتفتت إلى قطع
 حادة كالشفرات. يُستخدم
-لصنع ذخيرة تقطيع.",,,,,,,,,,,"Baya que se rompe
-en mil pedazos afilados.
-Sirve para crear balas cortantes."
+لصنع ذخيرة تقطيع.",,,,,,,,,,,"Nuez que se rompe en mil pedazos
+afilados. Sirve para hacer
+munición cortante."
 840ac69a-0114-448c-bc01-3162d21a9b3d,1015263778,Item_IT_139,煌雷竜の鱗,Rey Dau Scale,Écaille Rey Dau,Rey Dau: scaglia,Rey-Dau-Schuppe,Escama de Rey Dau,Чешуя рей дау,Łuska Rey Dau,,,Escama de Rey Dau,황뢰룡의 비늘,煌雷龍的鱗片,煌雷龙的鳞,,,,,,,,قشرة راي داو,,,,,,,,,,,Escama de Rey Dau
 97d4d63d-938d-456a-a6f3-137d0309756b,4245795589,Item_IT_EXP_139,"レ・ダウの鱗。
 発電器官からの電気を通すため、
@@ -3446,6 +3446,87 @@ adormecer monstros presos.","슬링어로 발사해 몬스터를
 لتنويم الوحوش المحاصرة.",,,,,,,,,,,"Cuchillo con tranquilizante que
 se dispara con la eslinga para
 dormir a monstruos atrapados."
+38058311-9721-4648-80af-99bf96eb0a8f,3358803250,Item_IT_146,毒投げナイフ,Poison Knife,Couteau empoisonné,Coltello veleno,Giftmesser,Navaja tóxica,Отравленный нож,Zatruty nóż,,,Faca Envenenada,독투척나이프,毒飛刀,毒飞刀,,,,,,,,سكين السم,,,,,,,,,,,Cuchillo tóxico
+2b50538e-1005-4ab9-be0e-82a9e8f6cf98,2230115993,Item_IT_EXP_146,"スリンガーで発射し、対象に
+毒の効果をもたらすナイフ。
+クエスト終了後に回収される。","A knife fired with the Slinger,
+inflicting poison on a target.
+Returned after quest completion.","Couteau tiré avec la fronde
+qui empoisonne la cible.
+Rendu à la fin de la quête.","Coltello lanciato con la fionda,
+infligge veleno. Va restituito
+alla fine della missione.","Ein mit der Schleuder abgefeuer-
+tes Messer. Verursacht Gift.
+Rückgabe nach Questabschluss.","Cuchillo que se puede lanzar con
+la eslinga y envenena al objetivo.
+Se devuelve al finalizar la misión.","Нож для самострела.
+Обладает отравляющим эффектом.
+Возвращается после поручения.","Nóż wystrzeliwany z procy,
+powodujący zatrucie ofiary.
+Zwracany po ukończeniu zadania.",,,"Faca disparada com a Atiradeira,
+infligindo veneno no alvo.
+Devolvida após a missão.","슬링어로 발사해 대상에
+독 효과를 주는 나이프.
+퀘스트 종료 후에 회수된다.","投射器彈藥，能使命中對象中毒。
+任務結束後會被回收。","以投射器发射，向对象施加中毒效
+果的匕首。任务结束后将被回收。",,,,,,,,"سكين يُطلق بنبلة المعصم، مصيبًا هدفه بسُم.
+تتم استعادته بعد انتهاء المَهمة.",,,,,,,,,,,"Un cuchillo que se lanza con la
+eslinga y envenena al objetivo.
+Se recupera al finalizar la misión."
+42ddc11d-4c73-4744-af0e-0d4bafe21975,1178363603,Item_IT_147,麻痺投げナイフ,Paralysis Knife,Couteau paralysant,Coltello paralisi,Lähmungsmesser,Navaja paralizante,Парализующий нож,Nóż paraliżujący,,,Faca Paralisante,마비투척나이프,麻痺飛刀,麻痹飞刀,,,,,,,,سكين الشلل,,,,,,,,,,,Cuchillo paralizante
+86fc84ad-990a-42f4-ac17-0e82f7d5667b,194142415,Item_IT_EXP_147,"スリンガーで発射し、対象に
+麻痺効果をもたらすナイフ。
+クエスト終了後に回収される。","A knife fired with the Slinger,
+inflicting paralysis on a target.
+Returned after quest completion.","Couteau tiré avec la fronde
+qui paralyse la cible.
+Rendu à la fin de la quête.","Coltello lanciato con la fionda,
+infligge paralisi. Va restituito
+alla fine della missione.","Ein mit der Schleuder abgefeuer-
+tes Messer. Verursacht Lähmung.
+Rückgabe nach Questabschluss.","Cuchillo que se puede lanzar
+con la eslinga e inflige parálisis.
+Se devuelve al finalizar la misión.","Нож для самострела.
+Обладает парализующим эффектом.
+Возвращается после поручения.","Nóż wystrzeliwany z procy,
+powodujący paraliż ofiary.
+Zwracany po ukończeniu zadania.",,,"Faca disparada com a Atiradeira,
+infligindo paralisia no alvo.
+Devolvida após a missão.","슬링어로 발사해 대상에
+마비 효과를 주는 나이프.
+퀘스트 종료 후에 회수된다.","投射器彈藥，能使命中對象麻痺。
+任務結束後會被回收。","以投射器发射，向对象施加麻痹效
+果的匕首。任务结束后将被回收。",,,,,,,,"سكين يُطلق بنبلة المعصم، مصيبًا هدفه بشلل.
+تتم استعادته بعد انتهاء المَهمة.",,,,,,,,,,,"Un cuchillo que se lanza con la
+eslinga y paraliza al objetivo.
+Se recupera al finalizar la misión."
+9778c6d9-8c69-46c1-aea1-d6bb02607420,4204612551,Item_IT_148,眠り投げナイフ,Sleep Knife,Couteau somnifère,Coltello sonno,Schlafmesser,Cuchillo sedante,Усыпляющий нож,Nóż nasenny,,,Faca Sonífera,수면투척나이프,睡眠飛刀,睡眠飞刀,,,,,,,,سكين النوم,,,,,,,,,,,Cuchillo sedante
+b94746b2-8183-4c75-9539-4a3c91ddc11a,1078705456,Item_IT_EXP_148,"スリンガーで発射し、対象に
+睡眠効果をもたらすナイフ。
+クエスト終了後に回収される。","A knife fired with the Slinger,
+inflicting sleep on a target.
+Returned after quest completion.","Couteau tiré avec la fronde
+qui endort la cible.
+Rendu à la fin de la quête.","Coltello lanciato con la fionda,
+infligge sonno. Va restituito
+alla fine della missione.","Ein mit der Schleuder abgefeuer-
+tes Messer. Verursacht Schlaf.
+Rückgabe nach Questabschluss.","Cuchillo que se puede lanzar
+con la eslinga e inflige sueño.
+Se devuelve al acabar la misión.","Нож для самострела.
+Обладает усыпляющим эффектом.
+Возвращается после поручения.","Nóż wystrzeliwany z procy,
+powodujący uśpienie ofiary.
+Zwracany po ukończeniu zadania.",,,"Faca disparada com a Atiradeira,
+infligindo sono no alvo.
+Devolvida após a missão.","슬링어로 발사해 대상에
+수면 효과를 주는 나이프.
+퀘스트 종료 후에 회수된다.","投射器彈藥，能使命中對象睡眠。
+任務結束後會被回收。","以投射器发射，向对象施加睡眠效
+果的匕首。任务结束后将被回收。",,,,,,,,"سكين يُطلق بنبلة المعصم، مصيبًا هدفه بالنوم.
+تتم استعادته بعد انتهاء المَهمة.",,,,,,,,,,,"Un cuchillo que se lanza con la
+eslinga y duerme al objetivo.
+Se recupera al finalizar la misión."
 26985952-4b6c-445a-b868-4a408f915aa0,519815751,Item_IT_151,けむり玉,Smoke Bomb,Bombe fumigène,Sfera fumogena,Rauchbombe,Bomba de humo,Дымовая бомба,Bomba dymna,,,Bomba de Fumaça,연기옥,煙霧球,烟雾球,,,,,,,,قنبلة دخان,,,,,,,,,,,Bomba de humo
 245c1157-f9d2-4ac8-9679-658927122b1e,3758128379,Item_IT_EXP_151,"着弾地点から広範囲に煙を発散し
 モンスターの視界をさえぎる。
@@ -3528,7 +3609,7 @@ Aumenta a defesa.","방어력을 상승시키는 부적.
 يجعل <LSNR ""جلدكَ"" ""جلدكِ""> صلبًا كالصخر.",,,,,,,,,,,"Amuleto que endurece, como
 una piedra, tu piel al portarlo y
 aumenta la defensa."
-3d6e9ddb-54bb-4a43-9e4b-9ae974e727a6,2091001099,Item_IT_154,竜撃弾,Wyvern Ammo,Wyverne,P wyvern,Wyvernmunition,Munición wyvern,Снаряд виверны,Amun. wiwernia,,,Munição de Serpe,용격탄,龍擊彈,龙击弹,,,,,,,,ذخيرة وايفرن,,,,,,,,,,,Bala wyvern
+3d6e9ddb-54bb-4a43-9e4b-9ae974e727a6,2091001099,Item_IT_154,竜撃弾,Wyvern Ammo,Wyverne,P wyvern,Wyvernmunition,Munición wyvern,Снаряды виверны,Amun. wiwernia,,,Munição de Serpe,용격탄,龍擊彈,龙击弹,,,,,,,,ذخيرة وايفرن,,,,,,,,,,,Bala wyvern
 7e890dd8-f1f9-4045-82a2-acf27753871b,2623849209,Item_IT_EXP_154,"竜撃砲の機構を研究し作られた弾。
 射程は極めて短いが、圧倒的な
 破壊力をもつ。","Ammo created through years
@@ -3541,7 +3622,7 @@ ma distruttive.","Jahre der Wyvernfeuer-Forschung
 sind in diese Munition geflossen.
 Kurze Reichweite, aber verheerend.","Munición creada tras años de
 estudio del fuego de wyvern.
-De corto alcance y muy destructiva.","Снаряд, созданный после долгих
+De corto alcance y muy destructiva.","Снаряды, созданные после долгих
 лет изучения пламени виверн.
 Высокая мощь, малая дальность.","Amunicja stworzona w wyniku
 badań nad ogniem wiwerny. Mały
@@ -5426,7 +5507,7 @@ opção para finalizar uma receita.","모닥불 요리용 토핑 식재료.
 لمسة نهائية رائعة لأي طبق.",,,,,,,,,,,"El fresco aroma de esta hierba
 puede ocultar cualquier olor.
 El toque final para todo plato."
-f2b4012c-72c3-4013-ba55-4c8acc7f065d,4063345323,Item_IT_224,イーストハニー,Eastern Honey,Miel oriental,Miele dell'est,Ostlandhonig,Miel del este,Восточный мёд,Miód ze wschodu,,,Mel Oriental,이스트 허니,東方蜂蜜,东部蜂蜜,,,,,,,,العسل الشرقي,,,,,,,,,,,Miel del este
+f2b4012c-72c3-4013-ba55-4c8acc7f065d,4063345323,Item_IT_224,イーストハニー,Eastern Honey,Miel oriental,Miele dell'est,Ostlandhonig,Miel del este,Восточный мёд,Miód ze wschodu,,,Mel Oriental,이스트 허니,東方蜂蜜,东部蜂蜜,,,,,,,,العسل الشرقي,,,,,,,,,,,Miel oriental
 6a00979c-6e3c-47a5-a0a0-81483606c0a1,2748634037,Item_IT_EXP_224,"焚き火料理に使う仕上げ食材。
 普通のハチミツとは異なる独特の
 風味があり、隠し味にピッタリ。","Has a unique flavor, making it the
@@ -5581,8 +5662,8 @@ Desprende un aura de maldad pura.","Странный кусок ткани, на
 где-то на Наветренных равнинах.
 Источает ауру чистого зла.","Podejrzany materiał znaleziony
 gdzieś na skraju Nawietrznych
-Równin. Ocieka aurą czystego zła.",,,"Pano suspeito encontrado nas
-canto das Planícies Zéfiras.
+Równin. Ocieka aurą czystego zła.",,,"Pano suspeito encontrado em
+um canto das Planícies Zéfiras.
 Irradia uma aura maligna.","경계의 모래 평원 모처에서
 발견된 수상한 천.
 불길한 분위기가 느껴진다.","在天塹沙原某處發現的詭異布料。
@@ -5650,7 +5731,7 @@ uma bênção para viajantes sedentos.","경계의 모래 평원의 특산품.
 نعمة للمسافرين العطشى.",,,,,,,,,,,"Nativo de los Llanos Ventosos. El
 agua que guarda en sus hojas ha
 salvado a muchos viajeros."
-ed2a066a-a8d0-4e15-a7d7-fbc4bcc1bc34,577246797,Item_IT_232,上質なヘダテアロエ,Fine Windward Aloe,Bel aloès solitaire,Aloe del vento pregiata,Feine Windaloe,Aloe Barlovento bueno,Малое наветр. алоэ,Wspaniały nawietrzny aloes,,,Babosa Zéfira Boa,양질의 따로알로에,優質天塹蘆薈,优质天堑芦荟,,,,,,,,صبار ويندوارد فاخر,,,,,,,,,,,Aloe ventoso puro
+ed2a066a-a8d0-4e15-a7d7-fbc4bcc1bc34,577246797,Item_IT_232,上質なヘダテアロエ,Fine Windward Aloe,Bel aloès solitaire,Aloe del vento pregiata,Feine Windaloe,Aloe Barlovento bueno,Сочное наветр. алоэ,Wspaniały nawietrzny aloes,,,Babosa Zéfira Boa,양질의 따로알로에,優質天塹蘆薈,优质天堑芦荟,,,,,,,,صبار ويندوارد فاخر,,,,,,,,,,,Aloe ventoso puro
 3e53095e-67a5-4ec7-b9ef-fe7c94133e97,1104550316,Item_IT_EXP_232,"隔ての砂原の珍しい特産品。
 その葉汁は非常に美味で、わずか
 一滴で水を高級ジュースに変える。","A rarity from the Windward Plains.
@@ -6007,7 +6088,7 @@ a4e16480-9803-4d6d-887e-79f02335f129,1109040662,Item_IT_EXP_244,"緋の森の珍
 高度な技術の一端がうかがわれる。","A rarity of the Scarlet Forest. The
 fine detail and lavish use of gold
 show quite advanced techniques.","Rareté de la Forêt écarlate. Les
-détails et l'abondance d'or témoignent
+détails et l'or utilisé témoignent
 d'une excellente technique.","Rarità della Foresta cremisi.
 I dettagli e l'uso dell'oro
 rivelano tecniche avanzate.","Seltenheit aus dem Karminwald.
@@ -8941,7 +9022,7 @@ con fulgorita pura muy afilada.","Сияющий лазурью острый к�
 poświatą. Pokryty czystym, ostrym jak
 brzytwa piorunowcem.",,,"Garra da asa de um Rey Dau de
 brilho azulado. Revestida com
-fulgurita pura e muito afida.","레 다우의 푸른빛 날개발톱.
+fulgurita pura e muito afiada.","레 다우의 푸른빛 날개발톱.
 예리하게 결정화된 고순도의
 섬전암이 매우 아름답다.","煌雷龍發出蒼藍光輝的翼爪。高純度
 蒼雷晶形成鋒利的結晶，非常美麗。","煌雷龙闪耀着苍蓝光芒的翼爪。高
@@ -9360,7 +9441,7 @@ scarlet color echoes a raging fire.","Crête recouvrant le dos d'un
 Ajarakan. Sa couleur écarlate
 évoque un brasier furieux.","La cresta sul dorso di un
 Ajarakan. Il suo rosso intenso
-ricorda un fuoco.","Der harte Mantel vom Rücken eines
+ricorda un fuoco.","Der harte Kamm vom Rücken eines
 Ajarakan. Die leuchtend rote
 Farbe ähnelt lodernden Flammen.","Carcasa rígida que cubre la
 espalda de un Ajarakan. Su color
@@ -10777,7 +10858,7 @@ gli attacchi nella zona in cui atterrano.","Munition, die den Angriff aller
 in der Umgebung des Einschlags
 vorübergehend verstärkt.","Munición que produce una nube que
 fortalece temporalmente los ataques
-en su zona de impacto.","Снаряд, который создаёт в месте
+en su zona de impacto.","Снаряды, которые создают в месте
 попадания облако вещества,
 временно усиливающего атаки.","Amunicja wytwarzająca chmurę,
 która tymczasowo wzmacnia ataki
@@ -10804,7 +10885,7 @@ la difesa nella zona in cui atterrano.","Munition, die die Verteidigung
 aller in der Umgebung des Ein-
 schlags vorübergehend verstärkt.","Munición que produce una nube que
 fortalece temporalmente la defensa
-de aquellos en su zona de impacto.","Снаряд, который создаёт в месте
+de aquellos en su zona de impacto.","Снаряды, которые создают в месте
 попадания облако вещества,
 временно усиливающего защиту.","Amunicja wytwarzająca chmurę,
 która tymczasowo wzmacnia obronę
@@ -10828,7 +10909,7 @@ di ripristinare la salute nella
 zona in cui atterrano.","Munition, die in der Umgebung
 des Einschlags eine heilende
 Wolke erschafft.","Munición que produce una nube
-curativa en su zona de impacto.","Снаряд, который создаёт в месте
+curativa en su zona de impacto.","Снаряды, которые создают в месте
 попадания облако исцеляющего
 вещества.","Po uderzeniu rozprzestrzenia
 w danym miejscu uzdrawiającą
@@ -10848,7 +10929,7 @@ ensnared in traps.","Munition qui permet de capturer
 les monstres piégés.","Proiettili utilizzati per catturare
 i mostri intrappolati nelle trappole.","Munition, die genutzt wird,
 um Monster in Fallen zu fangen.","Munición empleada para
-capturar monstruos atrapados.","Снаряд, который используется
+capturar monstruos atrapados.","Снаряды, которые используются
 при захвате монстров, пойманных
 в ловушку.","Amunicja do łukodziałka służąca
 do chwytania potworów w pułapce.",,,"Munição usada para capturar
@@ -11521,6 +11602,36 @@ os efeitos de alguns remédios.","특정 약의 효과를 배로 늘리는
 تأثيرات بعض الأدوية.",,,,,,,,,,,"Obtenido de algunos monstruos
 grandes. Es capaz de aumentar
 el efecto de ciertas medicinas."
+e4101368-6ac2-4f91-9165-c24c30c3e772,1532224474,Item_IT_803,大タル爆弾【花吹雪】,Blossom Barrel Bomb,Grande bombe baril florale,Bomba-botte floreale,Blüten-Fassbombe,Bomba de barril floral,Цветочная бочковая бомба,Kwiat. bomba beczkowa,,,Bomba de Barril Floral,대형나무통폭탄【꽃보라】,大爆彈桶【花吹雪】,大桶爆弹【花吹雪】,,,,,,,,برميل زهرة متفجر,,,,,,,,,,,Bomba de barril de flores
+40988bd3-b69c-44ed-a592-a0e9a8e0441b,2251282207,Item_IT_EXP_803,"交わりの祭事【花舞の儀】に参加
+するともらえる特別な大タル爆弾。
+爆発と共に、花吹雪が狩猟を彩る！","A large barrel bomb from the
+Blossomdance. Explodes with
+a flurry of flower petals.","Grande bombe baril pour
+la Danse des fleurs. Explose
+dans une pluie de pétales.","Una grossa bomba-botte della
+Fiordanza. Esplode creando
+una nuvola di petali.","Eine große Fassbombe vom Blüten-
+tanz. Die Explosion lässt Blüten-
+blätter durch die Luft wirbeln.","Una bomba de barril grande
+de la floradanza. Explota con
+una ráfaga de pétalos de flores.","Большая бочковая бомба с Танца
+цветов. При взрыве осыпает всё
+вокруг цветочными лепестками.","Duża bomba beczkowa z
+Tańca Kwiatów. Wybucha
+strumieniem płatków kwiatów.",,,"Superbomba de barril da
+Floridança. Explode em
+uma chuva de pétalas de flores.","교류 축제【화무 의식】 참가로
+받는 특별한 대형나무통폭탄.
+폭발하면 꽃보라 발생!","參加交匯慶典【花舞之儀】可獲得的
+特別大爆彈桶。爆炸時會繁花飛舞，
+使狩獵更增光彩！","参加聚落交流祭典【花舞之仪】后获
+得的特殊大桶爆弹。在爆炸时会掀起
+一阵繁花飞舞，为狩猎添一抹华彩！",,,,,,,,"برميل متفجر ضخم
+من مهرجان رقصة الزهرة.
+ينفجر مُطلقًا عاصفة من بتلات الزهور.",,,,,,,,,,,"Una gran bomba de barril
+de la Floradanza. Explota con
+una ráfaga de pétalos de flores"
 3e188794-44ec-4945-aed6-8f137fa1dc1a,1083835709,Item_IT_440,暗器蛸の皮,Xu Wu Hide,Peau Xu Wu,Xu Wu: pelle,Xu-Wu-Haut,Piel de Xu Wu,Шкура сю ву,Skóra Xu Wu,,,Couro de Xu Wu,암기소의 가죽,暗器鱆的皮,暗器蛸的皮,,,,,,,,جلد شو وو,,,,,,,,,,,Piel de Xu Wu
 61069738-178e-4123-941a-6a5bc820006e,3984652715,Item_IT_EXP_440,"シーウーの皮。
 独特の弾力に加え、粘液をまとって
@@ -12024,7 +12135,7 @@ Va restituito dopo la missione.","Verströmt beim Aufschlag in wei-
 tem Umfeld einen starken Geruch.
 Rückgabe nach Questabschluss.","Exuda un hedor maloliente en
 una zona amplia. Se devuelve
-al finalizar la misión.","Распространяет зловоние в большой
+al finalizar la misión.","Распространяет вонь в большой
 области вокруг места попадания.
 Возвращается после поручения.","Wydziela po uderzeniu intensywny 
 smród na dużej powierzchni.
@@ -12240,7 +12351,478 @@ Usado para fazer equipamento.","알슈베르도 퀘스트를 성공한
 تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio otorgado
 a quienes cazaron un Arkveld.
 Se usa para fabricar equipos."
-b95e7df2-2921-4821-b202-b2241e0ad533,4253496463,Item_IT_467,スリンガー重打撃弾,Heavy Blunt Pod,Capsule contondante lourde,Baccello impatto forte,Schwere Stumpfkapsel,Cápsula contundente pesada,Тяж. ударный снаряд,Ciężki obuchowy strąk,,,Cápsula Contundente Pesada,슬링어 중타격탄,投射器重打擊彈,投射器重打击弹,,,,,,,,كبسولة ثقيلة غير حادة,,,,,,,,,,,Cápsula impacto pesada
+407b450d-e0ed-4297-bb16-e8af697e3aaa,1477772159,Item_IT_721,泡狐竜の上鱗,Mizutsune Scale+,Écaille Mizutsune +,Mizu: scaglia+,Mizutsune-Schuppe+,Escama de Mizutsune+,Чешуя мидзуцунэ+,Łuska Mizutsune+,,,Escama de Mizutsune+,포호룡의 비늘+,泡狐龍的上鱗,泡狐龙的上等鳞,,,,,,,,قشرة ميزوتسوني+,,,,,,,,,,,Escama de Mizutsune+
+3e88b63b-bbf8-45ef-99d5-cf26a8db8849,881442461,Item_IT_EXP_721,"タマミツネの上質な鱗。長年、
+泡によって磨き上げられた古鱗
+には、宝石以上の価値が付く。","A high-quality Mizutsune scale.
+Older scales polished over
+time can be very valuable.","Écaille de Mizutsune de qualité.
+Les plus anciennes, polies par
+le temps, ont une grande valeur.","Scaglia pregiata di
+Mizutsune. Quelle vecchie e
+smussate sono molto ambite.","Die hochwertige Schuppe eines
+Mizutsune. Jahrelang mit Schaum
+poliert und äußerst begehrt.","Escama de Mizutsune de
+calidad. Muy valiosas debido
+a su pulido de varios años.","Высококачественная чешуя
+мидзуцунэ. Отполированные
+временем образцы очень ценны.","Piękna łuska Mizutsune.
+Te starsze, polerowane
+przez czas, są bardzo cenne.",,,"Escama superior de Mizutsune.
+Escamas anciãs que foram polidas
+pelas espumas e agregaram valor.","타마미츠네의 품질 좋은 비늘.
+오랫동안 거품으로 연마된
+비늘은 보석보다도 가치 있다.","泡狐龍的優質鱗片。老舊鱗片長年
+經泡沫打磨，擁有超越寶石的價值。","泡狐龙的优质鳞。长年被泡沫摩擦
+养护的旧鳞有着比宝石更高的价值。",,,,,,,,"قشرة ميزوتسوني جيدة.
+القشور الأقدم المصقولة 
+بمرور الوقت ذات قيمة كبيرة.",,,,,,,,,,,"Escama de Mizutsune de
+calidad. Muy valiosas debido
+a su pulido de varios años."
+c970f6a5-8982-4a15-9d37-f529cd73149b,4238346560,Item_IT_722,泡狐竜の紫上毛,Mizutsune Purplefur+,Fourrure mauve Mizutsune +,Mizu: violpelo+,Mizutsune-Violettfell+,Pelo violeta Mizutsune+,Фиолетовый мех мидзуцунэ+,Purpufut. Mizutsune+,,,Pelorroxo de Mizutsune+,포호룡의 보랏빛털+,泡狐龍的紫上毛,泡狐龙的上等紫毛,,,,,,,,فرو ميزوتسوني أرجواني+,,,,,,,,,,,Pelo morado Mizutsune+
+13b3344b-703d-4ecb-86d3-f805555128a0,390013278,Item_IT_EXP_722,"特に色が濃いタマミツネの上質な
+紫毛。色素が濃いほど硬度が増し、
+泡との親和性も上がるという。","High-quality purple Mizutsune
+fur. More foam-absorbent than
+its lighter counterpart.","Fourrure Mizutsune mauve
+de qualité. Absorbe plus de
+mousse que sa version allégée.","Pelliccia viola di Mizutsune.
+Assorbe più schiuma rispetto
+alla variante leggera.","Das hochwertige, violette Fell
+eines Mizutsune. Kann beson-
+ders viel Schaum aufnehmen.","Pelo de Mizutsune violeta
+de calidad. Absorbe más
+espuma que la versión básica.","Качественный фиолетовый мех
+мидзуцунэ. Впитывает больше
+пены, чем его легкий аналог.","Cudowne fioletowe futro Mizutsune
+absorbujące więcej piany
+niż zwykłe.",,,"Pelo roxo superior de Mizutsune.
+Absorve mais espuma do que
+sua versão mais leve.","색이 진하고 품질 좋은 보라색
+털. 색소가 진할수록 단단하고
+거품과 친화성도 높다고 한다.","色澤特別濃厚的泡狐龍優質紫毛。
+據說顏色越深硬度越高，與泡沫的
+親和性也會隨之提升。","颜色更加浓厚的泡狐龙优质紫毛。
+据称颜色越浓，硬度就越高，与泡
+沫的亲和性也越好。",,,,,,,,"فرو (ميزوتسوني) أرجواني عالي
+الجودة. أكثر قدرة على امتصاص
+الرغوة من نظرائه الأخف.",,,,,,,,,,,"Pelo morado de Mizutsune de
+calidad. Absorbe más espuma
+que la versión básica."
+4c9fafb6-3bf5-44fd-bad6-6d94981b2fa6,3725974462,Item_IT_723,泡狐竜の尖爪,Mizutsune Claw+,Griffe Mizutsune +,Mizu: artiglio+,Mizutsune-Klaue+,Garra de Mizutsune+,Коготь мидзуцунэ+,Pazur Mizutsune+,,,Garra de Mizutsune+,포호룡의 첨예발톱,泡狐龍的尖爪,泡狐龙的尖爪,,,,,,,,مخلب ميزوتسوني+,,,,,,,,,,,Garra de Mizutsune+
+5276fff3-23b3-47a6-93cd-33934ec63657,2528310833,Item_IT_EXP_723,"強固で鋭いタマミツネの爪。
+超硬度に加え、摩擦を消す泡の
+働きが唯一無二の強さを生む。","Friction-reducing bubblefoam
+helps this deadly claw slice
+through prey like sushi.","La mousse à bulles permet
+à cette griffe de découper
+ses proies comme des sushis.","La bollischiuma lubrificante
+consente all'artiglio di
+tagliare prede come sushi.","Durch reibungsmindernden
+Schaum zerteilt die tödliche
+Klaue Beute wie Sushi.","Con espuma de burbujas que
+reduce la fricción, corta la
+presa como si fuera sushi.","Благодаря скользкой пене
+этот смертельный коготь
+рассекает жертву будто суши.","Pianka redukująca tarcie
+sprawia, że pazur wchodzi
+w ciało ofiary jak w masło.",,,"Com espuma que reduz fricção,
+esta garra mortal é capaz de
+cortar presas como sushi.","단단하고 예리한 타마미츠네의
+발톱. 단단함과 마찰을 없애는
+거품이 엄청난 위력을 낸다.","泡狐龍強韌且尖銳的爪。硬度超高，
+配合能抹消摩擦力的泡沫，會產生
+獨一無二的力量。","泡狐龙强韧的锐爪。无比坚硬，配
+合泡沫消除摩擦的特性，造就了其
+独一无二的强度。",,,,,,,,"تساعد رغوة الفقاعة التي تقلل
+الاحتكاك هذه المخالب المميتة
+على قطع الفريسة مثل السوشي.",,,,,,,,,,,"Con espuma de burbujas que
+reduce la fricción, corta la
+presa como si fuera sushi."
+f1e692c7-9252-49b6-aec1-132a8ed14307,1267668277,Item_IT_724,泡狐竜の上錦ヒレ,Mizutsune Fin+,Nageoire Mizutsune +,Mizu: pinna+,Mizutsune-Flosse+,Aleta de Mizutsune+,Плавник мидзуцунэ+,Płetwa Mizutsune+,,,Barbatana de Mizutsune+,포호룡의 비단지느러미+,泡狐龍的上錦鰭,泡狐龙的上等锦鳍,,,,,,,,زعنفة ميزوتسوني+,,,,,,,,,,,Aleta de Mizutsune+
+3ad9f058-00f0-44d9-8834-327c018626d1,3972611906,Item_IT_EXP_724,"タマミツネの美しい上質なヒレ。
+如何なる染料よりも上等な泡に
+揉まれ、極上の文様を持った。","A high-quality Mizutsune fin.
+Bubblefoam gives it an elegant
+pattern prettier than dye.","Nageoire Mizutsune de qualité.
+Se pare d'un élégant motif grâce
+à la mousse à bulles.","Pinna pregiata di Mizutsune.
+Ha raffinate sfumature colorate
+create dalla bollischiuma.","Die hochwertige Flosse eines
+Mizutsune mit einem hübschen,
+vom Schaum geformten Muster.","Aleta de Mizutsune de calidad.
+La espuma forma una trama
+más bonita que un tinte.","Высококачественный плавник
+мидзуцунэ. Его пена образует
+элегантный узор лучше краски.","Wysokiej jakości płetwa Mizutsune.
+Piana nadaje jej elegancki wzór,
+ładniejszy niż barwnik.",,,"Barbatana superior de Mizutsune.
+A espuma dá a ela um padrão
+mais elegante que tinta.","타마미츠네의 곱고 좋은 지느러미.
+어떤 염료보다도 좋은 거품에
+닿아 최고의 문양을 지녔다.","泡狐龍美麗而優質的鰭。經過優於
+任何染料的泡沫揉製，有著絕美的
+花紋。","泡狐龙美丽而优质的鳍。浸润于超
+越任何染料的极品液泡让它自然生
+出无上的纹理。",,,,,,,,"زعنفة (ميزوتسوني) عالية الجودة.
+تمنحها رغوة الفقاعات نمطًا أنيقًا
+أجمل من الصبغة.",,,,,,,,,,,"Aleta de Mizutsune de calidad.
+La espuma forma un patrón
+más bonito que un tinte."
+091017ff-8df3-4b51-a9a0-d001bcb5353a,2012222121,Item_IT_726,泡狐竜の尻尾,Mizutsune Tail,Queue Mizutsune,Mizutsune: coda,Mizutsune-Schwanz,Cola de Mizutsune,Хвост мидзуцунэ,Ogon Mizutsune,,,Cauda de Mizutsune,포호룡의 꼬리,泡狐龍的尾巴,泡狐龙的尾巴,,,,,,,,ذيل ميزوتسوني,,,,,,,,,,,Cola de Mizutsune
+098ca368-78e9-47cc-8753-498f70a0528e,3622580044,Item_IT_EXP_726,"タマミツネのたわわな尻尾。
+しなやかな毛束と、美しい鱗から
+成る至上の逸品。","A flowing Mizutsune tail.
+It's prized for its supple
+fur and beautiful scales.","Queue de Mizutsune prisée
+pour sa fourrure souple et
+ses jolies écailles.","Coda fluente di Mizutsune. È
+ambita per il pelo morbido e
+le meravigliose scaglie.","Ein geschwungener Mizutsune-
+Schwanz. Begehrt für sein Fell
+und die schönen Schuppen.","Cola ondulante de Mizutsune.
+Apreciada por su sutil
+pelaje y bellas escamas.","Пластичный хвост мидзуцунэ.
+Высоко ценится за мягкий мех
+и прелестную чешую.","Zwiewny ogon Mizutsune.
+Ceniony za miękkie futerko
+i cudne łuski.",,,"Cauda graciosa de Mizutsune.
+Valorizada por sua pele
+flexível e lindas escamas.","타마미츠네의 휘어진 꼬리.
+부드러운 털과 아름다운
+비늘이 자아내는 극상의 명품.","泡狐龍厚重的尾巴。上面有柔順的
+毛髮與美麗的鱗片，堪稱頂級珍品。","泡狐龙沉甸甸的尾巴。柔顺的毛束
+与华美的鳞片，组合成这件无上的
+极品。",,,,,,,,"ذيل ميزوتسوني انسيابي.
+يستمد قيمته من فروه
+اللين وقشوره الجميلة.",,,,,,,,,,,"Cola fluida de Mizutsune.
+Apreciada por su sutil
+pelaje y bellas escamas."
+5eb4b891-b341-46c3-bb27-4defe4a349ae,893429811,Item_IT_727,泡立つ上滑液,Bubblefoam+,Mousse à bulles +,Bollischiuma+,Schaum+,Espuma burbujas+,Пена+,Piana bąbelkowa+,,,Bolhas+,거품 나는 활액+,起泡上滑液,上等起泡滑液,,,,,,,,رغوة الفقاعة+,,,,,,,,,,,Espuma de burbujas+
+9ba27850-fe1a-41ea-aaa0-dbc23fe35369,2904584834,Item_IT_EXP_727,"タマミツネから分泌される泡の滴の
+上澄み。あらゆる穢れを落とすと
+され、神事にも用いられる。","The top layer of Mizutsune
+fluid. Removes impurities
+and is used in many rituals.","Issue d'un fluide de Mizutsune.
+Purifiante, elle est employée
+lors des rituels.","La secrezione più pregiata
+del Mizutsune. Purifica ed
+è usata nei riti religiosi.","Der vom Mizutsune abgeson-
+derte Schaum. Wirkt reinigend
+und ist Bestandteil vieler Rituale.","Capa superior de líquido de
+Mizutsune. Elimina impurezas
+y se usa en rituales.","Верхний слой жидкости мидзуцунэ.
+Очищает и применяется во многих
+ритуалах.","Górna warstwa płynu
+Mizutsune. Stosowana do
+oczyszczania w rytuałach.",,,"Camada superior de fluido de
+Mizutsune. Remove impurezas.
+Usado em muitos rituais.","타마미츠네가 분비하는 맑은 거품
+방울. 온갖 더러움을 씻어낼 수
+있어 제사에서도 쓰인다.","從泡狐龍分泌的泡沫液除去沉澱物的
+澄清部分。據說可洗去一切穢物，
+也會用於祭祀。","泡狐龙分泌出的液泡中更精纯的部
+分。据说能洗净所有污秽，应用在
+各种祭神法事中。",,,,,,,,"الطبقة العليا من سائل
+ميزوتسوني. تزيل الشوائب
+وتُستخدم في كثير من الطقوس.",,,,,,,,,,,"Capa superior de líquido de
+Mizutsune. Elimina impurezas
+y se usa en rituales."
+fe586337-049f-44c5-8093-2dfed4a12e46,4070573056,Item_IT_728,泡狐竜の水玉,Mizutsune Water Orb,Orbe d'eau Mizutsune,Mizu: acquisfera,Mizutsune-Wasserstein,Orbe agua Mizutsune,Водная сфера мидзуцунэ,Wodna kula Mizutsune,,,Orbe d'Água de Mizutsune,포호룡의 수옥,泡狐龍的水玉,泡狐龙的水玉,,,,,,,,كرة ماء ميزوتسوني,,,,,,,,,,,Orbe de agua Mizutsune
+1abcede7-ad58-4e1e-86d3-d24b06ba297a,4235561089,Item_IT_EXP_728,"タマミツネの鱗や泡が結晶化した
+七色の珠玉。常にゆらめく色彩は、
+万華を咲かせ移ろう。","A multicolored orb formed
+from a crystalized Mizutsune
+scale and bubblefoam.","Orbe multicolore composé
+d'une écaille de Mizutsune
+et de mousse à bulles.","Sfera multicolore creata da
+una scaglia cristallizzata
+di Mizutsune e bollischiuma.","Ein regenbogenfarbenes Juwel,
+kristallisiert aus Schaum und
+Schuppen eines Mizutsune.","Orbe multicolor compuesto
+por una escama cristalizada
+y espuma de Mizutsune.","Разноцветная сфера, образованная
+из кристаллизированной чешуи
+и пены мидзуцунэ.","Tęczowa kulka ze
+skrystalizowanej łuski
+Mizutsune i piany.",,,"Orbe multicolorido formado
+por uma escama cristalizada
+de Mizutsune e espuma.","타마미츠네의 비늘과 거품이
+결정화된 칠색옥. 하늘거리는
+색채는 꽃을 피고 지게 한다.","泡狐龍鱗片和泡沫結晶後產生的
+七彩寶玉。色彩變化萬千，有如
+百花盛放。","泡狐龙的鳞与液泡结晶而成的七彩
+珠玉。斑斓多变的色彩，仿佛尽收
+了当世所有的艳丽。",,,,,,,,"كرة متعددة الألوان
+تتكون من قشرة ميزوتسوني
+المتبلورة ورغوة الفقاعات.",,,,,,,,,,,"Orbe multicolor compuesto
+por una escama cristalizada
+y espuma de Mizutsune."
+95c2eb96-3bed-4f11-ab8d-a432366669ea,3472947955,Item_IT_720,泡狐竜の狩猟証Ｓ,Mizutsune Certificate S,Certificat Mizutsune S,Mizutsune: certif. S,Mizutsune-Zertifikat S,Certificado de Mizutsune S,Сертификат S: мидзуцунэ,Certyfikat Mizutsune S,,,Certificado de Mizutsune S,포호룡 사냥증 S,泡狐龍狩獵證S,泡狐龙狩猎证 S,,,,,,,,شهادة ميزوتسوني S,,,,,,,,,,,Certificado de Mizutsune S
+989a4c21-569f-46e4-ab44-b8a9db814997,2184773429,Item_IT_EXP_720,"タマミツネのクエストに成功した
+者に与えられる、ギルドの証明書。
+装備の作成に使用する。","A Guild certificate awarded to those
+who have hunted a Mizutsune.
+Used to make equipment.","Certificat de la Guilde reçu pour
+avoir chassé un Mizutsune.
+Sert à fabriquer de l'équipement.","Un certificato della Gilda per
+chi ha cacciato un Mizutsune.
+Usato per creare equipaggiamento.","Gildenzertifikat für das Erjagen
+eines Mizutsune.
+Zur Ausrüstungsherstellung.","Certificado de gremio otorgado
+al cazar a un Mizutsune. Se usa
+para fabricar equipamiento.","Сертификат Гильдии, выдаваемый
+тем, кто одолел мидзуцунэ. Нужен
+для создания снаряжения.","Certyfikat Gildii przyznawany tym,
+którzy upolowali Mizutsune.
+Używany do produkcji wyposażenia.",,,"Certificado da Guilda concedido
+a quem caçou um Mizutsune.
+Usado para fazer equipamento.","타마미츠네 퀘스트를 성공한
+자에게 주어지는 길드 증명서.
+장비 제작에 사용.","公會的證書，會授予成功完成泡狐龍
+任務的人。可用於製作裝備。","公会颁发的证书，授予成功完成泡
+狐龙任务的人。可用于制作装备。",,,,,,,,"شهادة تمنحها الرابطة
+لأولئك الذين اصطادوا (ميزوتسوني).
+تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio otorgado a
+quienes cazaron un Mizutsune.
+Se usa para fabricar equipo."
+4c795d2e-ac1d-4e4a-91d0-80cb33d89aeb,837323569,Item_IT_711,白熾龍の結晶鱗,Zoh Shia Crystalscale,Écaille-cristal Zoh Shia,Cristalsquama Zoh Shia,Zoh-Shia-Kristallschuppe,Escama cristalizada de Zoh Shia,Кристальная чешуя Зо Шиа,Kryszt. łuska Zoh Shia,,,Cristaescama de Zoh Shia,백열룡의 결정비늘,白熾龍的結晶鱗,白炽龙的结晶鳞,,,,,,,,قشرة زو شيا بلورية,,,,,,,,,,,Escama de cristal de Zoh Shia
+0df96023-b29d-4027-a08b-30da2fb7fb1b,3970763517,Item_IT_EXP_711,"ゾ・シアの体表を覆う結晶化した
+鱗。鈍く輝く様は巨大なエネルギー
+を内包していることを示している。","A crystallized Zoh Shia scale.
+Its dull glow evinces the great
+energy it contains.","Écaille de Zoh Shia cristallisée.
+Son léger éclat témoigne de la
+grande énergie qu'elle contient.","Una squama cristallizzata di Zoh
+Shia. Emana un lieve bagliore,
+sintomo del suo potere.","Kristalline Zoh-Shia-Schuppe.
+Ihr schwaches Leuchten zeugt von
+der Energie, die sie enthält.","Escama cristalizada de Zoh Shia.
+Su brillo apagado es muestra de
+la energía que contiene.","Кристаллизованная чешуя Зо Шиа.
+Судя по слабому свечению, хранит
+в себе мощный заряд энергии.","Krystalizowana łuska Zoh Shia.
+Matowy blask sugeruje
+wielką energię, którą zawiera.",,,"Escama cristalizada de Zoh Shia.
+Seu brilho suave revela a grande
+energia que contém.","조 시아의 몸을 뒤덮은 결정화
+비늘. 빛나는 모습에서 거대한
+에너지를 느낄 수 있다.","覆蓋白熾龍軀體表面的結晶化鱗片。
+黯淡的光輝暗示其內含的強大能量。","覆盖于白炽龙体表的结晶化鳞片。
+其散发的黯淡光晕昭示着内部蕴含
+的巨大能量。",,,,,,,,"قشرة (زو شيا) متبلورة. يعكس
+توهجها الخافت الطاقة الهائلة
+التي تحتوي عليها.",,,,,,,,,,,"Escama cristalizada de Zoh Shia.
+Su brillo opaco es reflejo de
+la gran energía que contiene."
+b5bcdd02-b8e5-4f23-84a5-aac4ea8904bd,4221665058,Item_IT_712,白熾龍の層殻,Zoh Shia Layershell,Carapace Zoh Shia,Stratoguscio Zoh Shia,Zoh-Shia-Schichtpanzer,Caparazón laminado de Zoh Shia,Слоистый панцирь Зо Шиа,Warstwołuska Zoh Shia,,,Cascamada de Zoh Shia,백열룡의 층각,白熾龍的層殼,白炽龙的多层壳,,,,,,,,صدفة زو شيا متدرجة,,,,,,,,,,,Coraza laminada de Zoh Shia
+05df983a-e110-4cd4-986d-9d2179298baa,1258211280,Item_IT_EXP_712,"ゾ・シアを包むように重なった
+甲殻。纏わるように伸びた形状は、
+本体を守るためか、縛るためか。","The coiled nature of Zoh Shia's
+layered shell looks as though it
+protects as much as it constricts.","La carapace à plusieurs couches
+du Zoh Shia semble protéger
+autant qu'elle comprime.","La natura stratificata del guscio
+dello Zoh Shia garantisce
+protezione ma causa costrizione.","Der gewundene Aufbau des Zoh-
+Shia-Panzers wirkt schützend,
+doch zugleich einschränkend.","La naturaleza retorcida del
+caparazón laminado de Zoh Shia
+protege tanto como constriñe.","Витой многослойный панцирь
+хорошо защищает Зо Шиа, но,
+похоже, сковывает движения.","Zwinięta natura warstwowej powłoki
+Zoh Shia wygląda jakby chroniła
+i jednocześnie chciała ograniczyć.",,,"Casco em camadas de Zoh Shia.
+Com sua forma enrolada, protege
+tanto quanto restringe.","조 시아를 감싸듯이 겹친
+갑각. 두르듯이 펼쳐진 형상은
+호신용인가, 결박용인가.","層層包覆白熾龍的甲殼。其延展交纏
+的形狀既是守護，亦是束縛。","包裹着白炽龙躯体的层叠甲壳。那
+环绕交缠的形状不知是在保护本体，
+还是在对其加以束缚。",,,,,,,,"طبيعة صدفة (زو شيا) المتدرجة
+الملفوفة تبدو وكأنها تحمي
+بقدر ما تقيد.",,,,,,,,,,,"La coraza de Zoh Shia en láminas
+superpuestas se estira y parece
+dar protección como constricción."
+5ab4f9ef-42c4-4d93-9d1e-128a6e86253f,2102297495,Item_IT_713,白熾龍の冊状爪,Zoh Shia Stakeclaw,Griffe acérée Zoh Shia,Guzzartiglio Zoh Shia,Zoh-Shia-Pfahlklaue,Garra estaca de Zoh Shia,Слоистый коготь Зо Шиа,Brzytwoszpon Zoh Shia,,,Garrastaca de Zoh Shia,백열룡의 겹층발톱,白熾龍的柵狀爪,白炽龙的栅状爪,,,,,,,,مخلب وتد زو شيا,,,,,,,,,,,Garra estaca de Zoh Shia
+c5a47997-19b7-44b0-af50-19a57b09c8ea,1575857792,Item_IT_EXP_713,"ゾ・シアから染み出した竜乳が
+硬質化した爪。伸び続ける結晶の
+構造は、不気味な程に規則的。","Stake-like Zoh Shia claws extended
+by hardened Wylk. The Wylkrystal
+growths are eerily uniform.","Griffe de Zoh Shia prolongée
+par du wylait durci. Les cristaux
+sont étrangement réguliers.","Artigli affilati di Zoh Shia,
+allungati dal wylatte. Hanno
+escrescenze fin troppo regolari.","Durch gehärtetes Wiol verlängerte
+Zoh-Shia-Klauen. Die Wiol-
+kristalle sind seltsam gleichmäßig.","Con forma de estacas, extendidas
+por la wylact endurecida y de
+una uniformidad inquietante.","Когти Зо Шиа венчают прочные и
+идеально ровные кристаллические
+наслоения вивлока.","Szpony Zoh Shia w kształcie pali przedłużone
+utwardzonym wylkryształem. Wylkrystaliczne narośle
+mają niesamowicie wyrównaną strukturę.",,,"Garras de Zoh Shia como estacas,
+alongadas por Cristais de Serpil
+estranhamente uniformes.","조 시아에게서 배어 나온
+용유가 굳은 발톱. 결정이
+매우 규칙적으로 자라난다.","從白熾龍滲出的龍乳硬化後形成的
+爪子。不斷延伸的結晶構造異常地
+有規律，甚至有些詭異。","由白炽龙身上溢出的龙乳硬质化而
+成的爪子。不断延伸的结晶体异常
+齐整，甚至有些诡异。",,,,,,,,"مخالب (زو شيا) التي تبدو كالأوتاد تمتد
+من خلال حليب تنين متصلب. تنمو
+الوايليبريستال بتساوٍ بشكل غريب.",,,,,,,,,,,"Garras de Zoh Shia alargadas por
+wylk endurecido. Sus brotes de
+wylkristal son extrañamente lisos."
+45430fd1-046d-4018-901e-8b3860d18224,2368781531,Item_IT_714,白熾龍の晶角,Zoh Shia Crystalhorn,Corne-cristal Zoh Shia,Cristalcorno Zoh Shia,Zoh-Shia-Kristallhorn,Cuerno cristalino de Zoh Shia,Кристальный рог Зо Шиа,Kryszt. róg Zoh Shia,,,Chifristal de Zoh Shia,백열룡의 결정뿔,白熾龍的晶角,白炽龙的晶角,,,,,,,,قرن زو شيا بلوري,,,,,,,,,,,Cuerno de cristal de Zoh Shia
+cdf91870-f2a7-4336-b417-16a5274764c5,3174913730,Item_IT_EXP_714,"ゾ・シアの頭部を覆う、特に大きな
+結晶で構成された角。何かを封じて
+いた楔かのように重く、鋭い。","A crystal-coated Zoh Shia horn.
+Heavy and wedge-like, as though
+it were used to seal something.","Corne de Zoh Shia couverte de
+cristaux. Lourde et cunéiforme,
+comme pour sceller quelque chose.","Corno di Zoh Shia ricoperto di
+cristalli. Pesante, sembra un
+cuneo per creare sigilli.","Kristallummanteltes Horn eines
+Zoh Shia. Es ist schwer, keilför-
+mig und sieht aus wie ein Siegel.","Cuerno cubierto en cristal de Zoh
+Shia. Pesado y en forma de cuña,
+como si se usara para sellar algo.","Мощный клиновидный рог Зо Шиа,
+покрытый кристаллами. Выглядит
+так, будто им что-то запечатывали.","Pokryty kryształem róg Zoh Shia.
+Ciężki i klinowaty, jakby używany
+do pieczętowania czegoś.",,,"Chifre de Zoh Shia revestido de
+cristal. Pesado e afiado, como
+se fosse usado para selar algo.","조 시아의 머리를 감싸는 큰
+결정으로 구성된 뿔. 봉인용
+쐐기처럼 무겁고 예리하다.","覆蓋白熾龍頭部的角，由巨大的結晶
+形成。如同封印著某種東西的楔子，
+沉重而尖銳。","覆盖白炽龙头部的角，由巨大的结
+晶形成。如同封印着某种东西的楔
+子，沉重而尖锐。",,,,,,,,"قرن (زو شيا) مغطى بطبقة بلورية.
+ثقيل وشبيه بالوتد كما لو كان
+يُستخدم لختم شيء ما.",,,,,,,,,,,"Cuerno de Zoh Shia recubierto de
+cristales. Su gran estructura hace
+pensar que se usó para sellar algo."
+180400f3-95d9-47b6-85fe-de9d4b5ba2e4,1608267014,Item_IT_715,白熾龍の晶尾,Zoh Shia Crystaltail,Queue-cristal Zoh Shia,Cristalcoda Zoh Shia,Zoh-Shia-Kristallschwanz,Cola cristalina de Zoh Shia,Кристальный хвост Зо Шиа,Kryszt. ogon Zoh Shia,,,Cristacauda de Zoh Shia,백열룡의 결정꼬리,白熾龍的晶尾,白炽龙的晶尾,,,,,,,,ذيل زو شيا بلوري,,,,,,,,,,,Cola de cristal de Zoh Shia
+6b791a8d-91d5-4d62-92bb-81b4bcb93abb,3713449342,Item_IT_EXP_715,"ゾ・シアの竜乳の結晶に覆われた
+尻尾。切り離された後も、纏わる
+結晶は伸び続けるという。","A crystal-covered Zoh Shia tail.
+The crystals continue to grow
+even after the tail is severed.","Queue de Zoh Shia couverte de
+cristaux. Ils continuent de croître
+même si la queue est coupée.","Coda di Zoh Shia ricoperta di
+cristalli, che crescono
+anche dalla coda tagliata.","Kristallbedeckter Schwanz eines
+Zoh Shia. Die Kristalle wachsen
+selbst nach dem Abtrennen weiter.","Cola cubierta en cristal de Zoh
+Shia. Los cristales crecen aun
+después de cortar la cola.","Покрытый кристаллами хвост
+Зо Шиа. Кристаллы продолжают
+расти, даже когда хвост отсечён.","Pokryty kryształem ogon Zoh Shia.
+Kryształy nadal rosną
+nawet po odcięciu ogona.",,,"Cauda de Zoh Shia coberta
+de cristais. Os cristais crescem
+mesmo após a cauda ser cortada.","조 시아의 용유 결정에 뒤덮인
+꼬리. 떨어져 나간 후에도
+휘감기는 결정은 계속 자란다.","由白熾龍的龍乳結晶包覆的尾巴。
+據說即便切斷後，結晶也會繼續
+生長。","覆盖着龙乳结晶的白炽龙尾巴。就
+算在被切断之后，包裹着它的结晶
+依然会继续生长。",,,,,,,,"ذيل (زو شيا) مغطى بطبقة بلورية.
+تستمر البلورات في التزايد
+حتى بعد قطع الذيل.",,,,,,,,,,,"Cola de Zoh Shia recubierta de
+cristales. Sus cristales seguirán
+creciendo incluso tras ser cortada."
+7781a23d-cad5-4263-8daa-926206487285,2245948069,Item_IT_717,白耀の造龍玉,Faux Whitegleam Orb,Orbe pale éclat artificiel,S. biancob. artif.,Falsche Weißglanzkugel,Orbe brilloblanco falso,Искусств. белоснежная сфера,Pseudo sfera białegoblasku,,,Orbe Brilhalvo Falso,백요의 조룡옥,白耀的造龍玉,白耀的造龙玉,,,,,,,,كرة الوهج الأبيض المزيف,,,,,,,,,,,Orbe brilloblanco falso
+c2447350-f087-41d5-a487-05cab1239b0e,2371530664,Item_IT_EXP_717,"ゾ・シアの体内から見出された
+無機質に輝く玉石。造られたような
+精巧な真核の奥に、何かが蠢く。","An inorganic orb from inside Zoh
+Shia. Something wriggles deep
+within its elaborate design.","Orbe inorganique et élégant
+extrait d'un Zoh Shia. Quelque
+chose s'agite à l'intérieur.","Sfera inorganica dentro allo Zoh
+Shia. Qualcosa si agita tra
+i suoi motivi intricati.","Eine anorganische Kugel aus dem
+Körper eines Zoh Shia. Tief in
+ihrem Inneren windet sich etwas.","Orbe inorgánico del interior del
+Zoh Shia. Algo se retuerce en las
+entrañas de su elaborado diseño.","Искусственная сфера со сложной
+структурой, извлечённая из тела
+Зо Шиа. Внутри что-то шевелится.","Nieorganiczna sfera z wnętrza
+Zoh Shia. Coś wije się głęboko
+w jej misternej konstrukcji.",,,"Esfera inorgânica do interior
+de Zoh Shia. Algo se contorce
+dentro do seu design elaborado.","조 시아의 몸에서 나온 차가운
+옥석. 제작품처럼 정교한 진핵
+안에서 무언가가 꿈틀거린다.","在白熾龍體內發現的玉石，泛著毫無
+生氣的光澤。在有如人工物般精巧的
+核心裡，有種東西正在蠢蠢欲動。","从白炽龙体内发现的玉石，泛着无机
+质的光泽。在那仿佛人工造物一般精
+巧的核心中，有东西正在蠢蠢欲动。",,,,,,,,"كرة غير عضوية
+من أعماق (زو شيا). يتلوى شيء ما
+في أعماق تصميمها المعقد.",,,,,,,,,,,"Orbe inorgánico interno de Zoh Shia.
+Algo se retuerce en lo profundo
+de su elaborado diseño."
+37838cbb-009a-4ede-a3b9-7148337d01c1,2058823104,Item_IT_719,黒熾の瘤塊,Blackember Mass,Masse braisenoire,Massa di nerobrace,Schwarzglutmasse,Trozo de ascuasombra,Груда чёрноугля,Masa z czarnobursztynu,,,Massa de Sombrasa,검은 잉걸불 덩어리,黑熾瘤塊,黑炽瘤块,,,,,,,,كتلة الجمر الأسود,,,,,,,,,,,Masa de ascuas negras
+74d7f106-b169-4bf4-819a-8508cf1a02a0,3420444092,Item_IT_EXP_719,"ゾ・シアの体内から膨れ上がった
+肉塊。増殖によって常に脈動し、
+世の理から外れた異質さを持つ。","A small, swollen mass from the
+inside of Zoh Shia. It pulses
+with an alien-like quality.","Petite masse gonflée prélevée
+sur un Zoh Shia. Elle palpite
+d'une étrange façon.","Una piccola massa pulsante
+dentro allo Zoh Shia. I suoi
+movimenti paiono alieni.","Ein kleiner Klumpen aus dem
+Körper eines Zoh Shia. Er
+pulsiert auf fremdartige Weise.","Un trocito inflamado del interior
+del Zoh Shia. Late en pulsos
+con un cariz alienígena.","Небольшой комок плоти из тела Зо
+Шиа. Из-за постоянной пульсации
+кажется, что он чужд этому миру.","Mała, nabrzmiałą masa
+z wnętrza Zoh Shia.
+Pulsuje obcą jakością.",,,"Massa pequena e inchada do
+interior de Zoh Shia. Pulsa
+de maneira alienígena.","조 시아의 몸에서 부푼 덩어리.
+증식하며 계속 맥동하고 세상의
+섭리를 벗어난 이질성을 띤다.","白熾龍體內的腫大肉塊。會隨著增殖
+而一直脈動，其異常程度已超乎世間
+常理。","藏于白炽龙体内的肿大肉块。随着
+增殖而一直在微微脉动，透露出违
+背现实诸理的异质感。",,,,,,,,"كتلة صغيرة منتفخة
+من داخل (زو شيا).
+تنبض بطريقة غريبة.",,,,,,,,,,,"Masa pequeña y abultada del
+interior de Zoh Shia que emite
+pulsaciones fuera de este mundo."
+9e3bb5f2-e993-4278-bf3a-2c6860743ef8,2079261407,Item_IT_710,白熾龍の狩猟証Ｓ,Zoh Shia Certificate S,Certificat Zoh Shia S,Zoh Shia: certif. S,Zoh-Shia-Zertifikat S,Certificado Zoh Shia S,Сертификат S: Зо Шиа,Certyfikat Zoh Shia S,,,Certificado de Zoh Shia S,백열룡 사냥증 S,白熾龍狩獵證S,白炽龙狩猎证 S,,,,,,,,شهادة زو شيا S,,,,,,,,,,,Certificado de Zoh Shia S
+c091bb88-a10a-4b2b-abc4-04461506ed69,3225354119,Item_IT_EXP_710,"ゾ・シアのクエストに成功した
+者に与えられる、ギルドの証明書。
+装備の作成に使用する。","A Guild certificate awarded to
+those who have hunted Zoh
+Shia. Used to make equipment.","Certificat de la Guilde reçu pour
+avoir chassé un Zoh Shia.
+Sert à fabriquer de l'équipement.","Un certificato della Gilda per
+chi ha cacciato uno Zoh Shia.
+Usato per creare equipaggiamento.","Gildenzertifikat für das Erjagen
+des Zoh Shia.
+Zur Ausrüstungsherstellung.","Certificado del gremio otorgado a
+aquellos que han cazado a Zoh Shia.
+Se usa para hacer equipamiento.","Сертификат Гильдии, выдаваемый
+тем, кто одолел Зо Шиа. Нужен
+для создания снаряжения.","Certyfikat Gildii przyznawany tym,
+którzy upolowali Zoh Shia.
+Używany do produkcji wyposażenia.",,,"Certificado da Guilda concedido
+a quem caçou um Zoh Shia.
+Usado para fazer equipamento.","조 시아 퀘스트를 성공한
+자에게 주어지는 길드 증명서.
+장비 제작에 사용.","公會的證書，會授予成功完成白熾龍
+任務的人。可用於製作裝備。","公会颁发的证书，授予成功完成白
+炽龙任务的人。可用于制作装备。",,,,,,,,"شهادة تمنحها الرابطة
+لأولئك الذين اصطادوا (زو شيا).
+تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio otorgado
+a aquellos que cazaron a Zoh Shia.
+Se emplea para fabricar equipo."
+b95e7df2-2921-4821-b202-b2241e0ad533,4253496463,Item_IT_467,スリンガー重打撃弾,Heavy Blunt Pod,Capsule contondante lourde,Baccello impatto forte,Schwere Stumpfkapsel,Cápsula contundente pesada,Тяж. ударный снаряд,Ciężki obuchowy strąk,,,Cápsula Contundente Pesada,슬링어 중타격탄,投射器重打擊彈,投射器重打击弹,,,,,,,,كبسولة ثقيلة خشنة,,,,,,,,,,,Cápsula impacto pesada
 7eb89034-4478-4832-8c7c-96d8a4621350,3878448567,Item_IT_EXP_467,"スリンガーに装填して発射する。
 着弾した場所に高威力の
 打撃ダメージを与える。","Slinger ammo that inflicts
@@ -12683,9 +13265,9 @@ f257a03c-a03c-4a8b-a370-a37996cac9e9,2657466643,Item_IT_491,タリオスの上�
 激しい争いを生き抜くため無骨な
 姿のまま、より堅牢に発達した。","A high-quality Talioth scale.
 Built to survive fierce battles,
-but still not much to look at.","Écaille Talioth de grande qualité, assez
-solide pour résister à des combats
-féroces, mais d'un aspect peu raffiné.","Scaglia di Talioth di qualità.
+but still not much to look at.","Écaille de Talioth de qualité.
+Elle est peu raffinée, mais résiste
+à la férocité des combats.","Scaglia di Talioth di qualità.
 Sopravviverà a molte battaglie
 feroci, ma non ha molto fascino.","Eine hochwertige Talioth-
 Schuppe. Sie hält einiges aus,
@@ -12758,8 +13340,7 @@ facilidade.","필라길의 지느러미.
 예리한 날붙이처럼 사냥감의
 몸을 깊게 파고들어 찢는다.","棘鰭龍的鰭。銳利如刀刃，能深深
 切入獵物體內，將其撕裂。","锯带龙的鳍。宛如锋利锐刃的外形
-能深深嵌入猎物的身体，将其撕裂。",,,,,,,,"زعنفة (بيراغيل). حافتها الحادة تقطع
-الفريسة كسكين يقطع زبدة.",,,,,,,,,,,"Aleta de un Piragill. Su borde
+能深深嵌入猎物的身体，将其撕裂。",,,,,,,,زعنفة (بيراغيل). حافتها الحادة تقطع الفريسة كما يقطع السكين الزبدة.,,,,,,,,,,,"Aleta de un Piragill. Su borde
 afilado corta a las presas cual
 cuchillo corta mantequilla."
 10c00e63-b1a8-4a17-978d-9bfc3f1cd255,3071729249,Item_IT_494,ピラギルの上ヒレ,Piragill Fin+,Nageoire Piragill +,Piragill: pinna+,Piragill-Flosse+,Aleta de Piragill+,Плавник пирагилла+,Płetwa Piragilla+,,,Barbatana de Piragill+,필라길 지느러미+,棘鰭龍的上鰭,锯带龙的上等鳍,,,,,,,,زعنفة بيراغيل+,,,,,,,,,,,Aleta de Piragill+
@@ -12872,7 +13453,7 @@ lisa, possui um brilho atraente.","네마라치카의 갑각.
 的触感，令人忍不住摸了又摸。",,,,,,,,"صدفة (كوماكشي).
 فائقة النعومة ولها بريق جذاب للغاية.",,,,,,,,,,,"Coraza de Comaqchi. Es muy suave
 y tiene un brillo atractivo."
-7c4f678d-16a9-4ef1-be82-9aab73cf9b7f,3126793609,Item_IT_499,ネマラチカの堅殻,Comaqchi Carapace,Cuirasse Comaqchi,Comaqchi: carapace,Comaqchi-Rückenpanzer,Coraza de Comaqchi,Панцирь булакчи,Karapaks Comaqchi,,,Carapaça de Comaqchi,네마라치카의 견갑각,眠刺蟲的堅殼,血眠虫的坚壳,,,,,,,,هيكل كوماكشي,,,,,,,,,,,Caparazón de Comaqchi
+7c4f678d-16a9-4ef1-be82-9aab73cf9b7f,3126793609,Item_IT_499,ネマラチカの堅殻,Comaqchi Carapace,Cuirasse Comaqchi,Comaqchi: carapace,Comaqchi-Rückenpanzer,Coraza de Comaqchi,Панцирь комакчи,Karapaks Comaqchi,,,Carapaça de Comaqchi,네마라치카의 견갑각,眠刺蟲的堅殼,血眠虫的坚壳,,,,,,,,هيكل كوماكشي,,,,,,,,,,,Caparazón de Comaqchi
 acc04bb2-2d40-4cd0-a133-818eb75f58ca,2079094130,Item_IT_EXP_499,"ネマラチカの堅い甲殻。
 見るものを夢に誘うような、
 目を惹く淡い色味が魅惑的。","A high-quality Comaqchi shell.
@@ -14463,8 +15044,8 @@ frenesia e dolore senza fine.","Eine Klaue vom zweiten Vorder-
 bein eines Gore Magala. Verur-
 sacht Raserei und ewiges Leid.","Garra de la segunda pata delantera
 de un Gore Magala. Inflige cólera
-y una eternidad de sufrimiento.","Коготь кровавой магалы, со второй
-передней пары лап. Заражает
+y una eternidad de sufrimiento.","Коготь кровавой магалы со второй
+передней лапы. Заражает
 бешенством, обрекая на муки.","Pazur z drugiej przedniej nogi
 Gore Magali. Wywołuje szał i
 niesie cierpienie trwające wieki.",,,"Uma garra da segunda pata dianteira
@@ -16273,7 +16854,7 @@ Experimente levá-lo para o ferreiro.","과거 신대륙 조사에 나섰던
 <LSNR ""جرِّب"" ""جرّبي""> أخذها إلى ورشة الحدادة.",,,,,,,,,,,"Un cupón con la imagen de un
 cazador que viajó al Nuevo
 Mundo. Se usa en la forja."
-2309222d-bee6-44af-9885-d2ad799451a4,239010978,Item_IT_708,調査隊耳飾りチケット,Expedition Headgear Ticket,Ticket Heaume d'expédition,Buono copricapo esplorazione,Expeditionskopfbed.-Ticket,Vale casco de expedición,Билет: серьги экспедиции,Kwit ekspedycyjnej ozdoby,,,Bilhete de Cap. da Expedição,조사대 귀걸이 티켓,調查隊耳飾票,调查队耳饰票,,,,,,,,تذكرة عتاد رأس البعثات,,,,,,,,,,,Cupón cubrecabeza para exped.
+2309222d-bee6-44af-9885-d2ad799451a4,239010978,Item_IT_708,調査隊耳飾りチケット,Expedition Headgear Ticket,Ticket Heaume d'expédition,Buono copricapo esplorazione,Exped.-Kopfsch.-Ticket,Vale casco de expedición,Билет: серьги экспедиции,Kwit ekspedycyjnej ozdoby,,,Bilhete de Cap. da Expedição,조사대 귀걸이 티켓,調查隊耳飾票,调查队耳饰票,,,,,,,,تذكرة عتاد رأس البعثات,,,,,,,,,,,Cupón cubrecabeza para exped.
 eb8d5222-5577-4a72-88cc-c86611f0c246,3912694368,Item_IT_EXP_708,"調査隊の紋章に込められた思いが
 記されたチケット。加工屋に渡す
 と特別な装備を作ってくれる。","A ticket inscribed with the emblem
@@ -16329,6 +16910,252 @@ equipamento especial na Forja.","꽃성성이의 생태가 그려진 티켓.
 <LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón que describe la ecología
 de la Mimiphyta. Llévalo a la forja
 para conseguir equipo especial."
+04547e36-584a-4be6-89fd-fc00bdd26b33,404620388,Item_IT_758,煌雷竜の狩猟証γ,Rey Dau Certificate γ,Certificat Rey Dau γ,Rey Dau: certif. γ,Rey-Dau-Zertifikat γ,Certificado de Rey Dau γ,Сертификат γ: рей дау,Certyfikat Rey Dau γ,,,Certificado de Rey Dau γ,황뢰룡 사냥증 γ,煌雷龍狩獵證Y,煌雷龙狩猎证 γ,,,,,,,,شهادة راي داو γ,,,,,,,,,,,Certificado de Rey Dau γ
+ed4448bc-b96f-42d0-a8c4-3e7693fcac36,427507892,Item_IT_EXP_758,"歴戦王レ・ダウの狩猟に成功した
+者に与えられる、ギルドの証明書。
+特別な装備の作成に使用する。","A Guild certificate for hunting
+an Arch-tempered Rey Dau.
+Used to make equipment.","Certificat de la Guilde reçu pour avoir
+chassé un Rey Dau alpha suprême.
+Sert à fabriquer de l'équipement.","Un certificato della Gilda per
+un Rey Dau arcitemprato.
+Usato per creare equipaggiamento.","Gildenzertifikat für das Erjagen
+eines Kampfgehärteten Rey Dau.
+Zur Ausrüstungsherstellung.","Certificado de gremio por cazar
+a un Rey Dau hipercurtido.
+Se usa para fabricar equipamiento.","Сертификат Гильдии за победу над
+архизакалённым рей дау. Нужен
+для создания снаряжения.","Certyfikat Gildii przyznawany za
+polowanie na Arch-Tempered Rey Dau.
+Używany do produkcji wyposażenia.",,,"Certificado da Guilda dado a quem
+caçou um Rey Dau Arquiaguerrido.
+Usado para fazer equipamentos.","역전왕 레 다우 사냥을 성공한
+자에게 주어지는 길드 증명서.
+특별한 장비 제작에 사용.","公會的證書，會授予成功完成歷戰王
+煌雷龍任務的人。可用於製作特別裝
+備。","公会颁发的证书，授予成功完成历
+战王煌雷龙任务的人。可用于制作
+特殊装备。",,,,,,,,"شهادة تمنحها الرابطة
+لصيد وحش (راي داو) الغاضب.
+تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio por cazar
+un Rey Dau hipercurtido.
+Se emplea para fabricar equipo."
+d28d449b-b515-49c3-8901-39f1bc529c24,2155815381,Item_IT_763,祭事チケット【花舞】,Blossomdance Ticket,Ticket Danse des fleurs,Biglietto Fiordanza,Blütentanz-Ticket,Vale de floradanza,Билет Танца цветов,Kwit Tańca Kwiatów,,,Bilhete de Floridança,축제 티켓【화무】,慶典票【花舞】,祭典票券【花舞】,,,,,,,,تذكرة مهرجان رقصة الزهرة,,,,,,,,,,,Cupón de Floradanza
+1814b60e-e974-4fcf-8ce3-f79536922e17,2763544365,Item_IT_EXP_763,"交わりの祭事【花舞の儀】に参加
+すると貰えるチケット。季節を彩る
+特別な装備の生産に使用する。","A ticket you receive for attending
+the Blossomdance. Can be
+exchanged for festive equipment.","Ticket obtenu durant la Danse
+des fleurs. À échanger contre
+de l'équipement festif.","Ottenuto per aver partecipato
+alla Fiordanza. Scambiabile
+con equipaggiamento festivo.","Ein für die Teilnahme am Blüten-
+tanz erhaltenes Ticket. Wird gegen
+festliche Ausrüstung eingetauscht.","Vale recibido por asistir
+a la floradanza. Canjeable
+por equipo festivo.","Билет, выдаваемый за посещение
+Танца цветов. Можно обменять
+на праздничное снаряжение.","Kwit otrzymywany za udział w
+Tańcu Kwiatów. Można wymienić
+na wyposażenie świąteczne.",,,"Bilhete recebido por participar
+da Floridança. Troque por
+equipamentos festivos.","교류 축제【화무 의식】 참가로
+받는 티켓. 계절을 수놓는
+특별 장비 생산에 사용한다.","參加交匯慶典【花舞之儀】可獲得的
+票券。可用於生產特別裝備。","参加聚落交流祭典【花舞之仪】后
+获得的票券。可用于制作体现季节
+之美的特殊装备。",,,,,,,,"تذكرة <LSNR ""تحصل"" ""تحصلين""> عليها
+لحضور مهرجان رقصة الزهرة.
+يمكن استبدالها بمعدات احتفالية.",,,,,,,,,,,"Cupón recibido por asistir
+a la Floradanza. Se puede
+canjear por equipo festivo."
+2ed72ec9-7378-428f-91ac-04400a23e613,4274653555,Item_IT_764,ブロッサムチケット,Blossom Ticket,Ticket Floraison,Biglietto floreale,Blüten-Ticket,Vale de flores,Билет цветения,Kwit kwiecia,,,Bilhete Florido,블로섬 티켓,盛放票,盛开票券,,,,,,,,تذكرة مهرجان الزهرة,,,,,,,,,,,Cupón para flores
+530dc1e5-e7a9-494c-a96c-712152b10a47,540565774,Item_IT_EXP_764,"華やかな見た目の装備が描かれた
+チケット。加工屋に渡すと
+特別な装備を作ってくれる。","A ticket depicting a flowery set
+of armor. Give it to the Smithy
+to get special equipment.","Ticket représentant un ensemble
+d'armure fleuri. À échanger à la
+Forge contre de l'équipement.","Biglietto con set floreale.
+Portalo al fabbro per ottenere
+un equipaggiamento speciale.","Ein Ticket, das eine blumige
+Rüstung zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale sobre un conjunto floral
+de armaduras. Llévalo a la forja para
+conseguir equipamiento especial.","Билет с изображением цветочных
+доспехов. Отнесите его кузнецу,
+чтобы получить особое снаряжение.","Kwit przedstawiający kwiecistą
+zbroję. Użyj go w kuźni, by
+zdobyć specjalne wyposażenie.",,,"Bilhete com uma armadura
+florida. Troque-o por um
+equipamento especial na Forja.","화려한 장비가 그려진 티켓.
+가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有外型華麗的裝備。拿給
+工匠就可以製作特別裝備。","票券上描绘着外观华丽的装备。交
+给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر مجموعة دروع مزينة بالزهور.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con un set de armadura
+con flores. Llévalo a la forja
+para conseguir equipo especial."
+cf46de8e-ff61-44b6-b481-59b91779daf5,2968934099,Item_IT_765,花舞のカタログ,Blossomdance Catalog,Catalogue Danse des fleurs,Catalogo Fiordanza,Blütentanz-Katalog,Catálogo de floradanza,Каталог Танца цветов,Katalog Tańca Kwiatów,,,Catálogo da Floridança,화무 카탈로그,花舞目錄,花舞样册,,,,,,,,كتالوج مهرجان رقصة الزهرة,,,,,,,,,,,Catálogo de la Floradanza
+67d87484-6bf8-4979-8fb6-7fc7918cf05d,4132008605,Item_IT_EXP_765,"オシャレな装飾案が多く描かれた
+チケット。加工屋に渡すと特別な
+装備を作ってくれる。","A ticket depicting elegant
+decorations. Give it to the
+Smithy to get special equipment.","Catalogue représentant d'élégants
+accessoires. À échanger à la Forge
+contre de l'équipement.","Biglietto con disegni eleganti.
+Portalo al fabbro per ottenere
+un equipaggiamento speciale.","Ein Ticket, das eine elegante
+Dekoration zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale sobre las decoraciones
+elegantes. Llévalo a la forja para
+conseguir equipamiento especial.","Билет с изображением элегантных
+украшений. Отнесите его кузнецу,
+чтобы получить особое снаряжение.","Kwit przedstawiający eleganckie ozdoby.
+Przekaż go kowalowi,
+aby zdobyć specjalne wyposażenie.",,,"Bilhete com adornos elegantes.
+Troque-o por um equipamento
+especial na Forja.","세련된 장식안이 그려진 티켓.
+가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有時髦的裝飾設計。拿給
+工匠就可以製作特別裝備。","票券上描绘着时髦的装饰设计。交
+给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر إضافات أنيقة.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con decoraciones
+elegantes. Llévalo a la forja
+para conseguir equipo especial."
+8b7d633d-ce68-45d9-8637-2ac1e4495af7,2114210058,Item_IT_778,チャタコイン,Chata Coin,Pièce Chata,Moneta Chata,Chata-Münze,Moneda Chata,Монета чатакабры,Moneta Chatacabry,,,Moeda Chata,차타코인,纏蛙硬幣,缠蛙硬币,,,,,,,,عملة تشاتا المعدنية,,,,,,,,,,,Moneda Chata
+94870d8b-7d31-4218-8d34-a6b3e6edd356,4163596848,Item_IT_EXP_778,"闘技大会でチャタカブラを征した
+者に贈られるコイン。","A coin given to those who
+have bested a Chatacabra
+in the Arena.","Une pièce offerte à ceux qui ont
+vaincu un Chatacabra dans
+l'Arène.","Moneta assegnata a chi sconfigge
+un Chatacabra nell'arena.","Eine Münze, die all jene erhalten,
+die einen Chatacabra in der Arena
+besiegt haben.","Una moneda otorgada a aquellos
+que han vencido a un Chatacabra
+en la Arena.","Монета, выдаваемая тем, кто
+одолел на арене чатакабру.","Moneta wręczana tym,
+którzy na Arenie
+pokonali Chatacabrę.",,,"Moeda concedida àqueles que
+derrotaram um Chatacabra
+na Arena.","격투대회에서 차타카브라를
+무찌른 자에게 주어지는 코인.",在鬥技大會擊敗纏蛙後獲贈的硬幣。,"赠与在斗技大会中战胜缠蛙者的
+硬币。",,,,,,,,"عملة معدنية
+تُمنح لمَن تغلب على (تشاتاكابرا)
+في الحلبة.",,,,,,,,,,,"Una moneda otorgada a aquellos
+que vencieron a un Chatacabra
+en la Arena."
+2f2615a7-7ed4-48d0-9f78-39c7137a449d,4075973627,Item_IT_779,レイアコイン,Rathian Coin,Pièce Rathian,Moneta Rathian,Rathian-Münze,Moneda Rathian,Монета ратианы,Moneta Rathiany,,,Moeda Rathian,레이아코인,雌火龍硬幣,雌火龙硬币,,,,,,,,عملة راثيان المعدنية,,,,,,,,,,,Moneda Rathian
+62c9d9a2-b95d-4738-81ac-229065682a45,1796972732,Item_IT_EXP_779,"闘技大会でリオレイアを征した者に
+贈られるコイン。","A coin given to those who
+have bested a Rathian in
+the Arena.","Une pièce offerte à ceux qui ont
+vaincu une Rathian dans l'Arène.","Moneta assegnata a chi sconfigge
+una Rathian nell'arena.","Eine Münze, die all jene erhalten,
+die eine Rathian in der Arena
+besiegt haben.","Una moneda otorgada a aquellos
+que han vencido a una Rathian
+en la Arena.","Монета, выдаваемая тем, кто
+одолел на арене ратиану.","Moneta wręczana tym,
+którzy na Arenie
+pokonali Rathianę.",,,"Moeda concedida àqueles que
+derrotaram uma Rathian na Arena.","격투대회에서 리오레이아를
+무찌른 자에게 주어지는 코인.","在鬥技大會擊敗雌火龍後獲贈的
+硬幣。","赠与在斗技大会中战胜雌火龙者的
+硬币。",,,,,,,,"عملة معدنية
+تُمنح لمَن تغلب على (راثيان)
+في الحلبة.",,,,,,,,,,,"Una moneda otorgada a aquellos
+que vencieron a una Rathian
+en la Arena."
+d6dffb50-44d3-4d0c-b5de-80b5e2f92318,914830517,Item_IT_807,闘技王のコイン,Pinnacle Coin,Pièce Apogée,Moneta apogeo,Spitzenmünze,Moneda pináculo,Монета мастера,Moneta szczytu,,,Moeda Auge,격투왕코인,鬥技王硬幣,斗技王硬币,,,,,,,,عملة القمة,,,,,,,,,,,Moneda pináculo
+7399204e-303e-4caf-9c94-2839d520bcb6,3151399328,Item_IT_EXP_807,"狩りにおける技を極めた者に
+贈られる名誉あるコイン。
+その輝きはプライスレス。","A commemorative coin bestowed on
+hunters who have mastered the craft.
+The value of its sheen? Priceless.","Une pièce commémorative réservée
+aux chasseurs maîtrisant leur art.
+Sa valeur est inestimable.","Moneta commemorativa per i
+migliori cacciatori. Il suo
+valore? Incommensurabile.","Eine Gedenkmünze für Jäger, die
+ihr Handwerk gemeistert haben.
+Unschätzbar wertvoll.","Moneda de valor incalculable
+dada a cazadores expertos
+en crear equipamiento.","Монета, присуждаемая охотникам,
+освоившим ремесло. Сколько бы
+она не стоила, её блеск бесценен.","Pamiątkowa moneta wręczana
+wytrawnym łowcom.
+Jej blask? Bezcenny.",,,"Moeda comemorativa conferida a
+caçadores que dominaram o ofício.
+O valor desse brilho? Inestimável.","사냥 기술의 극에 달한 자에게
+주어지는 명예로운 코인.
+그 빛은 값을 매길 수 없다.","贈予徹底精通狩獵技術之人的名譽
+硬幣。其光輝是無價之寶。","赠予彻底精通狩猎相关技能之人的
+荣誉硬币。其光辉是无价之宝。",,,,,,,,"عملة تذكارية تُمنح للصيادين
+الذين أتقنوا الصناعة.
+قيمة لمعانها؟ لا تقدر بثمن.",,,,,,,,,,,"Una moneda de valor incalculable
+dada a aquellos que han
+perfeccionado el arte de cazar."
+344555ed-0eb4-441f-b480-5fa03449562b,2529846126,Item_IT_791,アワウタチケット,Amstrigian Ticket,Ticket Amstrigien,Biglietto strigiorana,Amphikauz-Ticket,Vale amstrigiano,Билет амстригана,Kwit amstryga,,,Bilhete de Anstrígio,거품노래 부엉이 티켓,泡沫歌票,泡歌券,,,,,,,,تذكرة أمستريجيان,,,,,,,,,,,Cupón amstrigiano
+7ba1a22c-f8bd-4873-836d-73613da2d7e6,3210615405,Item_IT_EXP_791,"アワウタイズクの生態が描かれて
+いるチケット。加工屋に渡すと
+特別な装備を作ってくれる。","A ticket depicting the ecology
+of Amstrigian. Give it to the
+Smithy to get special equipment.","Ticket représentant l'écologie
+de l'amstrigien. À échanger à la
+Forge contre de l'équipement.","Biglietto con una strigiorana.
+Portalo al fabbro per ottenere
+un equipaggiamento speciale.","Ein Ticket, das Amphikäuze zeigt.
+Zum Schmieden besonderer Aus-
+rüstung.","Un vale sobre la ecología de los
+amstrigianos. Llévalo a la forja para
+conseguir equipamiento especial.","Билет с рисунком окружающей среды
+амстригана. Отнесите его кузнецу,
+чтобы получить особое снаряжение.","Kwit przedstawiający ekologię
+amstryga. Przekaż go kowalowi,
+by zdobyć specjalne wyposażenie.",,,"Bilhete detalhando a ecologia de
+Anstrígios. Troque-o por um
+equipamento especial na Forja.","거품노래 부엉이의 생태가 그려진
+티켓. 가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有泡沫歌鴞的生態。拿給
+工匠就可以製作特別裝備。","票券上记录着泡歌鸮的生态。交给
+加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تصف بيئة (أمستريجيان).
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón que describe la ecología
+de amstrigiano. Llévalo a la forja
+para conseguir equipo especial."
+c04781d7-e096-4b70-914f-5abafb4b4172,2626731112,Item_IT_792,封印の龍骸布,Sealed Dragon Cloth,Châle-dragon interdit,Velo nero,Drachenstoff-Schal,Tejido sellado dragón,Ткань печати дракона,Tkanina zapieczętowanego smoka,,,Tecido de Dragão Selado,봉인의 용해포,封印的龍骸布,封印的龙骸布,,,,,,,,قماش تنين مختوم,,,,,,,,,,,Sudario sellado dragón
+98f0c835-d250-4bf3-b90a-dd52f32e6233,2892903415,Item_IT_EXP_792,"災厄なる古龍の亡骸を封印していた
+とされる布。真偽の程は定かでは
+無いが、その禍々しさは本物。","A cloth used to seal the corpse
+of a dreaded elder dragon. Truth
+or lie, the ominousness is palatable.","Un tissu jadis utilisé pour envelopper
+le cadavre d'un redoutable dragon
+ancien. Son aura sinistre est palpable.","Un velo utilizzato per avvolgere
+il corpo di un temibile drago anziano.
+Che sia vero o no, è molto sinistro.","Dieser Stoff wurde genutzt, um
+die Überreste eines gefürchteten
+Drachenältesten zu versiegeln.","Tejido usado para sellar el cadáver
+de un temible dragón anciano.
+Cierto o no, es muy solemne.","С помощью этой ткани был запечатан
+павший древний дракон. Неизвестно,
+так ли это, но её вид вызывает ужас.","Tkanina, którą owija się truchło
+strasznego Starszego Smoka. Albo i
+nie, ale bije od niej złowieszczość.",,,"Tecido usado para selar cadáver
+de um temido dragão ancião.
+Você sente a ameaça no ar.","재앙이 되는 고룡의 유해를 봉인하고
+있었다고 전해지는 천. 사실인지는 확실치
+않지만, 그 불길함만은 진짜다.","據傳有災難性古龍遺骸封印其中的
+布。雖不明真偽，但確實散發出駭
+人氣息。","据传有灾难性古龙遗骸封印其中的
+布。虽不明真伪，但确实散发出骇
+人气息。",,,,,,,,"قماش يستخدم لختم جثة تنين معمِّر
+مخيف. بغض النظر عن حقيقة الأمر،
+فشؤمه كافٍ.",,,,,,,,,,,"Sudario usado para sellar el cadáver
+de un temible dragón anciano.
+Cierto o no, es muy ominoso."
 e49c4e1a-863d-4c35-abce-5d358bde9db3,3538343536,Item_IT_619,なぞの珠・剣,Mystery Orb - Sword,Orbe mystérieux - Épée,Perla misteriosa (attacco),Rätselsphäre: Schwert,Orbe misterioso: espada,Загадочная сфера (меч),Tajemnicza sfera: miecz,,,Orbe Misterioso: Espada,수수께끼의 구슬-검,謎樣的寶珠・劍,谜之宝珠·剑,,,,,,,,لؤلؤة السلاح الغامضة - سيف,,,,,,,,,,,Orbe misteriosa: Espada
 cd0ed707-3da2-42b2-ac7c-5e7961396a53,4180893174,Item_IT_EXP_619,"かすかな力が秘められた珠。
 鑑定でその力が明らかになり、
@@ -17052,6 +17879,184 @@ Emite um lindo brilho.","백금어의 비늘.
 芒。",,,,,,,,"قشرة سمكة بلاتينية.
 تمنح لمعانًا جميلًا.",,,,,,,,,,,"Escama de un pez de platino.
 Relucen como un rayo de platino."
+f2e812df-fbea-443a-aae7-8443fd1b6e2d,2533889164,Item_IT_646,よりどり高級お食事券,Pick-a-meal Voucher,Coupon repas au choix,Buono pasto-a-scelta,Essen-Auswahlgutschein,Cupón menú a tu gusto,Талон на любое блюдо,Talon na wybór posiłku,,,Vale-refeição Livre,골라잡는 고급 식사권,自選高級餐券,严选高级餐券,,,,,,,,قسيمة اختيار وجبة,,,,,,,,,,,Cupón para elegir una comida
+520ebc9e-14ff-4c7e-8ca9-6d1239f87079,298904210,Item_IT_EXP_646,"大集会所の食事場で使用できる
+チケット。好きな集落の食事が
+お取り寄せできる、素敵な一枚。","Exchange this voucher in the
+Grand Hub Canteen for one order
+of your favorite regional meal.","Échangez ce coupon à la Cantine
+du Grand-Camp contre votre plat
+régional préféré.","Scambia questo buono nella
+mensa del Centro supremo per una
+porzione di un pasto regionale.","Tausche diesen Gutschein in der
+Großen Stätte gegen eine Portion
+deiner Lieblingsspezialität ein.","Intercambia el cupón en la cantina
+del gran centro por un pedido
+de tu comida regional favorita.","Можно обменять на любимое
+региональное блюдо в столовой
+Общего места встреч.","Wymień ten talon w kantynie w
+wielkim centrum, by zamówić jeden
+z ulubionych regionalnych posiłków.",,,"Troque esse vale na Cantina
+da Grande Central por um pedido
+da sua refeição típica favorita.","대집회소 식당에서 사용하는
+티켓. 원하는 마을의 식사를
+주문할 수 있어 편리하다.","可在大集會所用餐區使用的票券。
+有它就可以隨意選擇從任何聚落
+送來的餐點。","可以在大集会所的用餐区使用的票
+券。可以获得从任意聚落送来的餐
+点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
+في كافتيريا مركز التجمع الرئيسي
+للحصول على وجبة من <LSNR ""وجباتكَ"" ""وجباتكِ""> الإقليمية المفضلة.",,,,,,,,,,,"Cambia este cupón en la cantina
+del Gran centro por una ración
+de tu comida regional favorita."
+32418ef0-dc2e-41f1-a91b-b015e8257f18,3087673628,Item_IT_808,クナファお届け食事券,Kunafa Meal Voucher,Coupon repas Kunafa,Buono pasto Kunafa,Kunafa-Essensgutschein,Cupón de menú de Kunafa,Талон на еду: Кунафа,Talon na posiłek z Kunafy,,,Vale-refeição de Kunafa,쿠나파 배달 식사권,庫納法快遞餐券,库纳法速递餐券,,,,,,,,قسيمة وجبة كونافا,,,,,,,,,,,Cupón para comida de Kunafa
+76c4b883-6b0b-4ebe-9798-bfdfeb852572,3635186063,Item_IT_EXP_808,"大集会所の食事場で使用できる
+チケット。クナファで振る舞われる
+食事がお取り寄せできる。","Exchange this voucher in the
+Grand Hub Canteen for one order
+of the Kunafa regional meal.","Échangez ce coupon à la Cantine
+du Grand-Camp contre le plat
+typique de Kunafa.","Scambia questo buono nella
+mensa del Centro supremo per un
+pasto regionale di Kunafa.","Tausche diesen Gutschein in der
+Großen Stätte gegen eine Portion
+der Spezialität aus Kunafa ein.","Intercambia el cupón en la cantina
+del gran centro por un pedido
+de la comida regional de Kunafa.","Можно обменять на региональное
+кунафское блюдо в столовой
+Общего места встреч.","Wymień ten talon w kantynie
+w wielkim centrum, by zamówić jeden
+z regionalnych posiłków z Kunafy.",,,"Troque esse vale na Cantina
+da Grande Central por um pedido
+de refeição típica de Kunafa.","대집회소 식당에서 사용하는
+티켓. 쿠나파 음식을
+주문할 수 있다.","可在大集會所用餐區使用的票券。
+有它就可以享用從庫納法送來的
+餐點。","可以在大集会所的用餐区使用的票
+券。可以获得在库纳法才能享用到
+的餐点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
+في كافتيريا مركز التجمع الرئيسي
+للحصول على وجبة من وجبات (كونافا) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
+del Gran centro por una ración
+de la comida regional de Kunafa."
+a8fac147-cf64-462e-a52f-76ef47e771a0,1698280051,Item_IT_809,アズズお届け食事券,Azuz Meal Voucher,Coupon repas Azuz,Buono pasto Azuz,Azuz-Essensgutschein,Cupón de menú de Azuz,Талон на еду: Азуз,Talon na posiłek z Azuz,,,Vale-refeição de Azuz,아즈즈 배달 식사권,阿茲茲快遞餐券,阿孜兹速递餐券,,,,,,,,قسيمة وجبة آزوز,,,,,,,,,,,Cupón para comida de Azuz
+80b6ad8d-0e0a-4817-a6c8-ab3fa88c813a,1876790018,Item_IT_EXP_809,"大集会所の食事場で使用できる
+チケット。アズズで振る舞われる
+食事がお取り寄せできる。","Exchange this voucher in the
+Grand Hub Canteen for one order
+of the Azuz regional meal.","Échangez ce coupon à la Cantine
+du Grand-Camp contre le plat
+typique d'Azuz.","Scambia questo buono nella
+mensa del Centro supremo per un
+pasto regionale di Azuz.","Tausche diesen Gutschein in der
+Großen Stätte gegen eine Portion
+der Spezialität aus Azuz ein.","Intercambia el cupón en la cantina
+del gran centro por un pedido
+de la comida regional de Azuz.","Можно обменять на региональное
+азузское блюдо в столовой
+Общего места встреч.","Wymień ten talon w kantynie
+w wielkim centrum, by zamówić jeden
+z regionalnych posiłków z Azuz.",,,"Troque esse vale na Cantina
+da Grande Central por um pedido
+de refeição típica de Azuz.","대집회소 식당에서 사용하는
+티켓. 아즈즈 음식을
+주문할 수 있다.","可在大集會所用餐區使用的票券。
+有它就可以享用從阿茲茲送來的
+餐點。","可以在大集会所的用餐区使用的票
+券。可以获得在阿孜兹才能享用到
+的餐点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
+في كافتيريا مركز التجمع الرئيسي
+للحصول على وجبة من وجبات (آزوز) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
+del Gran centro por una ración
+de la comida regional de Azuz."
+a31f4784-af6c-4f98-b148-d62f1e9f5f16,229450249,Item_IT_810,シルドお届け食事券,Sild Meal Voucher,Coupon repas Sild,Buono pasto Sild,Sild-Essensgutschein,Cupón de menú de Sild,Талон на еду: Сильд,Talon na posiłek z Slid,,,Vale-refeição de Sild,실드 배달 식사권,希爾德快遞餐券,西尔德速递餐券,,,,,,,,قسيمة وجبة سيلد,,,,,,,,,,,Cupón para comida de Sild
+67e9f80e-0f7d-4663-a3f3-f4e4ba99bf49,3236149665,Item_IT_EXP_810,"大集会所の食事場で使用できる
+チケット。シルドで振る舞われる
+食事がお取り寄せできる。","Exchange this voucher in the
+Grand Hub Canteen for one order
+of the Sild regional meal.","Échangez ce coupon à la Cantine
+du Grand-Camp contre le plat
+typique de Sild.","Scambia questo buono nella
+mensa del Centro supremo per un
+pasto regionale di Sild.","Tausche diesen Gutschein in der
+Großen Stätte gegen eine Portion
+der Spezialität aus Sild ein.","Intercambia el cupón en la cantina
+del gran centro por un pedido
+de la comida regional de Sild.","Можно обменять на региональное
+сильдское блюдо в столовой
+Общего места встреч.","Wymień ten talon w kantynie
+w wielkim centrum, by zamówić jeden
+z regionalnych posiłków z Sild.",,,"Troque esse vale na Cantina
+da Grande Central por um pedido
+de refeição típica de Sild.","대집회소 식당에서 사용하는
+티켓. 실드 음식을
+주문할 수 있다.","可在大集會所用餐區使用的票券。
+有它就可以享用從希爾德送來的
+餐點。","可以在大集会所的用餐区使用的票
+券。可以获得在西尔德才能享用到
+的餐点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
+في كافتيريا مركز التجمع الرئيسي
+للحصول على وجبة من وجبات (سيلد) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
+del Gran centro por una ración
+de la comida regional de Sild."
+3f2b38ac-344d-465e-8125-385a3fd9a5f3,1301720865,Item_IT_811,スージャお届け食事券,Suja Meal Voucher,Coupon repas Suja,Buono pasto Suja,Suja-Essensgutschein,Cupón de menú de Suja,Талон на еду: Судджа,Talon na posiłek z Sui,,,Vale-refeição de Suja,스자 배달 식사권,蘇加快遞餐券,酥加速递餐券,,,,,,,,قسيمة وجبة سوجا,,,,,,,,,,,Cupón para comida de Suja
+a455bbd6-0177-4c12-b1c1-9fcea7fd3fc7,3053268686,Item_IT_EXP_811,"大集会所の食事場で使用できる
+チケット。スージャで振る舞われる
+食事がお取り寄せできる。","Exchange this voucher in the
+Grand Hub Canteen for one order
+of the Suja regional meal.","Échangez ce coupon à la Cantine
+du Grand-Camp contre le plat
+typique de Suja.","Scambia questo buono nella
+mensa del Centro supremo per un
+pasto regionale di Suja.","Tausche diesen Gutschein in der
+Großen Stätte gegen eine Portion
+der Spezialität aus Suja ein.","Intercambia el cupón en la cantina
+del gran centro por un pedido
+de la comida regional de Suja.","Можно обменять на региональное
+судджийское блюдо в столовой
+Общего места встреч.","Wymień ten talon w kantynie
+w wielkim centrum, by zamówić jeden
+z regionalnych posiłków z Sui.",,,"Troque esse vale na Cantina
+da Grande Central por um pedido
+de refeição típica de Suja.","대집회소 식당에서 사용하는
+티켓. 스자 음식을
+주문할 수 있다.","可在大集會所用餐區使用的票券。
+有它就可以享用從蘇加送來的餐點。","可以在大集会所的用餐区使用的票
+券。可以获得在酥加才能享用到的
+餐点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
+في كافتيريا مركز التجمع الرئيسي
+للحصول على وجبة من وجبات (سوجا) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
+del Gran centro por una ración
+de la comida regional de Suja."
+28b677d5-7b1a-4ab1-bf89-efc36a689ac0,3749124498,Item_IT_786,花舞のお食事券,Blossomdance Voucher,Coupon Danse des fleurs,Buono Fiordanza,Blütentanz-Gutschein,Cupón de floradanza,Талон Танца цветов,Talon Tańca Kwiatów,,,Vale de Floridança,화무 식사권,花舞餐券,花舞餐券,,,,,,,,قسيمة مهرجان رقصة الزهرة,,,,,,,,,,,Cupón para la Floradanza
+768907f5-9279-41f6-85ba-89ff6c0a860f,3391638843,Item_IT_EXP_786,"【花舞の儀】の期間中のみ使用
+できる限定お食事券。季節を彩る
+特別な食事が食べられる。","A voucher usable only during
+the Blossomdance. Exchange
+it for a festive meal.","Coupon valable uniquement
+pendant la Danse des fleurs.
+À échanger contre un repas festif.","Buono utilizzabile solo durante
+la Fiordanza. Scambiabile
+con un pasto festivo.","Ein exklusiver Gutschein für den
+Blütentanz. Tausche ihn gegen
+eine festliche Mahlzeit ein.","Un vale que solo se puede usar
+durante la floradanza. Intercámbialo
+por un menú festivo.","Талон, действительный только
+во время Танца цветов. Можно
+обменять на праздничное блюдо.","Talon do wykorzystania tylko
+podczas Tańca Kwiatów.
+Wymień na świąteczny posiłek.",,,"Vale válido apenas durante
+a Floridança. Troque-o por
+uma refeição festiva.","【화무 의식】 때 사용 가능한
+한정 식사권. 계절을 수놓는
+특별한 식사를 할 수 있다.","只可在【花舞之儀】期間使用的
+限定餐券。有它就可品嚐為季節
+增添色彩的特別餐點。","仅限在【花舞之仪】举办期间使用
+的餐券。可以享用应季的特别餐点。",,,,,,,,"قسيمة يمكن استخدامها
+أثناء مهرجان رقصة الزهرة فقط.
+<LSNR ""استبدلها"" ""استبدليها""> بوجبة احتفالية.",,,,,,,,,,,"Un cupón para usar solamente
+durante la Floradanza. Se puede
+canjear por un menú festivo."
 cc9c5b10-bc1c-4a11-8842-31c88e080433,1139524890,Item_IT_647,鋼の錬金チケット,Steel Melding Ticket,Ticket Fusion de fer,Buono fusione acciaio,Stahlschmelz-Ticket,Vale de fusión acerada,Стальн. билет плавильни,Kwit stapiania stali,,,Bilhete de Fundição de Aço,강철 연금 티켓,鋼之鍊金票,钢之炼金票,,,,,,,,تذكرة الدمج الفولاذي,,,,,,,,,,,Cupón de fusión acerada
 5471d277-a663-4da6-8e76-93c2fbf0cd77,2282253374,Item_IT_EXP_647,"竜人族が使っているチケット。
 装飾品を錬金する際に渡すと、
@@ -17412,6 +18417,36 @@ Altíssimo preço de venda.","반짝반짝 빛나는 금으로 된
 تُباع مقابل ثروة.",,,,,,,,,,,"Huevo de oro reluciente,
 valioso pero inservible.
 Se vende por una fortuna."
+f18e60f3-0c7e-4b5a-b5bd-e8526ac049a8,2293466159,Item_IT_785,タルコロチャレンジ券,Barrel Bowling Voucher,Coupon Bowling baril,Buono Fusti rotolanti,Fass-Bowling-Gutschein,Cupón de Bolera Barril,Талон бочкового боулинга,Talon na kręgle beczkowe,,,Vale de Boliche de Barril,나무통 굴리기 챌린지 티켓,滾滾木桶挑戰券,滚桶挑战券,,,,,,,,قسيمة بولينغ البراميل,,,,,,,,,,,Cupón para bolos con barriles
+47faa971-fa77-4f9c-b964-ac3ebeeb4621,3211958673,Item_IT_EXP_785,"大集会所のミニゲームを遊ぶ為に
+使用するチケット。タルがたくさん
+描かれており、手作り感満載。","A voucher for a chance to play
+a Grand Hub mini-game. Has
+a whimsical DIY look.","Coupon qui permet de jouer
+à un mini-jeu du Grand-Camp.
+Original, il semble fait main.","Buono per giocare a un
+minigioco del Centro supremo.
+Non sembra molto professionale.","Ein Gutschein zum Spielen eines
+Minispiels in der Großen Stätte.
+Sieht selbstgemacht aus.","Cupón que posibilita jugar a un
+minijuego del gran centro. Tiene
+un aire artesano fantástico.","Талон на мини-игру в Общем месте
+встреч. Производит впечатление
+талантливой ручной работы.","Talon do wykorzystania, by zagrać
+w minigrę w wielkim centrum.
+Fikuśny z wyglądu.",,,"Vale para jogar um minijogo
+na Grande Central. Tem um visual
+divertido e artesanal.","대집회소 미니 게임 플레이에
+사용하는 티켓. 나무통을 잔뜩
+그려두어 수제 느낌이 강하다.","用來遊玩大集會所的小遊戲的票券。
+票券上畫有許多木桶，帶有滿滿的
+手作感。","用来游玩大集会所的小游戏的票券。
+上面画着许多木桶，充满手工制作
+的感觉。",,,,,,,,"قسيمة تتيح فرصة تجربة
+لعبة مصغرة في مركز التجمع الرئيسي.
+تتميز بتصميم يدوي مبهج.",,,,,,,,,,,"Un cupón para jugar una vez
+a un minijuego en el Gran centro.
+Parece hecho a mano."
 67d3b980-e599-4f18-9dfe-ae5473c7780d,3452267233,Item_IT_654,重鎧玉,Heavy Armor Sphere,Sphère d'armure lourde,Sfera-armatura V,Rüstkugel V,Esfera armadura pesada,Тяжёлая сфера доспехов,Ciężka kula pancerza,,,Esfera de Armadura Pesada,중갑옥,重鎧玉,重铠玉,,,,,,,,إطار درع ثقيل,,,,,,,,,,,Esfera arm. pesada
 57784143-2e15-4c2c-8a1c-9adf17ef0b48,3428923944,Item_IT_EXP_654,"高密度の重厚な鎧玉。
 防具の強化をとても大きく進める。","A solid, high-density armor
@@ -17424,7 +18459,7 @@ notevolmente.","Feste und sehr dichte Rüstkugel.
 Verarbeite sie in Rüstung, um
 diese enorm zu verbessern.","Esfera armadura sólida y de alta
 densidad. Fúndela con armadura para
-mejorarla bastante.","Жёсткая и плотная сфера
+mejorarla bastante.","Тяжёлая и плотная сфера
 доспехов. Сплавьте с доспехом,
 чтобы сильно его улучшить.","Solidna kula pancerza o wysokiej
 gęstości. Połącz ją z pancerzem,
@@ -17533,8 +18568,9 @@ sólido y duradero.","Кость крупного монстра
 высокого ранга. Очень
 прочная и износостойкая.","Kość dużego potwora wysokiego
 poziomu. Niezwykle wytrzymała
-i trwała.",,,"Osso de um monstro grande de ranque
-elevado. Extremamente sólido e durável.","상위 대형 몬스터에서 얻는
+i trwała.",,,"Osso de um monstro grande de
+ranque elevado. Extremamente
+sólido e durável.","상위 대형 몬스터에서 얻는
 뼈 소재. 견고하며 내구성과
 강도가 뛰어난 짐승 뼈.","可從進階大型魔物採集到的骨素材。
 這種獸骨極為堅固，兼具耐久度與
