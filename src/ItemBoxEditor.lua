@@ -15,7 +15,7 @@ local ITEM_ID_MAX = 824
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.8.1"
+local INTER_VERSION = "v1.8.2"
 local MAX_VERSION = "1.1.0.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -126,10 +126,10 @@ end
 local function getVersion()
     local sysService = sdk.get_native_singleton("via.SystemService")
     local sysServiceType = sdk.find_type_definition("via.SystemService")
-    GAME_VER = sdk.call_native_func(sysService, sysServiceType, "get_ApplicationVersion"):match("Product:([^,]+)")
+    GAME_VER = sdk.call_native_func(sysService, sysServiceType, "get_ApplicationVersion()"):match("Product:([^,]+)")
 end
 
-function compareVersions(version1, version2)
+local function compareVersions(version1, version2)
     local v1Parts = {}
     for num in version1:gmatch("%d+") do
         table.insert(v1Parts, tonumber(num))
@@ -308,10 +308,10 @@ end
 
 local function initBoxItem()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
-    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData()")
     print("Hunter ID: " .. cUserSaveParam:get_field("HunterId"))
     cItemParam = cUserSaveParam:get_field("_Item")
-    boxItemArray = cItemParam:call("get_BoxItem")
+    boxItemArray = cItemParam:call("get_BoxItem()")
     for boxPosIndex = 0, #boxItemArray - 1 do
         local boxItem = boxItemArray[boxPosIndex]
         local isNotInList = true
@@ -364,21 +364,22 @@ end
 
 local function initHunterBasicData()
     local saveDataManager = sdk.get_managed_singleton("app.SaveDataManager")
-    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData")
+    local cUserSaveParam = saveDataManager:call("getCurrentUserSaveData()")
     cBasicParam = cUserSaveParam:get_field("_BasicData")
-    originMoney = cBasicParam:call("getMoney")
-    originPoints = cBasicParam:call("getPoint")
+    originMoney = cBasicParam:call("getMoney()")
+    originPoints = cBasicParam:call("getPoint()")
     moneySliderVal = originMoney
     pointsSliderVal = originPoints
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
     local itemID = itemIDAndFixedIDProjection[itemFixedId]
-    local boxItem = cItemParam:call("getBoxItem", itemID)
+    local boxItem = cItemParam:call("getBoxItem(app.ItemDef.ID)", itemID)
     if boxItem == nil then
-        cItemParam:call("changeItemBoxNum", itemID, changedNumber)
+        cItemParam:call("changeItemBoxNum(app.ItemDef.ID, System.Int16)", itemID, changedNumber)
     else
-        cItemParam:call("changeItemBoxNum", itemID, changedNumber - boxItem:get_field("Num"))
+        cItemParam:call("changeItemBoxNum(app.ItemDef.ID, System.Int16)", itemID,
+            changedNumber - boxItem:get_field("Num"))
     end
     if changedNumber == 0 then
         for index = 1, #itemBoxList do
@@ -392,11 +393,11 @@ local function changeBoxItemNum(itemFixedId, changedNumber)
 end
 
 local function moneyAddFunc(cBasicData, newMoney)
-    cBasicData:call("addMoney", newMoney, false)
+    cBasicData:call("addMoney(System.Int32, System.Boolean)", newMoney, false)
 end
 
 local function pointAddFunc(cBasicData, newPoint)
-    cBasicData:call("addPoint", newPoint, false)
+    cBasicData:call("addPoint(System.Int32, System.Boolean)", newPoint, false)
 end
 
 local function init()
