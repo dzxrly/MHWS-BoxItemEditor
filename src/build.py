@@ -99,6 +99,7 @@ LUA_SAVE_DIR = '{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'autorun')
 TXT_SAVE_PREFIX = 'Items_'
 JSON_SAVE_DIR = '{}/{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'data', MOD_NAME)
 JSON_FILE_NAME_PREFIX = 'ItemBoxEditor_'
+USER_CONFIG_JSON_FILE_NAME = 'UserConfig.json'
 FONTS_SAVE_DIR = '{}/{}/{}'.format(WORK_TEMP_DIR, MOD_ROOT_DIR, 'fonts')
 FONTS_FILE_NAME = 'ItemBoxEditor_Fonts_NotoSans'
 VERSION_JSON_SAVE_PATH = 'version.json'
@@ -215,6 +216,9 @@ def create_lua_by_i18n(
     if font_path is not None:
         lua_str = lua_str.replace('local FONT_NAME = ""',
                                   f'local FONT_NAME = "{font_path}"')
+    # math 'local USER_CONFIG_PATH = ""' row and replace the content in the double quotes
+    lua_str = lua_str.replace('local USER_CONFIG_PATH = ""',
+                              f'local USER_CONFIG_PATH = "{MOD_NAME}/{USER_CONFIG_JSON_FILE_NAME}"')
     # save lua file
     save_path = os.path.join(LUA_SAVE_DIR, f'ItemBoxEditor_{tag}.lua')
     with open(save_path, 'w', encoding='utf-8') as f:

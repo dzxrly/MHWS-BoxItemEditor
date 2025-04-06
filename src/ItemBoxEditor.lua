@@ -4,6 +4,7 @@
 
 -- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = ""
+local USER_CONFIG_PATH = ""
 local LANG = ""
 local FONT_NAME = ""
 local FONT_SIZE = 24
@@ -44,9 +45,14 @@ local i18n = nil
 -- NOT CHANGED VARIABLES END
 
 -- window status
-local mainWindowOpen = true
-local itemWindowOpen = false
-local aboutWindowOpen = false
+local userConfig = {
+    mainWindowOpen = false,
+    itemWindowOpen = false,
+    aboutWindowOpen = false
+}
+local mainWindowState = userConfig.mainWindowOpen
+local itemWindowState = userConfig.itemWindowOpen
+local aboutWindowState = userConfig.aboutWindowOpen
 -- window status end
 
 -- item table window
@@ -170,6 +176,25 @@ local function initIDAndFixedIDProjection()
         if fixedID ~= nil then
             itemIDAndFixedIDProjection[fixedID] = index
         end
+    end
+end
+
+local function loadUserConfigJson(jsonPath)
+    if json ~= nil then
+        local jsonFile = json.load_file(jsonPath)
+        if jsonFile then
+            userConfig.mainWindowOpen = jsonFile.mainWindowOpen
+            userConfig.itemWindowOpen = jsonFile.itemWindowOpen
+            userConfig.aboutWindowOpen = jsonFile.aboutWindowOpen
+        else
+            json.dump_file(jsonPath, userConfig)
+        end
+    end
+end
+
+local function saveUserConfigJson(jsonPath)
+    if json ~= nil then
+        json.dump_file(jsonPath, userConfig)
     end
 end
 
@@ -406,7 +431,7 @@ local function init()
 end
 
 local function mainWindow()
-    if imgui.begin_window(i18n.windowTitle, mainWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+    if imgui.begin_window(i18n.windowTitle, mainWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
         if MAX_VER_LT_OR_EQ_GAME_VER == false then
             imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
             imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
@@ -612,14 +637,16 @@ local function mainWindow()
         imgui.end_window()
     else
         clear()
-        mainWindowOpen = false
+        mainWindowState = false
+        userConfig.mainWindowOpen = mainWindowState
+        saveUserConfigJson(USER_CONFIG_PATH)
     end
 end
 
 local function itemTableWindow()
     local changed = nil
     imgui.set_next_window_size({ 480, 640 }, 4) -- 4 is ImGuiCond_FirstUseEver
-    if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+    if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
         imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
         imgui.table_setup_column('', 0, 2)
         imgui.table_setup_column('', 0, 1)
@@ -668,12 +695,14 @@ local function itemTableWindow()
 
         imgui.end_window()
     else
-        itemWindowOpen = false
+        itemWindowState = false
+        userConfig.itemWindowOpen = itemWindowState
+        saveUserConfigJson(USER_CONFIG_PATH)
     end
 end
 
 local function aboutWindow()
-    if imgui.begin_window(i18n.aboutWindowsTitle, aboutWindowOpen, ImGuiWindowFlags_AlwaysAutoResize) then
+    if imgui.begin_window(i18n.aboutWindowsTitle, aboutWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
         imgui.text(i18n.modContributorTitle)
         local contributorsStr = ""
         for i = 1, #i18n.modContributors do
@@ -697,28 +726,41 @@ local function aboutWindow()
 
         imgui.end_window()
     else
-        aboutWindowOpen = false
+        aboutWindowState = false
+        userConfig.aboutWindowOpen = aboutWindowState
     end
 end
 
 initIDAndFixedIDProjection()
 loadI18NJson(ITEM_NAME_JSON_PATH)
+loadUserConfigJson(USER_CONFIG_PATH)
 searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
 re.on_draw_ui(function()
-    local changed = false
+    local mainWindowChanged = false
+    local itemWindowChanged = false
     -- set the font
     if FONT ~= nil then
         imgui.push_font(FONT)
     end
 
     if imgui.tree_node(i18n.title) then
-        changed, mainWindowOpen = imgui.checkbox(i18n.openMainWindow, mainWindowOpen)
-        changed, itemWindowOpen = imgui.checkbox(i18n.openItemTableWindow, itemWindowOpen)
+        mainWindowChanged, mainWindowState = imgui.checkbox(i18n.openMainWindow, mainWindowState)
+        if mainWindowChanged then
+            userConfig.mainWindowOpen = mainWindowState
+            saveUserConfigJson(USER_CONFIG_PATH)
+        end
+        itemWindowChanged, itemWindowState = imgui.checkbox(i18n.openItemTableWindow, itemWindowState)
+        if itemWindowChanged then
+            userConfig.itemWindowOpen = itemWindowState
+            saveUserConfigJson(USER_CONFIG_PATH)
+        end
         if imgui.button(i18n.aboutWindowsTitle, SMALL_BTN) then
-            aboutWindowOpen = not aboutWindowOpen
+            aboutWindowState = not aboutWindowState
+            userConfig.aboutWindowOpen = aboutWindowState
+            saveUserConfigJson(USER_CONFIG_PATH)
         end
         imgui.tree_pop()
     end
