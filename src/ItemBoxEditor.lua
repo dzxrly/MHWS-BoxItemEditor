@@ -636,18 +636,17 @@ local function mainWindow()
         else
             imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
         end
-
         imgui.new_line()
         imgui.text(i18n.modRepoTitle)
         imgui.text(i18n.modRepo)
-        local repoBtnState = nil
+        local repoBtnState = true
         local resBtnRes = nil
         if imgui.button(i18n.cpToClipboardBtn, SMALL_BTN) then
             repoBtnState, resBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.modRepo)
             end)
         end
-        if ~repoBtnState then
+        if not repoBtnState then
             imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
         end
 
@@ -740,6 +739,16 @@ local function aboutWindow()
         imgui.text(i18n.modRepoTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(i18n.modRepo)
+        local repoBtnState = true
+        local resBtnRes = nil
+        if imgui.button(i18n.cpToClipboardBtn, SMALL_BTN) then
+            repoBtnState, resBtnRes = pcall(function()
+                sdk.copy_to_clipboard(i18n.modRepo)
+            end)
+        end
+        if not repoBtnState then
+            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
+        end
 
         imgui.end_window()
     else
