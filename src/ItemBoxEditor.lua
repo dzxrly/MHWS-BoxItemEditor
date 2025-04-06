@@ -186,6 +186,9 @@ local function loadUserConfigJson(jsonPath)
             userConfig.mainWindowOpen = jsonFile.mainWindowOpen
             userConfig.itemWindowOpen = jsonFile.itemWindowOpen
             userConfig.aboutWindowOpen = jsonFile.aboutWindowOpen
+            mainWindowState = userConfig.mainWindowOpen
+            itemWindowState = userConfig.itemWindowOpen
+            aboutWindowState = userConfig.aboutWindowOpen
         else
             json.dump_file(jsonPath, userConfig)
         end
