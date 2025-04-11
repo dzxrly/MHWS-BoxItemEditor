@@ -763,7 +763,7 @@ local function aboutWindow()
         imgui.text(i18n.nexusModPage)
         local modPageBtnState = true
         local modPageBtnRes = nil
-        if imgui.button("Nexus Mod: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
             modPageBtnState, modPageBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.nexusModPage)
             end)
