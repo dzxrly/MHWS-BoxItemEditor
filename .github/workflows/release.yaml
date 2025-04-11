@@ -61,6 +61,12 @@ jobs:
           echo "- **[ItemBoxEditor_JA-JP.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_JA-JP.zip)** （日本語 / Japanese Version）" >> release_notes.md
           echo "- **[ItemBoxEditor_KO-KR.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_KO-KR.zip)** （한국인 / Korean Version）" >> release_notes.md
           echo "" >> release_notes.md
+          echo "### 更新日志 / Changelogs" >> release_notes.md
+          if [ -f CHANGELOGS.md ]; then
+            cat CHANGELOGS.md >> release_notes.md
+          else
+            echo "未找到CHANGELOGS.md文件 / CHANGELOGS.md file not found." >> release_notes.md
+          fi
           echo "### 文件校验 / Checksums" >> release_notes.md
           echo "- \`ItemBoxEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_EN-US.zip.sha256)" >> release_notes.md
           echo "- \`ItemBoxEditor_ZH-Hans.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_ZH-Hans.zip.sha256)" >> release_notes.md
