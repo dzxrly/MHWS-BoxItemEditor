@@ -641,7 +641,7 @@ local function mainWindow()
         imgui.text(i18n.modRepo)
         local repoBtnState = true
         local reposBtnRes = nil
-        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
             repoBtnState, reposBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.modRepo)
             end)
@@ -652,7 +652,7 @@ local function mainWindow()
         imgui.text(i18n.nexusModPage)
         local modPageBtnState = true
         local modPageBtnRes = nil
-        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
             modPageBtnState, modPageBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.nexusModPage)
             end)
@@ -752,7 +752,7 @@ local function aboutWindow()
         imgui.text(i18n.modRepo)
         local repoBtnState = true
         local reposBtnRes = nil
-        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
             repoBtnState, reposBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.modRepo)
             end)
@@ -763,7 +763,7 @@ local function aboutWindow()
         imgui.text(i18n.nexusModPage)
         local modPageBtnState = true
         local modPageBtnRes = nil
-        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
             modPageBtnState, modPageBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.nexusModPage)
             end)
