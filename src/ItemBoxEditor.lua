@@ -640,13 +640,24 @@ local function mainWindow()
         imgui.text(i18n.modRepoTitle)
         imgui.text(i18n.modRepo)
         local repoBtnState = true
-        local resBtnRes = nil
-        if imgui.button(i18n.cpToClipboardBtn, SMALL_BTN) then
-            repoBtnState, resBtnRes = pcall(function()
+        local reposBtnRes = nil
+        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+            repoBtnState, reposBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.modRepo)
             end)
         end
         if not repoBtnState then
+            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
+        end
+        imgui.text(i18n.nexusModPage)
+        local modPageBtnState = true
+        local modPageBtnRes = nil
+        if imgui.button("Nexus Mod: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+            modPageBtnState, modPageBtnRes = pcall(function()
+                sdk.copy_to_clipboard(i18n.nexusModPage)
+            end)
+        end
+        if not modPageBtnState then
             imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
         end
 
@@ -740,15 +751,37 @@ local function aboutWindow()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(i18n.modRepo)
         local repoBtnState = true
-        local resBtnRes = nil
-        if imgui.button(i18n.cpToClipboardBtn, SMALL_BTN) then
-            repoBtnState, resBtnRes = pcall(function()
+        local reposBtnRes = nil
+        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+            repoBtnState, reposBtnRes = pcall(function()
                 sdk.copy_to_clipboard(i18n.modRepo)
             end)
         end
         if not repoBtnState then
             imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
         end
+        imgui.text(i18n.nexusModPage)
+        local modPageBtnState = true
+        local modPageBtnRes = nil
+        if imgui.button("Nexus Mod: " .. i18n.cpToClipboardBtn, SMALL_BTN) then
+            modPageBtnState, modPageBtnRes = pcall(function()
+                sdk.copy_to_clipboard(i18n.nexusModPage)
+            end)
+        end
+        if not modPageBtnState then
+            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
+        end
+
+        imgui.new_line()
+        imgui.text(i18n.otherLibsLicenseTitle)
+        imgui.new_line()
+        imgui.text(i18n.fontLicenseTitle)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.text(i18n.fontLicenseContent)
+        imgui.new_line()
+        imgui.text(i18n.reframeworkLicenseTitle)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.text(i18n.reframeworkLicense)
 
         imgui.end_window()
     else
