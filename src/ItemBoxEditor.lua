@@ -665,8 +665,8 @@ local function mainWindow()
 
         imgui.new_line()
         imgui.text(i18n.nameResetTitle)
-        imgui.text_colored(i18n.hunterNameNgWordWarning, ERROR_COLOR)
-        imgui.text_colored(i18n.nameNgWordWarning, TIPS_COLOR)
+        imgui.text_colored(i18n.nameNgWordWarning, ERROR_COLOR)
+        imgui.text_colored(i18n.nameResetReloadGameTip, TIPS_COLOR)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         hunterNameInputChanged, newHunterName = imgui.input_text(i18n.hunterName, newHunterName)
         if hunterNameInputChanged then
