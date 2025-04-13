@@ -470,8 +470,6 @@ local function mainWindow()
         end
 
         imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
-        imgui.new_line()
-
         imgui.text(i18n.modVersion)
         imgui.same_line()
         imgui.text(INTER_VERSION)
@@ -482,6 +480,7 @@ local function mainWindow()
         else
             imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
         end
+        imgui.new_line()
 
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
