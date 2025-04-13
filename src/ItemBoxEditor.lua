@@ -16,10 +16,11 @@ local ITEM_ID_MAX = 824
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.8.2"
+local INTER_VERSION = "v1.8.3"
 local MAX_VERSION = "1.1.0.0"
 -- Just change here can change every VERSION setting in all files END
 
+local NAME_LENGTH_MAX = 10
 local MONEY_PTS_MAX = 99999999
 local ADD_1E4 = 10000
 local ADD_5E4 = 50000
@@ -98,6 +99,13 @@ local pointsSliderChange = nil
 local moneySliderNewVal = nil
 local pointsSliderNewVal = nil
 
+local newHunterName = ""
+local newOtomoName = ""
+local hunterNameInputChanged = nil
+local hunterNameResetBtnEnabled = false
+local otomoNameInputChanged = nil
+local otomoNameResetBtnEnabled = false
+
 local function clear()
     boxItemArray = nil
     cItemParam = nil
@@ -127,6 +135,13 @@ local function clear()
     pointsSliderChange = nil
     moneySliderNewVal = nil
     pointsSliderNewVal = nil
+
+    newHunterName = ""
+    newOtomoName = ""
+    hunterNameInputChanged = nil
+    hunterNameResetBtnEnabled = false
+    otomoNameInputChanged = nil
+    otomoNameResetBtnEnabled = false
 end
 
 local function getVersion()
@@ -428,6 +443,18 @@ local function pointAddFunc(cBasicData, newPoint)
     cBasicData:call("addPoint(System.Int32, System.Boolean)", newPoint, false)
 end
 
+local function resetHunterName(cBasicData, newHunterName)
+    if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <= NAME_LENGTH_MAX then
+        cBasicData:call("setHunterName(System.String)", newHunterName)
+    end
+end
+
+local function resetOtomoName(cBasicData, newOtomoName)
+    if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <= NAME_LENGTH_MAX then
+        cBasicData:call("setOtomoName(System.String)", newOtomoName)
+    end
+end
+
 local function init()
     initBoxItem()
     initHunterBasicData()
@@ -445,9 +472,22 @@ local function mainWindow()
         imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
         imgui.new_line()
 
+        imgui.text(i18n.modVersion)
+        imgui.same_line()
+        imgui.text(INTER_VERSION)
+        imgui.text(i18n.gameVersion)
+        imgui.same_line()
+        if MAX_VER_LT_OR_EQ_GAME_VER then
+            imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
+        else
+            imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
+        end
+
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
         end
+        imgui.new_line()
+
         ------------------- existed item change -----------------
         imgui.begin_disabled(cItemParam == nil)
         imgui.new_line()
@@ -623,19 +663,56 @@ local function mainWindow()
             pointAddFunc(cBasicParam, pointsChangedDiff)
             init()
         end
-        imgui.end_disabled()
 
         imgui.new_line()
-        imgui.text(i18n.modVersion)
-        imgui.same_line()
-        imgui.text(INTER_VERSION)
-        imgui.text(i18n.gameVersion)
-        imgui.same_line()
-        if MAX_VER_LT_OR_EQ_GAME_VER then
-            imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
-        else
-            imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
+        imgui.text(i18n.nameResetTitle)
+        imgui.text_colored(i18n.hunterNameNgWordWarning, ERROR_COLOR)
+        imgui.text_colored(i18n.nameNgWordWarning, TIPS_COLOR)
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        hunterNameInputChanged, newHunterName = imgui.input_text(i18n.hunterName, newHunterName)
+        if hunterNameInputChanged then
+            if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <= NAME_LENGTH_MAX then
+                hunterNameResetBtnEnabled = true
+            else
+                hunterNameResetBtnEnabled = false
+            end
+            print(hunterNameResetBtnEnabled)
         end
+        imgui.begin_disabled(not hunterNameResetBtnEnabled)
+        if imgui.button(i18n.hunterNameResetBtn, LARGE_BTN) then
+            resetHunterName(cBasicParam, newHunterName)
+            init()
+        end
+        imgui.end_disabled()
+        if hunterNameResetBtnEnabled then
+            imgui.text_colored("", TIPS_COLOR)
+        else
+            imgui.text_colored(i18n.hunterNameMaxLengthWarning, ERROR_COLOR)
+        end
+
+        imgui.set_next_item_width(WINDOW_WIDTH_M)
+        otomoNameInputChanged, newOtomoName = imgui.input_text(i18n.otomoName, newOtomoName)
+        if otomoNameInputChanged then
+            if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <= NAME_LENGTH_MAX then
+                otomoNameResetBtnEnabled = true
+            else
+                otomoNameResetBtnEnabled = false
+            end
+        end
+        imgui.begin_disabled(not otomoNameResetBtnEnabled)
+        if imgui.button(i18n.otomoNameResetBtn, LARGE_BTN) then
+            resetOtomoName(cBasicParam, newOtomoName)
+            init()
+        end
+        imgui.end_disabled()
+        if otomoNameResetBtnEnabled then
+            imgui.text_colored("", TIPS_COLOR)
+        else
+            imgui.text_colored(i18n.otomoNameMaxLengthWarning, ERROR_COLOR)
+        end
+
+        imgui.end_disabled()
+
         imgui.new_line()
         imgui.text(i18n.modRepoTitle)
         imgui.text(i18n.modRepo)
