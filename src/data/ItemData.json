@@ -1,7 +1,7 @@
 [
   {
-    "name": "app.user_data.ItemData[689]",
-    "index": 689,
+    "name": "app.user_data.ItemData[695]",
+    "index": 695,
     "objectTableIndex": 0,
     "className": "app.user_data.ItemData",
     "fields": [
@@ -14737,7 +14737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 736
+                "value": 737
               },
               {
                 "name": "_ItemId",
@@ -21297,7 +21297,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 572
+                "value": 573
               },
               {
                 "name": "_ItemId",
@@ -21457,7 +21457,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 573
+                "value": 574
               },
               {
                 "name": "_ItemId",
@@ -21617,7 +21617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 574
+                "value": 575
               },
               {
                 "name": "_ItemId",
@@ -21777,7 +21777,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 575
+                "value": 576
               },
               {
                 "name": "_ItemId",
@@ -21937,7 +21937,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 576
+                "value": 577
               },
               {
                 "name": "_ItemId",
@@ -29777,7 +29777,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 678
+                "value": 679
               },
               {
                 "name": "_ItemId",
@@ -29937,7 +29937,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 679
+                "value": 680
               },
               {
                 "name": "_ItemId",
@@ -30097,7 +30097,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 680
+                "value": 681
               },
               {
                 "name": "_ItemId",
@@ -30257,7 +30257,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 681
+                "value": 682
               },
               {
                 "name": "_ItemId",
@@ -30417,7 +30417,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 682
+                "value": 683
               },
               {
                 "name": "_ItemId",
@@ -30577,7 +30577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 683
+                "value": 684
               },
               {
                 "name": "_ItemId",
@@ -30737,7 +30737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 684
+                "value": 685
               },
               {
                 "name": "_ItemId",
@@ -30897,7 +30897,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 685
+                "value": 686
               },
               {
                 "name": "_ItemId",
@@ -31057,7 +31057,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 686
+                "value": 687
               },
               {
                 "name": "_ItemId",
@@ -31217,7 +31217,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 687
+                "value": 688
               },
               {
                 "name": "_ItemId",
@@ -31377,7 +31377,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 688
+                "value": 689
               },
               {
                 "name": "_ItemId",
@@ -31537,7 +31537,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 689
+                "value": 690
               },
               {
                 "name": "_ItemId",
@@ -31697,7 +31697,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 690
+                "value": 691
               },
               {
                 "name": "_ItemId",
@@ -31857,7 +31857,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 691
+                "value": 692
               },
               {
                 "name": "_ItemId",
@@ -32017,7 +32017,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 692
+                "value": 693
               },
               {
                 "name": "_ItemId",
@@ -32177,7 +32177,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 693
+                "value": 694
               },
               {
                 "name": "_ItemId",
@@ -32337,7 +32337,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 605
+                "value": 606
               },
               {
                 "name": "_ItemId",
@@ -32497,7 +32497,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 606
+                "value": 607
               },
               {
                 "name": "_ItemId",
@@ -32657,7 +32657,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 694
+                "value": 695
               },
               {
                 "name": "_ItemId",
@@ -32817,7 +32817,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 695
+                "value": 696
               },
               {
                 "name": "_ItemId",
@@ -32977,7 +32977,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 696
+                "value": 697
               },
               {
                 "name": "_ItemId",
@@ -33137,7 +33137,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 697
+                "value": 698
               },
               {
                 "name": "_ItemId",
@@ -33297,7 +33297,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 698
+                "value": 699
               },
               {
                 "name": "_ItemId",
@@ -33457,7 +33457,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 699
+                "value": 700
               },
               {
                 "name": "_ItemId",
@@ -33617,7 +33617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 700
+                "value": 701
               },
               {
                 "name": "_ItemId",
@@ -33777,7 +33777,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 701
+                "value": 702
               },
               {
                 "name": "_ItemId",
@@ -33937,7 +33937,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 702
+                "value": 703
               },
               {
                 "name": "_ItemId",
@@ -34097,7 +34097,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 703
+                "value": 704
               },
               {
                 "name": "_ItemId",
@@ -34257,7 +34257,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 704
+                "value": 705
               },
               {
                 "name": "_ItemId",
@@ -34417,7 +34417,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 705
+                "value": 706
               },
               {
                 "name": "_ItemId",
@@ -34577,7 +34577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 706
+                "value": 707
               },
               {
                 "name": "_ItemId",
@@ -34737,7 +34737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 707
+                "value": 708
               },
               {
                 "name": "_ItemId",
@@ -34897,7 +34897,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 708
+                "value": 709
               },
               {
                 "name": "_ItemId",
@@ -35057,7 +35057,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 709
+                "value": 710
               },
               {
                 "name": "_ItemId",
@@ -35217,7 +35217,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 710
+                "value": 711
               },
               {
                 "name": "_ItemId",
@@ -35377,7 +35377,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 711
+                "value": 712
               },
               {
                 "name": "_ItemId",
@@ -35537,7 +35537,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 712
+                "value": 713
               },
               {
                 "name": "_ItemId",
@@ -35697,7 +35697,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 713
+                "value": 714
               },
               {
                 "name": "_ItemId",
@@ -35857,7 +35857,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 714
+                "value": 715
               },
               {
                 "name": "_ItemId",
@@ -36017,7 +36017,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 715
+                "value": 716
               },
               {
                 "name": "_ItemId",
@@ -36177,7 +36177,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 716
+                "value": 717
               },
               {
                 "name": "_ItemId",
@@ -36337,7 +36337,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 717
+                "value": 718
               },
               {
                 "name": "_ItemId",
@@ -36497,7 +36497,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 718
+                "value": 719
               },
               {
                 "name": "_ItemId",
@@ -36657,7 +36657,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 719
+                "value": 720
               },
               {
                 "name": "_ItemId",
@@ -36817,7 +36817,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 720
+                "value": 721
               },
               {
                 "name": "_ItemId",
@@ -36977,7 +36977,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 721
+                "value": 722
               },
               {
                 "name": "_ItemId",
@@ -37137,7 +37137,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 722
+                "value": 723
               },
               {
                 "name": "_ItemId",
@@ -37297,7 +37297,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 723
+                "value": 724
               },
               {
                 "name": "_ItemId",
@@ -37457,7 +37457,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 724
+                "value": 725
               },
               {
                 "name": "_ItemId",
@@ -37617,7 +37617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 725
+                "value": 726
               },
               {
                 "name": "_ItemId",
@@ -37777,7 +37777,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 726
+                "value": 727
               },
               {
                 "name": "_ItemId",
@@ -37937,7 +37937,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 727
+                "value": 728
               },
               {
                 "name": "_ItemId",
@@ -38097,7 +38097,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 728
+                "value": 729
               },
               {
                 "name": "_ItemId",
@@ -38257,7 +38257,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 729
+                "value": 730
               },
               {
                 "name": "_ItemId",
@@ -38417,7 +38417,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 730
+                "value": 731
               },
               {
                 "name": "_ItemId",
@@ -38577,7 +38577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 731
+                "value": 732
               },
               {
                 "name": "_ItemId",
@@ -38737,7 +38737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 732
+                "value": 733
               },
               {
                 "name": "_ItemId",
@@ -38897,7 +38897,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 733
+                "value": 734
               },
               {
                 "name": "_ItemId",
@@ -40177,7 +40177,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 743
+                "value": 744
               },
               {
                 "name": "_ItemId",
@@ -40337,7 +40337,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 737
+                "value": 738
               },
               {
                 "name": "_ItemId",
@@ -40497,7 +40497,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 661
+                "value": 662
               },
               {
                 "name": "_ItemId",
@@ -40657,7 +40657,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 662
+                "value": 663
               },
               {
                 "name": "_ItemId",
@@ -40817,7 +40817,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 738
+                "value": 739
               },
               {
                 "name": "_ItemId",
@@ -40977,7 +40977,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 739
+                "value": 740
               },
               {
                 "name": "_ItemId",
@@ -41617,7 +41617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 744
+                "value": 745
               },
               {
                 "name": "_ItemId",
@@ -70097,7 +70097,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 741
+                "value": 742
               },
               {
                 "name": "_ItemId",
@@ -70257,7 +70257,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 742
+                "value": 743
               },
               {
                 "name": "_ItemId",
@@ -70417,7 +70417,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 607
+                "value": 608
               },
               {
                 "name": "_ItemId",
@@ -70577,7 +70577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 608
+                "value": 609
               },
               {
                 "name": "_ItemId",
@@ -70737,7 +70737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 734
+                "value": 735
               },
               {
                 "name": "_ItemId",
@@ -71537,7 +71537,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 577
+                "value": 578
               },
               {
                 "name": "_ItemId",
@@ -87537,7 +87537,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 582
+                "value": 583
               },
               {
                 "name": "_ItemId",
@@ -87697,7 +87697,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 583
+                "value": 584
               },
               {
                 "name": "_ItemId",
@@ -87857,7 +87857,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 584
+                "value": 585
               },
               {
                 "name": "_ItemId",
@@ -90417,7 +90417,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 609
+                "value": 610
               },
               {
                 "name": "_ItemId",
@@ -90577,7 +90577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 610
+                "value": 611
               },
               {
                 "name": "_ItemId",
@@ -90737,7 +90737,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 611
+                "value": 612
               },
               {
                 "name": "_ItemId",
@@ -90897,7 +90897,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 612
+                "value": 613
               },
               {
                 "name": "_ItemId",
@@ -91057,7 +91057,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 613
+                "value": 614
               },
               {
                 "name": "_ItemId",
@@ -91217,7 +91217,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 615
+                "value": 616
               },
               {
                 "name": "_ItemId",
@@ -91377,7 +91377,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 616
+                "value": 617
               },
               {
                 "name": "_ItemId",
@@ -91537,7 +91537,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 617
+                "value": 618
               },
               {
                 "name": "_ItemId",
@@ -91697,7 +91697,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 619
+                "value": 620
               },
               {
                 "name": "_ItemId",
@@ -91857,7 +91857,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 569
+                "value": 570
               },
               {
                 "name": "_ItemId",
@@ -92017,7 +92017,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 570
+                "value": 571
               },
               {
                 "name": "_ItemId",
@@ -92177,7 +92177,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 571
+                "value": 572
               },
               {
                 "name": "_ItemId",
@@ -92337,7 +92337,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 600
+                "value": 601
               },
               {
                 "name": "_ItemId",
@@ -92497,7 +92497,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 601
+                "value": 602
               },
               {
                 "name": "_ItemId",
@@ -92657,7 +92657,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 602
+                "value": 603
               },
               {
                 "name": "_ItemId",
@@ -92817,7 +92817,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 603
+                "value": 604
               },
               {
                 "name": "_ItemId",
@@ -93617,7 +93617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 735
+                "value": 736
               },
               {
                 "name": "_ItemId",
@@ -94097,6 +94097,166 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
+                "value": 615
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 633
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "71d4b9d1-4274-49b2-a88c-9d1343df20d2"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "8ced5fd3-d06c-480f-9d2b-d8338b4c737c"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3510
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 14
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[590]",
+            "index": 590,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
                 "value": 59
               },
               {
@@ -94251,8 +94411,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[590]",
-            "index": 590,
+            "name": "app.user_data.ItemData.cData[591]",
+            "index": 591,
             "fields": [
               {
                 "name": "_Index",
@@ -94411,8 +94571,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[591]",
-            "index": 591,
+            "name": "app.user_data.ItemData.cData[592]",
+            "index": 592,
             "fields": [
               {
                 "name": "_Index",
@@ -94571,8 +94731,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[592]",
-            "index": 592,
+            "name": "app.user_data.ItemData.cData[593]",
+            "index": 593,
             "fields": [
               {
                 "name": "_Index",
@@ -94731,8 +94891,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[593]",
-            "index": 593,
+            "name": "app.user_data.ItemData.cData[594]",
+            "index": 594,
             "fields": [
               {
                 "name": "_Index",
@@ -94891,8 +95051,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[594]",
-            "index": 594,
+            "name": "app.user_data.ItemData.cData[595]",
+            "index": 595,
             "fields": [
               {
                 "name": "_Index",
@@ -95051,8 +95211,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[595]",
-            "index": 595,
+            "name": "app.user_data.ItemData.cData[596]",
+            "index": 596,
             "fields": [
               {
                 "name": "_Index",
@@ -95211,8 +95371,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[596]",
-            "index": 596,
+            "name": "app.user_data.ItemData.cData[597]",
+            "index": 597,
             "fields": [
               {
                 "name": "_Index",
@@ -95371,8 +95531,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[597]",
-            "index": 597,
+            "name": "app.user_data.ItemData.cData[598]",
+            "index": 598,
             "fields": [
               {
                 "name": "_Index",
@@ -95531,13 +95691,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[598]",
-            "index": 598,
+            "name": "app.user_data.ItemData.cData[599]",
+            "index": 599,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 659
+                "value": 660
               },
               {
                 "name": "_ItemId",
@@ -95691,13 +95851,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[599]",
-            "index": 599,
+            "name": "app.user_data.ItemData.cData[600]",
+            "index": 600,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 658
+                "value": 659
               },
               {
                 "name": "_ItemId",
@@ -95851,13 +96011,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[600]",
-            "index": 600,
+            "name": "app.user_data.ItemData.cData[601]",
+            "index": 601,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 660
+                "value": 661
               },
               {
                 "name": "_ItemId",
@@ -96011,13 +96171,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[601]",
-            "index": 601,
+            "name": "app.user_data.ItemData.cData[602]",
+            "index": 602,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 667
+                "value": 668
               },
               {
                 "name": "_ItemId",
@@ -96171,13 +96331,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[602]",
-            "index": 602,
+            "name": "app.user_data.ItemData.cData[603]",
+            "index": 603,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 590
+                "value": 591
               },
               {
                 "name": "_ItemId",
@@ -96331,13 +96491,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[603]",
-            "index": 603,
+            "name": "app.user_data.ItemData.cData[604]",
+            "index": 604,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 591
+                "value": 592
               },
               {
                 "name": "_ItemId",
@@ -96491,13 +96651,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[604]",
-            "index": 604,
+            "name": "app.user_data.ItemData.cData[605]",
+            "index": 605,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 593
+                "value": 594
               },
               {
                 "name": "_ItemId",
@@ -96651,13 +96811,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[605]",
-            "index": 605,
+            "name": "app.user_data.ItemData.cData[606]",
+            "index": 606,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 594
+                "value": 595
               },
               {
                 "name": "_ItemId",
@@ -96811,13 +96971,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[606]",
-            "index": 606,
+            "name": "app.user_data.ItemData.cData[607]",
+            "index": 607,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 663
+                "value": 664
               },
               {
                 "name": "_ItemId",
@@ -96971,13 +97131,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[607]",
-            "index": 607,
+            "name": "app.user_data.ItemData.cData[608]",
+            "index": 608,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 664
+                "value": 665
               },
               {
                 "name": "_ItemId",
@@ -97131,13 +97291,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[608]",
-            "index": 608,
+            "name": "app.user_data.ItemData.cData[609]",
+            "index": 609,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 665
+                "value": 666
               },
               {
                 "name": "_ItemId",
@@ -97291,13 +97451,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[609]",
-            "index": 609,
+            "name": "app.user_data.ItemData.cData[610]",
+            "index": 610,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 604
+                "value": 605
               },
               {
                 "name": "_ItemId",
@@ -97451,8 +97611,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[610]",
-            "index": 610,
+            "name": "app.user_data.ItemData.cData[611]",
+            "index": 611,
             "fields": [
               {
                 "name": "_Index",
@@ -97611,8 +97771,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[611]",
-            "index": 611,
+            "name": "app.user_data.ItemData.cData[612]",
+            "index": 612,
             "fields": [
               {
                 "name": "_Index",
@@ -97771,8 +97931,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[612]",
-            "index": 612,
+            "name": "app.user_data.ItemData.cData[613]",
+            "index": 613,
             "fields": [
               {
                 "name": "_Index",
@@ -97931,8 +98091,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[613]",
-            "index": 613,
+            "name": "app.user_data.ItemData.cData[614]",
+            "index": 614,
             "fields": [
               {
                 "name": "_Index",
@@ -98091,8 +98251,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[614]",
-            "index": 614,
+            "name": "app.user_data.ItemData.cData[615]",
+            "index": 615,
             "fields": [
               {
                 "name": "_Index",
@@ -98251,8 +98411,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[615]",
-            "index": 615,
+            "name": "app.user_data.ItemData.cData[616]",
+            "index": 616,
             "fields": [
               {
                 "name": "_Index",
@@ -98411,8 +98571,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[616]",
-            "index": 616,
+            "name": "app.user_data.ItemData.cData[617]",
+            "index": 617,
             "fields": [
               {
                 "name": "_Index",
@@ -98571,13 +98731,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[617]",
-            "index": 617,
+            "name": "app.user_data.ItemData.cData[618]",
+            "index": 618,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 592
+                "value": 593
               },
               {
                 "name": "_ItemId",
@@ -98731,13 +98891,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[618]",
-            "index": 618,
+            "name": "app.user_data.ItemData.cData[619]",
+            "index": 619,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 595
+                "value": 596
               },
               {
                 "name": "_ItemId",
@@ -98891,8 +99051,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[619]",
-            "index": 619,
+            "name": "app.user_data.ItemData.cData[620]",
+            "index": 620,
             "fields": [
               {
                 "name": "_Index",
@@ -99051,8 +99211,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[620]",
-            "index": 620,
+            "name": "app.user_data.ItemData.cData[621]",
+            "index": 621,
             "fields": [
               {
                 "name": "_Index",
@@ -99211,13 +99371,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[621]",
-            "index": 621,
+            "name": "app.user_data.ItemData.cData[622]",
+            "index": 622,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 596
+                "value": 597
               },
               {
                 "name": "_ItemId",
@@ -99371,13 +99531,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[622]",
-            "index": 622,
+            "name": "app.user_data.ItemData.cData[623]",
+            "index": 623,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 597
+                "value": 598
               },
               {
                 "name": "_ItemId",
@@ -99531,13 +99691,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[623]",
-            "index": 623,
+            "name": "app.user_data.ItemData.cData[624]",
+            "index": 624,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 598
+                "value": 599
               },
               {
                 "name": "_ItemId",
@@ -99691,13 +99851,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[624]",
-            "index": 624,
+            "name": "app.user_data.ItemData.cData[625]",
+            "index": 625,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 599
+                "value": 600
               },
               {
                 "name": "_ItemId",
@@ -99851,8 +100011,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[625]",
-            "index": 625,
+            "name": "app.user_data.ItemData.cData[626]",
+            "index": 626,
             "fields": [
               {
                 "name": "_Index",
@@ -100011,8 +100171,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[626]",
-            "index": 626,
+            "name": "app.user_data.ItemData.cData[627]",
+            "index": 627,
             "fields": [
               {
                 "name": "_Index",
@@ -100171,8 +100331,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[627]",
-            "index": 627,
+            "name": "app.user_data.ItemData.cData[628]",
+            "index": 628,
             "fields": [
               {
                 "name": "_Index",
@@ -100331,8 +100491,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[628]",
-            "index": 628,
+            "name": "app.user_data.ItemData.cData[629]",
+            "index": 629,
             "fields": [
               {
                 "name": "_Index",
@@ -100491,8 +100651,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[629]",
-            "index": 629,
+            "name": "app.user_data.ItemData.cData[630]",
+            "index": 630,
             "fields": [
               {
                 "name": "_Index",
@@ -100651,8 +100811,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[630]",
-            "index": 630,
+            "name": "app.user_data.ItemData.cData[631]",
+            "index": 631,
             "fields": [
               {
                 "name": "_Index",
@@ -100811,8 +100971,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[631]",
-            "index": 631,
+            "name": "app.user_data.ItemData.cData[632]",
+            "index": 632,
             "fields": [
               {
                 "name": "_Index",
@@ -100971,8 +101131,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[632]",
-            "index": 632,
+            "name": "app.user_data.ItemData.cData[633]",
+            "index": 633,
             "fields": [
               {
                 "name": "_Index",
@@ -101131,8 +101291,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[633]",
-            "index": 633,
+            "name": "app.user_data.ItemData.cData[634]",
+            "index": 634,
             "fields": [
               {
                 "name": "_Index",
@@ -101291,8 +101451,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[634]",
-            "index": 634,
+            "name": "app.user_data.ItemData.cData[635]",
+            "index": 635,
             "fields": [
               {
                 "name": "_Index",
@@ -101451,8 +101611,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[635]",
-            "index": 635,
+            "name": "app.user_data.ItemData.cData[636]",
+            "index": 636,
             "fields": [
               {
                 "name": "_Index",
@@ -101611,8 +101771,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[636]",
-            "index": 636,
+            "name": "app.user_data.ItemData.cData[637]",
+            "index": 637,
             "fields": [
               {
                 "name": "_Index",
@@ -101771,8 +101931,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[637]",
-            "index": 637,
+            "name": "app.user_data.ItemData.cData[638]",
+            "index": 638,
             "fields": [
               {
                 "name": "_Index",
@@ -101931,8 +102091,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[638]",
-            "index": 638,
+            "name": "app.user_data.ItemData.cData[639]",
+            "index": 639,
             "fields": [
               {
                 "name": "_Index",
@@ -102091,8 +102251,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[639]",
-            "index": 639,
+            "name": "app.user_data.ItemData.cData[640]",
+            "index": 640,
             "fields": [
               {
                 "name": "_Index",
@@ -102251,8 +102411,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[640]",
-            "index": 640,
+            "name": "app.user_data.ItemData.cData[641]",
+            "index": 641,
             "fields": [
               {
                 "name": "_Index",
@@ -102411,13 +102571,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[641]",
-            "index": 641,
+            "name": "app.user_data.ItemData.cData[642]",
+            "index": 642,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 578
+                "value": 579
               },
               {
                 "name": "_ItemId",
@@ -102571,13 +102731,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[642]",
-            "index": 642,
+            "name": "app.user_data.ItemData.cData[643]",
+            "index": 643,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 579
+                "value": 580
               },
               {
                 "name": "_ItemId",
@@ -102731,13 +102891,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[643]",
-            "index": 643,
+            "name": "app.user_data.ItemData.cData[644]",
+            "index": 644,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 580
+                "value": 581
               },
               {
                 "name": "_ItemId",
@@ -102891,13 +103051,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[644]",
-            "index": 644,
+            "name": "app.user_data.ItemData.cData[645]",
+            "index": 645,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 581
+                "value": 582
               },
               {
                 "name": "_ItemId",
@@ -103051,13 +103211,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[645]",
-            "index": 645,
+            "name": "app.user_data.ItemData.cData[646]",
+            "index": 646,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 740
+                "value": 741
               },
               {
                 "name": "_ItemId",
@@ -103211,8 +103371,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[646]",
-            "index": 646,
+            "name": "app.user_data.ItemData.cData[647]",
+            "index": 647,
             "fields": [
               {
                 "name": "_Index",
@@ -103371,13 +103531,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[647]",
-            "index": 647,
+            "name": "app.user_data.ItemData.cData[648]",
+            "index": 648,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 585
+                "value": 586
               },
               {
                 "name": "_ItemId",
@@ -103531,13 +103691,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[648]",
-            "index": 648,
+            "name": "app.user_data.ItemData.cData[649]",
+            "index": 649,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 586
+                "value": 587
               },
               {
                 "name": "_ItemId",
@@ -103691,13 +103851,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[649]",
-            "index": 649,
+            "name": "app.user_data.ItemData.cData[650]",
+            "index": 650,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 587
+                "value": 588
               },
               {
                 "name": "_ItemId",
@@ -103851,13 +104011,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[650]",
-            "index": 650,
+            "name": "app.user_data.ItemData.cData[651]",
+            "index": 651,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 588
+                "value": 589
               },
               {
                 "name": "_ItemId",
@@ -104011,13 +104171,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[651]",
-            "index": 651,
+            "name": "app.user_data.ItemData.cData[652]",
+            "index": 652,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 589
+                "value": 590
               },
               {
                 "name": "_ItemId",
@@ -104171,8 +104331,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[652]",
-            "index": 652,
+            "name": "app.user_data.ItemData.cData[653]",
+            "index": 653,
             "fields": [
               {
                 "name": "_Index",
@@ -104331,8 +104491,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[653]",
-            "index": 653,
+            "name": "app.user_data.ItemData.cData[654]",
+            "index": 654,
             "fields": [
               {
                 "name": "_Index",
@@ -104491,8 +104651,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[654]",
-            "index": 654,
+            "name": "app.user_data.ItemData.cData[655]",
+            "index": 655,
             "fields": [
               {
                 "name": "_Index",
@@ -104651,8 +104811,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[655]",
-            "index": 655,
+            "name": "app.user_data.ItemData.cData[656]",
+            "index": 656,
             "fields": [
               {
                 "name": "_Index",
@@ -104811,13 +104971,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[656]",
-            "index": 656,
+            "name": "app.user_data.ItemData.cData[657]",
+            "index": 657,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 618
+                "value": 619
               },
               {
                 "name": "_ItemId",
@@ -104971,8 +105131,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[657]",
-            "index": 657,
+            "name": "app.user_data.ItemData.cData[658]",
+            "index": 658,
             "fields": [
               {
                 "name": "_Index",
@@ -105131,8 +105291,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[658]",
-            "index": 658,
+            "name": "app.user_data.ItemData.cData[659]",
+            "index": 659,
             "fields": [
               {
                 "name": "_Index",
@@ -105291,8 +105451,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[659]",
-            "index": 659,
+            "name": "app.user_data.ItemData.cData[660]",
+            "index": 660,
             "fields": [
               {
                 "name": "_Index",
@@ -105451,8 +105611,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[660]",
-            "index": 660,
+            "name": "app.user_data.ItemData.cData[661]",
+            "index": 661,
             "fields": [
               {
                 "name": "_Index",
@@ -105611,8 +105771,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[661]",
-            "index": 661,
+            "name": "app.user_data.ItemData.cData[662]",
+            "index": 662,
             "fields": [
               {
                 "name": "_Index",
@@ -105771,8 +105931,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[662]",
-            "index": 662,
+            "name": "app.user_data.ItemData.cData[663]",
+            "index": 663,
             "fields": [
               {
                 "name": "_Index",
@@ -105931,8 +106091,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[663]",
-            "index": 663,
+            "name": "app.user_data.ItemData.cData[664]",
+            "index": 664,
             "fields": [
               {
                 "name": "_Index",
@@ -106091,8 +106251,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[664]",
-            "index": 664,
+            "name": "app.user_data.ItemData.cData[665]",
+            "index": 665,
             "fields": [
               {
                 "name": "_Index",
@@ -106251,8 +106411,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[665]",
-            "index": 665,
+            "name": "app.user_data.ItemData.cData[666]",
+            "index": 666,
             "fields": [
               {
                 "name": "_Index",
@@ -106411,8 +106571,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[666]",
-            "index": 666,
+            "name": "app.user_data.ItemData.cData[667]",
+            "index": 667,
             "fields": [
               {
                 "name": "_Index",
@@ -106571,8 +106731,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[667]",
-            "index": 667,
+            "name": "app.user_data.ItemData.cData[668]",
+            "index": 668,
             "fields": [
               {
                 "name": "_Index",
@@ -106731,8 +106891,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[668]",
-            "index": 668,
+            "name": "app.user_data.ItemData.cData[669]",
+            "index": 669,
             "fields": [
               {
                 "name": "_Index",
@@ -106891,8 +107051,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[669]",
-            "index": 669,
+            "name": "app.user_data.ItemData.cData[670]",
+            "index": 670,
             "fields": [
               {
                 "name": "_Index",
@@ -107051,8 +107211,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[670]",
-            "index": 670,
+            "name": "app.user_data.ItemData.cData[671]",
+            "index": 671,
             "fields": [
               {
                 "name": "_Index",
@@ -107211,8 +107371,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[671]",
-            "index": 671,
+            "name": "app.user_data.ItemData.cData[672]",
+            "index": 672,
             "fields": [
               {
                 "name": "_Index",
@@ -107371,8 +107531,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[672]",
-            "index": 672,
+            "name": "app.user_data.ItemData.cData[673]",
+            "index": 673,
             "fields": [
               {
                 "name": "_Index",
@@ -107531,13 +107691,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[673]",
-            "index": 673,
+            "name": "app.user_data.ItemData.cData[674]",
+            "index": 674,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 620
+                "value": 621
               },
               {
                 "name": "_ItemId",
@@ -107691,13 +107851,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[674]",
-            "index": 674,
+            "name": "app.user_data.ItemData.cData[675]",
+            "index": 675,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 625
+                "value": 626
               },
               {
                 "name": "_ItemId",
@@ -107851,13 +108011,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[675]",
-            "index": 675,
+            "name": "app.user_data.ItemData.cData[676]",
+            "index": 676,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 626
+                "value": 627
               },
               {
                 "name": "_ItemId",
@@ -108011,13 +108171,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[676]",
-            "index": 676,
+            "name": "app.user_data.ItemData.cData[677]",
+            "index": 677,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 627
+                "value": 628
               },
               {
                 "name": "_ItemId",
@@ -108171,13 +108331,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[677]",
-            "index": 677,
+            "name": "app.user_data.ItemData.cData[678]",
+            "index": 678,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 640
+                "value": 641
               },
               {
                 "name": "_ItemId",
@@ -108331,13 +108491,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[678]",
-            "index": 678,
+            "name": "app.user_data.ItemData.cData[679]",
+            "index": 679,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 641
+                "value": 642
               },
               {
                 "name": "_ItemId",
@@ -108491,13 +108651,813 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[679]",
-            "index": 679,
+            "name": "app.user_data.ItemData.cData[680]",
+            "index": 680,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 666
+                "value": 644
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 780
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "9908e685-07a5-41b8-9bff-ed955d4dc5dc"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "f5ec44e2-ffb1-4b19-8330-e3228484c13e"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3539
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[681]",
+            "index": 681,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 645
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 781
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "7c1ab188-975e-4924-af56-1df510402b96"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "d4d5f936-19a4-4374-abc7-7dd84d373fc4"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3540
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 20
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[682]",
+            "index": 682,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 748
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 782
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "22045ea0-fc6b-4e02-81f0-f57e4ed26142"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "03471e85-a948-4c99-8a66-610a6d6997ee"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5010
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 88
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 16
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[683]",
+            "index": 683,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 746
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 783
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "68210719-65f6-4670-b7ca-2765807d4aca"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "8d58fd99-4c53-4145-802a-0e619926358f"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5010
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 89
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 21
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[684]",
+            "index": 684,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 747
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 784
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "08a36e99-2454-4589-9ccd-b3df87e903f0"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "08b2c6a7-c59c-4dc4-be57-864bdfefd3e7"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5010
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 90
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 5
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[685]",
+            "index": 685,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 667
               },
               {
                 "name": "_ItemId",
@@ -108651,13 +109611,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[680]",
-            "index": 680,
+            "name": "app.user_data.ItemData.cData[686]",
+            "index": 686,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 672
+                "value": 673
               },
               {
                 "name": "_ItemId",
@@ -108811,13 +109771,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[681]",
-            "index": 681,
+            "name": "app.user_data.ItemData.cData[687]",
+            "index": 687,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 645
+                "value": 646
               },
               {
                 "name": "_ItemId",
@@ -108971,13 +109931,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[682]",
-            "index": 682,
+            "name": "app.user_data.ItemData.cData[688]",
+            "index": 688,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 646
+                "value": 647
               },
               {
                 "name": "_ItemId",
@@ -109131,8 +110091,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[683]",
-            "index": 683,
+            "name": "app.user_data.ItemData.cData[689]",
+            "index": 689,
             "fields": [
               {
                 "name": "_Index",
@@ -109291,13 +110251,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[684]",
-            "index": 684,
+            "name": "app.user_data.ItemData.cData[690]",
+            "index": 690,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 642
+                "value": 643
               },
               {
                 "name": "_ItemId",
@@ -109451,13 +110411,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[685]",
-            "index": 685,
+            "name": "app.user_data.ItemData.cData[691]",
+            "index": 691,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 668
+                "value": 669
               },
               {
                 "name": "_ItemId",
@@ -109611,13 +110571,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[686]",
-            "index": 686,
+            "name": "app.user_data.ItemData.cData[692]",
+            "index": 692,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 669
+                "value": 670
               },
               {
                 "name": "_ItemId",
@@ -109771,13 +110731,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[687]",
-            "index": 687,
+            "name": "app.user_data.ItemData.cData[693]",
+            "index": 693,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 670
+                "value": 671
               },
               {
                 "name": "_ItemId",
@@ -109931,13 +110891,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[688]",
-            "index": 688,
+            "name": "app.user_data.ItemData.cData[694]",
+            "index": 694,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 671
+                "value": 672
               },
               {
                 "name": "_ItemId",
