@@ -18,7 +18,7 @@ LANG_LIST = [
         'tag': 'ZH-Hans',
         'item_i18n_tag': 'SimplifiedChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf',
+        # 'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf',
         'fmm_config': {
             'name': 'Item Box Editor',
             'description': 'Item Box Editor',
@@ -32,7 +32,7 @@ LANG_LIST = [
         'tag': 'ZH-Hant',
         'item_i18n_tag': 'TraditionalChinese',
         'save_txt_header': ['[物品ID]', '[物品名]'],
-        'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf',
+        #         'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf',
         'fmm_config': {
             'name': 'Item Box Editor',
             'description': 'Item Box Editor',
@@ -59,7 +59,7 @@ LANG_LIST = [
         'tag': 'JA-JP',
         'item_i18n_tag': 'Japanese',
         'save_txt_header': ['[アイテムID]', '[アイテム名]'],
-        'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf',
+        #         'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf',
         'fmm_config': {
             'name': 'Item Box Editor',
             'description': 'Item Box Editor',
@@ -73,7 +73,7 @@ LANG_LIST = [
         'tag': 'KO-KR',
         'item_i18n_tag': 'Korean',
         'save_txt_header': ['[아이템ID]', '[아이템명]'],
-        'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf',
+        #         'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf',
         'fmm_config': {
             'name': 'Item Box Editor',
             'description': 'Item Box Editor',
@@ -253,7 +253,7 @@ def init_dir() -> None:
     create_dir(os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR))
     create_dir(LUA_SAVE_DIR)
     create_dir(JSON_SAVE_DIR)
-    create_dir(FONTS_SAVE_DIR)
+    # create_dir(FONTS_SAVE_DIR)
 
 
 def force_del_dir(

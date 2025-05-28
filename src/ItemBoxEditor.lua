@@ -5,18 +5,11 @@
 -- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = ""
 local USER_CONFIG_PATH = ""
-local LANG = ""
-local FONT_NAME = ""
-local FONT_SIZE = 24
-local FONT_GLYPH = {
-    0x0020, 0xFFEE,
-    0,
-}
 local ITEM_ID_MAX = 824
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.8.4"
+local INTER_VERSION = "v1.9.0"
 local MAX_VERSION = "1.11.1.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -34,11 +27,6 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
-local FONT = nil
-
-if LANG ~= "EN-US" then
-    FONT = imgui.load_font(FONT_NAME, FONT_SIZE, FONT_GLYPH)
-end
 
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
@@ -851,10 +839,6 @@ local function aboutWindow()
         imgui.new_line()
         imgui.text(i18n.otherLibsLicenseTitle)
         imgui.new_line()
-        imgui.text(i18n.fontLicenseTitle)
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        imgui.text(i18n.fontLicenseContent)
-        imgui.new_line()
         imgui.text(i18n.reframeworkLicenseTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(i18n.reframeworkLicense)
@@ -876,10 +860,6 @@ MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 re.on_draw_ui(function()
     local mainWindowChanged = false
     local itemWindowChanged = false
-    -- set the font
-    if FONT ~= nil then
-        imgui.push_font(FONT)
-    end
 
     if imgui.tree_node(i18n.title) then
         mainWindowChanged, mainWindowState = imgui.checkbox(i18n.openMainWindow, mainWindowState)
@@ -899,28 +879,13 @@ re.on_draw_ui(function()
         end
         imgui.tree_pop()
     end
-
-    -- reset the font at the frame end
-    if FONT ~= nil then
-        imgui.pop_font()
-    end
 end)
 
 re.on_frame(function()
-    -- set the font
-    if FONT ~= nil then
-        imgui.push_font(FONT)
-    end
-
     -- only display the window when REFramework is actually drawing its own UI
     if reframework:is_drawing_ui() then
         mainWindow()
         itemTableWindow()
         aboutWindow()
-    end
-
-    -- reset the font at the frame end
-    if FONT ~= nil then
-        imgui.pop_font()
     end
 end)
