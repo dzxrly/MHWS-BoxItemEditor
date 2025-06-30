@@ -10,7 +10,7 @@
   "maxCompatibleVersion": "MOD最高兼容版本",
   "confirmCompatibleTip": "[确认兼容]",
   "notCompatibleTip": "[不兼容]",
-  "backupSaveWarning": "[警告]\n使用该MOD前请务必备份存档 !!!\n使用该MOD前请务必备份存档 !!!\n使用该MOD前请务必备份存档 !!!",
+  "backupSaveWarning": "[警告]\n使用该MOD前请务必备份存档 !\n请勿修改尚未发布的道具，以免封号！",
   "itemIdFileTip": "[提示] 物品ID列表位于 '游戏根目录/reframework/Items_ZH-Hans.txt' 中",
   "readItemBoxBtn": "读取道具箱",
   "changeItemTip": "[提示] 修改后请关闭道具箱界面再打开，以刷新道具箱内容 !",

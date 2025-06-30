@@ -10,7 +10,7 @@
   "maxCompatibleVersion": "MOD Compatible Version",
   "confirmCompatibleTip": "[Compatible]",
   "notCompatibleTip": "[NOT Compatible]",
-  "backupSaveWarning": "[Warning]\nPlease backup your save before using this mod !!!\nPlease backup your save before using this mod !!!\nPlease backup your save before using this mod !!!",
+  "backupSaveWarning": "[Warning]\nPlease backup your save before using this mod !\nDo NOT modify items that are not released, or you may get banned !",
   "itemIdFileTip": "[Tips] Item ID list is in 'GameRoot/reframework/Items_EN-US.txt'",
   "readItemBoxBtn": "Read In-Game ItemBox",
   "changeItemTip": "[Tips] After change, please close and reopen the ItemBox to refresh !",

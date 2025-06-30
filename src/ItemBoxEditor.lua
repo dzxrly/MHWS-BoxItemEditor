@@ -5,12 +5,12 @@
 -- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = ""
 local USER_CONFIG_PATH = ""
-local ITEM_ID_MAX = 824
+local ITEM_ID_MAX = 974
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.0"
-local MAX_VERSION = "1.11.1.0"
+local INTER_VERSION = "v1.9.1"
+local MAX_VERSION = "1.20.0.0"
 -- Just change here can change every VERSION setting in all files END
 
 local NAME_LENGTH_MAX = 10

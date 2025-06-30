@@ -10,7 +10,7 @@
   "maxCompatibleVersion": "MOD最高相容版本",
   "confirmCompatibleTip": "[確認相容]",
   "notCompatibleTip": "[不相容]",
-  "backupSaveWarning": "[警告]\n使用該MOD前請務必備份存檔 !!!\n使用該MOD前請務必備份存檔 !!!\n使用該MOD前請務必備份存檔 !!!",
+  "backupSaveWarning": "[警告]\n使用該MOD前請務必備份存檔 !\n請勿修改尚未發布的道具，以免封號！",
   "itemIdFileTip": "[提示] 物品ID列表位於 '遊戲根目錄/reframework/Items_ZH-Hant.txt' 中",
   "readItemBoxBtn": "讀取道具箱",
   "changeItemTip": "[提示] 修改後請關閉道具箱介面再打開，以刷新道具箱內容 !",
