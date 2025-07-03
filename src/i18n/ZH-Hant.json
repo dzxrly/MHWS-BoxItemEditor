@@ -11,7 +11,6 @@
   "confirmCompatibleTip": "[確認相容]",
   "notCompatibleTip": "[不相容]",
   "backupSaveWarning": "[警告]\n使用該MOD前請務必備份存檔 !\n請勿修改尚未發布的道具，以免封號！",
-  "itemIdFileTip": "[提示] 物品ID列表位於 '遊戲根目錄/reframework/Items_ZH-Hant.txt' 中",
   "readItemBoxBtn": "讀取道具箱",
   "changeItemTip": "[提示] 修改後請關閉道具箱介面再打開，以刷新道具箱內容 !",
   "changeItemWarning": "[警告]\n本MOD不對道具進行合法性檢測，請務必確認修改的道具能放入道具箱 !",
@@ -62,7 +61,8 @@
   "modContributors": [
     "Egg Targaryen",
     "TinyStick",
-    "RabbitFeet"
+    "RabbitFeet",
+    "Blank-1973"
   ],
   "modLicenseTitle": "MOD 授權",
   "modLicenseContent": "MIT License\n\nCopyright (c) 2024 Egg Targaryen \n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",

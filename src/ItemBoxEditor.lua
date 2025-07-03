@@ -9,7 +9,7 @@ local ITEM_ID_MAX = 974
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.2"
+local INTER_VERSION = "v1.9.3"
 local MAX_VERSION = "1.20.1.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -27,6 +27,12 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
+local LANG_DICT = {}
+LANG_DICT["0"] = "ja-JP"    -- Japanese
+LANG_DICT["1"] = "en-US"    -- English
+LANG_DICT["9"] = "ko-KR"    -- Korean
+LANG_DICT["10"] = "zh-Hant" -- Traditional Chinese
+LANG_DICT["11"] = "zh-Hans" -- Simplified Chinese
 
 -- NOT CHANGED VARIABLES:
 local itemNameJson = nil
@@ -37,11 +43,13 @@ local i18n = nil
 local userConfig = {
     mainWindowOpen = false,
     itemWindowOpen = false,
-    aboutWindowOpen = false
+    aboutWindowOpen = false,
+    userLanguage = nil,
 }
 local mainWindowState = userConfig.mainWindowOpen
 local itemWindowState = userConfig.itemWindowOpen
 local aboutWindowState = userConfig.aboutWindowOpen
+local userLanguage = 1
 -- window status end
 
 -- item table window
@@ -205,12 +213,19 @@ local function saveUserConfigJson(jsonPath)
 end
 
 local function loadI18NJson(jsonPath)
+    local default_lang = tostring(sdk.get_managed_singleton("app.GUIManager"):call("get_DefaultLanguage()"))
+    print("Default Language: " .. default_lang)
+    if LANG_DICT[default_lang] ~= nil then
+        userLanguage = LANG_DICT[default_lang]
+    else
+        userLanguage = "en-US" -- Default to English if language not found
+    end
     print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
         local jsonFile = json.load_file(jsonPath)
         if jsonFile then
-            i18n = jsonFile.I18N
-            itemNameJson = jsonFile.ItemName
+            i18n = jsonFile[userLanguage].I18N
+            itemNameJson = jsonFile[userLanguage].ItemName
             local tempIndex = 1
             itemBoxList = {}
             print(itemNameJson[1]["_Name"])
@@ -478,7 +493,6 @@ local function mainWindow()
         ------------------- existed item change -----------------
         imgui.begin_disabled(cItemParam == nil)
         imgui.new_line()
-        imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_S)
         typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,

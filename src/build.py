@@ -11,77 +11,43 @@ CONTRIBUTORS = [
     "Egg Targaryen",
     "TinyStick",
     "RabbitFeet",
+    "Blank-1973",
 ]
+
+FMM_CONFIG = {
+    "name": "Item Box Editor",
+    "description": "Item Box Editor",
+    "author": ", ".join(CONTRIBUTORS),
+    "screenshot": "src/assets/screenshot.png",
+    "category": "Gameplay",
+    "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
+}
 
 LANG_LIST = [
     {
-        "tag": "ZH-Hans",
-        "item_i18n_tag": "SimplifiedChinese",
+        "tag": "zh-Hans",
+        "item_lang": "SimplifiedChinese",
         "save_txt_header": ["[物品ID]", "[物品名]"],
-        # 'fonts': 'src/fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf',
-        "fmm_config": {
-            "name": "Item Box Editor",
-            "description": "Item Box Editor",
-            "author": ", ".join(CONTRIBUTORS),
-            "screenshot": "src/assets/screenshot_ZH-Hans.png",
-            "category": "Gameplay",
-            "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
-        },
     },
     {
-        "tag": "ZH-Hant",
-        "item_i18n_tag": "TraditionalChinese",
+        "tag": "zh-Hant",
+        "item_lang": "TraditionalChinese",
         "save_txt_header": ["[物品ID]", "[物品名]"],
-        #         'fonts': 'src/fonts/Noto_Sans_TC/static/NotoSansTC-Medium.ttf',
-        "fmm_config": {
-            "name": "Item Box Editor",
-            "description": "Item Box Editor",
-            "author": ", ".join(CONTRIBUTORS),
-            "screenshot": "src/assets/screenshot_ZH-Hant.png",
-            "category": "Gameplay",
-            "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
-        },
     },
     {
-        "tag": "EN-US",
-        "item_i18n_tag": "English",
+        "tag": "en-US",
+        "item_lang": "English",
         "save_txt_header": ["[Item ID]", "[Item Name]"],
-        "fmm_config": {
-            "name": "Item Box Editor",
-            "description": "Item Box Editor",
-            "author": ", ".join(CONTRIBUTORS),
-            "screenshot": "src/assets/screenshot_EN-US.png",
-            "category": "Gameplay",
-            "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
-        },
     },
     {
-        "tag": "JA-JP",
-        "item_i18n_tag": "Japanese",
+        "tag": "ja-JP",
+        "item_lang": "Japanese",
         "save_txt_header": ["[アイテムID]", "[アイテム名]"],
-        #         'fonts': 'src/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf',
-        "fmm_config": {
-            "name": "Item Box Editor",
-            "description": "Item Box Editor",
-            "author": ", ".join(CONTRIBUTORS),
-            "screenshot": "src/assets/screenshot_JA-JP.png",
-            "category": "Gameplay",
-            "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
-        },
     },
     {
-        "tag": "KO-KR",
-        "item_i18n_tag": "Korean",
+        "tag": "ko-KR",
+        "item_lang": "Korean",
         "save_txt_header": ["[아이템ID]", "[아이템명]"],
-        #         'fonts': 'src/fonts/Noto_Sans_KR/static/NotoSansKR-Medium.ttf',
-        "fmm_config": {
-            "name": "Item Box Editor",
-            "description": "Item Box Editor",
-            "author": ", ".join(CONTRIBUTORS),
-            "screenshot": "src/assets/screenshot_KO-KR.png",
-            "category": "Gameplay",
-            "homepage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
-        },
     },
 ]
 
@@ -96,21 +62,18 @@ WORK_TEMP_DIR = ".temp"
 MOD_ROOT_DIR = "reframework"
 MOD_NAME = "ItemBoxEditor"
 LUA_SAVE_DIR = "{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "autorun")
-TXT_SAVE_PREFIX = "Items_"
 JSON_SAVE_DIR = "{}/{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "data", MOD_NAME)
-JSON_FILE_NAME_PREFIX = "ItemBoxEditor_"
+JSON_FILE_NAME_PREFIX = "ItemBoxEditor"
 USER_CONFIG_JSON_FILE_NAME = "UserConfig.json"
-FONTS_SAVE_DIR = "{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "fonts")
-FONTS_FILE_NAME = "ItemBoxEditor_Fonts_NotoSans"
 VERSION_JSON_SAVE_PATH = "version.json"
-ZIP_FILE_PREFIX = "ItemBoxEditor_"
+ZIP_FILE_PREFIX = "ItemBoxEditor"
 # fmm settings
 COVER_FILE_NAME = "cover.png"
 INI_FILE_NAME = "modinfo.ini"
 
 
 def get_item_df(
-    lang_tag: str,
+    item_lang: str,
 ) -> pd.DataFrame:
     # read ITEM_DATA_JSON
     with open(ITEM_DATA_JSON, "r", encoding="utf-8") as f:
@@ -150,7 +113,7 @@ def get_item_df(
         TEXT_DATA_CSV,
         header=0,
         encoding="utf-8",
-        usecols=["guid", "entry name", lang_tag],
+        usecols=["guid", "entry name", item_lang],
     )
     # remove 'entry name' contains 'EXP' keyword
     text_data = text_data[~text_data["entry name"].str.contains("EXP")]
@@ -180,68 +143,20 @@ def read_origin_lua() -> (str, str, str):
     return lua_str, mod_ver, max_ver
 
 
-def save_txt(
-    tag: str,
-    lang_tag: str,
-    item_df: pd.DataFrame,
-    header: list[str],
-    data_ver: str = "Unknown",
-) -> None:
-    save_path = os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR, f"{TXT_SAVE_PREFIX}{tag}.txt")
-    item_df = item_df[["_ItemId", lang_tag]]
-    item_df.to_csv(save_path, sep="\t", header=header, index=False, encoding="utf-8")
-    # write data version to file at the top
-    with open(save_path, "r", encoding="utf-8") as f:
-        data = f.read()
-    with open(save_path, "w", encoding="utf-8") as f:
-        f.write(f"Data Version: {data_ver}\n\n")
-        f.write(data)
-
-
-def save_json(
-    tag: str,
-    lang_tag: str,
-    item_df: pd.DataFrame,
-    lua_i18n_json: dict,
-) -> None:
-    item_dict = (
-        item_df.rename(columns={lang_tag: "_Name", "_ItemId": "fixedId"})
-        .drop(columns=["_RawName", "guid", "entry name"])
-        .to_dict(orient="records")
-    )
-    final_json = {
-        "I18N": lua_i18n_json,
-        "ItemName": item_dict,
-    }
-    save_path = os.path.join(JSON_SAVE_DIR, f"{JSON_FILE_NAME_PREFIX}{tag}.json")
-    with open(save_path, "w", encoding="utf-8") as f:
-        json.dump(final_json, f, ensure_ascii=False, indent=4)
-
-
-def create_lua_by_i18n(
-    tag: str,
-    font_path: str = None,
-) -> (str, str, str):
+def create_release_lua() -> (str, str, str):
     lua_str, mod_ver, max_support_ver = read_origin_lua()
     # match 'local ITEM_NAME_JSON_PATH = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace(
         'local ITEM_NAME_JSON_PATH = ""',
-        f'local ITEM_NAME_JSON_PATH = "{MOD_NAME}/{JSON_FILE_NAME_PREFIX}{tag}.json"',
+        f'local ITEM_NAME_JSON_PATH = "{MOD_NAME}/{JSON_FILE_NAME_PREFIX}.json"',
     )
-    # match 'local LANG = ""' row and replace the content in the double quotes
-    lua_str = lua_str.replace('local LANG = ""', f'local LANG = "{tag}"')
-    # match 'local FONT_NAME = ""' row and replace the content in the double quotes
-    if font_path is not None:
-        lua_str = lua_str.replace(
-            'local FONT_NAME = ""', f'local FONT_NAME = "{font_path}"'
-        )
     # math 'local USER_CONFIG_PATH = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace(
         'local USER_CONFIG_PATH = ""',
         f'local USER_CONFIG_PATH = "{MOD_NAME}/{USER_CONFIG_JSON_FILE_NAME}"',
     )
     # save lua file
-    save_path = os.path.join(LUA_SAVE_DIR, f"ItemBoxEditor_{tag}.lua")
+    save_path = os.path.join(LUA_SAVE_DIR, f"ItemBoxEditor.lua")
     with open(save_path, "w", encoding="utf-8") as f:
         f.write(lua_str)
     return lua_str, mod_ver, max_support_ver
@@ -270,10 +185,12 @@ def create_dir(path: str) -> None:
 
 
 def init_dir() -> None:
+    if os.path.exists(WORK_TEMP_DIR):
+        shutil.rmtree(WORK_TEMP_DIR)
+
     create_dir(os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR))
     create_dir(LUA_SAVE_DIR)
     create_dir(JSON_SAVE_DIR)
-    # create_dir(FONTS_SAVE_DIR)
 
 
 def force_del_dir(
@@ -285,12 +202,11 @@ def force_del_dir(
 
 
 def create_zip(
-    tag: str,
     mod_version: str,
     file_name_prefix: str,
 ) -> None:
     shutil.make_archive(
-        "{}{}_{}".format(file_name_prefix, tag, mod_version),
+        "{}_{}".format(file_name_prefix, mod_version),
         "zip",
         root_dir=WORK_TEMP_DIR,
         base_dir=".",
@@ -318,47 +234,31 @@ if __name__ == "__main__":
 
     mod_version = "Unknown"
     max_support_version = "Unknown"
+    json_file = {}
+    init_dir()
+    _, mod_version, _ = create_release_lua()
     for lang in LANG_LIST:
-        init_dir()
-        item_df = get_item_df(lang["item_i18n_tag"])
-        lua_i18n_json = get_lua_i18n_json(lang["tag"])
-        _, mod_version, max_support_version = create_lua_by_i18n(
-            lang["tag"],
-            (
-                "{}.{}".format(
-                    FONTS_FILE_NAME, os.path.splitext(lang["fonts"])[-1].split(".")[-1]
-                )
-                if "fonts" in lang.keys()
-                and lang["fonts"] is not None
-                and lang["fonts"] != ""
-                else None
-            ),
+        item_df = get_item_df(lang["item_lang"])
+        item_dict = (
+            item_df.rename(columns={lang["item_lang"]: "_Name", "_ItemId": "fixedId"})
+            .drop(columns=["_RawName", "guid", "entry name"])
+            .to_dict(orient="records")
         )
-        save_txt(
-            lang["tag"],
-            lang["item_i18n_tag"],
-            item_df,
-            lang["save_txt_header"],
-            max_support_version,
-        )
-        save_json(lang["tag"], lang["item_i18n_tag"], item_df, lua_i18n_json)
-        # cp fonts to FONTS_SAVE_DIR
-        if "fonts" in lang.keys() and lang["fonts"] is not None and lang["fonts"] != "":
-            shutil.copyfile(
-                lang["fonts"],
-                os.path.join(
-                    FONTS_SAVE_DIR,
-                    "{}.{}".format(
-                        FONTS_FILE_NAME,
-                        os.path.splitext(lang["fonts"])[-1].split(".")[-1],
-                    ),
-                ),
-            )
-        create_fmm_config(mod_version, lang["fmm_config"], WORK_TEMP_DIR)
-        # create zip
-        create_zip(lang["tag"], mod_version, ZIP_FILE_PREFIX)
-        # del dir
-        force_del_dir(WORK_TEMP_DIR, enable_debug)
+        json_file[lang["tag"]] = {
+            "I18N": get_lua_i18n_json(lang["tag"]),
+            "ItemName": item_dict,
+        }
+    with open(
+        os.path.join(JSON_SAVE_DIR, f"{JSON_FILE_NAME_PREFIX}.json"),
+        "w",
+        encoding="utf-8",
+    ) as f:
+        json.dump(json_file, f, ensure_ascii=False, indent=4)
+    create_fmm_config(mod_version, FMM_CONFIG, WORK_TEMP_DIR)
+    # create zip
+    create_zip(mod_version, ZIP_FILE_PREFIX)
+    # del dir
+    force_del_dir(WORK_TEMP_DIR, enable_debug)
     if not enable_debug and args.create_version_json:
         # save version.json
         version_json = {
