@@ -36,30 +36,30 @@ jobs:
       - name: Run src/build.py
         run: python src/build.py -v
 
-      - name: Generate checksums
-        run: |
-          sha256sum ItemBoxEditor_EN-US.zip > ItemBoxEditor_EN-US.zip.sha256
-          sha256sum ItemBoxEditor_ZH-Hans.zip > ItemBoxEditor_ZH-Hans.zip.sha256
-          sha256sum ItemBoxEditor_ZH-Hant.zip > ItemBoxEditor_ZH-Hant.zip.sha256
-          sha256sum ItemBoxEditor_JA-JP.zip > ItemBoxEditor_JA-JP.zip.sha256
-          sha256sum ItemBoxEditor_KO-KR.zip > ItemBoxEditor_KO-KR.zip.sha256
-
       - name: Check if release exists and delete it
         run: |
           if gh release view ${{ github.event.inputs.tag || github.ref_name }}; then
             gh release delete ${{ github.event.inputs.tag || github.ref_name }} --yes
           fi
 
+      - name: Generate checksums
+        run: |
+          sha256sum "ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip" > "ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256"
+          sha256sum "ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip" > "ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256"
+          sha256sum "ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip" > "ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256"
+          sha256sum "ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip" > "ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256"
+          sha256sum "ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip" > "ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256"
+
       - name: Prepare release notes
         id: generate_notes
         run: |
           echo "### 版本下载 / Release Downloads" > release_notes.md
           echo "> `reframework`目录中包含物品ID列表 / The `reframework` directory contains item ID list." >> release_notes.md
-          echo "- **[ItemBoxEditor_EN-US.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_EN-US.zip)** （英文版 / English Version）" >> release_notes.md
-          echo "- **[ItemBoxEditor_ZH-Hans.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_ZH-Hans.zip)** （简体中文版 / Simplified Chinese Version）" >> release_notes.md
-          echo "- **[ItemBoxEditor_ZH-Hant.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_ZH-Hant.zip)** （繁體中文版 / Traditional Chinese Version）" >> release_notes.md
-          echo "- **[ItemBoxEditor_JA-JP.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_JA-JP.zip)** （日本語 / Japanese Version）" >> release_notes.md
-          echo "- **[ItemBoxEditor_KO-KR.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_KO-KR.zip)** （한국인 / Korean Version）" >> release_notes.md
+          echo "- **[ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip)** （英文版 / English Version）" >> release_notes.md
+          echo "- **[ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip)** （简体中文版 / Simplified Chinese Version）" >> release_notes.md
+          echo "- **[ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip)** （繁體中文版 / Traditional Chinese Version）" >> release_notes.md
+          echo "- **[ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip)** （日本語 / Japanese Version）" >> release_notes.md
+          echo "- **[ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip](https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.tag || github.ref_name }}/ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip)** （한국인 / Korean Version）" >> release_notes.md
           echo "" >> release_notes.md
           echo "### 更新日志 / Changelogs" >> release_notes.md
           if [ -f CHANGELOGS.md ]; then
@@ -68,11 +68,11 @@ jobs:
             echo "未找到CHANGELOGS.md文件 / CHANGELOGS.md file not found." >> release_notes.md
           fi
           echo "### 文件校验 / Checksums" >> release_notes.md
-          echo "- \`ItemBoxEditor_EN-US.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_EN-US.zip.sha256)" >> release_notes.md
-          echo "- \`ItemBoxEditor_ZH-Hans.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_ZH-Hans.zip.sha256)" >> release_notes.md
-          echo "- \`ItemBoxEditor_ZH-Hant.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_ZH-Hant.zip.sha256)" >> release_notes.md
-          echo "- \`ItemBoxEditor_JA-JP.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_JA-JP.zip.sha256)" >> release_notes.md
-          echo "- \`ItemBoxEditor_KO-KR.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_KO-KR.zip.sha256)" >> release_notes.md
+          echo "- \`ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_EN-US_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256)" >> release_notes.md
+          echo "- \`ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_ZH-Hans_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256)" >> release_notes.md
+          echo "- \`ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_ZH-Hant_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256)" >> release_notes.md
+          echo "- \`ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_JA-JP_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256)" >> release_notes.md
+          echo "- \`ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip\` SHA-256: $(cut -d ' ' -f1 ItemBoxEditor_KO-KR_${{ github.event.inputs.tag || github.ref_name }}.zip.sha256)" >> release_notes.md
           echo "### 打包时间 / Build Time" >> release_notes.md
           echo "- $(date)" >> release_notes.md
 
