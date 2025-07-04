@@ -9,7 +9,7 @@ local ITEM_ID_MAX = 974
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.3"
+local INTER_VERSION = "v1.9.4"
 local MAX_VERSION = "1.20.1.0"
 -- Just change here can change every VERSION setting in all files END
 

@@ -51,6 +51,15 @@ LANG_LIST = [
     },
 ]
 
+REF_UNSUPPORTED_FONT_REPLACE = {
+    "Ⅰ": "1",
+    "Ⅱ": "2",
+    "Ⅲ": "3",
+    "α": "A",
+    "β": "B",
+    "γ": "Y",
+}
+
 # source file settings
 ORIGIN_LUA_FIEL = "src/ItemBoxEditor.lua"
 I18N_FILE_DIR = "src/i18n"
@@ -114,6 +123,10 @@ def get_item_df(
         header=0,
         encoding="utf-8",
         usecols=["guid", "entry name", item_lang],
+    )
+    # replace the char in item_lang column with REF_UNSUPPORTED_FONT_REPLACE
+    text_data[item_lang] = text_data[item_lang].apply(
+        lambda x: "".join(REF_UNSUPPORTED_FONT_REPLACE.get(char, char) for char in x)
     )
     # remove 'entry name' contains 'EXP' keyword
     text_data = text_data[~text_data["entry name"].str.contains("EXP")]
