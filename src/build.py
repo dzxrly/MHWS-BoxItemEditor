@@ -249,7 +249,7 @@ if __name__ == "__main__":
     max_support_version = "Unknown"
     json_file = {}
     init_dir()
-    _, mod_version, _ = create_release_lua()
+    _, mod_version, max_support_version = create_release_lua()
     for lang in LANG_LIST:
         item_df = get_item_df(lang["item_lang"])
         item_dict = (
