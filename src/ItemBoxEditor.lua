@@ -49,7 +49,7 @@ local userConfig = {
 local mainWindowState = userConfig.mainWindowOpen
 local itemWindowState = userConfig.itemWindowOpen
 local aboutWindowState = userConfig.aboutWindowOpen
-local userLanguage = 1
+local userLanguage = "en-US" -- default language
 -- window status end
 
 -- item table window
@@ -213,13 +213,6 @@ local function saveUserConfigJson(jsonPath)
 end
 
 local function loadI18NJson(jsonPath)
-    local default_lang = tostring(sdk.get_managed_singleton("app.GUIManager"):call("get_DefaultLanguage()"))
-    print("Default Language: " .. default_lang)
-    if LANG_DICT[default_lang] ~= nil then
-        userLanguage = LANG_DICT[default_lang]
-    else
-        userLanguage = "en-US" -- Default to English if language not found
-    end
     print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
         local jsonFile = json.load_file(jsonPath)
@@ -864,12 +857,28 @@ local function aboutWindow()
     end
 end
 
+
+print("Initializing ItemBoxEditor...")
 initIDAndFixedIDProjection()
 loadI18NJson(ITEM_NAME_JSON_PATH)
 loadUserConfigJson(USER_CONFIG_PATH)
 searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+
+sdk.hook(sdk.find_type_definition("app.GUIManager"):get_method("startPlayable()"), function()
+end, function()
+    local get_text_language = sdk.find_type_definition("app.OptionUtil"):get_method("getTextLanguage()")
+    local default_lang = tostring(get_text_language(nil))
+    if LANG_DICT[default_lang] ~= nil then
+        userLanguage = LANG_DICT[default_lang]
+    else
+        userLanguage = "en-US" -- Default to English if language not found
+    end
+    print("Default Language: " .. default_lang .. " - User Language: " .. userLanguage)
+    loadI18NJson(ITEM_NAME_JSON_PATH)
+end
+)
 
 re.on_draw_ui(function()
     local mainWindowChanged = false
