@@ -72,6 +72,9 @@ MOD_ROOT_DIR = "reframework"
 MOD_NAME = "ItemBoxEditor"
 LUA_SAVE_DIR = "{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "autorun")
 JSON_SAVE_DIR = "{}/{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "data", MOD_NAME)
+ITEM_ID_TXT_SAVE_PATH = "{}/{}/{}".format(
+    WORK_TEMP_DIR, MOD_ROOT_DIR, "ItemEditor_ItemIDs.txt"
+)
 JSON_FILE_NAME_PREFIX = "ItemBoxEditor"
 USER_CONFIG_JSON_FILE_NAME = "UserConfig.json"
 VERSION_JSON_SAVE_PATH = "version.json"
@@ -250,7 +253,9 @@ if __name__ == "__main__":
     json_file = {}
     init_dir()
     _, mod_version, max_support_version = create_release_lua()
+    item_list_txt = {}
     for lang in LANG_LIST:
+        _item_list = []
         item_df = get_item_df(lang["item_lang"])
         item_dict = (
             item_df.rename(columns={lang["item_lang"]: "_Name", "_ItemId": "fixedId"})
@@ -261,6 +266,10 @@ if __name__ == "__main__":
             "I18N": get_lua_i18n_json(lang["tag"]),
             "ItemName": item_dict,
         }
+        for item in item_dict:
+            # add item to item_list_txt
+            _item_list.append("{}\t{}\n".format(item["fixedId"], item["_Name"]))
+        item_list_txt[lang["tag"]] = _item_list
     with open(
         os.path.join(JSON_SAVE_DIR, f"{JSON_FILE_NAME_PREFIX}.json"),
         "w",
@@ -268,6 +277,17 @@ if __name__ == "__main__":
     ) as f:
         json.dump(json_file, f, ensure_ascii=False, indent=4)
     create_fmm_config(mod_version, FMM_CONFIG, WORK_TEMP_DIR)
+    with open(
+        ITEM_ID_TXT_SAVE_PATH,
+        "w",
+        encoding="utf-8",
+    ) as f:
+        f.write(f"# Item IDs for Item Box Editor\n")
+        f.write(f"# Version: {mod_version}\n\n")
+        for lang in LANG_LIST:
+            f.write(f"# Language: {lang['tag']}\n")
+            f.write("".join(item_list_txt[lang["tag"]]))
+            f.write("\n")
     # create zip
     create_zip(mod_version, ZIP_FILE_PREFIX)
     # del dir

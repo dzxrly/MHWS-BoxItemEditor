@@ -11,6 +11,7 @@
   "confirmCompatibleTip": "[Compatible]",
   "notCompatibleTip": "[NOT Compatible]",
   "backupSaveWarning": "[Warning]\nPlease backup your save before using this mod !\nDo NOT modify items that are not released, or you may get banned !",
+  "itemIdFileTip": "[Tips] Item ID list is in 'GameRoot/reframework/ItemEditor_ItemIDs.txt'",
   "readItemBoxBtn": "Read In-Game ItemBox",
   "changeItemTip": "[Tips] After change, please close and reopen the ItemBox to refresh !",
   "changeItemWarning": "[Warning]\nThis MOD does NOT check the legality, please make sure the item you modified can be put into the ItemBox !",

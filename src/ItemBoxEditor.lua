@@ -487,6 +487,7 @@ local function mainWindow()
         ------------------- existed item change -----------------
         imgui.begin_disabled(cItemParam == nil)
         imgui.new_line()
+        imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
         imgui.text(i18n.changeItemNumTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_S)
         typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
