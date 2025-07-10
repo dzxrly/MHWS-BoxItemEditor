@@ -862,6 +862,7 @@ end
 print("Initializing ItemBoxEditor...")
 initIDAndFixedIDProjection()
 loadI18NJson(ITEM_NAME_JSON_PATH)
+loadUserConfigJson(USER_CONFIG_PATH)
 searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
@@ -878,7 +879,6 @@ end, function()
     print("Default Language: " .. default_lang .. " - User Language: " .. userLanguage)
     loadI18NJson(ITEM_NAME_JSON_PATH)
     isLoadLanguage = true
-    loadUserConfigJson(USER_CONFIG_PATH)
 end
 )
 
@@ -910,7 +910,7 @@ end)
 
 re.on_frame(function()
     -- only display the window when REFramework is actually drawing its own UI
-    if reframework:is_drawing_ui() then
+    if reframework:is_drawing_ui() and isLoadLanguage then
         mainWindow()
         itemTableWindow()
         aboutWindow()
