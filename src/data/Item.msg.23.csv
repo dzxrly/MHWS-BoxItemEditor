@@ -18220,6 +18220,35 @@ Precisa ser avaliada.","버려진 낡은 무기의 어떤
 من نوع ما. ينبغي تقدير قيمته.",,,,,,,,,,,"Una pieza de un arma ancestral
 con cierto dispositivo. Necesita
 una tasación."
+0825cd00-4305-402d-81af-e28a10ca596f,3802498700,Item_IT_822,光るお守り,Glowing Stone,Pierre lumineuse,Pietra lucente,Leuchtender Stein,Piedra brillante,Сияющий камень,Świecący kamień,,,Pedra Reluzente,빛나는 부적,發光護符,发光护符,,,,,,,,حجر متوهج,,,,,,,,,,,Piedra reluciente
+4668e503-c5d5-43c7-abee-afe3373410fa,3371613922,Item_IT_EXP_822,"何かの力が秘められたお守り。
+鑑定でその力が明らかになり、
+護石として装備できるようになる。","Contains some secret power.
+Needs to be appraised in order
+to be equipped as a talisman.","Renferme un pouvoir secret.
+Sa nature doit être révélée pour
+pouvoir l'utiliser comme talisman.","Cela poteri segreti.
+Per equipaggiarlo come amuleto
+deve essere prima valutato.","Enthält eine geheime Kraft.
+Muss geschätzt werden, um als
+Talisman ausgerüstet zu werden.","Alberga una especie de poder secreto.
+Hay que tasarlo primero para poder
+usarlo como talismán.","Обладает скрытой силой. Можно
+использовать в качестве
+талисмана только после оценки.","Zawiera jakąś tajemniczą moc.
+Żeby go nosić jako talizman,
+wymaga wyceny.",,,"Contém algum poder secreto.
+Precisa ser avaliada para
+ser equipada como talismã.","무언가 힘을 간직한 부적.
+감정하면 힘이 밝혀지고
+호석으로 장비할 수 있다.","蘊藏著某種力量的護符。鑑定後才能
+知道它的力量，用作護石。","秘藏着某种力量的护符。可以通过
+鉴定揭示它的力量，作为护石装备
+起来。",,,,,,,,"تحتوي على قوة سرية.
+تحتاج إلى تقييم
+قبل أن تُجهز كتعويذة.",,,,,,,,,,,"Contiene un poder secreto.
+Necesita ser tasado antes de
+poder equiparse como amuleto."
 3b10e8c4-3270-4c5f-b9d1-385f1b9cec2f,3616841432,Item_IT_689,古びた武器片・装置,Old Weapon Shard - Device,Vieux fragment d'arme - Appareil,Parte arma antica (meccanismo),Waffenscherbe – Gerät,Esq. vieja arma: Aparato,Старый фрагмент оружия: устр-во,Odłamek starej broni: urządzenie,,,Frag. de Arma Antiga: Aparato,낡은 무기 조각-장치,老舊武器碎片・裝置,老旧武器碎片·装置,,,,,,,,شظية سلاح قديم: جهاز,,,,,,,,,,,Esq. arma antigua: Dispositivo
 05dab170-9d5f-413a-a5c1-016f1be7a8b1,3839560725,Item_IT_EXP_621,"強い力が秘められた珠。
 鑑定でその力が明らかになり、
@@ -19321,6 +19350,34 @@ feito com ele é imbatível.","아즈즈의 솥에서 정제된 신기한
 المعدات المصنوعة منها لا يعلى عليها.",,,,,,,,,,,"Misterioso material de alta calidad
 fundido en Azuz. Sirve para fabricar
 equipos de una calidad impecable."
+e0bb3a64-2a35-4f41-bacc-4d8dad82c533,3934084684,Item_IT_824,銀のお守りチケット,Silver Talisman Ticket,Ticket Talisman d'argent,Buono amuleto argento,Silbertalisman-Ticket,Vale de talismán de plata,Серебр. билет талисманов,Srebrny kwit talizmanu,,,Bilhete de Pingente de Prata,은 부적 티켓,銀之護身符票,银之护身符票,,,,,,,,تذكرة التعويذة الفضية,,,,,,,,,,,Cupón de talismán plateado
+32e71eab-d883-43b8-a02e-c1c4f3c4f04b,1689530035,Item_IT_EXP_824,"竜人族が使っているチケット。
+護石を錬金する際に渡すと、
+サービスしてもらえる。","A ticket used by Wyverians.
+Hand it over when melding
+talismans to get a discount.","Ticket utilisé par les Wyvériens.
+Garantit une réduction
+lors de la fusion de talismans.","Un buono wyveriano.
+Usalo quando stai fondendo degli
+amuleti per avere uno sconto.","Wyverianer-Ticket. Löse es beim
+Einschmelzen von Talismanen
+für einen Rabatt ein.","Un vale usado por los wyverianos.
+Entrégalo al fusionar talismanes
+para obtener un descuento.","Эти билеты в ходу у виверианцев.
+За такой дадут скидку при
+сплавлении талисманов.","Kwit używany przez Wiwerian.
+Przekaż go podczas wytapiania
+talizmanów, by otrzymać zniżkę.",,,"Bilhete usado pelos serperianos.
+Use-o ao fundir talismãs para
+ganhar um desconto.","용인족이 쓰는 티켓.
+호석을 연금할 때 건네면
+서비스를 받을 수 있다.","龍人族使用的票券。在鍊製護石時
+遞交，就能得到優惠。","龙人族使用的票券。炼制护石时交
+出，可以获得优惠。",,,,,,,,"تذكرة يستخدمها نسل (وايفرين).
+<LSNR ""سلمها"" ""سلميها""> عند دمج التعويذات
+للحصول على خصم.",,,,,,,,,,,"Un cupón usado por los wyverianos.
+Entrégalo al fusionar talismanes
+para obtener un descuento."
 9ef9a162-035c-4ab0-8fff-45b773729dbc,453077706,Item_IT_651,鋼のたまご,Steel Egg,Œuf d'acier,Uovo d'acciaio,Stahlei,Huevo de acero,Стальное яйцо,Stalowe jajo,,,Ovo de Aço,강철알,鋼蛋,钢蛋,,,,,,,,بيضة صلبة,,,,,,,,,,,Huevo de acero
 49ad6fd3-312a-40bc-b850-a10f2626b492,4005881147,Item_IT_EXP_651,"ピカピカ光るスティールな卵。
 大変価値のある珍しい宝。
