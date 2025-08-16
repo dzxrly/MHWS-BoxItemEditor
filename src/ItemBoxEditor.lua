@@ -9,8 +9,8 @@ local ITEM_ID_MAX = 974
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.6"
-local MAX_VERSION = "1.21.0.0"
+local INTER_VERSION = "v1.9.7"
+local MAX_VERSION = "1.21.1.0"
 -- Just change here can change every VERSION setting in all files END
 
 local NAME_LENGTH_MAX = 10
