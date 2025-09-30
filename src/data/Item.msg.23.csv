@@ -438,9 +438,9 @@ vaciller un monstre.","Munizioni per la fionda che esplodono
 all'impatto. Usale per stordire un mostro
 in situazioni d'emergenza.","Schleudermunition, die beim Ein-
 schlag explodiert. Bringe ein Monster
-ins Wanken, wenn’s gefährlich wird.","Munición de eslinga que estalla
-al impactar. Úsala como distracción
-si te ves en apuros.","Снаряд для самострела. Взрывается
+ins Wanken, wenn’s gefährlich wird.","Munición de eslinga que estalla al
+impactar. Úsala para desequilibrar
+a un monstruo si te ves en apuros.","Снаряд для самострела. Взрывается
 при ударе. Позволяет выбить
 монстра из равновесия и спастись.","Amunicja do procy wybuchająca
 przy uderzeniu. Można nią
@@ -5390,7 +5390,7 @@ produziu. Melhora qualquer receita.","모닥불 요리용 추가 식재료.
 노른자와 흰자도 폭신폭신하다.","營火料理的追加食材。是柔毛秧雞
 的蛋，蛋黃和蛋白都非常輕盈綿軟。","营火烹饪的追加食材。柔毛秧鸡的
 蛋，蛋黄蛋白都十分轻盈绵软。",,,,,,,,"بيضة بصفار وبياض منفوشة
-مثل الـ(كراك) الناعم الذي وضعها.
+مثل (كريك الناعم) الذي وضعها.
 إضافة رائعة إلى أي طبق.",,,,,,,,,,,"La yema y la clara de un huevo
 esponjosas como el carrao algodón
 que lo puso. Gran añadido en platos."
@@ -7339,6 +7339,121 @@ para executar combos temíveis.","고우키가 펼치는 암살권.
 لإطلاق هجمات مجمعة قوية.",,,,,,,,,,,"El estilo de lucha Ansatsuken
 de Akuma. Combina diferentes
 botones para desatar combos."
+16ccfb94-2c92-44c5-acab-7ff0efe28fc8,1703105704,Item_IT_816,ブラックナイト,The Blackest Night,Nuit noirissime,La notte più nera,Schwärzeste Nacht,La noche más oscura,Темнейшая ночь,Najczarniejsza noc,,,A Noite Mais Escura,흑야,至黑之夜,至黑之夜,,,,,,,,الليلة الظلماء,,,,,,,,,,,La noche más oscura
+89db9824-f38f-4dcd-87a2-8c0765d034ed,3941283491,Item_IT_EXP_816,"体力を削って自身にバリアを張る。
+バリアが消えるか、破壊されると
+カウンター攻撃を行う。","Reduces health and creates a
+barrier around you. Counterattacks
+when the barrier fades or is destroyed.","Réduit la vie et crée une barrière
+autour de vous. Contre-attaque quand
+elle se dissipe ou est détruite.","Riduce la salute e crea una
+barriera. Quando essa svanisce o
+è distrutta, contrattacca.","Verringert Gesundheit und er-
+schafft eine Barriere um dich.
+Konter bei Ende der Barriere.","Reduce la salud y crea una barrera
+a tu alrededor. Contraataca al
+desaparecer o destruirse la barrera.","Окружает вас барьером, сокращая
+здоровье. Истощение или разрушение
+барьера вызывает контратаку.","Zmniejsza zdrowie i tworzy wokół
+ciebie barierę. Kontratakuje, gdy
+bariera zanika lub jest zniszczona.",,,"Reduz a vida e cria uma barreira
+ao seu redor. Contra-ataca quando
+a barreira expira ou é destruída.","체력을 줄여 자신에게 보호막을
+친다. 보호막이 사라지거나
+파괴되면 카운터 공격을 한다.","削減自身體力來展開護盾。護盾消失
+或遭到破壞時會發動反擊。","削减自身体力展开护罩。
+护罩消失或被破坏时会发动反击。",,,,,,,,"تقلل الصحة وتنشئ حاجزًا <LSNR ""حولكَ"" ""حولكِ"">.
+تشن هجومًا مضادًا
+عند زوال الحاجز أو تدميره.",,,,,,,,,,,"Reduce salud y crea una barrera
+a tu alrededor. Contraataca al
+desaparecer o ser destruida."
+067bdd77-7068-4850-bc58-e8be74028dbf,181166059,Item_IT_817,ピクトポンポン,Pom Motif,Picto Pompon,Motivo pon-pon,Pikto-Bommel,Signo de pompón,Изображение пома,Motyw pompona,,,Pintura de Pom,폼폼 그림,絨球彩繪,绒球彩绘,,,,,,,,زخرفة كرات البوم بوم,,,,,,,,,,,Diseño de pompón
+e4e30d59-4564-4084-901f-02d5b1e49209,1919752793,Item_IT_EXP_817,"「ポンポン」の絵素を描く魔法。
+「ポンポン」が降り注ぎ、範囲内の
+モンスターに複数回当たる。","A spell that paints a pom,
+rendering a rain of poms that
+deal damage to monsters nearby.","Sort qui peint un Pompon et crée
+une pluie de pompons infligeant
+des dégâts aux monstres à proximité.","Incantesimo che dipinge un pompon,
+scatenandone una pioggia che
+infligge danni ai mostri vicini.","Zauber, der einen Bommel malt
+und mit einem Bommel-Regen
+nahen Monstern Schaden zufügt.","Un hechizo que dibuja un pom, lo que
+provoca una lluvia de poms que inflige
+daño a los monstruos cercanos.","Заклинание, рисующее пома.
+Ливень из помов наносит урон
+находящимся рядом монстрам.","Zaklęcie malujące pompon. Tworzy
+deszcz pomponów, które zadają
+obrażenia pobliskim potworom.",,,"Um feitiço que pinta um pom,
+fazendo uma chuva de pompons que
+causam dano a monstros próximos.","'폼폼' 그림을 그리는 마법.
+'폼폼'이 쏟아져 범위 내
+몬스터를 여러 번 맞힌다.","描繪出絨球的魔法。絨球會從天
+而降，並命中範圍內的魔物數次。","描绘出“绒球”的魔法。绒球会从
+天而降，对范围内的怪物造成多次
+打击。",,,,,,,,"تعويذة ترسم كرات البوم بوم،
+مما يؤدي إلى هطول أمطار من الكرات
+التي تلحق الضرر بالوحوش القريبة.",,,,,,,,,,,"Un hechizo que pinta un pompón
+y causa una lluvia de pompones,
+dañando a monstruos cercanos."
+6664b093-6915-47b9-81b1-3cb32d25acce,3339907911,Item_IT_818,ピクトウィング,Wing Motif,Picto Ailes,Motivo alare,Pikto-Schwingen,Signo de alas,Изображение крыльев,Motyw skrzydła,,,Pintura de Asas,날개 그림,翅膀彩繪,翅膀彩绘,,,,,,,,زخرفة الجناح,,,,,,,,,,,Diseño de ala
+47d08a6d-2a9b-4df4-915d-a10329bed989,2124122556,Item_IT_EXP_818,"「ウィング」の絵素を描く魔法。
+「ウィング」が風を巻き起こし、
+範囲のモンスターに攻撃する。","A spell that paints a pair of
+windborne wings that deal
+damage to monsters nearby.","Sort qui peint une paire d'ailes
+infligeant des dégâts aux
+monstres à proximité.","Incantesimo che dipinge delle ali
+avvolte dal vento che infliggono
+danni ai mostri vicini.","Zauber, der fliegende Flügel
+malt und mit diesen nahen
+Monstern Schaden zufügt.","Un hechizo que dibuja un par
+de alas voladoras que infligen
+daño a los monstruos cercanos.","Заклинание, рисующее крылья,
+уносимые ветром. Наносит урон
+находящимся рядом монстрам.","Zaklęcie malujące parę
+skrzydeł, które zadają obrażenia
+pobliskim potworom.",,,"Um feitiço que pinta um par de
+asas voadoras que causam dano
+a monstros próximos.","'날개' 그림을 그리는 마법.
+'날개'가 바람을 일으켜
+범위 내 몬스터를 공격한다.","描繪出翅膀的魔法。翅膀會颳起
+強風，攻擊範圍內的魔物。","描绘出“翅膀”的魔法。翅膀会掀
+起大风，攻击范围内的怪物。",,,,,,,,"تعويذة ترسم زوجًا من الأجنحة
+تحملهما الرياح وتلحقا الضرر
+بالوحوش القريبة.",,,,,,,,,,,"Un hechizo que pinta un par
+de alas voladoras que infligen
+daño a los monstruos cercanos."
+5fb3b41c-5a35-48b2-92b3-4187c8f6dd62,2054187511,Item_IT_819,モーグリストリーム,Mog of the Ages,Mognum opus,Mog delle ere,Opus Mognum,Mog ancestral,Мугл на века,Przedwieczny Mog,,,Mog das Eras,모그리 격류,莫古利激流,莫古力激流,,,,,,,,أسطورة الأزمان,,,,,,,,,,,Moguri ancestral
+adb716fd-2f0c-4dfb-9408-7eb40282f846,827297135,Item_IT_EXP_819,"「モーグリ」を具現化する魔法。
+呼び出された「モーグリ」が
+直線状に魔法攻撃を放つ。","Render your moogle portrait
+to life, dealing magical damage
+to enemies in a straight line.","Matérialise un Mog et inflige
+des dégâts magiques en ligne
+droite vers les cibles.","Dai vita al tuo ritratto di
+moguri, infliggendo danni magici
+ai nemici in linea retta.","Zauber, der einen Mogry zum Leben
+erweckt, welcher Gegnern in gera-
+der Linie Magieschaden zufügt.","Infunde vida a tu retrato de moguri
+para infligir daño mágico
+a los enemigos en una línea recta.","Оживите портрет мугла, чтобы
+нанести магический урон всем
+врагам по прямой линии.","Ożyw portret mugla, który
+zadaje magiczne obrażenia
+przeciwnikom w linii prostej.",,,"Dê vida ao seu retrato de moogle,
+causando dano mágico aos inimigos
+em linha reta.","'모그리'를 구현하는 마법.
+소환된 '모그리'가 직선
+범위에 마법 공격을 가한다.","使莫古利化為實體的魔法。被召喚
+出來的莫古利會施放呈直線狀的魔
+法攻擊。","将莫古力变为实体的魔法。被召唤
+出来的莫古力将释放直线状的魔法
+攻击。",,,,,,,,"يجعل صورة الـ(موغل) تنبض بالحياة،
+وتلحق ضررًا سحريًا بالأعداء
+في مسار مستقيم.",,,,,,,,,,,"Da vida a tu retrato de moguri
+e inflige daño mágico a los
+enemigos en una línea recta."
 68210719-65f6-4670-b7ca-2765807d4aca,2092360424,Item_IT_783,豪波動拳,Gou Hadoken,Gou Hadoken,Gou Hadoken,Gou Hadoken,Gou Hadoken,Gou Hadoken,Gou Hadoken,,,Gou Hadoken,호파동권,豪波動拳,豪波动拳,,,,,,,,Gou Hadoken,,,,,,,,,,,Gou Hadoken
 8d58fd99-4c53-4145-802a-0e619926358f,589702023,Item_IT_EXP_783,"豪鬼が放つ波動拳。
 スリンガーに装填して発射する。
@@ -7408,8 +7523,8 @@ dall'elemento ghiaccio. Utili
 per stordire un mostro.","Schleudermunition mit Eis-
 element. Bringe ein Monster ins
 Wanken, wenn’s gefährlich wird.","Munición de eslinga imbuida con
-hielo. Úsala como distracción
-si te ves en apuros.","Снаряд для самострела, заряженный
+hielo. Úsala para desequilibrar a
+un monstruo si te ves en apuros.","Снаряд для самострела, заряженный
 стихией льда. Позволяет выбить
 монстра из равновесия и спастись.","Amunicja do procy nasycona
 żywiołem lodu. Użyj, by ogłuszyć
@@ -11708,7 +11823,7 @@ blätter durch die Luft wirbeln.","Una bomba de barril grande
 de la floradanza. Explota con
 una ráfaga de pétalos de flores.","Большая бочковая бомба с Танца
 цветов. При взрыве осыпает всё
-вокруг цветочными лепестками.","Duża bomba beczkowa z
+вокруг цветочными лепестками.","Duża bomba beczkowa z festiwalu
 Tańca Kwiatów. Wybucha
 strumieniem płatków kwiatów.",,,"Superbomba Barril da Floridança.
 Explode em uma chuva de pétalas
@@ -11752,6 +11867,64 @@ de fogos de artifício.","교류 축제【용화 의식】 참가로
 من الألعاب النارية.",,,,,,,,,,,"Bomba de barril de Chisparranda.
 Forma un colorido ramillete de
 fuegos artificiales al explotar."
+f919eb5c-2142-4dca-a2c8-86baec27f30e,3824583060,Item_IT_805,大タル爆弾【ソウル】,Spectral Barrel Bomb,Bombe baril spectrale,Bomba-botte spettro,Spektrale Fassbombe,Bomba de barril espectral,Призрачная бочковая бомба,Widmowa bomba beczkowa,,,Bomba Barril Espectral,대형나무통폭탄【소울】,大爆彈桶【靈魂】,大桶爆弹【灵魂】,,,,,,,,برميل متفجر طيفي,,,,,,,,,,,Bomba de barril espectral
+f4f39564-4c6f-4a9f-b24e-3823be8cff23,3469438528,Item_IT_EXP_805,"交わりの祭事【夢灯の儀】に参加
+するともらえる特別な大タル爆弾。
+爆発でナニかが解き放たれる…。","A large barrel bomb from the
+Dreamspell. Releases something
+when it detonates...","Grande bombe baril de la Veillée
+des rêves. Libère quelque chose
+quand elle explose...","Una bomba-botte grande da
+Ognissogni. Quando esplode
+rilascia qualcosa...","Eine große Fassbombe aus dem
+Traumzauber. Entfesselt etwas,
+wenn sie explodiert...","Una gran bomba de barril
+del sueñiencanto.
+Libera algo al estallar...","Большая бочковая бомба с Чар
+снов. При взрыве выбрасывает
+что-то в воздух...","Duża bomba beczkowa z festiwalu
+Czaru Snów. Podczas detonacji
+coś wypuszcza...",,,"Uma superbomba barril do
+Feitissonho. Libera alguma
+coisa quando é detonada...","교류 축제【몽화 의식】 참가로
+받는 특별한 대형나무통폭탄.
+폭발하면 무언가가 해방된다.","參加交匯慶典【夢燈之儀】可獲得的
+特別大爆彈桶。爆炸的時候會釋放出
+某種東西……","参加交流祭典【梦灯之仪】后获得
+的特殊大桶爆弹。在爆炸时会放出
+某种东西……",,,,,,,,"برميل متفجر ضخم
+من تعويذة الأحلام.
+يطلق شيئًا ما عند انفجاره...",,,,,,,,,,,"Una bomba de barril grande
+de Sueñiencanto. Libera algo
+cuando estalla..."
+b136b47d-ae50-47df-a42a-15ca56843f36,3431716686,Item_IT_821,ピクトマンサーの証,Soul of the Pictomancer,Cristal de pictomancien,Anima del pittomante,Piktomanten-Kristall,Alma del pictomante,Душа пиктомансера,Dusza piktomanty,,,Alma do Pictomante,픽토맨서의 증표,繪靈法師之證,绘灵法师之证,,,,,,,,روح رسام السحر التصويري,,,,,,,,,,,Alma del pictomante
+1e47b080-7082-4e76-9bb4-5a5e0b419507,3967272426,Item_IT_EXP_821,"ピクトマンサーの記憶と想像力が
+刻まれたクリスタル。所持すること
+で、絵画魔法が使えるようになる。","A crystal containing the memories
+and creativity of a pictomancer.
+Allows you to use pictomancy.","Cristal contenant les souvenirs et
+la créativité d'un pictomancien.
+Permet d'utiliser la pictomancie.","Cristallo che contiene ricordi e
+creatività di un pittomante.
+Permette l'uso della pittomanzia.","Ein Kristall voller Erinnerungen
+und Kreativität eines Piktoman-
+ten. Ermöglicht Piktomantie.","Un cristal que alberga los recuerdos
+y la creatividad de un pictomante.
+Permite hacer uso de la pictomancia.","Кристалл с памятью и творческим
+потенциалом пиктомансера.
+Позволяет применять пиктомантию.","Kryształ pełen wspomnień
+i kreatywności piktomanty.
+Umożliwia używanie piktomancji.",,,"Um cristal que contém as memórias
+e a criatividade de um pictomante.
+Permite que você use pictomancia.","픽토맨서의 기억과 상상력이
+새겨진 크리스탈. 소지하면
+그림 마법을 사용할 수 있다.","刻著繪靈法師記憶與想像力的水晶。
+只要持有它就能使用繪靈魔法。","储存有绘灵法师记忆和想象力的水
+晶。持有时可使用绘灵魔法。",,,,,,,,"بلورة تحتوي على ذكريات
+رسام السحر التصويري وإبداعه.
+تتيح <LSNR ""لكَ"" ""لكِ""> استخدام فن السحر التصويري.",,,,,,,,,,,"Cristal que guarda los recuerdos
+y el ingenio de un pictomante.
+Te permite usar la pictomancia."
 3e188794-44ec-4945-aed6-8f137fa1dc1a,1083835709,Item_IT_440,暗器蛸の皮,Xu Wu Hide,Peau Xu Wu,Xu Wu: pelle,Xu-Wu-Haut,Piel de Xu Wu,Шкура сю ву,Skóra Xu Wu,,,Couro de Xu Wu,암기소의 가죽,暗器鱆的皮,暗器蛸的皮,,,,,,,,جلد شو وو,,,,,,,,,,,Piel de Xu Wu
 61069738-178e-4123-941a-6a5bc820006e,3984652715,Item_IT_EXP_440,"シーウーの皮。
 独特の弾力に加え、粘液をまとって
@@ -13309,6 +13482,36 @@ Atacá-la causa dano adicional.","슬링어에 장전해서 발사한다.
 مهاجمتها لإلحاق ضرر إضافي.",,,,,,,,,,,"Munición de eslinga que se fija
 en el objetivo causando continuo
 daño. Daño extra si se ataca."
+8f8e61f9-ea53-4b5a-9b6a-e14f652dbbb5,1469389052,Item_IT_815,障壁発生器,Shield Generator,Générateur de bouclier,Generatore di scudi,Schildgenerator,Generador de escudo,Генератор щита,Generator tarczy,,,Gerador de Barreira,장벽 발생기,防護屏障生成器,障壁发生器,,,,,,,,مولّد الدروع,,,,,,,,,,,Generador de escudo
+fb3c7063-ae53-44af-956f-fc756c9595d7,4290960531,Item_IT_EXP_815,"スリンガーに装填して発射する。
+着弾場所に障壁が発生し、
+一定時間モンスターの攻撃を防ぐ。","Slinger ammo that creates a
+shield where it lands, blocking
+monster attacks for a while.","Munition pour fronde qui crée
+un bouclier capable de bloquer
+les attaques des monstres.","Munizione per fionda che crea
+uno scudo che blocca gli attacchi
+dei mostri dove atterra.","Schleudermunition, die bei Auf-
+schlag einen Schild erschafft
+und Monsterangriffe blockiert.","Munición de la eslinga que crea un escudo
+allí donde impacta, capaz de bloquear
+temporalmente los ataques de monstruos.","Снаряды для самострела, создающие
+в выбранном месте временный щит,
+который закрывает от атак.","Amunicja do procy tworząca
+tarczę w miejscu trafienia.
+Blokuje przez chwilę ataki potworów.",,,"Munição de atiradeira que cria
+uma barreira onde cai, bloqueando
+ataques de monstros por um tempo.","슬링어에 장전해서 발사한다.
+착탄 지점에 장벽이 발생해
+일정 시간 몬스터의 공격을 막는다.","投射器彈藥，命中的地點將會產生
+防護罩，可以在一定時間內阻擋魔
+物的攻擊。","装填到投射器后发射。在命中地点
+生成防御障壁，一定时间内抵御怪
+物的攻击。",,,,,,,,"ذخيرة لنبلة معصم
+تنشئ درعًا في مكان سقوطها
+وتحجب هجمات الوحوش لفترة مؤقتة.",,,,,,,,,,,"Munición de eslinga que crea
+un escudo donde cae, bloqueando
+temporalmente ataques."
 bfcd82ec-adb0-45b1-86cf-73f5ee9442cb,1624372452,Item_IT_470,普通の素材,Basic Material,Matériau de base,Materiale base,Grundmaterial,Material básico,Базовый материал,Podstawowy materiał,,,Material Básico,보통 소재,普通素材,普通素材,,,,,,,,مواد أساسية,,,,,,,,,,,Material básico
 a4cbb0c9-022b-4915-b3dd-cc9800f96f81,202381993,Item_IT_EXP_470,"ターゲットモンスターの様々な
 素材が追加報酬として手に入る。","Assorted materials from target
@@ -15385,9 +15588,8 @@ oposta às suas irmãs.","셀레기오스의 칼날비늘 중에
 反方向豎起的刃鱗。彷彿體現了叛逆
 心的珍品。","在千刃龙矗立的片片刃鳞之中，仅
 有一枚逆向突立的刃鳞。完美体现
-了叛逆心的珍品。",,,,,,,,"قشرة فريدة تتجه بعصيان
-في اتجاه مختلف
-عن باقي مثيلاتها.",,,,,,,,,,,"Una única escama que apunta
+了叛逆心的珍品。",,,,,,,,"قشرة فريدة تشير بتحدٍ في 
+اتجاه مختلف عن نظيراتها.",,,,,,,,,,,"Una única escama que apunta
 desafiante en una dirección
 diferente al resto."
 8faaa653-4249-42ae-bfe7-b10f5db9d74b,2938342794,Item_IT_555,千刃竜の狩猟証Ｓ,Seregios Certificate S,Certificat Seregios S,Seregios: certificato S,Seregios-Zertifikat S,Certificado Seregios S,Сертификат S: серегиос,Certyfikat Seregiosa S,,,Certificado de Seregios S,천인룡 사냥증 S,千刃龍狩獵證S,千刃龙狩猎证 S,,,,,,,,شهادة سيرجيوس S,,,,,,,,,,,Certificado de Seregios S
@@ -15418,6 +15620,244 @@ Usado para fazer equipamento.","셀레기오스 퀘스트를 성공한
 تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio otorgado a
 quienes cazaron un Seregios.
 Se usa para fabricar equipo."
+01127372-8df0-4bd2-95e5-47e9cc179225,3881697903,Item_IT_738,オメガの螺子,Omega Screw,Vis d'Oméga,Vite Omega,Omega-Schraube,Tornillo Omega,Омега-винт,Śruba z Omegi,,,Parafuso Omega,오메가의 나사,歐米茄的螺絲,欧米茄的螺丝,,,,,,,,برغي أوميغا,,,,,,,,,,,Tornillo Omega
+ea1eeb01-27ba-4719-aeea-a0f0c7929bee,3677415375,Item_IT_EXP_738,"オメガ・プラネテスの謎めいた
+ネジ。再現できない精度で作られて
+おり、複雑な機構を支えている。","A puzzling screw from Omega Planetes.
+Made with such precision and
+complexity that it cannot be replicated.","Étrange vis d'Oméga Planetikos.
+Si complexe qu'elle est
+impossible à reproduire.","Strana vite di Omega Planetes.
+Impossibile replicarne la
+precisione e complessità.","Eine seltsame Schraube von Omega
+Planetes. Der komplexe Aufbau
+macht ein Kopieren unmöglich.","Un extraño tornillo de Omega Planetes.
+Es tan preciso y complejo que no se
+puede crear otro igual.","Странный винт из Омеги-Планетеса.
+Изготовлен с такой точностью,
+что его невозможно воссоздать.","Zagadkowa śruba z Omegi Planetes.
+Stworzona z wielką precyzją jest tak
+złożona, że nie da się jej odtworzyć.",,,"Um curioso parafuso da Omega
+Planetes. Sua engenharia precisa
+e complexa torna-o irreplicável.","오메가 플라네테스의 수수께끼의
+나사. 재현 불가능한 정밀도로
+복잡한 기구를 지탱한다.","來自遊星歐米茄身上的神秘螺絲。
+以無法重現的精細度製作，支撐著
+複雜的機構。","来自游星欧米茄身上的神秘螺丝。
+以无法重现的精细度制作，支撑起
+复杂的机器结构。",,,,,,,,"برغي محير من (أوميغا بلانيتيس).
+صُنع بدقة وتعقيد
+لا يمكن تكرارهما.",,,,,,,,,,,"Un enigmático tornillo de Omega
+Planetes. Es tan complejo que no
+se puede replicar."
+961f54af-1bdb-444e-b17f-31aca7d06c53,3944921683,Item_IT_739,オメガの発条,Omega Spring,Ressort d'Oméga,Molla Omega,Omega-Feder,Muelle Omega,Омега-пружина,Sprężyna z Omegi,,,Mola Omega,오메가의 스프링,歐米茄的彈簧,欧米茄的弹簧,,,,,,,,زنبرك أوميغا,,,,,,,,,,,Muelle Omega
+1dd871e3-1e07-440b-b80b-228a9809c550,2737483686,Item_IT_EXP_739,"オメガ・プラネテスの謎めいた
+スプリング。規格外の荷重にも
+耐え、精密な挙動を実現している。","A puzzling spring from Omega Planetes.
+Its detailed makeup allows it to
+bear unusually heavy loads.","Étrange ressort d'Oméga
+Planetikos. Capable de supporter
+des charges anormalement lourdes.","Strana molla di Omega Planetes.
+Sopporta carichi insolitamente
+pesanti grazie alla sua forma.","Eine seltsame Feder von Omega
+Planetes. Ihre Machart lässt sie
+schwere Lasten tragen.","Un extraño muelle de Omega Planetes.
+Su compleja estructura le permite
+soportar cargas enormes.","Странная пружина из Омеги-
+Планетеса. Выполнена из сплава,
+выдерживающего любую нагрузку.","Zagadkowa sprężyna z Omegi Planetes.
+Dzięki szczegółowej konstrukcji
+udźwignie niezwykle ciężkie ładunki.",,,"Uma curiosa mola da Omega
+Planetes. Capaz de suportar
+cargas excepcionalmente pesadas.","오메가 플라네테스의 수수께끼의
+스프링. 규격 외 무게를
+견디며 정밀한 움직임을 실현한다.","來自遊星歐米茄身上的神秘彈簧。
+能承受非比尋常的重量，使機器
+能做出精密的動作。","来自游星欧米茄身上的神秘弹簧。
+能够承受超出寻常的负重，以完成
+精密的动作。",,,,,,,,"زنبرك محير من (أوميغا بلانيتيس).
+يمكِّنه تركيبه المتقن
+من حمل أحمال ثقيلة بشكل استثنائي.",,,,,,,,,,,"Un enigmático muelle de Omega
+Planetes. Su complejo diseño le
+permite soportar cargas pesadas."
+8b92c178-83ac-4caa-a920-3ad7c4bce26f,1876189868,Item_IT_740,オメガの機脚,Omega Pedal,Pédale d'Oméga,Pedale Omega,Omega-Pedal,Pedal Omega,Омега-рычаг,Pedał z Omegi,,,Pedal Omega,오메가의 기계 다리,歐米茄的機械腳,欧米茄的机械腿,,,,,,,,دواسة أوميغا,,,,,,,,,,,Pedal Omega
+1b6c1913-f945-4cac-b28f-fa78d376362a,2630797477,Item_IT_EXP_740,"オメガ・プラネテスの謎めいた
+ペダル。数多の部品が正確に動く
+様は、驚異の技術力を感じさせる。","A puzzling pedal from Omega Planetes.
+Its incredible technological capabilities
+allow it to move many parts at once.","Étrange pédale d'Oméga
+Planetikos. Capable de faire
+bouger plusieurs pièces à la fois.","Strano pedale di Omega Planetes.
+Muove simultaneamente più parti
+con la sua tecnologia avanzata.","Ein seltsames Pedal von Omega
+Planetes. Es ist in der Lage,
+viele Teile zu bewegen.","Un extraño pedal de Omega Planetes.
+Sus capacidades tecnológicas le
+permiten mover varias partes a la vez.","Странный рычаг из Омеги-
+Планетеса. Имеет сложную много-
+функциональную конструкцию.","Zagadkowy pedał z Omegi Planetes.
+Jego niesamowite właściwości pozwalają
+mu ruszać wieloma częściami na raz.",,,"Um curioso pedal da Omega
+Planetes. Sua tecnologia incrível
+permite mover muitas partes.","오메가 플라네테스의 수수께끼의
+페달. 수많은 부품이 정확히
+움직이며 경이로움을 자아낸다.","來自遊星歐米茄身上的神秘踏板。
+能使眾多零件正確運作，讓人感受
+到其神奇的技術。","来自游星欧米茄身上的神秘踏板。
+无数零件协调运作，精密程度令人
+惊叹，尽显卓绝的技术实力。",,,,,,,,"دواسة محيرة من (أوميغا بلانيتيس).
+تمتاز بقدراتها التقنية المذهلة التي تمكنها
+من تحريك العديد من الأجزاء في وقت واحد.",,,,,,,,,,,"Un enigmático pedal de Omega
+Planetes. Su tecnología permite
+mover varias piezas a la vez."
+d29a6a22-9c8f-4b39-8d30-041fd879004e,4156170739,Item_IT_741,オメガの透鏡,Omega Lens,Lentille d'Oméga,Lente Omega,Omega-Linse,Lente Omega,Омега-линза,Soczewka z Omegi,,,Lente Omega,오메가의 렌즈,歐米茄的透鏡,欧米茄的透镜,,,,,,,,عدسة أوميغا,,,,,,,,,,,Lente Omega
+fda19b18-c0eb-4ed3-b549-6fdffc333f42,3342533318,Item_IT_EXP_741,"オメガ・プラネテスの謎めいた
+レンズ。覗き込んだ者は、新たな
+次元を垣間見るといわれる。","A puzzling lens from Omega Planetes.
+It's said that peering through it allows
+you to see into a new dimension.","Étrange lentille d'Oméga Planetikos.
+Regarder à travers permettrait
+d'observer une nouvelle dimension.","Strana lente di Omega Planetes.
+Se ci guardi attraverso puoi
+scorgere una nuova dimensione.","Eine seltsame Linse von Omega
+Planetes. Wer hindurchblickt,
+soll eine neue Dimension sehen.","Una extraña lente de Omega Planetes.
+Dicen que al mirar a través de ellas
+se puede ver una nueva dimensión.","Странная линза из Омеги-
+Планетеса. Говорят, она позволяет
+заглянуть в другое измерение.","Zagadkowa soczewka z Omegi Planetes.
+Spojrzenie przez nią ma umożliwić
+zajrzenie do nowego wymiaru.",,,"Uma curiosa lente da Omega
+Planetes. Dizem que através dela
+se pode ver uma nova dimensão.","오메가 플라네테스의 수수께끼의
+렌즈. 이 렌즈를 들여다보면
+새로운 차원이 보인다고 한다.","來自遊星歐米茄身上的神秘透鏡。
+據說往裡面看就能窺見新的次元。","来自游星欧米茄身上的神秘透镜。
+据说凝视此透镜的人能够瞥见一个
+崭新的次元。",,,,,,,,"عدسة محيرة من (أوميغا بلانيتيس).
+يُقال إن النظر من خلالها
+<LSNR ""يمكِّنكَ"" ""يمكِّنكِ""> من رؤية بُعد جديد.",,,,,,,,,,,"Una enigmática lente de Omega
+Planetes. Dicen que si miras por
+ella verás una nueva dimensión."
+02ab0554-b0eb-49ee-bfbc-5a52866a4257,1513195864,Item_IT_743,オメガの廻軸,Omega Axle,Essieu d'Oméga,Asse Omega,Omega-Achse,Eje Omega,Омега-ось,Oś z Omegi,,,Eixo Omega,오메가의 회전축,歐米茄的迴旋軸,欧米茄的转轴,,,,,,,,محور أوميغا,,,,,,,,,,,Eje Omega
+84079929-136a-4edd-b67f-ba78033dcbfb,3492733394,Item_IT_EXP_743,"オメガ・プラネテスの謎めいた
+シャフト。異次元の技術による
+回転で、巨大な駆動力を生む。","A puzzling axle from Omega Planetes.
+Interdimensional technology allows
+it to rotate with immense force.","Étrange essieu d'Oméga Planetikos.
+La technologie interdimensionnelle lui
+permet de tourner avec une force immense.","Strano asse di Omega Planetes.
+La tecnologia interdimensionale
+gli imprime una forza immensa.","Eine seltsame Achse von Omega
+Planetes. Ihre Technologie
+erlaubt enormes Drehmoment.","Un extraño eje de Omega Planetes. Su
+tecnología interdimensional le permite
+rotar con una fuerza demoledora.","Странная ось из Омеги-Планетеса.
+Выдерживает огромные нагрузки
+при вращении.","Zagadkowa oś z Omegi Planetes.
+Dzięki międzywymiarowej technologii
+obraca się z ogromną siłą.",,,"Um curioso eixo da Omega Planetes.
+Sua tecnologia interdimensional
+permite que gire com imensa força.","오메가 플라네테스의 수수께끼의
+샤프트. 다른 차원의 기술로
+회전하며 큰 동력을 생성한다.","來自遊星歐米茄身上的神秘機軸。
+會透過超乎常理的技術來旋轉，
+以此產生出巨大的動力。","来自游星欧米茄身上的神秘转轴。
+通过异世界的技术来旋转，以此产
+生强大的驱动力。",,,,,,,,"محور محير من (أوميغا بلانيتيس).
+تتيح تقنيته البُعدية
+دورانه بقوة هائلة.",,,,,,,,,,,"Un enigmático eje de Omega
+Planetes. Su avanzada tecnología
+le permite rotar con gran poder."
+21c6b82a-829b-422e-82c5-fb18766b4530,781157232,Item_IT_744,オメガの赤熱核,Omega Nodule,Nodule veiné d'Oméga,Nodulo Omega,Omega-Glühkern,Nódulo Omega,Омега-ядро,Grudka Omegi,,,Núcleo Omega,오메가의 적열핵,歐米茄的熾熱核,欧米茄的炽热核,,,,,,,,جوهر أوميغا,,,,,,,,,,,Nódulo Omega
+37496a76-b315-4bed-8d6d-a37e26598bc3,3916825765,Item_IT_EXP_744,"オメガ・プラネテスの謎めいた
+コア。本体から切り離された後も、
+生きているかのように熱く脈打つ。","A puzzling core from Omega Planetes.
+It pulsates with heat, as if still active even
+after being removed from the main body.","Étrange noyau d'Oméga Planetikos.
+Dégage de la chaleur comme s'il
+était encore actif hors du corps.","Strano nucleo di Omega Planetes.
+Palpita di calore, come se fosse
+ancora attivo dopo la rimozione.","Ein seltsamer Kern von Omega
+Planetes. Pulsiert vor Hitze,
+als wäre er immer noch aktiv.","Un extraño núcleo de Omega Planetes.
+Palpita y emite calor como si siguiera
+activo tras retirarlo del cuerpo principal.","Странное ядро из Омеги-
+Планетеса. Испускает жар даже
+после извлечения из механизма.","Zagadkowy rdzeń z Omegi Planetes.
+Emituje ciepło, jakby po usunięciu
+z korpusu wciąż był aktywny.",,,"Um curioso núcleo da Omega
+Planetes. Continua a pulsar,
+mesmo após ser removido.","오메가 플라네테스의 수수께끼의
+코어. 본체에서 떨어져 나가도
+살아 있듯 강렬하게 뛴다.","來自遊星歐米茄身上的神秘核心。
+從本體分離之後仍會搏動，就像是
+有生命一般。","来自游星欧米茄身上的神秘核心。
+即使离开本体仍然在滚烫脉动，彷
+彿拥有生命一般。",,,,,,,,"جوهر محير من (أوميغا بلانيتيس).
+ينبض بالحرارة وكأنه ما زال نشطًا
+حتى بعد فصله عن الجسم الرئيسي.",,,,,,,,,,,"Un enigmático núcleo de Omega
+Planetes. Palpita ardiente, como
+si acabaran de sacarlo de Omega."
+a6ec25b1-4683-437c-a364-a1b500e08435,236742470,Item_IT_737,オメガデータ１.０,Omega Data 1.0,Données d'Oméga 1.0,Dati Omega 1.0,Omega-Daten 1.0,Datos Omega 1.0,Данные Омеги 1.0,Dane Omegi 1.0,,,Dados Omega 1.0,오메가 데이터 1.0,歐米茄資料1.0,欧米茄数据1.0,,,,,,,,بيانات أوميغا 1.0,,,,,,,,,,,Datos Omega 1.0
+430d33f9-697b-47ff-bd33-e9509ebed709,3307887598,Item_IT_EXP_737,"オメガ・プラネテスに残された
+戦闘記録。英雄たちと繰り広げた、
+無数の戦いの痕跡が刻まれている。","Data left behind by Omega Planetes.
+Includes records of the countless
+battles it has had with various heroes.","Données laissées par Oméga
+Planetikos. Répertorient ses
+nombreuses batailles.","Dati lasciati da Omega Planetes.
+Includono i registri di infinite
+battaglie contro vari eroi.","Kampfdaten von Omega Planetes,
+die Schlachten gegen zahllose
+Helden dokumentieren.","Datos que dejó Omega Planetes tras
+de sí. Incluye registros de batallas
+libradas contra diversos héroes.","Данные, полученные из Омеги-
+Планетеса. Хранят записи
+о битвах с различными героями.","Dane pozostawione przez Omegę
+Planetes. Zawiera informacje o wielu
+walkach z różnymi bohaterami.",,,"Dados deixados por Omega Planetes.
+Há registros das inúmeras batalhas
+contra diversos heróis.","오메가 플라네테스에 남은
+전투 기록. 영웅들과 펼친
+전투의 흔적들이 새겨져 있다.","留在遊星歐米茄上的戰鬥紀錄。上面
+記錄著它與各個英雄無數次戰鬥的痕
+跡。","游星欧米茄中留存的战斗记录。记
+录着它与英雄们无数次战斗的痕迹。",,,,,,,,"بيانات خلّفها (أوميغا بلانيتيس).
+تتضمن سجلات لمعارك لا حصر لها
+خاضها مع أبطال متعددين.",,,,,,,,,,,"Datos que dejó Omega Planetes.
+Guardan registros de las muchas
+batallas con diferentes héroes."
+b3a7a845-20bf-47d7-9056-6da1423c6535,1546518203,Item_IT_745,オメガデータ２.０,Omega Data 2.0,Données d'Oméga 2.0,Dati Omega 2.0,Omega-Daten 2.0,Datos Omega 2.0,Данные Омеги 2.0,Dane Omegi 2.0,,,Dados Omega 2.0,오메가 데이터 2.0,歐米茄資料2.0,欧米茄数据2.0,,,,,,,,بيانات أوميغا 2.0,,,,,,,,,,,Datos Omega 2.0
+a605066a-8515-4793-9c84-d554a8732c31,2154453854,Item_IT_EXP_745,"零式オメガ・プラネテスに残された
+戦闘記録。英雄たちと繰り広げた、
+壮絶な戦いの痕跡が刻まれている。","Battle data left behind by Omega Planetes
+(Savage). Includes records of the fierce
+battles it has had with various heroes.","Données laissées par Oméga
+Planetikos (sadique). Répertorient
+ses féroces batailles.","Dati lasciati da Omega Planetes
+(Brutale). Includono registri di
+feroci battaglie contro eroi.","Kampfdaten vom Wilden Omega
+Planetes, die Schlachten gegen
+zahllose Helden dokumentieren.","Datos de combate que dejó Omega Planetes
+(brutal). Incluye registros de batallas
+libradas contra diversos héroes.","Данные, полученные из Омеги-
+Планетеса (тип 0). Хранят записи
+о его суровых битвах с героями.","Dane pozostawione przez Omegę
+Planetes (brutalnego). Zawiera inf. o
+walkach z różnymi bohaterami.",,,"Dados deixados por Omega Planetes
+(Brutal). Há registros das ferozes
+batalhas contra diversos heróis.","0식 오메가 플라네테스에 남은
+전투 기록. 영웅들과 펼친
+전투의 흔적들이 새겨져 있다.","留在零式遊星歐米茄上的戰鬥紀錄。
+上面記錄著它與各個英雄壯烈戰鬥的
+痕跡。","零式游星欧米茄中留存的战斗记录。
+记录着它与英雄们无数次惨烈战斗
+的痕迹。",,,,,,,,"بيانات معارك خلّفها (أوميغا بلانيتيس) (وحشي).
+تتضمن سجلات لمعارك شرسة لا حصر لها
+خاضها مع أبطال متعددين.",,,,,,,,,,,"Datos de combate que dejó Omega Planetes
+(Violento). Incluyen registros de las feroces
+batallas contra diferentes héroes."
 a5e866c8-69d6-47eb-86d4-406e43d3164d,2826714552,Item_IT_556,火竜の上鱗,Rathalos Scale+,Écaille Rathalos +,Rathalos: scaglia+,Rathalos-Schuppe+,Escama de Rathalos+,Чешуя раталоса+,Łuska Rathalosa+,,,Escama de Rathalos+,화룡의 비늘+,火龍的上鱗,火龙的上等鳞,,,,,,,,قشرة راثالوس+,,,,,,,,,,,Escama de Rathalos+
 3c633673-cdc2-4ab4-a39c-15500d644bce,2485223529,Item_IT_EXP_556,"リオレウスから剥ぎ取った
 上質な鱗。確かな厚みによって
@@ -17609,6 +18049,36 @@ Usado para fazer equipamentos.","역전왕 우드 투나 사냥을 성공한
 تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio por cazar
 un Uth Duna hipercurtido.
 Se emplea para fabricar equipo."
+df5c5e41-a698-4d58-b760-cdfbb72d98c3,1644064759,Item_IT_760,獄焔蛸の狩猟証γ,Nu Udra Certificate γ,Certificat Nu Udra γ,Nu Udra: certificato γ,Nu-Udra-Zertifikat γ,Certificado Nu Udra γ,Сертификат γ: ну удра,Certyfikat Nu Udry γ,,,Certificado de Nu Udra γ,염옥소 사냥증 γ,獄焰鱆狩獵證γ,狱焰蛸狩猎证γ,,,,,,,,شهادة نو أودرا γ,,,,,,,,,,,Certificado de Nu Udra γ
+f40f17f1-b4cf-4018-ad20-6025a0956185,3674371918,Item_IT_EXP_760,"歴戦王ヌ・エグドラの狩猟に成功し
+た者に与えられる、ギルドの証明
+書。特別な装備の作成に使用する。","A Guild certificate for hunting
+an Arch-tempered Nu Udra.
+Used to make equipment.","Certificat de la Guilde reçu pour avoir
+chassé un Nu Udra alpha suprême.
+Sert à fabriquer de l'équipement.","Un certificato della Gilda per
+un Nu Udra arcitemprato. Usato
+per creare equipaggiamento.","Gildenzertifikat für das Erjagen
+eines Kampfgehärteten Nu Udra.
+Zur Ausrüstungsherstellung.","Certificado de gremio por cazar
+a un Nu Udra hipercurtido.
+Se usa para fabricar equipamiento.","Сертификат Гильдии за победу над
+архизакалённым ну удрой. Нужен
+для создания снаряжения.","Certyfikat Gildii za polowanie
+na Arcyzahartowanego Nu Udry.
+Używany do produkcji wyposażenia.",,,"Certificado da Guilda dado a quem
+caçou um Nu Udra Arquiaguerrido.
+Usado para fazer equipamentos.","역전왕 누 이그드라 사냥을 성공한
+자에게 주어지는 길드 증명서.
+특별한 장비 제작에 사용.","公會的證書，會授予成功完成歷戰王
+獄焰鱆任務的人。可用於製作特別裝
+備。","公会颁发的证书，授予成功完成历
+战王狱焰蛸任务的人。可用于制作
+特殊装备。",,,,,,,,"شهادة تمنحها الرابطة
+لصيد وحش (نو أودرا) شديد الغضب.
+تُستخدم لصنع المعدات.",,,,,,,,,,,"Certificado de gremio por cazar
+un Nu Udra hipercurtido.
+Se emplea para fabricar equipo."
 d28d449b-b515-49c3-8901-39f1bc529c24,2155815381,Item_IT_763,祭事チケット【花舞】,Blossomdance Ticket,Ticket Danse des fleurs,Biglietto Fiordanza,Blütentanz-Ticket,Vale de floradanza,Билет Танца цветов,Kwit Tańca Kwiatów,,,Bilhete da Floridança,축제 티켓【화무】,慶典票【花舞】,祭典票券【花舞】,,,,,,,,تذكرة مهرجان رقصة الزهرة,,,,,,,,,,,Cupón de Floradanza
 1814b60e-e974-4fcf-8ce3-f79536922e17,2763544365,Item_IT_EXP_763,"交わりの祭事【花舞の儀】に参加
 すると貰えるチケット。季節を彩る
@@ -17809,6 +18279,91 @@ um equipamento especial na Forja.","자주 사용했는지 여기저기 낡은
 الحدادة للحصول على معدات مميزة.",,,,,,,,,,,"Preciado pico desgastado por el
 uso continuo. Llévalo a la forja
 para conseguir equipo especial."
+058704df-da76-485b-a691-e8d87262676d,3157583875,Item_IT_770,祭事チケット【夢灯】,Dreamspell Ticket,Ticket Veillée des rêves,Biglietto Ognissogni,Traumzauber-Ticket,Vale del sueñiencanto,Билет Чар снов,Kwit Czaru Snów,,,Bilhete do Feitissonho,축제 티켓【몽화】,慶典票【夢燈】,祭典票券【梦灯】,,,,,,,,تذكرة تعويذة الأحلام,,,,,,,,,,,Cupón de Sueñiencanto
+fda9a8a6-7470-423c-964a-591321c2e240,2685741248,Item_IT_EXP_770,"交わりの祭事【夢灯の儀】に参加
+すると貰えるチケット。季節を彩る
+特別な装備の生産に使用する。","A ticket you receive for attending
+the Dreamspell. Can be
+exchanged for festive equipment.","Ticket obtenu durant la Veillée
+des rêves. À échanger contre
+de l'équipement festif.","Ottenuto per aver partecipato
+a Ognissogni. Scambiabile con
+equipaggiamento festivo.","Ein für die Teilnahme am Traum-
+zauber erhaltenes Ticket. Gegen
+festliche Ausrüstung tauschbar.","Vale recibido por asistir
+al sueñiencanto. Canjeable
+por equipamiento festivo.","Билет, выдаваемый за посещение
+Чар снов. Можно обменять на
+праздничное снаряжение.","Kwit otrzymywany za udział w
+Czarze Snów. Można wymienić
+na odświętne wyposażenie.",,,"Bilhete recebido por participar
+do Feitissonho. Troque por
+equipamentos festivos.","교류 축제【몽화 의식】 참가로
+받는 티켓. 계절을 수놓는
+특별 장비 생산에 사용.","參加交匯慶典【夢燈之儀】可獲得的
+票券。可用於生產特別裝備。","参加聚落交流祭典【梦灯之仪】后
+获得的票券。可用于制作体现季节
+之美的特殊装备。",,,,,,,,"تذكرة <LSNR ""تحصل"" ""تحصلين""> عليها
+لحضور مهرجان تعويذة الأحلام.
+يمكن استبدالها بمعدات احتفالية.",,,,,,,,,,,"Cupón recibido por asistir
+a Sueñiencanto. Se puede
+canjear por equipo festivo."
+7dcf50e2-277d-4c63-b0b1-6abcfeb366cf,2700761485,Item_IT_771,ハーベストチケット,Harvest Ticket,Ticket Récolte,Biglietto Raccolto,Ernte-Ticket,Vale de la cosecha,Билет урожая,Kwit zbiorów,,,Bilhete da Safra,하베스트 티켓,收穫票,收获票,,,,,,,,تذكرة الحصاد,,,,,,,,,,,Cupón de cosecha
+c84952d8-ee62-4c90-aa90-cd53222e4d97,3592619935,Item_IT_EXP_771,"豊穣を祝う仮装のような装備が
+描かれたチケット。加工屋に渡すと
+特別な装備を作ってくれる。","A ticket depicting an autumnal
+set of armor. Give it to the Smithy
+to get special equipment.","Ticket représentant un ensemble
+d'armure automnal. À échanger à
+la Forge contre de l'équipement.","Biglietto con set autunnale.
+Portalo al fabbro per ottenere
+un equipaggiamento speciale.","Ein Ticket, das eine herbstliche
+Rüstung zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale que representa un conjunto
+de armaduras otoñal. Llévalo a la forja
+para conseguir equipamiento especial.","Билет с изображением осенних
+доспехов. Отнесите его кузнецу,
+чтобы получить особое снаряжение.","Kwit przedstawiający jesienny
+pancerz. Użyj go w kuźni, by
+zdobyć specjalne wyposażenie.",,,"Bilhete com uma armadura
+outonal. Troque-o por um
+equipamento especial na Forja.","풍작을 축하하는 변장형 장비가
+그려진 티켓. 가공점에 주면
+특별한 장비를 만들어 준다.","票券上畫有慶祝豐收之裝扮的裝備。
+拿給工匠就可以製作特別裝備。","票券上描绘着庆祝丰收装扮的装备。
+交给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر مجموعة دروع خريفية.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con un set de armadura
+otoñal. Llévalo a la forja
+para conseguir equipo especial."
+6c6d53ec-653b-4280-bd2a-32313dfa0743,1879064541,Item_IT_772,夢灯のカタログ,Dreamspell Catalog,Catalogue Veillée des rêves,Catalogo Ognissogni,Traumzauber-Katalog,Catálogo del sueñiencanto,Каталог Чар снов,Katalog Czaru Snów,,,Catálogo do Feitissonho,몽화 카탈로그,夢燈目錄,梦灯样册,,,,,,,,كتالوج تعويذة الأحلام,,,,,,,,,,,Catálogo de Sueñiencanto
+ec8b8091-6efe-4e21-b8b7-b36128500206,1796063045,Item_IT_EXP_772,"オシャレな装飾案が多く描かれた
+チケット。加工屋に渡すと特別な
+装備を作ってくれる。","A ticket depicting elegant
+decorations. Give it to the
+Smithy to get special equipment.","Catalogue représentant d'élégants
+accessoires. À échanger à la Forge
+contre de l'équipement.","Biglietto con disegni eleganti.
+Portalo al fabbro per ottenere
+un equipaggiamento speciale.","Ein Ticket, das elegante Deko-
+rationen zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale con elegantes decoraciones.
+Llévalo a la forja para conseguir
+equipamiento especial.","Билет с изображением элегантных
+украшений. Отнесите его кузнецу,
+чтобы получить особое снаряжение.","Kwit przedstawiający eleganckie
+ozdoby. Użyj go w kuźni,
+by zdobyć specjalne wyposażenie.",,,"Bilhete com adornos elegantes.
+Troque-o por um equipamento
+especial na Forja.","세련된 장식안이 그려진 티켓.
+가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有時髦的裝飾設計。拿給
+工匠就可以製作特別裝備。","票券上描绘着时髦的装饰设计。交
+给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر إضافات أنيقة.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con decoraciones
+elegantes. Llévalo a la forja
+para conseguir equipo especial."
 8b7d633d-ce68-45d9-8637-2ac1e4495af7,2114210058,Item_IT_778,チャタコイン,Chata Coin,Pièce Chata,Moneta Chata,Chata-Münze,Moneda Chata,Монета чатакабры,Moneta Chatacabry,,,Moeda Chata,차타코인,纏蛙硬幣,缠蛙硬币,,,,,,,,عملة تشاتا المعدنية,,,,,,,,,,,Moneda Chata
 94870d8b-7d31-4218-8d34-a6b3e6edd356,4163596848,Item_IT_EXP_778,"闘技大会でチャタカブラを征した
 者に贈られるコイン。","A coin given to those who
@@ -17992,7 +18547,7 @@ Você sente a ameaça no ar.","재앙이 되는 고룡의 유해를 봉인하고
 布。雖不明真偽，但確實散發出駭
 人氣息。","据传有灾难性古龙遗骸封印其中的
 布。虽不明真伪，但确实散发出骇
-人气息。",,,,,,,,"قماش يستخدم لختم جثة تنين معمِّر
+人气息。",,,,,,,,"قماش يستخدم لختم جثة تنين قديم
 مخيف. بغض النظر عن حقيقة الأمر،
 فشؤمه كافٍ.",,,,,,,,,,,"Sudario usado para sellar el cadáver
 de un temible dragón anciano.
@@ -18082,6 +18637,92 @@ equipamento especial na Forja.","아이루 발자국이 그려진 티켓.
 قدم باليكو. <LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
 للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con la huella de un
 camarada. Llévalo a la forja
+para conseguir equipo especial."
+d2b3ee71-f4c3-4083-b7cd-909bc196cf19,807958925,Item_IT_797,スカルチケット,Skull Ticket,Ticket Crâne,Biglietto teschio,Schädel-Ticket,Vale calavérico,Билет с черепом,Kwit czaszki,,,Bilhete de Crânio,스컬 티켓,骷髏票,骷髅票,,,,,,,,تذكرة الجمجمة,,,,,,,,,,,Cupón de calavera
+589f3d51-28f2-4db9-9801-2370eab2cf65,1361362058,Item_IT_EXP_797,"ドクロのマークが描かれた、いわく
+ありげなチケット。加工屋に渡すと
+特別な装備を作ってくれる。","A ticket depicting a skull.
+Give it to the Smithy to get
+special equipment.","Ticket représentant un crâne.
+À échanger à la Forge
+contre de l'équipement.","Biglietto con un teschio.
+Portalo al fabbro per ottenere
+dell'equipaggiamento speciale.","Ein Ticket, das einen Schädel
+zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale con una calavera dibujada.
+Llévalo a la forja para conseguir
+equipamiento especial.","Билет с изображением черепа.
+Отнесите его кузнецу, чтобы
+получить особое снаряжение.","Kwit przedstawiający czaszkę.
+Użyj go w kuźni, by zdobyć
+specjalne wyposażenie.",,,"Bilhete exibindo um crânio.
+Troque-o por um equipamento
+especial na Forja.","해골 마크가 그려진 의미심장한
+티켓. 가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有骷髏的標誌，若有所指。
+拿給工匠就可以製作特別裝備。","票券上描绘着骷髅标记，有些诡异。
+交给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر جمجمة.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con una calavera.
+Llévalo a la forja para
+conseguir equipo especial."
+46d3b6a6-dae1-43fa-bb2b-06907df49540,694723689,Item_IT_798,美声の鳥のスケッチ,Songbird Sketch,Croquis oiseau chanteur,Schizzo di usignolo,Singvogel-Skizze,Dibujo de ave cantora,Набросок певчей птицы,Szkic hymstryga,,,Esboço de Pássaro,미성의 새 스케치,天籟之鳥畫像,天籁之鸟素描,,,,,,,,رسمة الطائر المغرد,,,,,,,,,,,Boceto de ave cantora
+ef843503-1241-4126-826b-4777a570f9a5,3176712184,Item_IT_EXP_798,"ビセイウタイズクの姿が描かれて
+いるチケット。加工屋に渡すと
+特別な装備を作ってくれる。","A ticket depicting a Hymstrigian.
+Give it to the Smithy to get
+special equipment.","Ticket représentant un
+hymstrigien. À échanger à la
+Forge contre de l'équipement.","Biglietto con strigiorana
+canterina. Portalo al fabbro per
+ottenere equipaggiamento speciale.","Ein Ticket, das einen Operetten-
+kauz zeigt. Zum Schmieden
+besonderer Ausrüstung.","Un vale con un imstrigiano
+dibujado. Llévalo a la forja para
+conseguir equipamiento especial.","Билет с изображением химстригана.
+Отнесите его кузнецу, чтобы
+получить особое снаряжение.","Kwit przedstawiający hymstryga.
+Użyj go w kuźni, by zdobyć
+specjalne wyposażenie.",,,"Bilhete com um Hinostrígio.
+Troque-o por um equipamento
+especial na Forja.","예쁜노래 부엉이가 그려진
+티켓. 가공점에 가져다주면
+특별한 장비를 만들어 준다.","票券上畫有美聲歌鴞的身影。拿給
+工匠就可以製作特別裝備。","票券上描绘着美声歌鸮的模样。交
+给加工商后，可以制作特殊装备。",,,,,,,,"تذكرة تُظهر (هيمستريجيان).
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة.",,,,,,,,,,,"Un cupón con un himstrigiano.
+Llévalo a la forja para conseguir
+equipo especial."
+f555794b-a472-422a-b6b3-ff6fcc68175b,3722736645,Item_IT_799,こんがり肉のレシピ本,Well-done Steak Recipe Book,Livre de recette steak à point,Ricettario bistecca ben cotta,Steak-Rezept,Receta de filete al punto,Кулинарная книга: стейк,Przepis - Wysmażony stek,,,Receita de Bife Bem Passado,잘 익은 고기 레시피북,全熟肉食譜,烤熟的肉食谱,,,,,,,,كتاب وصفات شرائح اللحم المطهوة جيدًا,,,,,,,,,,,Libro de receta de filete bien cocido
+b3f8cc18-1db8-4538-a14b-99af3df1e6cb,3858319096,Item_IT_EXP_799,"こんがり肉の特別な製法が描かれた
+レシピ。加工屋に渡すと特別な
+装備を作ってくれる。…なぜ？","A recipe for a special well-done
+steak. Give it to the Smithy to
+get special equipment... But why?","Recette d'un steak à point spécial.
+À échanger à la Forge contre de
+l'équipement... Mais pourquoi ?","Ricetta per bistecca ben cotta.
+Portala al fabbro per ottenere...
+un equipaggiamento speciale?","Rezept für besonderes gebratenes
+Steak. Zum Schmieden besonderer
+Ausrüstung... Aber warum?","Una receta para un filete al punto
+especial. Llévalo a la forja y consigue
+equipamiento especial... ¿En serio?","Рецепт хорошо прожаренного
+стейка. Отнесите его кузнецу,
+чтобы получить снаряжение... Ч-что?","Przepis na specjalny dobrze wysma-
+żony stek. Użyj w kuźni, by zdobyć
+specjalne wyposażenie... Ale czemu?",,,"Uma receita para um bife bem
+passado especial. Troque na Forja
+por algo especial... Mas por quê?","잘 익은 고기의 특별 조리법이
+그려진 레시피. 가공점에 주면
+왠지 특별한 장비를 만들어 준다.","畫有全熟肉特別做法的食譜。拿給
+工匠就可以製作特別裝備……可是
+為什麼？","食谱上写有烤熟的肉的特殊烹饪
+法。交给加工商后，可以制作特
+殊装备……原理上说得过去吗？",,,,,,,,"وصفة لشريحة لحم خاصة مطهوة جيدًا.
+<LSNR ""أعطها"" ""أعطيها""> لورشة الحدادة
+للحصول على معدات مميزة... ولكن لأي سبب؟",,,,,,,,,,,"Una receta para un filete bien
+cocido único. Llévalo a la forja
 para conseguir equipo especial."
 e49c4e1a-863d-4c35-abce-5d358bde9db3,3538343536,Item_IT_619,なぞの珠・剣,Mystery Orb - Sword,Orbe mystérieux - Épée,Perla misteriosa (attacco),Rätselsphäre: Schwert,Orbe misterioso: espada,Загадочная сфера (меч),Tajemnicza sfera: miecz,,,Orbe Misterioso: Espada,수수께끼의 구슬-검,謎樣的寶珠・劍,谜之宝珠·剑,,,,,,,,لؤلؤة السلاح الغامضة - سيف,,,,,,,,,,,Orbe misteriosa: Espada
 cd0ed707-3da2-42b2-ac7c-5e7961396a53,4180893174,Item_IT_EXP_619,"かすかな力が秘められた珠。
@@ -18220,16 +18861,16 @@ Precisa ser avaliada.","버려진 낡은 무기의 어떤
 من نوع ما. ينبغي تقدير قيمته.",,,,,,,,,,,"Una pieza de un arma ancestral
 con cierto dispositivo. Necesita
 una tasación."
-0825cd00-4305-402d-81af-e28a10ca596f,3802498700,Item_IT_822,光るお守り,Glowing Stone,Pierre lumineuse,Pietra lucente,Leuchtender Stein,Piedra brillante,Сияющий камень,Świecący kamień,,,Pedra Reluzente,빛나는 부적,發光護符,发光护符,,,,,,,,حجر متوهج,,,,,,,,,,,Piedra reluciente
-4668e503-c5d5-43c7-abee-afe3373410fa,3371613922,Item_IT_EXP_822,"何かの力が秘められたお守り。
+09ab4496-c9f8-4b6d-8c1b-b7fd6f60c1c1,3802498700,Item_IT_822,光るお守り,Glowing Stone,Pierre lumineuse,Pietra lucente,Leuchtender Stein,Piedra brillante,Сияющий камень,Świecący kamień,,,Pedra Reluzente,빛나는 부적,發光護符,发光护符,,,,,,,,حجر متوهج,,,,,,,,,,,Piedra reluciente
+11087253-90f7-4dcc-b2d6-a5d5dcf5badd,3371613922,Item_IT_EXP_822,"何かの力が秘められたお守り。
 鑑定でその力が明らかになり、
 護石として装備できるようになる。","Contains some secret power.
 Needs to be appraised in order
 to be equipped as a talisman.","Renferme un pouvoir secret.
 Sa nature doit être révélée pour
 pouvoir l'utiliser comme talisman.","Cela poteri segreti.
-Per equipaggiarlo come amuleto
-deve essere prima valutato.","Enthält eine geheime Kraft.
+Per equipaggiarla come amuleto
+deve essere prima valutata.","Enthält eine geheime Kraft.
 Muss geschätzt werden, um als
 Talisman ausgerüstet zu werden.","Alberga una especie de poder secreto.
 Hay que tasarlo primero para poder
@@ -18895,7 +19536,7 @@ da sua refeição típica favorita.","대집회소 식당에서 사용하는
 للحصول على وجبة من <LSNR ""وجباتكَ"" ""وجباتكِ""> الإقليمية المفضلة.",,,,,,,,,,,"Cambia este cupón en la cantina
 del Gran centro por una ración
 de tu comida regional favorita."
-32418ef0-dc2e-41f1-a91b-b015e8257f18,3087673628,Item_IT_808,クナファお届け食事券,Kunafa Meal Voucher,Coupon repas Kunafa,Buono pasto Kunafa,Kunafa-Essensgutschein,Cupón de menú de Kunafa,Талон на еду: Кунафа,Talon na posiłek z Kunafy,,,Vale-refeição de Kunafa,쿠나파 배달 식사권,庫納法快遞餐券,库纳法速递餐券,,,,,,,,قسيمة وجبة كونافا,,,,,,,,,,,Cupón para comida de Kunafa
+32418ef0-dc2e-41f1-a91b-b015e8257f18,3087673628,Item_IT_808,クナファお届け食事券,Kunafa Meal Voucher,Coupon repas Kunafa,Buono pasto Kunafa,Kunafa-Essensgutschein,Cupón de menú de Kunafa,Талон на еду: Кунафа,Talon na posiłek z Kunafy,,,Vale-refeição de Kunafa,쿠나파 배달 식사권,庫納法快遞餐券,库纳法速递餐券,,,,,,,,قسيمة وجبة كُنافة,,,,,,,,,,,Cupón para comida de Kunafa
 76c4b883-6b0b-4ebe-9798-bfdfeb852572,3635186063,Item_IT_EXP_808,"大集会所の食事場で使用できる
 チケット。クナファで振る舞われる
 食事がお取り寄せできる。","Exchange this voucher in the
@@ -18922,7 +19563,7 @@ de refeição típica de Kunafa.","대집회소 식당에서 사용하는
 券。可以获得在库纳法才能享用到
 的餐点。",,,,,,,,"<LSNR ""استبدل"" ""استبدلي""> هذه القسيمة
 في كافتيريا مركز التجمع الرئيسي
-للحصول على وجبة من وجبات (كونافا) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
+للحصول على وجبة من وجبات (كُنافة) الإقليمية.",,,,,,,,,,,"Cambia este cupón en la cantina
 del Gran centro por una ración
 de la comida regional de Kunafa."
 a8fac147-cf64-462e-a52f-76ef47e771a0,1698280051,Item_IT_809,アズズお届け食事券,Azuz Meal Voucher,Coupon repas Azuz,Buono pasto Azuz,Azuz-Essensgutschein,Cupón de menú de Azuz,Талон на еду: Азуз,Talon na posiłek z Azuz,,,Vale-refeição de Azuz,아즈즈 배달 식사권,阿茲茲快遞餐券,阿孜兹速递餐券,,,,,,,,قسيمة وجبة آزوز,,,,,,,,,,,Cupón para comida de Azuz
@@ -19072,6 +19713,35 @@ uma refeição festiva.","【용화 의식】 때 사용 가능한
 أثناء مهرجان اللهب.
 <LSNR ""استبدلها"" ""استبدليها""> بوجبة احتفالية.",,,,,,,,,,,"Un cupón para usar solamente
 durante la Chisparranda. Se puede
+canjear por un menú festivo."
+ebec6a18-fd12-4c12-86fe-f26d71455754,4126363401,Item_IT_788,夢灯のお食事券,Dreamspell Voucher,Coupon Veillée des rêves,Buono Ognissogni,Traumzauber-Gutschein,Cupón del sueñiencanto,Талон Чар снов,Talon Czaru Snów,,,Vale-refeição do Feitissonho,몽화 식사권,夢燈餐券,梦灯餐券,,,,,,,,قسيمة تعويذة الأحلام,,,,,,,,,,,Cupón de Sueñiencanto
+92b7ba1e-9ab2-4d29-b561-5f64ac6bd872,53435040,Item_IT_EXP_788,"【夢灯の儀】の期間中のみ使用
+できる限定お食事券。季節を彩る
+特別な食事が食べられる。","A voucher usable only during
+the Dreamspell. Exchange
+it for a festive meal.","Coupon valable uniquement
+pendant la Veillée des rêves.
+À échanger contre un repas festif.","Buono utilizzabile solo durante
+Ognissogni. Scambiabile
+con un pasto festivo.","Ein exklusiver Gutschein für den
+Traumzauber. Tausche ihn gegen
+eine festliche Mahlzeit ein.","Un cupón que solo se puede
+usar durante el sueñiencanto.
+Intercámbialo por un menú festivo.","Талон, действительный только во
+время Чар снов. Можно обменять
+на праздничное блюдо.","Talon do wykorzystania tylko
+podczas Czaru Snów. Wymień go
+na świąteczny posiłek.",,,"Vale válido apenas durante
+o Feitissonho. Troque-o por
+uma refeição festiva.","【몽화 의식】 때 사용 가능한
+한정 식사권. 계절을 수놓는
+특별한 식사를 할 수 있다.","只可在【夢燈之儀】期間使用的
+限定餐券。有它就可品嚐為季節
+增添色彩的特別餐點。","仅限在【梦灯之仪】举办期间使用
+的餐券。可以享用应季的特别餐点。",,,,,,,,"قسيمة يمكن استخدامها
+أثناء مهرجان تعويذة الأحلام فقط.
+<LSNR ""استبدلها"" ""استبدليها""> بوجبة احتفالية.",,,,,,,,,,,"Un cupón para usar solamente
+durante Sueñiencanto. Se puede
 canjear por un menú festivo."
 cc9c5b10-bc1c-4a11-8842-31c88e080433,1139524890,Item_IT_647,鋼の錬金チケット,Steel Melding Ticket,Ticket Fusion de fer,Buono fusione acciaio,Stahlschmelz-Ticket,Vale de fusión acerada,Стальн. билет плавильни,Kwit stapiania stali,,,Bilhete de Fundição de Aço,강철 연금 티켓,鋼之鍊金票,钢之炼金票,,,,,,,,تذكرة الدمج الفولاذي,,,,,,,,,,,Cupón de fusión acerada
 5471d277-a663-4da6-8e76-93c2fbf0cd77,2282253374,Item_IT_EXP_647,"竜人族が使っているチケット。
@@ -19350,8 +20020,8 @@ feito com ele é imbatível.","아즈즈의 솥에서 정제된 신기한
 المعدات المصنوعة منها لا يعلى عليها.",,,,,,,,,,,"Misterioso material de alta calidad
 fundido en Azuz. Sirve para fabricar
 equipos de una calidad impecable."
-e0bb3a64-2a35-4f41-bacc-4d8dad82c533,3934084684,Item_IT_824,銀のお守りチケット,Silver Talisman Ticket,Ticket Talisman d'argent,Buono amuleto argento,Silbertalisman-Ticket,Vale de talismán de plata,Серебр. билет талисманов,Srebrny kwit talizmanu,,,Bilhete de Pingente de Prata,은 부적 티켓,銀之護身符票,银之护身符票,,,,,,,,تذكرة التعويذة الفضية,,,,,,,,,,,Cupón de talismán plateado
-32e71eab-d883-43b8-a02e-c1c4f3c4f04b,1689530035,Item_IT_EXP_824,"竜人族が使っているチケット。
+c6c27453-a274-4968-9fa4-fbab94b3f9db,3934084684,Item_IT_824,銀のお守りチケット,Silver Talisman Ticket,Ticket Talisman d'argent,Buono amuleto argento,Silbertalisman-Ticket,Vale de talismán de plata,Серебр. билет талисманов,Srebrny kwit talizmanu,,,Bilhete de Pingente de Prata,은 부적 티켓,銀之護身符票,银之护身符票,,,,,,,,تذكرة التعويذة الفضية,,,,,,,,,,,Cupón de talismán plateado
+2618b9e0-c306-42fe-b3de-47d51d91391b,1689530035,Item_IT_EXP_824,"竜人族が使っているチケット。
 護石を錬金する際に渡すと、
 サービスしてもらえる。","A ticket used by Wyverians.
 Hand it over when melding

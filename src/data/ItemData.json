@@ -1,7 +1,7 @@
 [
   {
-    "name": "app.user_data.ItemData[725]",
-    "index": 725,
+    "name": "app.user_data.ItemData[748]",
+    "index": 748,
     "objectTableIndex": 0,
     "className": "app.user_data.ItemData",
     "fields": [
@@ -21962,7 +21962,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 594
+                "value": 593
               },
               {
                 "name": "_ItemId",
@@ -22127,7 +22127,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 595
+                "value": 594
               },
               {
                 "name": "_ItemId",
@@ -22292,7 +22292,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 596
+                "value": 595
               },
               {
                 "name": "_ItemId",
@@ -22457,7 +22457,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 597
+                "value": 596
               },
               {
                 "name": "_ItemId",
@@ -22622,7 +22622,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 598
+                "value": 597
               },
               {
                 "name": "_ItemId",
@@ -33347,7 +33347,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 631
+                "value": 630
               },
               {
                 "name": "_ItemId",
@@ -33512,7 +33512,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 632
+                "value": 631
               },
               {
                 "name": "_ItemId",
@@ -72617,7 +72617,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 633
+                "value": 632
               },
               {
                 "name": "_ItemId",
@@ -72782,7 +72782,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 634
+                "value": 633
               },
               {
                 "name": "_ItemId",
@@ -73772,7 +73772,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 599
+                "value": 598
               },
               {
                 "name": "_ItemId",
@@ -91592,7 +91592,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 606
+                "value": 605
               },
               {
                 "name": "_ItemId",
@@ -91757,7 +91757,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 607
+                "value": 606
               },
               {
                 "name": "_ItemId",
@@ -91922,7 +91922,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 608
+                "value": 607
               },
               {
                 "name": "_ItemId",
@@ -94562,7 +94562,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 635
+                "value": 634
               },
               {
                 "name": "_ItemId",
@@ -94727,7 +94727,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 636
+                "value": 635
               },
               {
                 "name": "_ItemId",
@@ -94892,7 +94892,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 637
+                "value": 636
               },
               {
                 "name": "_ItemId",
@@ -95057,7 +95057,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 638
+                "value": 637
               },
               {
                 "name": "_ItemId",
@@ -95222,7 +95222,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 639
+                "value": 638
               },
               {
                 "name": "_ItemId",
@@ -95387,7 +95387,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 641
+                "value": 640
               },
               {
                 "name": "_ItemId",
@@ -95552,7 +95552,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 642
+                "value": 641
               },
               {
                 "name": "_ItemId",
@@ -95717,7 +95717,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 643
+                "value": 642
               },
               {
                 "name": "_ItemId",
@@ -95882,7 +95882,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 645
+                "value": 644
               },
               {
                 "name": "_ItemId",
@@ -96047,7 +96047,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 591
+                "value": 590
               },
               {
                 "name": "_ItemId",
@@ -96212,7 +96212,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 592
+                "value": 591
               },
               {
                 "name": "_ItemId",
@@ -96377,7 +96377,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 593
+                "value": 592
               },
               {
                 "name": "_ItemId",
@@ -96542,7 +96542,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 626
+                "value": 625
               },
               {
                 "name": "_ItemId",
@@ -96707,7 +96707,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 627
+                "value": 626
               },
               {
                 "name": "_ItemId",
@@ -96872,7 +96872,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 628
+                "value": 627
               },
               {
                 "name": "_ItemId",
@@ -97037,7 +97037,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 629
+                "value": 628
               },
               {
                 "name": "_ItemId",
@@ -98357,7 +98357,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 640
+                "value": 639
               },
               {
                 "name": "_ItemId",
@@ -100667,7 +100667,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 614
+                "value": 613
               },
               {
                 "name": "_ItemId",
@@ -100832,7 +100832,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 615
+                "value": 614
               },
               {
                 "name": "_ItemId",
@@ -100997,7 +100997,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 617
+                "value": 616
               },
               {
                 "name": "_ItemId",
@@ -101162,7 +101162,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 618
+                "value": 617
               },
               {
                 "name": "_ItemId",
@@ -101822,7 +101822,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 630
+                "value": 629
               },
               {
                 "name": "_ItemId",
@@ -103142,7 +103142,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 616
+                "value": 615
               },
               {
                 "name": "_ItemId",
@@ -103307,7 +103307,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 619
+                "value": 618
               },
               {
                 "name": "_ItemId",
@@ -103802,7 +103802,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 622
+                "value": 621
               },
               {
                 "name": "_ItemId",
@@ -103967,7 +103967,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 623
+                "value": 622
               },
               {
                 "name": "_ItemId",
@@ -104132,7 +104132,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 624
+                "value": 623
               },
               {
                 "name": "_ItemId",
@@ -104297,7 +104297,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 625
+                "value": 624
               },
               {
                 "name": "_ItemId",
@@ -107102,7 +107102,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 600
+                "value": 599
               },
               {
                 "name": "_ItemId",
@@ -107267,7 +107267,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 601
+                "value": 600
               },
               {
                 "name": "_ItemId",
@@ -107432,7 +107432,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 602
+                "value": 601
               },
               {
                 "name": "_ItemId",
@@ -107597,7 +107597,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 603
+                "value": 602
               },
               {
                 "name": "_ItemId",
@@ -108092,7 +108092,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 609
+                "value": 608
               },
               {
                 "name": "_ItemId",
@@ -108257,7 +108257,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 610
+                "value": 609
               },
               {
                 "name": "_ItemId",
@@ -108422,7 +108422,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 611
+                "value": 610
               },
               {
                 "name": "_ItemId",
@@ -108587,7 +108587,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 612
+                "value": 611
               },
               {
                 "name": "_ItemId",
@@ -108752,7 +108752,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 613
+                "value": 612
               },
               {
                 "name": "_ItemId",
@@ -109577,7 +109577,7 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 644
+                "value": 643
               },
               {
                 "name": "_ItemId",
@@ -113702,7 +113702,1327 @@
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 646
+                "value": 580
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 737
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "a6ec25b1-4683-437c-a364-a1b500e08435"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "430d33f9-697b-47ff-bd33-e9509ebed709"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1379
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 3200
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 32000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[691]",
+            "index": 691,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 574
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 738
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "01127372-8df0-4bd2-95e5-47e9cc179225"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "ea1eeb01-27ba-4719-aeea-a0f0c7929bee"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1373
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 45
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 3200
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 32000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[692]",
+            "index": 692,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 575
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 739
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "961f54af-1bdb-444e-b17f-31aca7d06c53"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "1dd871e3-1e07-440b-b80b-228a9809c550"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1374
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 45
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 4800
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 48000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[693]",
+            "index": 693,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 576
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 740
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "8b92c178-83ac-4caa-a920-3ad7c4bce26f"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "1b6c1913-f945-4cac-b28f-fa78d376362a"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1375
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 46
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 5760
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 57600
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[694]",
+            "index": 694,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 577
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 741
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "d29a6a22-9c8f-4b39-8d30-041fd879004e"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "fda19b18-c0eb-4ed3-b549-6fdffc333f42"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1376
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 42
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 6400
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 64000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[695]",
+            "index": 695,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 578
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 743
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "02ab0554-b0eb-49ee-bfbc-5a52866a4257"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "84079929-136a-4edd-b67f-ba78033dcbfb"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1377
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 46
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 6400
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 64000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[696]",
+            "index": 696,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 579
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 744
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "21c6b82a-829b-422e-82c5-fb18766b4530"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "37496a76-b315-4bed-8d6d-a37e26598bc3"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 1378
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 20
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 12
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 19200
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 192000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  3,
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[697]",
+            "index": 697,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 650
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 745
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "b3a7a845-20bf-47d7-9056-6da1423c6535"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "a605066a-8515-4793-9c84-d554a8732c31"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3521
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 11
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 6400
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 64000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[698]",
+            "index": 698,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 645
               },
               {
                 "name": "_ItemId",
@@ -113861,13 +115181,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[691]",
-            "index": 691,
+            "name": "app.user_data.ItemData.cData[699]",
+            "index": 699,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 647
+                "value": 646
               },
               {
                 "name": "_ItemId",
@@ -114026,8 +115346,173 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[692]",
-            "index": 692,
+            "name": "app.user_data.ItemData.cData[700]",
+            "index": 700,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 647
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 760
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "df5c5e41-a698-4d58-b760-cdfbb72d98c3"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "f40f17f1-b4cf-4018-ad20-6025a0956185"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3518
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 5
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 12
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 3200
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 32000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[701]",
+            "index": 701,
             "fields": [
               {
                 "name": "_Index",
@@ -114052,7 +115537,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3521
+                "value": 3522
               },
               {
                 "name": "_VertexIndex",
@@ -114191,8 +115676,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[693]",
-            "index": 693,
+            "name": "app.user_data.ItemData.cData[702]",
+            "index": 702,
             "fields": [
               {
                 "name": "_Index",
@@ -114213,171 +115698,6 @@
                 "name": "_RawExplain",
                 "type": "System.Guid",
                 "value": "530dc1e5-e7a9-494c-a96c-712152b10a47"
-              },
-              {
-                "name": "_SortId",
-                "type": "System.Int16",
-                "value": 3522
-              },
-              {
-                "name": "_VertexIndex",
-                "type": "System.Byte",
-                "value": 0
-              },
-              {
-                "name": "_Type",
-                "type": "app.ItemDef.TYPE_Fixed",
-                "value": 2
-              },
-              {
-                "name": "_ItemGroup",
-                "type": "app.ItemDef.ITEM_GROUP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_TextType",
-                "type": "app.ItemDef.TEXT_TYPE_Fixed",
-                "value": 6
-              },
-              {
-                "name": "_IconType",
-                "type": "app.IconDef.ITEM_Fixed",
-                "value": 30
-              },
-              {
-                "name": "_EquipIcon",
-                "type": "app.IconDef.EQUIP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_IconColor",
-                "type": "app.ColorPreset.TYPE_Fixed",
-                "value": 4
-              },
-              {
-                "name": "_AddIconType",
-                "type": "app.IconDef.AddIcon_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_Rare",
-                "type": "app.ItemDef.RARE_Fixed",
-                "value": 13
-              },
-              {
-                "name": "_MaxCount",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_OtomoMax",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_EnableOnRaptor",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_SellPrice",
-                "type": "System.Int32",
-                "value": 450
-              },
-              {
-                "name": "_BuyPrice",
-                "type": "System.Int32",
-                "value": 4500
-              },
-              {
-                "name": "_Fix",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Shikyu",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Eatable",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Window",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Infinit",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Heal",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Battle",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Special",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_ForMoney",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_OutBox",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_NonLevelShell",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_GetRank",
-                "type": "app.ItemDef.GET_RANK_Fixed",
-                "value": [
-                  1,
-                  1
-                ]
-              }
-            ]
-          },
-          {
-            "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[694]",
-            "index": 694,
-            "fields": [
-              {
-                "name": "_Index",
-                "type": "System.Int32",
-                "value": 653
-              },
-              {
-                "name": "_ItemId",
-                "type": "app.ItemDef.ID_Fixed",
-                "value": 765
-              },
-              {
-                "name": "_RawName",
-                "type": "System.Guid",
-                "value": "cf46de8e-ff61-44b6-b481-59b91779daf5"
-              },
-              {
-                "name": "_RawExplain",
-                "type": "System.Guid",
-                "value": "67d87484-6bf8-4979-8fb6-7fc7918cf05d"
               },
               {
                 "name": "_SortId",
@@ -114521,8 +115841,173 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[695]",
-            "index": 695,
+            "name": "app.user_data.ItemData.cData[703]",
+            "index": 703,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 653
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 765
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "cf46de8e-ff61-44b6-b481-59b91779daf5"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "67d87484-6bf8-4979-8fb6-7fc7918cf05d"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3524
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 450
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 4500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[704]",
+            "index": 704,
             "fields": [
               {
                 "name": "_Index",
@@ -114547,7 +116032,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3524
+                "value": 3525
               },
               {
                 "name": "_VertexIndex",
@@ -114686,8 +116171,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[696]",
-            "index": 696,
+            "name": "app.user_data.ItemData.cData[705]",
+            "index": 705,
             "fields": [
               {
                 "name": "_Index",
@@ -114708,171 +116193,6 @@
                 "name": "_RawExplain",
                 "type": "System.Guid",
                 "value": "3f79ac75-fa13-45e3-b697-fe3397e194fb"
-              },
-              {
-                "name": "_SortId",
-                "type": "System.Int16",
-                "value": 3525
-              },
-              {
-                "name": "_VertexIndex",
-                "type": "System.Byte",
-                "value": 0
-              },
-              {
-                "name": "_Type",
-                "type": "app.ItemDef.TYPE_Fixed",
-                "value": 2
-              },
-              {
-                "name": "_ItemGroup",
-                "type": "app.ItemDef.ITEM_GROUP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_TextType",
-                "type": "app.ItemDef.TEXT_TYPE_Fixed",
-                "value": 6
-              },
-              {
-                "name": "_IconType",
-                "type": "app.IconDef.ITEM_Fixed",
-                "value": 30
-              },
-              {
-                "name": "_EquipIcon",
-                "type": "app.IconDef.EQUIP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_IconColor",
-                "type": "app.ColorPreset.TYPE_Fixed",
-                "value": 17
-              },
-              {
-                "name": "_AddIconType",
-                "type": "app.IconDef.AddIcon_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_Rare",
-                "type": "app.ItemDef.RARE_Fixed",
-                "value": 13
-              },
-              {
-                "name": "_MaxCount",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_OtomoMax",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_EnableOnRaptor",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_SellPrice",
-                "type": "System.Int32",
-                "value": 450
-              },
-              {
-                "name": "_BuyPrice",
-                "type": "System.Int32",
-                "value": 4500
-              },
-              {
-                "name": "_Fix",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Shikyu",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Eatable",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Window",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Infinit",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Heal",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Battle",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Special",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_ForMoney",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_OutBox",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_NonLevelShell",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_GetRank",
-                "type": "app.ItemDef.GET_RANK_Fixed",
-                "value": [
-                  1,
-                  1
-                ]
-              }
-            ]
-          },
-          {
-            "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[697]",
-            "index": 697,
-            "fields": [
-              {
-                "name": "_Index",
-                "type": "System.Int32",
-                "value": 656
-              },
-              {
-                "name": "_ItemId",
-                "type": "app.ItemDef.ID_Fixed",
-                "value": 768
-              },
-              {
-                "name": "_RawName",
-                "type": "System.Guid",
-                "value": "52d659d5-2145-4459-b956-401ce8826a95"
-              },
-              {
-                "name": "_RawExplain",
-                "type": "System.Guid",
-                "value": "92d0b3dd-de45-4fbc-8233-fe948184d0f9"
               },
               {
                 "name": "_SortId",
@@ -115016,8 +116336,173 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[698]",
-            "index": 698,
+            "name": "app.user_data.ItemData.cData[706]",
+            "index": 706,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 656
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 768
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "52d659d5-2145-4459-b956-401ce8826a95"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "92d0b3dd-de45-4fbc-8233-fe948184d0f9"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3527
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 17
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 450
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 4500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[707]",
+            "index": 707,
             "fields": [
               {
                 "name": "_Index",
@@ -115042,7 +116527,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3541
+                "value": 3542
               },
               {
                 "name": "_VertexIndex",
@@ -115181,528 +116666,33 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[699]",
-            "index": 699,
+            "name": "app.user_data.ItemData.cData[708]",
+            "index": 708,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 664
+                "value": 657
               },
               {
                 "name": "_ItemId",
                 "type": "app.ItemDef.ID_Fixed",
-                "value": 778
+                "value": 770
               },
               {
                 "name": "_RawName",
                 "type": "System.Guid",
-                "value": "8b7d633d-ce68-45d9-8637-2ac1e4495af7"
+                "value": "058704df-da76-485b-a691-e8d87262676d"
               },
               {
                 "name": "_RawExplain",
                 "type": "System.Guid",
-                "value": "94870d8b-7d31-4218-8d34-a6b3e6edd356"
+                "value": "fda9a8a6-7470-423c-964a-591321c2e240"
               },
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3534
-              },
-              {
-                "name": "_VertexIndex",
-                "type": "System.Byte",
-                "value": 0
-              },
-              {
-                "name": "_Type",
-                "type": "app.ItemDef.TYPE_Fixed",
-                "value": 2
-              },
-              {
-                "name": "_ItemGroup",
-                "type": "app.ItemDef.ITEM_GROUP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_TextType",
-                "type": "app.ItemDef.TEXT_TYPE_Fixed",
-                "value": 6
-              },
-              {
-                "name": "_IconType",
-                "type": "app.IconDef.ITEM_Fixed",
-                "value": 31
-              },
-              {
-                "name": "_EquipIcon",
-                "type": "app.IconDef.EQUIP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_IconColor",
-                "type": "app.ColorPreset.TYPE_Fixed",
-                "value": 1
-              },
-              {
-                "name": "_AddIconType",
-                "type": "app.IconDef.AddIcon_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_Rare",
-                "type": "app.ItemDef.RARE_Fixed",
-                "value": 13
-              },
-              {
-                "name": "_MaxCount",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_OtomoMax",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_EnableOnRaptor",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_SellPrice",
-                "type": "System.Int32",
-                "value": 300
-              },
-              {
-                "name": "_BuyPrice",
-                "type": "System.Int32",
-                "value": 3000
-              },
-              {
-                "name": "_Fix",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Shikyu",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Eatable",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Window",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Infinit",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Heal",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Battle",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Special",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_ForMoney",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_OutBox",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_NonLevelShell",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_GetRank",
-                "type": "app.ItemDef.GET_RANK_Fixed",
-                "value": [
-                  1,
-                  1
-                ]
-              }
-            ]
-          },
-          {
-            "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[700]",
-            "index": 700,
-            "fields": [
-              {
-                "name": "_Index",
-                "type": "System.Int32",
-                "value": 665
-              },
-              {
-                "name": "_ItemId",
-                "type": "app.ItemDef.ID_Fixed",
-                "value": 779
-              },
-              {
-                "name": "_RawName",
-                "type": "System.Guid",
-                "value": "2f2615a7-7ed4-48d0-9f78-39c7137a449d"
-              },
-              {
-                "name": "_RawExplain",
-                "type": "System.Guid",
-                "value": "62c9d9a2-b95d-4738-81ac-229065682a45"
-              },
-              {
-                "name": "_SortId",
-                "type": "System.Int16",
-                "value": 3535
-              },
-              {
-                "name": "_VertexIndex",
-                "type": "System.Byte",
-                "value": 0
-              },
-              {
-                "name": "_Type",
-                "type": "app.ItemDef.TYPE_Fixed",
-                "value": 2
-              },
-              {
-                "name": "_ItemGroup",
-                "type": "app.ItemDef.ITEM_GROUP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_TextType",
-                "type": "app.ItemDef.TEXT_TYPE_Fixed",
-                "value": 6
-              },
-              {
-                "name": "_IconType",
-                "type": "app.IconDef.ITEM_Fixed",
-                "value": 31
-              },
-              {
-                "name": "_EquipIcon",
-                "type": "app.IconDef.EQUIP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_IconColor",
-                "type": "app.ColorPreset.TYPE_Fixed",
-                "value": 14
-              },
-              {
-                "name": "_AddIconType",
-                "type": "app.IconDef.AddIcon_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_Rare",
-                "type": "app.ItemDef.RARE_Fixed",
-                "value": 13
-              },
-              {
-                "name": "_MaxCount",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_OtomoMax",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_EnableOnRaptor",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_SellPrice",
-                "type": "System.Int32",
-                "value": 400
-              },
-              {
-                "name": "_BuyPrice",
-                "type": "System.Int32",
-                "value": 4000
-              },
-              {
-                "name": "_Fix",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Shikyu",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Eatable",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Window",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Infinit",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Heal",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Battle",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Special",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_ForMoney",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_OutBox",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_NonLevelShell",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_GetRank",
-                "type": "app.ItemDef.GET_RANK_Fixed",
-                "value": [
-                  1,
-                  1
-                ]
-              }
-            ]
-          },
-          {
-            "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[701]",
-            "index": 701,
-            "fields": [
-              {
-                "name": "_Index",
-                "type": "System.Int32",
-                "value": 667
-              },
-              {
-                "name": "_ItemId",
-                "type": "app.ItemDef.ID_Fixed",
-                "value": 780
-              },
-              {
-                "name": "_RawName",
-                "type": "System.Guid",
-                "value": "9908e685-07a5-41b8-9bff-ed955d4dc5dc"
-              },
-              {
-                "name": "_RawExplain",
-                "type": "System.Guid",
-                "value": "f5ec44e2-ffb1-4b19-8330-e3228484c13e"
-              },
-              {
-                "name": "_SortId",
-                "type": "System.Int16",
-                "value": 3537
-              },
-              {
-                "name": "_VertexIndex",
-                "type": "System.Byte",
-                "value": 0
-              },
-              {
-                "name": "_Type",
-                "type": "app.ItemDef.TYPE_Fixed",
-                "value": 2
-              },
-              {
-                "name": "_ItemGroup",
-                "type": "app.ItemDef.ITEM_GROUP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_TextType",
-                "type": "app.ItemDef.TEXT_TYPE_Fixed",
-                "value": 6
-              },
-              {
-                "name": "_IconType",
-                "type": "app.IconDef.ITEM_Fixed",
-                "value": 30
-              },
-              {
-                "name": "_EquipIcon",
-                "type": "app.IconDef.EQUIP_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_IconColor",
-                "type": "app.ColorPreset.TYPE_Fixed",
-                "value": 1
-              },
-              {
-                "name": "_AddIconType",
-                "type": "app.IconDef.AddIcon_Fixed",
-                "value": 0
-              },
-              {
-                "name": "_Rare",
-                "type": "app.ItemDef.RARE_Fixed",
-                "value": 13
-              },
-              {
-                "name": "_MaxCount",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_OtomoMax",
-                "type": "System.Int16",
-                "value": 99
-              },
-              {
-                "name": "_EnableOnRaptor",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_SellPrice",
-                "type": "System.Int32",
-                "value": 350
-              },
-              {
-                "name": "_BuyPrice",
-                "type": "System.Int32",
-                "value": 3500
-              },
-              {
-                "name": "_Fix",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Shikyu",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Eatable",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Window",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Infinit",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Heal",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Battle",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_Special",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_ForMoney",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_OutBox",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_NonLevelShell",
-                "type": "System.Boolean",
-                "value": false
-              },
-              {
-                "name": "_GetRank",
-                "type": "app.ItemDef.GET_RANK_Fixed",
-                "value": [
-                  1,
-                  1
-                ]
-              }
-            ]
-          },
-          {
-            "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[702]",
-            "index": 702,
-            "fields": [
-              {
-                "name": "_Index",
-                "type": "System.Int32",
-                "value": 668
-              },
-              {
-                "name": "_ItemId",
-                "type": "app.ItemDef.ID_Fixed",
-                "value": 781
-              },
-              {
-                "name": "_RawName",
-                "type": "System.Guid",
-                "value": "7c1ab188-975e-4924-af56-1df510402b96"
-              },
-              {
-                "name": "_RawExplain",
-                "type": "System.Guid",
-                "value": "d4d5f936-19a4-4374-abc7-7dd84d373fc4"
-              },
-              {
-                "name": "_SortId",
-                "type": "System.Int16",
-                "value": 3538
+                "value": 3528
               },
               {
                 "name": "_VertexIndex",
@@ -115841,8 +116831,998 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[703]",
-            "index": 703,
+            "name": "app.user_data.ItemData.cData[709]",
+            "index": 709,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 658
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 771
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "7dcf50e2-277d-4c63-b0b1-6abcfeb366cf"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "c84952d8-ee62-4c90-aa90-cd53222e4d97"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3529
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 7
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 450
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 4500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[710]",
+            "index": 710,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 659
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 772
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "6c6d53ec-653b-4280-bd2a-32313dfa0743"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "ec8b8091-6efe-4e21-b8b7-b36128500206"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3530
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 20
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 450
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 4500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[711]",
+            "index": 711,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 664
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 778
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "8b7d633d-ce68-45d9-8637-2ac1e4495af7"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "94870d8b-7d31-4218-8d34-a6b3e6edd356"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3535
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 31
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 300
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[712]",
+            "index": 712,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 665
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 779
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "2f2615a7-7ed4-48d0-9f78-39c7137a449d"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "62c9d9a2-b95d-4738-81ac-229065682a45"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3536
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 31
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 14
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 400
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 4000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[713]",
+            "index": 713,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 667
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 780
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "9908e685-07a5-41b8-9bff-ed955d4dc5dc"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "f5ec44e2-ffb1-4b19-8330-e3228484c13e"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3538
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[714]",
+            "index": 714,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 668
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 781
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "7c1ab188-975e-4924-af56-1df510402b96"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "d4d5f936-19a4-4374-abc7-7dd84d373fc4"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3539
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 20
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[715]",
+            "index": 715,
             "fields": [
               {
                 "name": "_Index",
@@ -116006,8 +117986,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[704]",
-            "index": 704,
+            "name": "app.user_data.ItemData.cData[716]",
+            "index": 716,
             "fields": [
               {
                 "name": "_Index",
@@ -116171,8 +118151,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[705]",
-            "index": 705,
+            "name": "app.user_data.ItemData.cData[717]",
+            "index": 717,
             "fields": [
               {
                 "name": "_Index",
@@ -116336,8 +118316,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[706]",
-            "index": 706,
+            "name": "app.user_data.ItemData.cData[718]",
+            "index": 718,
             "fields": [
               {
                 "name": "_Index",
@@ -116501,8 +118481,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[707]",
-            "index": 707,
+            "name": "app.user_data.ItemData.cData[719]",
+            "index": 719,
             "fields": [
               {
                 "name": "_Index",
@@ -116666,8 +118646,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[708]",
-            "index": 708,
+            "name": "app.user_data.ItemData.cData[720]",
+            "index": 720,
             "fields": [
               {
                 "name": "_Index",
@@ -116831,8 +118811,173 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[709]",
-            "index": 709,
+            "name": "app.user_data.ItemData.cData[721]",
+            "index": 721,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 697
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 788
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "ebec6a18-fd12-4c12-86fe-f26d71455754"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "92b7ba1e-9ab2-4d29-b561-5f64ac6bd872"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 4017
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 12
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 29
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 7
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 500
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 5000
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[722]",
+            "index": 722,
             "fields": [
               {
                 "name": "_Index",
@@ -116857,7 +119002,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3539
+                "value": 3540
               },
               {
                 "name": "_VertexIndex",
@@ -116996,8 +119141,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[710]",
-            "index": 710,
+            "name": "app.user_data.ItemData.cData[723]",
+            "index": 723,
             "fields": [
               {
                 "name": "_Index",
@@ -117022,7 +119167,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3540
+                "value": 3541
               },
               {
                 "name": "_VertexIndex",
@@ -117161,8 +119306,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[711]",
-            "index": 711,
+            "name": "app.user_data.ItemData.cData[724]",
+            "index": 724,
             "fields": [
               {
                 "name": "_Index",
@@ -117187,7 +119332,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3542
+                "value": 3543
               },
               {
                 "name": "_VertexIndex",
@@ -117326,8 +119471,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[712]",
-            "index": 712,
+            "name": "app.user_data.ItemData.cData[725]",
+            "index": 725,
             "fields": [
               {
                 "name": "_Index",
@@ -117352,7 +119497,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3543
+                "value": 3544
               },
               {
                 "name": "_VertexIndex",
@@ -117491,8 +119636,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[713]",
-            "index": 713,
+            "name": "app.user_data.ItemData.cData[726]",
+            "index": 726,
             "fields": [
               {
                 "name": "_Index",
@@ -117517,7 +119662,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3544
+                "value": 3545
               },
               {
                 "name": "_VertexIndex",
@@ -117656,8 +119801,503 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[714]",
-            "index": 714,
+            "name": "app.user_data.ItemData.cData[727]",
+            "index": 727,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 675
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 797
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "d2b3ee71-f4c3-4083-b7cd-909bc196cf19"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "589f3d51-28f2-4db9-9801-2370eab2cf65"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3546
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[728]",
+            "index": 728,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 676
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 798
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "46d3b6a6-dae1-43fa-bb2b-06907df49540"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "ef843503-1241-4126-826b-4777a570f9a5"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3547
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 30
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 16
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[729]",
+            "index": 729,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 677
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 799
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "f555794b-a472-422a-b6b3-ff6fcc68175b"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "b3f8cc18-1db8-4538-a14b-99af3df1e6cb"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 3548
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 6
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 28
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 7
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 13
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 99
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 350
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 3500
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[730]",
+            "index": 730,
             "fields": [
               {
                 "name": "_Index",
@@ -117821,8 +120461,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[715]",
-            "index": 715,
+            "name": "app.user_data.ItemData.cData[731]",
+            "index": 731,
             "fields": [
               {
                 "name": "_Index",
@@ -117986,8 +120626,173 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[716]",
-            "index": 716,
+            "name": "app.user_data.ItemData.cData[732]",
+            "index": 732,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 106
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 805
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "f919eb5c-2142-4dca-a2c8-86baec27f30e"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "f4f39564-4c6f-4a9f-b24e-3823be8cff23"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 102
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 17
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 20
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 2
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 2
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 52
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 518
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[733]",
+            "index": 733,
             "fields": [
               {
                 "name": "_Index",
@@ -118012,7 +120817,7 @@
               {
                 "name": "_SortId",
                 "type": "System.Int16",
-                "value": 3536
+                "value": 3537
               },
               {
                 "name": "_VertexIndex",
@@ -118151,8 +120956,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[717]",
-            "index": 717,
+            "name": "app.user_data.ItemData.cData[734]",
+            "index": 734,
             "fields": [
               {
                 "name": "_Index",
@@ -118316,8 +121121,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[718]",
-            "index": 718,
+            "name": "app.user_data.ItemData.cData[735]",
+            "index": 735,
             "fields": [
               {
                 "name": "_Index",
@@ -118481,8 +121286,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[719]",
-            "index": 719,
+            "name": "app.user_data.ItemData.cData[736]",
+            "index": 736,
             "fields": [
               {
                 "name": "_Index",
@@ -118646,8 +121451,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[720]",
-            "index": 720,
+            "name": "app.user_data.ItemData.cData[737]",
+            "index": 737,
             "fields": [
               {
                 "name": "_Index",
@@ -118811,8 +121616,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[721]",
-            "index": 721,
+            "name": "app.user_data.ItemData.cData[738]",
+            "index": 738,
             "fields": [
               {
                 "name": "_Index",
@@ -118976,8 +121781,8 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[722]",
-            "index": 722,
+            "name": "app.user_data.ItemData.cData[739]",
+            "index": 739,
             "fields": [
               {
                 "name": "_Index",
@@ -119141,13 +121946,1003 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[723]",
-            "index": 723,
+            "name": "app.user_data.ItemData.cData[740]",
+            "index": 740,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 604
+                "value": 200
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 815
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "8f8e61f9-ea53-4b5a-9b6a-e14f652dbbb5"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "fb3c7063-ae53-44af-956f-fc756c9595d7"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 744
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 2
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 96
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 17
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[741]",
+            "index": 741,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 771
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 816
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "16ccfb94-2c92-44c5-acab-7ff0efe28fc8"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "89db9824-f38f-4dcd-87a2-8c0765d034ed"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5011
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 95
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[742]",
+            "index": 742,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 772
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 817
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "067bdd77-7068-4850-bc58-e8be74028dbf"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "e4e30d59-4564-4084-901f-02d5b1e49209"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5012
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 4
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 92
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[743]",
+            "index": 743,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 773
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 818
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "6664b093-6915-47b9-81b1-3cb32d25acce"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "47d08a6d-2a9b-4df4-915d-a10329bed989"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5012
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 93
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[744]",
+            "index": 744,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 774
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 819
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "5fb3b41c-5a35-48b2-92b3-4187c8f6dd62"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "adb716fd-2f0c-4dfb-9408-7eb40282f846"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 5012
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 1
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 94
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 15
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[745]",
+            "index": 745,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 108
+              },
+              {
+                "name": "_ItemId",
+                "type": "app.ItemDef.ID_Fixed",
+                "value": 821
+              },
+              {
+                "name": "_RawName",
+                "type": "System.Guid",
+                "value": "b136b47d-ae50-47df-a42a-15ca56843f36"
+              },
+              {
+                "name": "_RawExplain",
+                "type": "System.Guid",
+                "value": "1e47b080-7082-4e76-9bb4-5a5e0b419507"
+              },
+              {
+                "name": "_SortId",
+                "type": "System.Int16",
+                "value": 104
+              },
+              {
+                "name": "_VertexIndex",
+                "type": "System.Byte",
+                "value": 0
+              },
+              {
+                "name": "_Type",
+                "type": "app.ItemDef.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_ItemGroup",
+                "type": "app.ItemDef.ITEM_GROUP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_TextType",
+                "type": "app.ItemDef.TEXT_TYPE_Fixed",
+                "value": 8
+              },
+              {
+                "name": "_IconType",
+                "type": "app.IconDef.ITEM_Fixed",
+                "value": 97
+              },
+              {
+                "name": "_EquipIcon",
+                "type": "app.IconDef.EQUIP_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_IconColor",
+                "type": "app.ColorPreset.TYPE_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_AddIconType",
+                "type": "app.IconDef.AddIcon_Fixed",
+                "value": 0
+              },
+              {
+                "name": "_Rare",
+                "type": "app.ItemDef.RARE_Fixed",
+                "value": 14
+              },
+              {
+                "name": "_MaxCount",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_OtomoMax",
+                "type": "System.Int16",
+                "value": 1
+              },
+              {
+                "name": "_EnableOnRaptor",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_SellPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_BuyPrice",
+                "type": "System.Int32",
+                "value": 0
+              },
+              {
+                "name": "_Fix",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Shikyu",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Eatable",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Window",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Infinit",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Heal",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_Battle",
+                "type": "System.Boolean",
+                "value": true
+              },
+              {
+                "name": "_Special",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_ForMoney",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_OutBox",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_NonLevelShell",
+                "type": "System.Boolean",
+                "value": false
+              },
+              {
+                "name": "_GetRank",
+                "type": "app.ItemDef.GET_RANK_Fixed",
+                "value": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "referenceType": "instance",
+            "name": "app.user_data.ItemData.cData[746]",
+            "index": 746,
+            "fields": [
+              {
+                "name": "_Index",
+                "type": "System.Int32",
+                "value": 603
               },
               {
                 "name": "_ItemId",
@@ -119157,12 +122952,12 @@
               {
                 "name": "_RawName",
                 "type": "System.Guid",
-                "value": "0825cd00-4305-402d-81af-e28a10ca596f"
+                "value": "09ab4496-c9f8-4b6d-8c1b-b7fd6f60c1c1"
               },
               {
                 "name": "_RawExplain",
                 "type": "System.Guid",
-                "value": "4668e503-c5d5-43c7-abee-afe3373410fa"
+                "value": "11087253-90f7-4dcc-b2d6-a5d5dcf5badd"
               },
               {
                 "name": "_SortId",
@@ -119306,13 +123101,13 @@
           },
           {
             "referenceType": "instance",
-            "name": "app.user_data.ItemData.cData[724]",
-            "index": 724,
+            "name": "app.user_data.ItemData.cData[747]",
+            "index": 747,
             "fields": [
               {
                 "name": "_Index",
                 "type": "System.Int32",
-                "value": 620
+                "value": 619
               },
               {
                 "name": "_ItemId",
@@ -119322,12 +123117,12 @@
               {
                 "name": "_RawName",
                 "type": "System.Guid",
-                "value": "e0bb3a64-2a35-4f41-bacc-4d8dad82c533"
+                "value": "c6c27453-a274-4968-9fa4-fbab94b3f9db"
               },
               {
                 "name": "_RawExplain",
                 "type": "System.Guid",
-                "value": "32e71eab-d883-43b8-a02e-c1c4f3c4f04b"
+                "value": "2618b9e0-c306-42fe-b3de-47d51d91391b"
               },
               {
                 "name": "_SortId",
