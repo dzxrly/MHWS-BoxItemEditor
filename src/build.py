@@ -11,7 +11,8 @@ CONTRIBUTORS = [
     "Egg Targaryen",
     "TinyStick",
     "RabbitFeet",
-    "Blank-1973",
+    "Ruri73",
+    "dtlnor",
 ]
 
 FMM_CONFIG = {
