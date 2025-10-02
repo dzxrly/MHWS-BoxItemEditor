@@ -9,7 +9,7 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.10"
+local INTER_VERSION = "v1.9.11"
 local MAX_VERSION = "1.30.1.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -213,6 +213,34 @@ local function saveUserConfigJson(jsonPath)
     end
 end
 
+local function searchItemList(target)
+    local itemIndex = 0
+    local itemMap = {}
+    for index = 1, #itemNameJson do
+        if itemNameJson and checkItem(itemNameJson[index]) then
+            if target ~= nil then
+                if string.lower(itemNameJson[index]._Name):match(string.lower(target)) then
+                    itemMap[itemIndex] = {
+                        key = tonumber(itemNameJson[index].fixedId),
+                        value = itemNameJson[index]
+                            ._Name
+                    }
+                    itemIndex = itemIndex + 1
+                end
+            else
+                itemMap[itemIndex] = { key = tonumber(itemNameJson[index].fixedId), value = itemNameJson[index]._Name }
+                itemIndex = itemIndex + 1
+            end
+        end
+    end
+
+    table.sort(itemMap, function(a, b)
+        return a.key < b.key
+    end)
+
+    return itemMap
+end
+
 local function loadI18NJson(jsonPath)
     print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
@@ -244,34 +272,7 @@ local function loadI18NJson(jsonPath)
     table.insert(typeFilterLabel, 1, i18n.filterNoLimitTitle)
     rareFilterLabel = { "1", "2", "3", "4", "5", "6", "7", "8" }
     table.insert(rareFilterLabel, 1, i18n.filterNoLimitTitle)
-end
-
-local function searchItemList(target)
-    local itemIndex = 0
-    local itemMap = {}
-    for index = 1, #itemNameJson do
-        if checkItem(itemNameJson[index]) then
-            if target ~= nil then
-                if string.lower(itemNameJson[index]._Name):match(string.lower(target)) then
-                    itemMap[itemIndex] = {
-                        key = tonumber(itemNameJson[index].fixedId),
-                        value = itemNameJson[index]
-                            ._Name
-                    }
-                    itemIndex = itemIndex + 1
-                end
-            else
-                itemMap[itemIndex] = { key = tonumber(itemNameJson[index].fixedId), value = itemNameJson[index]._Name }
-                itemIndex = itemIndex + 1
-            end
-        end
-    end
-
-    table.sort(itemMap, function(a, b)
-        return a.key < b.key
-    end)
-
-    return itemMap
+    searchItemResult = searchItemList(searchItemTarget)
 end
 
 local function filterCombo(array, filterSetting)
@@ -863,7 +864,6 @@ print("Initializing ItemBoxEditor...")
 initIDAndFixedIDProjection()
 loadI18NJson(ITEM_NAME_JSON_PATH)
 loadUserConfigJson(USER_CONFIG_PATH)
-searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 

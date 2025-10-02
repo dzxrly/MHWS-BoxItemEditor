@@ -147,7 +147,7 @@ def get_lua_i18n_json(
     return i18n_json
 
 
-def read_origin_lua() -> (str, str, str):
+def read_origin_lua() -> tuple[str, str, str]:
     with open(ORIGIN_LUA_FIEL, "r", encoding="utf-8") as f:
         lua_str = f.read()
     # match local INTER_VERSION = "xxx" row and read the content in the double quotes
@@ -159,7 +159,7 @@ def read_origin_lua() -> (str, str, str):
     return lua_str, mod_ver, max_ver
 
 
-def create_release_lua() -> (str, str, str):
+def create_release_lua() -> tuple[str, str, str]:
     lua_str, mod_ver, max_support_ver = read_origin_lua()
     # match 'local ITEM_NAME_JSON_PATH = ""' row and replace the content in the double quotes
     lua_str = lua_str.replace(
