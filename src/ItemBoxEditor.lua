@@ -867,8 +867,7 @@ searchItemResult = searchItemList(searchItemTarget)
 getVersion()
 MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
 
-sdk.hook(sdk.find_type_definition("app.GUIManager"):get_method("startPlayable()"), function()
-end, function()
+local function onStartPlayable()
     local get_text_language = sdk.find_type_definition("app.OptionUtil"):get_method("getTextLanguage()")
     local default_lang = tostring(get_text_language(nil))
     if LANG_DICT[default_lang] ~= nil then
@@ -879,6 +878,37 @@ end, function()
     print("Default Language: " .. default_lang .. " - User Language: " .. userLanguage)
     loadI18NJson(ITEM_NAME_JSON_PATH)
     isLoadLanguage = true
+end
+
+local function notTitleScreen()
+    local playerManager = sdk.get_managed_singleton("app.PlayerManager")
+    if playerManager == nil then
+        return false
+    end
+
+    local currentNetworkPosition = playerManager:call("get_CurrentNetworkPosition()")
+    if currentNetworkPosition == nil then
+        return false
+    end
+
+    if currentNetworkPosition ~= 0 and currentNetworkPosition ~= 2 then
+        return true
+    end
+
+    return false
+end
+
+re.on_application_entry("UpdateScene", function()
+    if not isLoadLanguage and notTitleScreen() then
+        onStartPlayable()
+    end
+end)
+
+sdk.hook(sdk.find_type_definition("app.GUIManager"):get_method("startPlayable()"), function()
+end, function()
+    if not isLoadLanguage then
+        onStartPlayable()
+    end
 end
 )
 
