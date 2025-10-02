@@ -63,10 +63,10 @@
     "Egg Targaryen",
     "TinyStick",
     "RabbitFeet",
-    "Blank-1973"
+    "Ruri73"
   ],
   "modLicenseTitle": "MOD ライセンス",
-  "modLicenseContent": "MIT License\n\nCopyright (c) 2024 Egg Targaryen \n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
+  "modLicenseContent": "MITライセンス\n\nCopyright (c) 2024 Egg Targaryen\n\n本ソフトウェアおよび関連するドキュメントファイル（以下「本ソフトウェア」）の複製を取得するすべての人に対し、\n本ソフトウェアを無制限に取り扱うことを無償で許可します。\nこれには、使用、複製、改変、結合、掲載、頒布、サブライセンス、\nおよび/または本ソフトウェアのコピーを販売する権利、\nならびに本ソフトウェアが提供される相手に同様のことを許可する権利を含みます。\nただし、以下の条件に従うものとします。\n\n上記の著作権表示および本許諾表示は、本ソフトウェアのすべての複製または\n重要な部分に記載されるものとします。\n\n本ソフトウェアは「現状のまま」で提供され、明示であるか黙示であるかを問わず、\n商品性、特定の目的への適合性、権利非侵害に関する保証を含め、\nいかなる保証も行いません。\n著作者または著作権者は、本ソフトウェアまたは本ソフトウェアの使用、\nその他の取り扱いに起因または関連して生じるいかなる請求、損害、\nその他の責任についても、一切責任を負わないものとします。",
   "modRepoTitle": "MOD リポジトリ",
   "modRepo": "https://github.com/dzxrly/MHWS-BoxItemEditor",
   "rememberWindowCloseOpenStateTip": "ウィンドウの開閉状態を保存する",
@@ -75,6 +75,6 @@
   "nexusModPage": "https://www.nexusmods.com/monsterhunterwilds/mods/102",
   "otherLibsLicenseTitle": "その他のライブラリのライセンス",
   "reframeworkLicenseTitle": "REFramework ライセンス",
-  "reframeworkLicense": "MIT License\n\nCopyright (c) 2019 praydog\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
+  "reframeworkLicense": "MITライセンス\n\nCopyright (c) 2019 praydog\n\n本ソフトウェアおよび関連するドキュメントファイル（以下「本ソフトウェア」）の複製を取得するすべての人に対し、\n本ソフトウェアを無制限に取り扱うことを無償で許可します。\nこれには、使用、複製、改変、結合、掲載、頒布、サブライセンス、\nおよび/または本ソフトウェアのコピーを販売する権利、\nならびに本ソフトウェアが提供される相手に同様のことを許可する権利を含みます。\nただし、以下の条件に従うものとします。\n\n上記の著作権表示および本許諾表示は、本ソフトウェアのすべての複製または\n重要な部分に記載されるものとします。\n\n本ソフトウェアは「現状のまま」で提供され、明示であるか黙示であるかを問わず、\n商品性、特定の目的への適合性、権利非侵害に関する保証を含め、\nいかなる保証も行いません。\n著作者または著作権者は、本ソフトウェアまたは本ソフトウェアの使用、\nその他の取り扱いに起因または関連して生じるいかなる請求、損害、\nその他の責任についても、一切責任を負わないものとします。",
   "modFreeTips": "[ヒント] このMODは完全に無料です。誰かに料金を支払って購入しないでください !"
 }
