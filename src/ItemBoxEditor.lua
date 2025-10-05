@@ -27,9 +27,9 @@ local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local LANG_DICT = {}
-LANG_DICT["0"] = "ja-JP" -- Japanese
-LANG_DICT["1"] = "en-US" -- English
-LANG_DICT["9"] = "ko-KR" -- Korean
+LANG_DICT["0"] = "ja-JP"    -- Japanese
+LANG_DICT["1"] = "en-US"    -- English
+LANG_DICT["9"] = "ko-KR"    -- Korean
 LANG_DICT["10"] = "zh-Hant" -- Traditional Chinese
 LANG_DICT["11"] = "zh-Hans" -- Simplified Chinese
 
@@ -269,7 +269,7 @@ local function loadI18NJson(jsonPath)
                 if checkItem(itemNameJson[index]) then
                     itemBoxList[tempIndex] = itemNameJson[index]
                     itemBoxList[tempIndex]["name"] = "[" .. itemNameJson[index]["fixedId"] .. "]" ..
-                                                         itemNameJson[index]["_Name"] .. " - 0"
+                        itemNameJson[index]["_Name"] .. " - 0"
                     itemBoxList[tempIndex]["num"] = 0
                     itemBoxList[tempIndex]["isUnknown"] = false
                     itemBoxList[tempIndex]["id"] = itemIDAndFixedIDProjection[itemNameJson[index]["fixedId"]]
@@ -288,7 +288,7 @@ local function loadI18NJson(jsonPath)
     end
     typeFilterLabel = i18n.typeFilterComboLabel
     table.insert(typeFilterLabel, 1, i18n.filterNoLimitTitle)
-    rareFilterLabel = {"1", "2", "3", "4", "5", "6", "7", "8"}
+    rareFilterLabel = { "1", "2", "3", "4", "5", "6", "7", "8" }
     table.insert(rareFilterLabel, 1, i18n.filterNoLimitTitle)
     searchItemResult = searchItemList(searchItemTarget)
 end
@@ -304,27 +304,27 @@ local function filterCombo(array, filterSetting)
     }
     local tempArray = {}
     local switch =
-        { -- { "无筛选条件", "治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材" }
+    { -- { "无筛选条件", "治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材" }
         function()
             return
         end, function()
-            category._Type = 0
-            category._Heal = true
-        end, function()
-            category._Type = 0
-            category._Battle = true
-        end, function()
-            category._Type = 0
-        end, function()
-            category._Type = 2
-        end, function()
-            category._Type = 3
-        end, function()
-            category._Type = 5
-        end, function()
-            category._Type = 2
-            category._ForMoney = true
-        end}
+        category._Type = 0
+        category._Heal = true
+    end, function()
+        category._Type = 0
+        category._Battle = true
+    end, function()
+        category._Type = 0
+    end, function()
+        category._Type = 2
+    end, function()
+        category._Type = 3
+    end, function()
+        category._Type = 5
+    end, function()
+        category._Type = 2
+        category._ForMoney = true
+    end }
     switch[filterSetting.filterIndex]()
     if category._Type ~= nil then
         tempArray = {}
@@ -396,7 +396,7 @@ local function initBoxItem()
                 for tempIndex = 1, #itemBoxList do
                     if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
                         itemBoxList[tempIndex].name = "[" .. tostring(boxItem:get_field("ItemIdFixed")) .. "]" ..
-                                                          itemName .. " - " .. boxItem:get_field("Num")
+                            itemName .. " - " .. boxItem:get_field("Num")
                         itemBoxList[tempIndex].num = boxItem:get_field("Num")
                         break
                     end
@@ -587,7 +587,7 @@ local function mainWindow()
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
         imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0 or itemBoxSelectedItemFixedId ==
-                                 nil or not itemBoxConfirmBtnEnabled)
+            nil or not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
             -- clear()
@@ -759,7 +759,7 @@ end
 
 local function itemTableWindow()
     local changed = nil
-    imgui.set_next_window_size({480, 640}, 4) -- 4 is ImGuiCond_FirstUseEver
+    imgui.set_next_window_size({ 480, 640 }, 4) -- 4 is ImGuiCond_FirstUseEver
     if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
         imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
         imgui.table_setup_column('', 0, 2)
@@ -774,13 +774,13 @@ local function itemTableWindow()
         end
 
         imgui.table_next_column()
-        if imgui.button(i18n.clearBtn, {-0.001, 0}) then
+        if imgui.button(i18n.clearBtn, { -0.001, 0 }) then
             searchItemTarget = nil
             searchItemResult = searchItemList(searchItemTarget)
         end
         imgui.end_table()
 
-        if imgui.button(i18n.searchBtn, {-0.001, 0}) then
+        if imgui.button(i18n.searchBtn, { -0.001, 0 }) then
             searchItemResult = searchItemList(searchItemTarget)
         end
 
@@ -793,16 +793,16 @@ local function itemTableWindow()
         imgui.push_style_color(22, 0xff142D65)
         imgui.push_style_color(23, 0xff142D65)
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleID, {-0.001, 0})
+        imgui.button(i18n.itemTableTitleID, { -0.001, 0 })
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleName, {-0.001, 0})
+        imgui.button(i18n.itemTableTitleName, { -0.001, 0 })
         imgui.pop_style_color(3)
 
         for i = 1, #searchItemResult do
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].key, {-0.001, 0})
+            imgui.button(searchItemResult[i].key, { -0.001, 0 })
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].value, {-0.001, 0})
+            imgui.button(searchItemResult[i].value, { -0.001, 0 })
         end
 
         imgui.end_table()
