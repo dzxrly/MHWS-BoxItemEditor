@@ -1,7 +1,6 @@
 -- https://github.com/dzxrly/MHWS-BoxItemEditor
 -- MIT License
 -- For Monster Hunter: Wilds
-
 -- !!! DO NOT MODIFY THE FOLLOWING CODE !!!
 local ITEM_NAME_JSON_PATH = ""
 local USER_CONFIG_PATH = ""
@@ -9,7 +8,7 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.11"
+local INTER_VERSION = "v1.9.12"
 local MAX_VERSION = "1.30.1.0"
 -- Just change here can change every VERSION setting in all files END
 
@@ -28,9 +27,9 @@ local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
 local LANG_DICT = {}
-LANG_DICT["0"] = "ja-JP"    -- Japanese
-LANG_DICT["1"] = "en-US"    -- English
-LANG_DICT["9"] = "ko-KR"    -- Korean
+LANG_DICT["0"] = "ja-JP" -- Japanese
+LANG_DICT["1"] = "en-US" -- English
+LANG_DICT["9"] = "ko-KR" -- Korean
 LANG_DICT["10"] = "zh-Hant" -- Traditional Chinese
 LANG_DICT["11"] = "zh-Hans" -- Simplified Chinese
 
@@ -81,7 +80,11 @@ local itemBoxConfirmBtnEnabled = true
 
 local rareFilterComboChanged = nil
 local typeFilterComboChanged = nil
-local filterSetting = { searchStr = "", filterIndex = 1, rareIndex = 1 }
+local filterSetting = {
+    searchStr = "",
+    filterIndex = 1,
+    rareIndex = 1
+}
 local typeFilterLabel = {}
 local rareFilterLabel = {}
 
@@ -102,6 +105,9 @@ local hunterNameInputChanged = nil
 local hunterNameResetBtnEnabled = false
 local otomoNameInputChanged = nil
 local otomoNameResetBtnEnabled = false
+
+local isInitError = false
+local initErrorMsg = ""
 
 local function clear()
     boxItemArray = nil
@@ -183,11 +189,15 @@ end
 
 local function initIDAndFixedIDProjection()
     local getFixedFromID = sdk.find_type_definition("app.ItemDef"):get_method("ItemId(app.ItemDef.ID)")
-    for index = 1, ITEM_ID_MAX do
-        local fixedID = getFixedFromID(nil, index)
-        if fixedID ~= nil then
-            itemIDAndFixedIDProjection[fixedID] = index
+    if getFixedFromID ~= nil then
+        for index = 1, ITEM_ID_MAX do
+            local fixedID = getFixedFromID(nil, index)
+            if fixedID ~= nil then
+                itemIDAndFixedIDProjection[fixedID] = index
+            end
         end
+    else
+        error("Error: Cannot find method app.ItemDef::ItemId(app.ItemDef.ID)")
     end
 end
 
@@ -204,6 +214,8 @@ local function loadUserConfigJson(jsonPath)
         else
             json.dump_file(jsonPath, userConfig)
         end
+    else
+        error("Error: Cannot load json lib")
     end
 end
 
@@ -222,13 +234,15 @@ local function searchItemList(target)
                 if string.lower(itemNameJson[index]._Name):match(string.lower(target)) then
                     itemMap[itemIndex] = {
                         key = tonumber(itemNameJson[index].fixedId),
-                        value = itemNameJson[index]
-                            ._Name
+                        value = itemNameJson[index]._Name
                     }
                     itemIndex = itemIndex + 1
                 end
             else
-                itemMap[itemIndex] = { key = tonumber(itemNameJson[index].fixedId), value = itemNameJson[index]._Name }
+                itemMap[itemIndex] = {
+                    key = tonumber(itemNameJson[index].fixedId),
+                    value = itemNameJson[index]._Name
+                }
                 itemIndex = itemIndex + 1
             end
         end
@@ -245,7 +259,7 @@ local function loadI18NJson(jsonPath)
     print("Loading I18N JSON file: " .. jsonPath)
     if json ~= nil then
         local jsonFile = json.load_file(jsonPath)
-        if jsonFile then
+        if jsonFile ~= nil then
             i18n = jsonFile[userLanguage].I18N
             itemNameJson = jsonFile[userLanguage].ItemName
             local tempIndex = 1
@@ -254,8 +268,8 @@ local function loadI18NJson(jsonPath)
             for index = 1, #itemNameJson do
                 if checkItem(itemNameJson[index]) then
                     itemBoxList[tempIndex] = itemNameJson[index]
-                    itemBoxList[tempIndex]["name"] = "[" ..
-                        itemNameJson[index]["fixedId"] .. "]" .. itemNameJson[index]["_Name"] .. " - 0"
+                    itemBoxList[tempIndex]["name"] = "[" .. itemNameJson[index]["fixedId"] .. "]" ..
+                                                         itemNameJson[index]["_Name"] .. " - 0"
                     itemBoxList[tempIndex]["num"] = 0
                     itemBoxList[tempIndex]["isUnknown"] = false
                     itemBoxList[tempIndex]["id"] = itemIDAndFixedIDProjection[itemNameJson[index]["fixedId"]]
@@ -266,11 +280,15 @@ local function loadI18NJson(jsonPath)
             table.sort(itemBoxList, function(a, b)
                 return a._SortId < b._SortId
             end)
+        else
+            error("Error: Cannot load i18n json file")
         end
+    else
+        error("Error: Cannot load json lib")
     end
     typeFilterLabel = i18n.typeFilterComboLabel
     table.insert(typeFilterLabel, 1, i18n.filterNoLimitTitle)
-    rareFilterLabel = { "1", "2", "3", "4", "5", "6", "7", "8" }
+    rareFilterLabel = {"1", "2", "3", "4", "5", "6", "7", "8"}
     table.insert(rareFilterLabel, 1, i18n.filterNoLimitTitle)
     searchItemResult = searchItemList(searchItemTarget)
 end
@@ -278,38 +296,35 @@ end
 local function filterCombo(array, filterSetting)
     local filteredArray = {}
     local filteredArrayLabel = {}
-    local category = { _Type = nil, _Heal = false, _Battle = false, _OutBox = false }
+    local category = {
+        _Type = nil,
+        _Heal = false,
+        _Battle = false,
+        _OutBox = false
+    }
     local tempArray = {}
-    local switch = {
-        -- { "无筛选条件", "治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材" }
+    local switch =
+        { -- { "无筛选条件", "治疗道具", "战斗道具", "调和素材", "制造材料", "弩炮弹药", "特产", "换金素材" }
         function()
             return
-        end,
-        function()
+        end, function()
             category._Type = 0
             category._Heal = true
-        end,
-        function()
+        end, function()
             category._Type = 0
             category._Battle = true
-        end,
-        function()
+        end, function()
             category._Type = 0
-        end,
-        function()
+        end, function()
             category._Type = 2
-        end,
-        function()
+        end, function()
             category._Type = 3
-        end,
-        function()
+        end, function()
             category._Type = 5
-        end,
-        function()
+        end, function()
             category._Type = 2
             category._ForMoney = true
-        end
-    }
+        end}
     switch[filterSetting.filterIndex]()
     if category._Type ~= nil then
         tempArray = {}
@@ -369,9 +384,8 @@ local function initBoxItem()
             if isNotInList then
                 itemName = i18n.unknownItem
                 local itemInfo = {
-                    name = "[" ..
-                        tostring(boxItem:get_field("ItemIdFixed")) ..
-                        "]" .. itemName .. " - " .. boxItem:get_field("Num"),
+                    name = "[" .. tostring(boxItem:get_field("ItemIdFixed")) .. "]" .. itemName .. " - " ..
+                        boxItem:get_field("Num"),
                     fixedId = boxItem:get_field("ItemIdFixed"),
                     num = boxItem:get_field("Num"),
                     _SortId = 99999,
@@ -381,9 +395,8 @@ local function initBoxItem()
             else
                 for tempIndex = 1, #itemBoxList do
                     if itemBoxList[tempIndex].fixedId == boxItem:get_field("ItemIdFixed") then
-                        itemBoxList[tempIndex].name = "[" ..
-                            tostring(boxItem:get_field("ItemIdFixed")) ..
-                            "]" .. itemName .. " - " .. boxItem:get_field("Num")
+                        itemBoxList[tempIndex].name = "[" .. tostring(boxItem:get_field("ItemIdFixed")) .. "]" ..
+                                                          itemName .. " - " .. boxItem:get_field("Num")
                         itemBoxList[tempIndex].num = boxItem:get_field("Num")
                         break
                     end
@@ -425,8 +438,8 @@ local function changeBoxItemNum(itemFixedId, changedNumber)
     if changedNumber == 0 then
         for index = 1, #itemBoxList do
             if itemBoxList[index].fixedId == itemFixedId then
-                itemBoxList[index]["name"] = "[" ..
-                    itemBoxList[index]["fixedId"] .. "]" .. itemBoxList[index]["_Name"] .. " - 0"
+                itemBoxList[index]["name"] =
+                    "[" .. itemBoxList[index]["fixedId"] .. "]" .. itemBoxList[index]["_Name"] .. " - 0"
                 itemBoxList[index]["num"] = 0
             end
         end
@@ -442,13 +455,15 @@ local function pointAddFunc(cBasicData, newPoint)
 end
 
 local function resetHunterName(cBasicData, newHunterName)
-    if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <= NAME_LENGTH_MAX then
+    if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <=
+        NAME_LENGTH_MAX then
         cBasicData:call("setHunterName(System.String)", newHunterName)
     end
 end
 
 local function resetOtomoName(cBasicData, newOtomoName)
-    if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <= NAME_LENGTH_MAX then
+    if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <=
+        NAME_LENGTH_MAX then
         cBasicData:call("setOtomoName(System.String)", newOtomoName)
     end
 end
@@ -536,8 +551,8 @@ local function mainWindow()
             itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
         end
         imgui.set_next_item_width(WINDOW_WIDTH_M)
-        itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
-            9999)
+        itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum,
+            0, 9999)
         if itemBoxSliderChanged then
             itemBoxSelectedItemNum = itemBoxSliderNewVal
             itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
@@ -571,13 +586,11 @@ local function mainWindow()
         end
         imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
         imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
-        imgui.begin_disabled(itemBoxSearchedItems == nil or
-            #itemBoxSearchedItems == 0 or
-            itemBoxSelectedItemFixedId == nil or
-            not itemBoxConfirmBtnEnabled)
+        imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0 or itemBoxSelectedItemFixedId ==
+                                 nil or not itemBoxConfirmBtnEnabled)
         if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
             changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
-            --clear()
+            -- clear()
             init()
         end
         imgui.end_disabled()
@@ -616,8 +629,7 @@ local function mainWindow()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
             i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-            originMoney,
-            MONEY_PTS_MAX - originMoney)
+            originMoney, MONEY_PTS_MAX - originMoney)
         if moneySliderChanged then
             moneyChangedDiff = moneySliderNewVal - originMoney
             moneySliderVal = moneySliderNewVal
@@ -650,8 +662,7 @@ local function mainWindow()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
             i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-            originPoints,
-            MONEY_PTS_MAX - originPoints)
+            originPoints, MONEY_PTS_MAX - originPoints)
         if pointsSliderChange then
             pointsChangedDiff = pointsSliderNewVal - originPoints
             pointsSliderVal = pointsSliderNewVal
@@ -668,7 +679,8 @@ local function mainWindow()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         hunterNameInputChanged, newHunterName = imgui.input_text(i18n.hunterName, newHunterName)
         if hunterNameInputChanged then
-            if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <= NAME_LENGTH_MAX then
+            if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <=
+                NAME_LENGTH_MAX then
                 hunterNameResetBtnEnabled = true
             else
                 hunterNameResetBtnEnabled = false
@@ -690,7 +702,8 @@ local function mainWindow()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         otomoNameInputChanged, newOtomoName = imgui.input_text(i18n.otomoName, newOtomoName)
         if otomoNameInputChanged then
-            if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <= NAME_LENGTH_MAX then
+            if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <=
+                NAME_LENGTH_MAX then
                 otomoNameResetBtnEnabled = true
             else
                 otomoNameResetBtnEnabled = false
@@ -746,7 +759,7 @@ end
 
 local function itemTableWindow()
     local changed = nil
-    imgui.set_next_window_size({ 480, 640 }, 4) -- 4 is ImGuiCond_FirstUseEver
+    imgui.set_next_window_size({480, 640}, 4) -- 4 is ImGuiCond_FirstUseEver
     if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
         imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
         imgui.table_setup_column('', 0, 2)
@@ -761,13 +774,13 @@ local function itemTableWindow()
         end
 
         imgui.table_next_column()
-        if imgui.button(i18n.clearBtn, { -0.001, 0 }) then
+        if imgui.button(i18n.clearBtn, {-0.001, 0}) then
             searchItemTarget = nil
             searchItemResult = searchItemList(searchItemTarget)
         end
         imgui.end_table()
 
-        if imgui.button(i18n.searchBtn, { -0.001, 0 }) then
+        if imgui.button(i18n.searchBtn, {-0.001, 0}) then
             searchItemResult = searchItemList(searchItemTarget)
         end
 
@@ -780,16 +793,16 @@ local function itemTableWindow()
         imgui.push_style_color(22, 0xff142D65)
         imgui.push_style_color(23, 0xff142D65)
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleID, { -0.001, 0 })
+        imgui.button(i18n.itemTableTitleID, {-0.001, 0})
         imgui.table_next_column()
-        imgui.button(i18n.itemTableTitleName, { -0.001, 0 })
+        imgui.button(i18n.itemTableTitleName, {-0.001, 0})
         imgui.pop_style_color(3)
 
         for i = 1, #searchItemResult do
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].key, { -0.001, 0 })
+            imgui.button(searchItemResult[i].key, {-0.001, 0})
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].value, { -0.001, 0 })
+            imgui.button(searchItemResult[i].value, {-0.001, 0})
         end
 
         imgui.end_table()
@@ -860,12 +873,33 @@ local function aboutWindow()
     end
 end
 
-print("Initializing ItemBoxEditor...")
-initIDAndFixedIDProjection()
-loadI18NJson(ITEM_NAME_JSON_PATH)
-loadUserConfigJson(USER_CONFIG_PATH)
-getVersion()
-MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+local function modInitalize()
+    print("Initializing ItemBoxEditor...")
+    isInitError = false
+    initErrorMsg = nil
+
+    local function initStep(stepFn, ...)
+        local ok, err = pcall(stepFn, ...)
+        if not ok then
+            initErrorMsg = err
+            isInitError = true
+        end
+        return ok
+    end
+
+    if not initStep(initIDAndFixedIDProjection) then
+        return
+    end
+    if not initStep(loadI18NJson, ITEM_NAME_JSON_PATH) then
+        return
+    end
+    if not initStep(loadUserConfigJson, USER_CONFIG_PATH) then
+        return
+    end
+
+    getVersion()
+    MAX_VER_LT_OR_EQ_GAME_VER = compareVersions(GAME_VER, MAX_VERSION)
+end
 
 local function onStartPlayable()
     local get_text_language = sdk.find_type_definition("app.OptionUtil"):get_method("getTextLanguage()")
@@ -876,7 +910,8 @@ local function onStartPlayable()
         userLanguage = "en-US" -- Default to English if language not found
     end
     print("Default Language: " .. default_lang .. " - User Language: " .. userLanguage)
-    loadI18NJson(ITEM_NAME_JSON_PATH)
+
+    modInitalize()
     isLoadLanguage = true
 end
 
@@ -909,33 +944,39 @@ end, function()
     if not isLoadLanguage then
         onStartPlayable()
     end
-end
-)
+end)
 
 re.on_draw_ui(function()
     local mainWindowChanged = false
     local itemWindowChanged = false
 
-    if imgui.tree_node(i18n.title) then
-        imgui.text_colored(i18n.modFreeTips, TIPS_COLOR)
-        imgui.begin_disabled(not isLoadLanguage)
-        mainWindowChanged, mainWindowState = imgui.checkbox(i18n.openMainWindow, mainWindowState)
-        if mainWindowChanged then
-            userConfig.mainWindowOpen = mainWindowState
-            saveUserConfigJson(USER_CONFIG_PATH)
-        end
-        itemWindowChanged, itemWindowState = imgui.checkbox(i18n.openItemTableWindow, itemWindowState)
-        if itemWindowChanged then
-            userConfig.itemWindowOpen = itemWindowState
-            saveUserConfigJson(USER_CONFIG_PATH)
-        end
-        if imgui.button(i18n.aboutWindowsTitle, SMALL_BTN) then
-            aboutWindowState = not aboutWindowState
-            userConfig.aboutWindowOpen = aboutWindowState
-            saveUserConfigJson(USER_CONFIG_PATH)
+    if imgui.tree_node("Item Box Editor") then
+        if isLoadLanguage and not isInitError then
+            imgui.text_colored(i18n.modFreeTips, TIPS_COLOR)
+            imgui.begin_disabled(not isLoadLanguage)
+            mainWindowChanged, mainWindowState = imgui.checkbox(i18n.openMainWindow, mainWindowState)
+            if mainWindowChanged then
+                userConfig.mainWindowOpen = mainWindowState
+                saveUserConfigJson(USER_CONFIG_PATH)
+            end
+            itemWindowChanged, itemWindowState = imgui.checkbox(i18n.openItemTableWindow, itemWindowState)
+            if itemWindowChanged then
+                userConfig.itemWindowOpen = itemWindowState
+                saveUserConfigJson(USER_CONFIG_PATH)
+            end
+            if imgui.button(i18n.aboutWindowsTitle, SMALL_BTN) then
+                aboutWindowState = not aboutWindowState
+                userConfig.aboutWindowOpen = aboutWindowState
+                saveUserConfigJson(USER_CONFIG_PATH)
+            end
+            imgui.end_disabled()
+        elseif not isLoadLanguage and not isInitError then
+            imgui.text_colored("[Item Box Editor] Mod Initializing...", TIPS_COLOR)
+        else
+            imgui.text_colored("[Item Box Editor] Mod Initialization Error", ERROR_COLOR)
+            imgui.text_colored("[Item Box Editor] " .. initErrorMsg, ERROR_COLOR)
         end
         imgui.tree_pop()
-        imgui.end_disabled()
     end
 end)
 
