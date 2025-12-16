@@ -111,14 +111,16 @@ def get_item_df(
         "_ForMoney",
         "_OutBox",
     ]
-    for item in item_data_json[0]["fields"][0]["value"]:
+    for item in item_data_json[0]["fields"]["_Values"]:
         item_info = item["fields"]
         _item_id = None
         _raw_name = None
         _item_data = []
-        for _field in item_info:
-            if _field["name"] in item_header:
-                _item_data.append(_field["value"])
+        for _item_info_key in item_info.keys():
+            if _item_info_key in item_header:
+                _item_data.append(item_info[_item_info_key])
+        if item_info["_Infinit"]:
+            continue
         item_data.append(_item_data)
     item_df = pd.DataFrame(item_data, columns=item_header)
     # read TEXT_DATA_CSV
