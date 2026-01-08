@@ -8,8 +8,8 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.15"
-local MAX_VERSION = "1.40.2.0"
+local INTER_VERSION = "v1.9.16"
+local MAX_VERSION = "1.40.3.0"
 -- Just change here can change every VERSION setting in all files END
 
 local NAME_LENGTH_MAX = 10
@@ -611,24 +611,26 @@ local function mainWindow()
             moneyChangedDiff = ADD_1E4
         end
         imgui.end_disabled()
-        imgui.same_line()
-        imgui.begin_disabled(originMoney + ADD_5E4 > MONEY_PTS_MAX)
-        if imgui.button("Money: +" .. tostring(ADD_5E4), SMALL_BTN) then
-            moneySliderVal = originMoney + ADD_5E4
-            moneyChangedDiff = ADD_5E4
-        end
-        imgui.end_disabled()
-        imgui.same_line()
-        imgui.begin_disabled(originMoney + ADD_1E5 > MONEY_PTS_MAX)
-        if imgui.button("Money: +" .. tostring(ADD_1E5), SMALL_BTN) then
-            moneySliderVal = originMoney + ADD_1E5
-            moneyChangedDiff = ADD_1E5
-        end
-        imgui.end_disabled()
+        --imgui.same_line()
+        --imgui.begin_disabled(originMoney + ADD_5E4 > MONEY_PTS_MAX)
+        --if imgui.button("Money: +" .. tostring(ADD_5E4), SMALL_BTN) then
+        --    moneySliderVal = originMoney + ADD_5E4
+        --    moneyChangedDiff = ADD_5E4
+        --end
+        --imgui.end_disabled()
+        --imgui.same_line()
+        --imgui.begin_disabled(originMoney + ADD_1E5 > MONEY_PTS_MAX)
+        --if imgui.button("Money: +" .. tostring(ADD_1E5), SMALL_BTN) then
+        --    moneySliderVal = originMoney + ADD_1E5
+        --    moneyChangedDiff = ADD_1E5
+        --end
+        --imgui.end_disabled()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.begin_disabled()
         moneySliderChanged, moneySliderNewVal = imgui.slider_int(
                 i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
                 originMoney, MONEY_PTS_MAX - originMoney)
+        imgui.end_disabled()
         if moneySliderChanged then
             moneyChangedDiff = moneySliderNewVal - originMoney
             moneySliderVal = moneySliderNewVal
@@ -644,24 +646,26 @@ local function mainWindow()
             pointsChangedDiff = ADD_1E4
         end
         imgui.end_disabled()
-        imgui.same_line()
-        imgui.begin_disabled(originPoints + ADD_5E4 > MONEY_PTS_MAX)
-        if imgui.button("PTS: +" .. tostring(ADD_5E4), SMALL_BTN) then
-            pointsSliderVal = originPoints + ADD_5E4
-            pointsChangedDiff = ADD_5E4
-        end
-        imgui.end_disabled()
-        imgui.same_line()
-        imgui.begin_disabled(originPoints + ADD_1E5 > MONEY_PTS_MAX)
-        if imgui.button("PTS: +" .. tostring(ADD_1E5), SMALL_BTN) then
-            pointsSliderVal = originPoints + ADD_1E5
-            pointsChangedDiff = ADD_1E5
-        end
-        imgui.end_disabled()
+        --imgui.same_line()
+        --imgui.begin_disabled(originPoints + ADD_5E4 > MONEY_PTS_MAX)
+        --if imgui.button("PTS: +" .. tostring(ADD_5E4), SMALL_BTN) then
+        --    pointsSliderVal = originPoints + ADD_5E4
+        --    pointsChangedDiff = ADD_5E4
+        --end
+        --imgui.end_disabled()
+        --imgui.same_line()
+        --imgui.begin_disabled(originPoints + ADD_1E5 > MONEY_PTS_MAX)
+        --if imgui.button("PTS: +" .. tostring(ADD_1E5), SMALL_BTN) then
+        --    pointsSliderVal = originPoints + ADD_1E5
+        --    pointsChangedDiff = ADD_1E5
+        --end
+        --imgui.end_disabled()
         imgui.set_next_item_width(WINDOW_WIDTH_M)
+        imgui.begin_disabled()
         pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
                 i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
                 originPoints, MONEY_PTS_MAX - originPoints)
+        imgui.end_disabled()
         if pointsSliderChange then
             pointsChangedDiff = pointsSliderNewVal - originPoints
             pointsSliderVal = pointsSliderNewVal
