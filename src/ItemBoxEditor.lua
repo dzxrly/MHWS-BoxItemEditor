@@ -15,7 +15,7 @@ local MAX_VERSION = "1.40.3.0"
 -- === Constants ===
 local NAME_LENGTH_MAX = 10
 local MONEY_PTS_MAX = 99999999
-local MONEY_PTS_ADD_VALUES = { 500, 2500, 5000 }
+local MONEY_PTS_ADD_VALUES = { 1000, 5000, 10000 }
 local CLICK_COOLDOWN_SEC = 5
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
