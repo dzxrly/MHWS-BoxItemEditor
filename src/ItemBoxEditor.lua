@@ -8,15 +8,15 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.16"
+local INTER_VERSION = "v1.9.17"
 local MAX_VERSION = "1.40.3.0"
 -- Just change here can change every VERSION setting in all files END
 
+-- === Constants ===
 local NAME_LENGTH_MAX = 10
 local MONEY_PTS_MAX = 99999999
-local ADD_1E4 = 10000
-local ADD_5E4 = 50000
-local ADD_1E5 = 100000
+local MONEY_PTS_ADD_VALUES = { 500, 2500, 5000 }
+local CLICK_COOLDOWN_SEC = 5
 local LARGE_BTN = Vector2f.new(300, 50)
 local SMALL_BTN = Vector2f.new(200, 40)
 local WINDOW_WIDTH_M = 300
@@ -26,6 +26,8 @@ local CHECKED_COLOR = 0xff74ff33
 local TIPS_COLOR = 0xff00c3ff
 local GAME_VER = nil
 local MAX_VER_LT_OR_EQ_GAME_VER = true
+
+-- === Language mapping ===
 local LANG_DICT = {}
 LANG_DICT["0"] = "ja-JP"    -- Japanese
 LANG_DICT["1"] = "en-US"    -- English
@@ -38,6 +40,7 @@ local itemNameJson = nil
 local i18n = nil
 -- NOT CHANGED VARIABLES END
 
+-- === Runtime state ===
 -- window status
 local isLoadLanguage = false
 local userConfig = {
@@ -98,6 +101,7 @@ local moneySliderChanged = nil
 local pointsSliderChange = nil
 local moneySliderNewVal = nil
 local pointsSliderNewVal = nil
+local moneyPtsNextAllowed = 0
 
 local newHunterName = ""
 local newOtomoName = ""
@@ -110,6 +114,7 @@ local isInitError = false
 local initErrorMsg = ""
 
 local function clear()
+    -- item box state
     boxItemArray = nil
     cItemParam = nil
     cBasicParam = nil
@@ -128,6 +133,7 @@ local function clear()
     itemBoxInputCountNewVal = nil
     itemBoxConfirmBtnEnabled = true
 
+    -- money/points state
     originMoney = 0
     moneySliderVal = 0
     moneyChangedDiff = 0
@@ -138,7 +144,9 @@ local function clear()
     pointsSliderChange = nil
     moneySliderNewVal = nil
     pointsSliderNewVal = nil
+    moneyPtsNextAllowed = 0
 
+    -- name reset state
     newHunterName = ""
     newOtomoName = ""
     hunterNameInputChanged = nil
@@ -472,27 +480,295 @@ local function init()
     initHunterBasicData()
 end
 
+-- === UI helpers ===
+local function consumeDebounce(nextAllowed)
+    local now = os.clock()
+    if now < nextAllowed then
+        return false, nextAllowed
+    end
+    return true, now + CLICK_COOLDOWN_SEC
+end
+
+local function refreshItemBoxSearch()
+    itemBoxComboIndex = 1
+    itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
+    if #itemBoxSearchedItems > 0 then
+        itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
+        itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
+    end
+end
+
+local function setItemBoxSelectionByIndex(index)
+    if itemBoxSearchedItems == nil or itemBoxSearchedItems[index] == nil then
+        return
+    end
+    itemBoxSelectedItemFixedId = itemBoxSearchedItems[index].fixedId
+    itemBoxSelectedItemNum = itemBoxSearchedItems[index].num
+    itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
+end
+
+local function renderAddButtons(labelPrefix, baseValue, applyFn, isCooldown)
+    for i = 1, #MONEY_PTS_ADD_VALUES do
+        local addValue = MONEY_PTS_ADD_VALUES[i]
+        if i > 1 then
+            imgui.same_line()
+        end
+        imgui.begin_disabled(isCooldown or baseValue + addValue > MONEY_PTS_MAX)
+        if imgui.button(labelPrefix .. tostring(addValue), SMALL_BTN) then
+            applyFn(addValue)
+        end
+        imgui.end_disabled()
+    end
+end
+
+local function findItemIndexByFixedId(items, fixedId)
+    if items == nil then
+        return nil
+    end
+    local targetId = tonumber(fixedId) or fixedId
+    for index = 1, #items do
+        local currentId = tonumber(items[index].fixedId) or items[index].fixedId
+        if currentId == targetId then
+            return index
+        end
+    end
+    return nil
+end
+
+local function selectItemInMainWindowByFixedId(fixedId)
+    if itemBoxList == nil or #itemBoxList == 0 then
+        return
+    end
+    local targetId = tonumber(fixedId) or fixedId
+    local index = findItemIndexByFixedId(itemBoxSearchedItems, targetId)
+    if index == nil then
+        filterSetting.filterIndex = 1
+        filterSetting.rareIndex = 1
+        filterSetting.searchStr = "[" .. tostring(targetId) .. "]"
+        refreshItemBoxSearch()
+        index = findItemIndexByFixedId(itemBoxSearchedItems, targetId)
+    end
+    if index ~= nil then
+        itemBoxComboIndex = index
+        setItemBoxSelectionByIndex(index)
+    end
+end
+
+local function tryApplyMoneyChange(diff)
+    local allowed = false
+    allowed, moneyPtsNextAllowed = consumeDebounce(moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    moneySliderVal = originMoney + diff
+    moneyChangedDiff = diff
+    moneyAddFunc(cBasicParam, moneyChangedDiff)
+    init()
+end
+
+local function tryApplyPointsChange(diff)
+    local allowed = false
+    allowed, moneyPtsNextAllowed = consumeDebounce(moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    pointsSliderVal = originPoints + diff
+    pointsChangedDiff = diff
+    pointAddFunc(cBasicParam, pointsChangedDiff)
+    init()
+end
+
+local function renderCopyButton(label, content)
+    local ok = true
+    if imgui.button(label, LARGE_BTN) then
+        ok = pcall(function()
+            sdk.copy_to_clipboard(content)
+        end)
+    end
+    if not ok then
+        imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
+    end
+end
+
+local function renderVersionInfo()
+    if MAX_VER_LT_OR_EQ_GAME_VER == false then
+        imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
+        imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
+                ERROR_COLOR)
+        imgui.new_line()
+    end
+
+    imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
+    imgui.text(i18n.modVersion)
+    imgui.same_line()
+    imgui.text(INTER_VERSION)
+    imgui.text(i18n.gameVersion)
+    imgui.same_line()
+    if MAX_VER_LT_OR_EQ_GAME_VER then
+        imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
+    else
+        imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
+    end
+    imgui.new_line()
+end
+
+local function renderItemBoxEditorSection()
+    imgui.new_line()
+    imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
+    imgui.text(i18n.changeItemNumTitle)
+    imgui.set_next_item_width(WINDOW_WIDTH_S)
+    typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
+            filterSetting.filterIndex, typeFilterLabel);
+    imgui.same_line()
+    imgui.set_next_item_width(WINDOW_WIDTH_S)
+    rareFilterComboChanged, filterSetting.rareIndex = imgui.combo(i18n.changeItemNumFilterItemRare,
+            filterSetting.rareIndex, rareFilterLabel)
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
+
+    if rareFilterComboChanged then
+        refreshItemBoxSearch()
+    end
+
+    if typeFilterComboChanged then
+        refreshItemBoxSearch()
+    end
+
+    if itemBoxInputChanged then
+        refreshItemBoxSearch()
+    end
+
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
+            itemBoxSearchedLabels)
+    if itemBoxComboChanged then
+        setItemBoxSelectionByIndex(itemBoxComboIndex)
+    end
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum, 0,
+            9999)
+    if itemBoxSliderChanged then
+        itemBoxSelectedItemNum = itemBoxSliderNewVal
+        itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
+        if checkIntegerInRange(itemBoxSliderNewVal, 0, 9999) then
+            itemBoxConfirmBtnEnabled = true
+        else
+            itemBoxConfirmBtnEnabled = false
+        end
+    end
+    if imgui.button(i18n.changeItemNumMinBtn, SMALL_BTN) then
+        itemBoxSelectedItemNum = 0
+        itemBoxInputCountNewVal = "0"
+    end
+    imgui.same_line()
+    if imgui.button(i18n.changeItemNumMaxBtn, SMALL_BTN) then
+        itemBoxSelectedItemNum = 9999
+        itemBoxInputCountNewVal = "9999"
+    end
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
+            itemBoxInputCountNewVal)
+    if itemBoxInputCountChanged then
+        local num = checkIntegerInRange(itemBoxInputCountNewVal, 0, 9999)
+        if num then
+            itemBoxConfirmBtnEnabled = true
+            itemBoxSelectedItemNum = num
+            itemBoxSliderNewVal = num
+        else
+            itemBoxConfirmBtnEnabled = false
+        end
+    end
+    imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
+    imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
+    imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0 or itemBoxSelectedItemFixedId ==
+            nil or not itemBoxConfirmBtnEnabled)
+    if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
+        changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
+        -- clear()
+        init()
+    end
+    imgui.end_disabled()
+    local errDisplay = ""
+    if not itemBoxConfirmBtnEnabled then
+        errDisplay = i18n.changeItemNumInputError
+    else
+        errDisplay = ""
+    end
+    imgui.text_colored(errDisplay, ERROR_COLOR)
+end
+
+local function renderMoneyAndPointsSection()
+    imgui.text(i18n.coinAndPtsEditorTitle)
+    local isCooldown = os.clock() < moneyPtsNextAllowed
+    renderAddButtons("Money: +", originMoney, tryApplyMoneyChange, isCooldown)
+    imgui.text(i18n.coinCounterVal .. ": " .. tostring(originMoney))
+
+    renderAddButtons("PTS: +", originPoints, tryApplyPointsChange, isCooldown)
+    imgui.text(i18n.ptsCounterVal .. ": " .. tostring(originPoints))
+end
+
+local function renderNameResetSection()
+    imgui.new_line()
+    imgui.text(i18n.nameResetTitle)
+    imgui.text_colored(i18n.nameNgWordWarning, ERROR_COLOR)
+    imgui.text_colored(i18n.nameResetReloadGameTip, TIPS_COLOR)
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    hunterNameInputChanged, newHunterName = imgui.input_text(i18n.hunterName, newHunterName)
+    if hunterNameInputChanged then
+        if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <=
+                NAME_LENGTH_MAX then
+            hunterNameResetBtnEnabled = true
+        else
+            hunterNameResetBtnEnabled = false
+        end
+        print(hunterNameResetBtnEnabled)
+    end
+    imgui.begin_disabled(not hunterNameResetBtnEnabled)
+    if imgui.button(i18n.hunterNameResetBtn, LARGE_BTN) then
+        resetHunterName(cBasicParam, newHunterName)
+        init()
+    end
+    imgui.end_disabled()
+    if hunterNameResetBtnEnabled then
+        imgui.text_colored("", TIPS_COLOR)
+    else
+        imgui.text_colored(i18n.hunterNameMaxLengthWarning, ERROR_COLOR)
+    end
+
+    imgui.set_next_item_width(WINDOW_WIDTH_M)
+    otomoNameInputChanged, newOtomoName = imgui.input_text(i18n.otomoName, newOtomoName)
+    if otomoNameInputChanged then
+        if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <=
+                NAME_LENGTH_MAX then
+            otomoNameResetBtnEnabled = true
+        else
+            otomoNameResetBtnEnabled = false
+        end
+    end
+    imgui.begin_disabled(not otomoNameResetBtnEnabled)
+    if imgui.button(i18n.otomoNameResetBtn, LARGE_BTN) then
+        resetOtomoName(cBasicParam, newOtomoName)
+        init()
+    end
+    imgui.end_disabled()
+    if otomoNameResetBtnEnabled then
+        imgui.text_colored("", TIPS_COLOR)
+    else
+        imgui.text_colored(i18n.otomoNameMaxLengthWarning, ERROR_COLOR)
+    end
+end
+
+local function renderRepoLinksSection()
+    imgui.text(i18n.modRepoTitle)
+    imgui.text(i18n.modRepo)
+    renderCopyButton("Repo: " .. i18n.cpToClipboardBtn, i18n.modRepo)
+    imgui.text(i18n.nexusModPage)
+    renderCopyButton("NexusMods: " .. i18n.cpToClipboardBtn, i18n.nexusModPage)
+end
+
 local function mainWindow()
     if imgui.begin_window(i18n.windowTitle, mainWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
-        if MAX_VER_LT_OR_EQ_GAME_VER == false then
-            imgui.text_colored(i18n.compatibleWarning, ERROR_COLOR)
-            imgui.text_colored(i18n.gameVersion .. GAME_VER .. " > " .. i18n.maxCompatibleVersion .. MAX_VERSION,
-                    ERROR_COLOR)
-            imgui.new_line()
-        end
-
-        imgui.text_colored(i18n.backupSaveWarning, ERROR_COLOR)
-        imgui.text(i18n.modVersion)
-        imgui.same_line()
-        imgui.text(INTER_VERSION)
-        imgui.text(i18n.gameVersion)
-        imgui.same_line()
-        if MAX_VER_LT_OR_EQ_GAME_VER then
-            imgui.text_colored(GAME_VER .. i18n.confirmCompatibleTip, CHECKED_COLOR)
-        else
-            imgui.text_colored(GAME_VER .. i18n.notCompatibleTip, ERROR_COLOR)
-        end
-        imgui.new_line()
+        renderVersionInfo()
 
         if imgui.button(i18n.readItemBoxBtn, LARGE_BTN) then
             init()
@@ -501,255 +777,17 @@ local function mainWindow()
 
         ------------------- existed item change -----------------
         imgui.begin_disabled(cItemParam == nil)
-        imgui.new_line()
-        imgui.text_colored(i18n.itemIdFileTip, TIPS_COLOR)
-        imgui.text(i18n.changeItemNumTitle)
-        imgui.set_next_item_width(WINDOW_WIDTH_S)
-        typeFilterComboChanged, filterSetting.filterIndex = imgui.combo(i18n.changeItemNumFilterItemType,
-                filterSetting.filterIndex, typeFilterLabel);
-        imgui.same_line()
-        imgui.set_next_item_width(WINDOW_WIDTH_S)
-        rareFilterComboChanged, filterSetting.rareIndex = imgui.combo(i18n.changeItemNumFilterItemRare,
-                filterSetting.rareIndex, rareFilterLabel)
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        itemBoxInputChanged, filterSetting.searchStr = imgui.input_text(i18n.searchInput, filterSetting.searchStr)
-
-        if rareFilterComboChanged then
-            itemBoxComboIndex = 1
-            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
-            if #itemBoxSearchedItems > 0 then
-                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
-                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
-            end
-        end
-
-        if typeFilterComboChanged then
-            itemBoxComboIndex = 1
-            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
-            if #itemBoxSearchedItems > 0 then
-                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
-                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
-            end
-        end
-
-        if itemBoxInputChanged then
-            itemBoxComboIndex = 1
-            itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
-            if #itemBoxSearchedItems > 0 then
-                itemBoxSelectedItemFixedId = itemBoxSearchedItems[1].fixedId
-                itemBoxSelectedItemNum = itemBoxSearchedItems[1].num
-            end
-        end
-
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        itemBoxComboChanged, itemBoxComboIndex = imgui.combo(i18n.changeItemNumCombox, itemBoxComboIndex,
-                itemBoxSearchedLabels)
-        if itemBoxComboChanged then
-            itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
-            itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
-            itemBoxInputCountNewVal = tostring(itemBoxSelectedItemNum)
-        end
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        itemBoxSliderChanged, itemBoxSliderNewVal = imgui.slider_int(i18n.changeItemNumSlider, itemBoxSelectedItemNum,
-                0, 9999)
-        if itemBoxSliderChanged then
-            itemBoxSelectedItemNum = itemBoxSliderNewVal
-            itemBoxInputCountNewVal = tostring(itemBoxSliderNewVal)
-            if checkIntegerInRange(itemBoxSliderNewVal, 0, 9999) then
-                itemBoxConfirmBtnEnabled = true
-            else
-                itemBoxConfirmBtnEnabled = false
-            end
-        end
-        if imgui.button(i18n.changeItemNumMinBtn, SMALL_BTN) then
-            itemBoxSelectedItemNum = 0
-            itemBoxInputCountNewVal = "0"
-        end
-        imgui.same_line()
-        if imgui.button(i18n.changeItemNumMaxBtn, SMALL_BTN) then
-            itemBoxSelectedItemNum = 9999
-            itemBoxInputCountNewVal = "9999"
-        end
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        itemBoxInputCountChanged, itemBoxInputCountNewVal = imgui.input_text(i18n.changeItemNumInput,
-                itemBoxInputCountNewVal)
-        if itemBoxInputCountChanged then
-            local num = checkIntegerInRange(itemBoxInputCountNewVal, 0, 9999)
-            if num then
-                itemBoxConfirmBtnEnabled = true
-                itemBoxSelectedItemNum = num
-                itemBoxSliderNewVal = num
-            else
-                itemBoxConfirmBtnEnabled = false
-            end
-        end
-        imgui.text_colored(i18n.changeItemTip, TIPS_COLOR)
-        imgui.text_colored(i18n.changeItemWarning, ERROR_COLOR)
-        imgui.begin_disabled(itemBoxSearchedItems == nil or #itemBoxSearchedItems == 0 or itemBoxSelectedItemFixedId ==
-                nil or not itemBoxConfirmBtnEnabled)
-        if imgui.button(i18n.changeItemNumBtn, SMALL_BTN) then
-            changeBoxItemNum(itemBoxSelectedItemFixedId, itemBoxSelectedItemNum)
-            -- clear()
-            init()
-        end
-        imgui.end_disabled()
-        local errDisplay = ""
-        if not itemBoxConfirmBtnEnabled then
-            errDisplay = i18n.changeItemNumInputError
-        else
-            errDisplay = ""
-        end
-        imgui.text_colored(errDisplay, ERROR_COLOR)
+        renderItemBoxEditorSection()
         imgui.end_disabled()
 
         imgui.new_line()
         imgui.begin_disabled(cBasicParam == nil)
-        imgui.text(i18n.coinAndPtsEditorTitle)
-        imgui.begin_disabled(originMoney + ADD_1E4 > MONEY_PTS_MAX)
-        if imgui.button("Money: +" .. tostring(ADD_1E4), SMALL_BTN) then
-            moneySliderVal = originMoney + ADD_1E4
-            moneyChangedDiff = ADD_1E4
-        end
-        imgui.end_disabled()
-        --imgui.same_line()
-        --imgui.begin_disabled(originMoney + ADD_5E4 > MONEY_PTS_MAX)
-        --if imgui.button("Money: +" .. tostring(ADD_5E4), SMALL_BTN) then
-        --    moneySliderVal = originMoney + ADD_5E4
-        --    moneyChangedDiff = ADD_5E4
-        --end
-        --imgui.end_disabled()
-        --imgui.same_line()
-        --imgui.begin_disabled(originMoney + ADD_1E5 > MONEY_PTS_MAX)
-        --if imgui.button("Money: +" .. tostring(ADD_1E5), SMALL_BTN) then
-        --    moneySliderVal = originMoney + ADD_1E5
-        --    moneyChangedDiff = ADD_1E5
-        --end
-        --imgui.end_disabled()
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        imgui.begin_disabled()
-        moneySliderChanged, moneySliderNewVal = imgui.slider_int(
-                i18n.coinSlider .. " (" .. originMoney .. "~" .. (MONEY_PTS_MAX - originMoney) .. ")", moneySliderVal,
-                originMoney, MONEY_PTS_MAX - originMoney)
-        imgui.end_disabled()
-        if moneySliderChanged then
-            moneyChangedDiff = moneySliderNewVal - originMoney
-            moneySliderVal = moneySliderNewVal
-        end
-        if imgui.button(i18n.coinBtn, SMALL_BTN) then
-            moneyAddFunc(cBasicParam, moneyChangedDiff)
-            init()
-        end
-
-        imgui.begin_disabled(originPoints + ADD_1E4 > MONEY_PTS_MAX)
-        if imgui.button("PTS: +" .. tostring(ADD_1E4), SMALL_BTN) then
-            pointsSliderVal = originPoints + ADD_1E4
-            pointsChangedDiff = ADD_1E4
-        end
-        imgui.end_disabled()
-        --imgui.same_line()
-        --imgui.begin_disabled(originPoints + ADD_5E4 > MONEY_PTS_MAX)
-        --if imgui.button("PTS: +" .. tostring(ADD_5E4), SMALL_BTN) then
-        --    pointsSliderVal = originPoints + ADD_5E4
-        --    pointsChangedDiff = ADD_5E4
-        --end
-        --imgui.end_disabled()
-        --imgui.same_line()
-        --imgui.begin_disabled(originPoints + ADD_1E5 > MONEY_PTS_MAX)
-        --if imgui.button("PTS: +" .. tostring(ADD_1E5), SMALL_BTN) then
-        --    pointsSliderVal = originPoints + ADD_1E5
-        --    pointsChangedDiff = ADD_1E5
-        --end
-        --imgui.end_disabled()
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        imgui.begin_disabled()
-        pointsSliderChange, pointsSliderNewVal = imgui.slider_int(
-                i18n.ptsSlider .. " (" .. originPoints .. "~" .. (MONEY_PTS_MAX - originPoints) .. ")", pointsSliderVal,
-                originPoints, MONEY_PTS_MAX - originPoints)
-        imgui.end_disabled()
-        if pointsSliderChange then
-            pointsChangedDiff = pointsSliderNewVal - originPoints
-            pointsSliderVal = pointsSliderNewVal
-        end
-        if imgui.button(i18n.ptsBtn, SMALL_BTN) then
-            pointAddFunc(cBasicParam, pointsChangedDiff)
-            init()
-        end
-
-        imgui.new_line()
-        imgui.text(i18n.nameResetTitle)
-        imgui.text_colored(i18n.nameNgWordWarning, ERROR_COLOR)
-        imgui.text_colored(i18n.nameResetReloadGameTip, TIPS_COLOR)
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        hunterNameInputChanged, newHunterName = imgui.input_text(i18n.hunterName, newHunterName)
-        if hunterNameInputChanged then
-            if newHunterName ~= nil and utf8.len(tostring(newHunterName)) > 0 and utf8.len(tostring(newHunterName)) <=
-                    NAME_LENGTH_MAX then
-                hunterNameResetBtnEnabled = true
-            else
-                hunterNameResetBtnEnabled = false
-            end
-            print(hunterNameResetBtnEnabled)
-        end
-        imgui.begin_disabled(not hunterNameResetBtnEnabled)
-        if imgui.button(i18n.hunterNameResetBtn, LARGE_BTN) then
-            resetHunterName(cBasicParam, newHunterName)
-            init()
-        end
-        imgui.end_disabled()
-        if hunterNameResetBtnEnabled then
-            imgui.text_colored("", TIPS_COLOR)
-        else
-            imgui.text_colored(i18n.hunterNameMaxLengthWarning, ERROR_COLOR)
-        end
-
-        imgui.set_next_item_width(WINDOW_WIDTH_M)
-        otomoNameInputChanged, newOtomoName = imgui.input_text(i18n.otomoName, newOtomoName)
-        if otomoNameInputChanged then
-            if newOtomoName ~= nil and utf8.len(tostring(newOtomoName)) > 0 and utf8.len(tostring(newOtomoName)) <=
-                    NAME_LENGTH_MAX then
-                otomoNameResetBtnEnabled = true
-            else
-                otomoNameResetBtnEnabled = false
-            end
-        end
-        imgui.begin_disabled(not otomoNameResetBtnEnabled)
-        if imgui.button(i18n.otomoNameResetBtn, LARGE_BTN) then
-            resetOtomoName(cBasicParam, newOtomoName)
-            init()
-        end
-        imgui.end_disabled()
-        if otomoNameResetBtnEnabled then
-            imgui.text_colored("", TIPS_COLOR)
-        else
-            imgui.text_colored(i18n.otomoNameMaxLengthWarning, ERROR_COLOR)
-        end
-
+        renderMoneyAndPointsSection()
+        renderNameResetSection()
         imgui.end_disabled()
 
         imgui.new_line()
-        imgui.text(i18n.modRepoTitle)
-        imgui.text(i18n.modRepo)
-        local repoBtnState = true
-        local reposBtnRes = nil
-        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
-            repoBtnState, reposBtnRes = pcall(function()
-                sdk.copy_to_clipboard(i18n.modRepo)
-            end)
-        end
-        if not repoBtnState then
-            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
-        end
-        imgui.text(i18n.nexusModPage)
-        local modPageBtnState = true
-        local modPageBtnRes = nil
-        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
-            modPageBtnState, modPageBtnRes = pcall(function()
-                sdk.copy_to_clipboard(i18n.nexusModPage)
-            end)
-        end
-        if not modPageBtnState then
-            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
-        end
+        renderRepoLinksSection()
 
         imgui.end_window()
     else
@@ -764,13 +802,14 @@ local function itemTableWindow()
     local changed = nil
     imgui.set_next_window_size({ 480, 640 }, 4) -- 4 is ImGuiCond_FirstUseEver
     if imgui.begin_window(i18n.itemTableWindowTitle, itemWindowState, ImGuiWindowFlags_AlwaysAutoResize) then
-        imgui.begin_table('search-group', 2, ImGuiTableFlags_NoSavedSettings)
-        imgui.table_setup_column('', 0, 2)
-        imgui.table_setup_column('', 0, 1)
+        imgui.begin_table("search-group", 2, ImGuiTableFlags_NoSavedSettings)
+        imgui.table_setup_column("", 0, 2)
+        imgui.table_setup_column("", 0, 1)
 
         imgui.table_next_column()
         imgui.push_item_width(-1)
-        changed, searchItem = imgui.input_text('', searchItemTarget)
+        local searchItem = searchItemTarget
+        changed, searchItem = imgui.input_text("", searchItemTarget)
         imgui.pop_item_width()
         if changed then
             searchItemTarget = searchItem
@@ -787,10 +826,10 @@ local function itemTableWindow()
             searchItemResult = searchItemList(searchItemTarget)
         end
 
-        imgui.begin_table('table', 2, 17) -- 17 is ImGuiTableFlags_Resizable | ImGuiTableFlags_NoSavedSettings
+        imgui.begin_table("table", 2, 17) -- 17 is ImGuiTableFlags_Resizable | ImGuiTableFlags_NoSavedSettings
 
-        imgui.table_setup_column('', 0, 1)
-        imgui.table_setup_column('', 0, 2)
+        imgui.table_setup_column("", 0, 1)
+        imgui.table_setup_column("", 0, 2)
 
         imgui.push_style_color(21, 0xff142D65)
         imgui.push_style_color(22, 0xff142D65)
@@ -803,9 +842,13 @@ local function itemTableWindow()
 
         for i = 1, #searchItemResult do
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].key, { -0.001, 0 })
+            if imgui.button(searchItemResult[i].key, { -0.001, 0 }) then
+                selectItemInMainWindowByFixedId(searchItemResult[i].key)
+            end
             imgui.table_next_column()
-            imgui.button(searchItemResult[i].value, { -0.001, 0 })
+            if imgui.button(searchItemResult[i].value, { -0.001, 0 }) then
+                selectItemInMainWindowByFixedId(searchItemResult[i].key)
+            end
         end
 
         imgui.end_table()
@@ -840,27 +883,9 @@ local function aboutWindow()
         imgui.text(i18n.modRepoTitle)
         imgui.set_next_item_width(WINDOW_WIDTH_M)
         imgui.text(i18n.modRepo)
-        local repoBtnState = true
-        local reposBtnRes = nil
-        if imgui.button("Repo: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
-            repoBtnState, reposBtnRes = pcall(function()
-                sdk.copy_to_clipboard(i18n.modRepo)
-            end)
-        end
-        if not repoBtnState then
-            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
-        end
+        renderCopyButton("Repo: " .. i18n.cpToClipboardBtn, i18n.modRepo)
         imgui.text(i18n.nexusModPage)
-        local modPageBtnState = true
-        local modPageBtnRes = nil
-        if imgui.button("NexusMods: " .. i18n.cpToClipboardBtn, LARGE_BTN) then
-            modPageBtnState, modPageBtnRes = pcall(function()
-                sdk.copy_to_clipboard(i18n.nexusModPage)
-            end)
-        end
-        if not modPageBtnState then
-            imgui.text_colored(i18n.reframeworkVersionError, ERROR_COLOR)
-        end
+        renderCopyButton("NexusMods: " .. i18n.cpToClipboardBtn, i18n.nexusModPage)
 
         imgui.new_line()
         imgui.text(i18n.otherLibsLicenseTitle)
