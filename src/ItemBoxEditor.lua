@@ -8,8 +8,8 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.17"
-local MAX_VERSION = "1.40.3.1"
+local INTER_VERSION = "v1.9.18"
+local MAX_VERSION = "1.40.3.2"
 -- Just change here can change every VERSION setting in all files END
 
 -- === Constants ===
