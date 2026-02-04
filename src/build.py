@@ -73,6 +73,8 @@ MOD_ROOT_DIR = "reframework"
 MOD_NAME = "ItemBoxEditor"
 LUA_SAVE_DIR = "{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "autorun")
 JSON_SAVE_DIR = "{}/{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "data", MOD_NAME)
+MODULE_SRC_DIR = "src/ItemBoxEditor"
+MODULE_SAVE_DIR = "{}/{}/{}/{}".format(WORK_TEMP_DIR, MOD_ROOT_DIR, "autorun", MOD_NAME)
 ITEM_ID_TXT_SAVE_PATH = "{}/{}/{}".format(
     WORK_TEMP_DIR, MOD_ROOT_DIR, "ItemEditor_ItemIDs.txt"
 )
@@ -210,6 +212,19 @@ def init_dir() -> None:
     create_dir(os.path.join(WORK_TEMP_DIR, MOD_ROOT_DIR))
     create_dir(LUA_SAVE_DIR)
     create_dir(JSON_SAVE_DIR)
+    create_dir(MODULE_SAVE_DIR)
+
+
+def copy_module_lua() -> None:
+    if not os.path.exists(MODULE_SRC_DIR):
+        return
+    create_dir(MODULE_SAVE_DIR)
+    for file_name in os.listdir(MODULE_SRC_DIR):
+        if not file_name.endswith(".lua"):
+            continue
+        src_file = os.path.join(MODULE_SRC_DIR, file_name)
+        dst_file = os.path.join(MODULE_SAVE_DIR, file_name)
+        shutil.copyfile(src_file, dst_file)
 
 
 def force_del_dir(
@@ -256,6 +271,7 @@ if __name__ == "__main__":
     json_file = {}
     init_dir()
     _, mod_version, max_support_version = create_release_lua()
+    copy_module_lua()
     item_list_txt = {}
     for lang in LANG_LIST:
         _item_list = []
