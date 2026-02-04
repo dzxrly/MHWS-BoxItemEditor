@@ -6,55 +6,18 @@ on:
 
 permissions:
   issues: write
+  contents: read
 
 jobs:
   check-format:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto-close lazy bug reports in wrong templates
-          uses: actions/github-script@v6
-          with:
-            script: |
-              const issue = context.payload.issue;
-              const body = issue.body || "";
-              const title = (issue.title || "").toLowerCase();
-              
-              // 1. 定义匹配规则 (使用正则表达式)
-              // /i 表示忽略大小写
-              // 只要正文中包含 "Issue Description" 和 "问题描述" 这一段文字，就认为是合规的
-              const bugTemplatePattern = /Issue Description.*问题描述/i;
-              
-              // 2. 检查是否匹配
-              const isBugReportTemplate = bugTemplatePattern.test(body);
-              
-              console.log("Is Bug Report Template?", isBugReportTemplate);
-              
-              // 3. 定义 Bug 关键词 (中英双语)
-              const bugKeywords = [
-                "crash", "error", "exception", "not working", "fail", "bug",
-                "崩溃", "报错", "错误", "无法运行", "闪退", "失效"
-              ];
-              
-              // 4. 逻辑判断
-              if (!isBugReportTemplate) {
-                // 检查是否包含 Bug 关键词（标题或正文）
-                // 将正文转小写仅用于关键词搜索，不影响上面的模板匹配
-                const lowerBody = body.toLowerCase();
-                const hasBugKeywords = bugKeywords.some(keyword => 
-                  title.includes(keyword) || lowerBody.includes(keyword)
-                );
-              
-                if (hasBugKeywords) {
-                  console.log("Detected bug keywords in non-bug template. Sending warning.");
-                  await github.rest.issues.createComment({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    body: "⚠️ **Format Warning / 格式警告**\n\n" +
-                          "It seems you are reporting a bug but not using the **Bug Report** template.\n" +
-                          "If this is indeed a bug, please close this issue and open a new one using the correct template to provide versions and logs.\n\n" +
-                          "看起来您正在反馈一个 Bug，但没有使用 **Bug report / 问题报告** 模板。\n" +
-                          "如果是 Bug，请关闭此 Issue 并使用正确的模板重新提交，以便提供必要的版本和日志信息。"
-                  });
-                }
-              }
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Auto-close lazy bug reports
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const script = require('./.github/scripts/check_issue.js')
+            await script({github, context, core})
