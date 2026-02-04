@@ -1,0 +1,81 @@
+name: Bug report / 问题报告
+description: Create a report to help us improve / 提交问题报告以帮助我们要改进项目
+title: "[Bug] "
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        感谢您花费时间填写此问题报告！
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description / 问题描述
+      description: |
+        Please describe the bug you encountered. To avoid ambiguity caused by translation software, **please use English or Chinese only**.
+        请描述您遇到的问题。为了避免翻译软件产生歧义，**请仅使用英文或中文进行描述**。
+      placeholder: Describe what happened... / 描述发生了什么...
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / 截图
+      description: |
+        If you can see an error message or visual glitch, please provide screenshots. You can drag and drop images directly into this box.
+        如果能看到报错信息或视觉错误，请提供截图。您可以直接将图片拖拽至此输入框中。
+    validations:
+      required: false
+
+  - type: input
+    id: game-version
+    attributes:
+      label: Game Version / 游戏版本
+      placeholder: e.g. v1.40.3.2
+    validations:
+      required: true
+
+  - type: input
+    id: ref-version
+    attributes:
+      label: REFramework Version / REFramework 版本
+      placeholder: e.g. v1.5.9.1 / Nightly 01212
+    validations:
+      required: true
+
+  - type: input
+    id: ourmod-version
+    attributes:
+      label: ItemBoxEditor Version / ItemBoxEditor 版本
+      placeholder: e.g. v1.9.18
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Core Dependencies / 核心底层支持库
+      description: |
+        Are you using other core libraries? Please list their versions.
+        是否正在使用其他模组底层支持库？请列出其版本。
+      value: |
+        CatLib: 
+        ScriptCore: 
+        Other:
+      render: bash
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / 日志
+      description: |
+        Please provide the content of `re2_framework_log.txt`. You can paste the text here or drag the file into this box.
+        请提供 `re2_framework_log.txt` 的内容。您可以粘贴文本或直接将文件拖拽至此处。
+      render: shell
+    validations:
+      required: false
