@@ -21,7 +21,8 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 ---
 
 ## Requirements:
-- [REFramework](https://github.com/praydog/REFramework/releases)
+
+- [REFramework](https://github.com/praydog/REFramework/releases) (≥ Nightly 01207)
 
 ## Mod Download:
 
@@ -29,15 +30,20 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 
 ## How To Install:
 
-1. Install [REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93);
+1. Install [REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93) (≥ Nightly 01207);
 2. Download the mod;
-3. Unzip the mod to the Monster Hunter Wilds root directory. So the final directory seems like
-   `./reframework/autorun/ItemBoxEditor_EN-US.lua`.
+3. Unzip the mod (**ALL FILES**) to the Monster Hunter Wilds **ROOT** directory.
+4. When you install correctly, there will be three files in your `./reframework`, and they are:
+
+   - `./reframework/autorun/ItemBoxEditor.lua`
+   - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
+   - `./reframework/ItemEditor_ItemIDs.txt`
 
 ---
 
 ## 前置：
-- [REFramework](https://github.com/praydog/REFramework/releases)
+
+- [REFramework](https://github.com/praydog/REFramework/releases) （≥ Nightly 01207）
 
 ## MOD下载:
 
@@ -45,9 +51,13 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 
 ## 安装方式：
 
-1. 安装[REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93)；
+1. 安装[REFramework](https://www.nexusmods.com/monsterhunterwilds/mods/93) （≥ Nightly 01207）；
 2. 下载MOD；
-3. 将MOD解压缩后存放至Monster Hunter Wilds根目录，即`./reframework/autorun/ItemBoxEditor_ZH-Hans.lua`。
+3. 将MOD解压缩（**所有文件**）后存放至Monster Hunter Wilds**根目录**；
+4. 当你正确安装MOD后，在你的 `./reframework` 目录下应该有三个文件路径：
+   - `./reframework/autorun/ItemBoxEditor.lua`
+   - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
+   - `./reframework/ItemEditor_ItemIDs.txt`
 
 <div align="center">
 
