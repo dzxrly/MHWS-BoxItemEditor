@@ -8,7 +8,7 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.9.18"
+local INTER_VERSION = "v1.9.19"
 local MAX_VERSION = "1.40.3.2"
 -- Just change here can change every VERSION setting in all files END
 
@@ -65,7 +65,6 @@ local boxItemArray = nil
 local cItemParam = nil
 local cBasicParam = nil
 
-local itemBoxLabels = {}
 local itemBoxComboChanged = false
 local itemBoxComboIndex = 1
 local itemBoxSelectedItemFixedId = nil
@@ -75,8 +74,6 @@ local itemBoxSliderNewVal = nil
 local itemBoxSearchedItems = {}
 local itemBoxSearchedLabels = {}
 local itemBoxInputChanged = nil
-local itemBoxInputNewVal = nil
-local itemBoxInputVal = nil
 local itemBoxInputCountChanged = nil
 local itemBoxInputCountNewVal = nil
 local itemBoxConfirmBtnEnabled = true
@@ -92,15 +89,9 @@ local typeFilterLabel = {}
 local rareFilterLabel = {}
 
 local originMoney = 0
-local moneySliderVal = 0
 local moneyChangedDiff = 0
 local originPoints = 0
-local pointsSliderVal = 0
 local pointsChangedDiff = 0
-local moneySliderChanged = nil
-local pointsSliderChange = nil
-local moneySliderNewVal = nil
-local pointsSliderNewVal = nil
 local moneyPtsNextAllowed = 0
 
 local newHunterName = ""
@@ -119,7 +110,6 @@ local function clear()
     cItemParam = nil
     cBasicParam = nil
 
-    itemBoxLabels = {}
     itemBoxComboChanged = false
     itemBoxComboIndex = 1
     itemBoxSelectedItemFixedId = nil
@@ -127,23 +117,15 @@ local function clear()
     itemBoxSliderChanged = nil
     itemBoxSliderNewVal = nil
     itemBoxInputChanged = nil
-    itemBoxInputNewVal = nil
-    itemBoxInputVal = nil
     itemBoxInputCountChanged = nil
     itemBoxInputCountNewVal = nil
     itemBoxConfirmBtnEnabled = true
 
     -- money/points state
     originMoney = 0
-    moneySliderVal = 0
     moneyChangedDiff = 0
     originPoints = 0
-    pointsSliderVal = 0
     pointsChangedDiff = 0
-    moneySliderChanged = nil
-    pointsSliderChange = nil
-    moneySliderNewVal = nil
-    pointsSliderNewVal = nil
     moneyPtsNextAllowed = 0
 
     -- name reset state
@@ -414,9 +396,6 @@ local function initBoxItem()
     table.sort(itemBoxList, function(a, b)
         return a._SortId < b._SortId
     end)
-    for itemIndex = 1, #itemBoxList do
-        itemBoxLabels[itemIndex] = itemBoxList[itemIndex].name
-    end
     itemBoxSearchedItems, itemBoxSearchedLabels = filterCombo(itemBoxList, filterSetting)
     itemBoxSelectedItemFixedId = itemBoxSearchedItems[itemBoxComboIndex].fixedId
     itemBoxSelectedItemNum = itemBoxSearchedItems[itemBoxComboIndex].num
@@ -429,8 +408,6 @@ local function initHunterBasicData()
     cBasicParam = cUserSaveParam:get_field("_BasicData")
     originMoney = cBasicParam:call("getMoney()")
     originPoints = cBasicParam:call("getPoint()")
-    moneySliderVal = originMoney
-    pointsSliderVal = originPoints
 end
 
 local function changeBoxItemNum(itemFixedId, changedNumber)
@@ -457,8 +434,22 @@ local function moneyAddFunc(cBasicData, newMoney)
     cBasicData:call("addMoney(System.Int32, System.Boolean)", newMoney, true)
 end
 
+local function moneySubFunc(moneyDiff)
+    local payMoneyFunc = sdk.find_type_definition("app.FacilityUtil"):get_method("payMoney(System.Int32)")
+    if payMoneyFunc ~= nil then
+        payMoneyFunc(nil, moneyDiff)
+    end
+end
+
 local function pointAddFunc(cBasicData, newPoint)
     cBasicData:call("addPoint(System.Int32, System.Boolean)", newPoint, true)
+end
+
+local function pointSubFunc(pointDiff)
+    local payPointFunc = sdk.find_type_definition("app.FacilityUtil"):get_method("payPoint(System.Int32)")
+    if payPointFunc ~= nil then
+        payPointFunc(nil, pointDiff)
+    end
 end
 
 local function resetHunterName(cBasicData, newHunterName)
@@ -521,6 +512,20 @@ local function renderAddButtons(labelPrefix, baseValue, applyFn, isCooldown)
     end
 end
 
+local function renderSubButtons(labelPrefix, baseValue, applyFn, isCooldown)
+    for i = 1, #MONEY_PTS_ADD_VALUES do
+        local subValue = MONEY_PTS_ADD_VALUES[i]
+        if i > 1 then
+            imgui.same_line()
+        end
+        imgui.begin_disabled(isCooldown or baseValue - subValue < 0)
+        if imgui.button(labelPrefix .. tostring(subValue), SMALL_BTN) then
+            applyFn(subValue)
+        end
+        imgui.end_disabled()
+    end
+end
+
 local function findItemIndexByFixedId(items, fixedId)
     if items == nil then
         return nil
@@ -560,9 +565,19 @@ local function tryApplyMoneyChange(diff)
     if not allowed then
         return
     end
-    moneySliderVal = originMoney + diff
     moneyChangedDiff = diff
     moneyAddFunc(cBasicParam, moneyChangedDiff)
+    init()
+end
+
+local function tryApplyMoneySubChange(diff)
+    local allowed = false
+    allowed, moneyPtsNextAllowed = consumeDebounce(moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    moneyChangedDiff = -diff
+    moneySubFunc(diff)
     init()
 end
 
@@ -572,9 +587,19 @@ local function tryApplyPointsChange(diff)
     if not allowed then
         return
     end
-    pointsSliderVal = originPoints + diff
     pointsChangedDiff = diff
     pointAddFunc(cBasicParam, pointsChangedDiff)
+    init()
+end
+
+local function tryApplyPointsSubChange(diff)
+    local allowed = false
+    allowed, moneyPtsNextAllowed = consumeDebounce(moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    pointsChangedDiff = -diff
+    pointSubFunc(diff)
     init()
 end
 
@@ -700,11 +725,13 @@ end
 local function renderMoneyAndPointsSection()
     imgui.text(i18n.coinAndPtsEditorTitle)
     local isCooldown = os.clock() < moneyPtsNextAllowed
-    renderAddButtons("Money: +", originMoney, tryApplyMoneyChange, isCooldown)
     imgui.text(i18n.coinCounterVal .. ": " .. tostring(originMoney))
+    renderAddButtons("Money: +", originMoney, tryApplyMoneyChange, isCooldown)
+    renderSubButtons("Money: -", originMoney, tryApplyMoneySubChange, isCooldown)
 
-    renderAddButtons("PTS: +", originPoints, tryApplyPointsChange, isCooldown)
     imgui.text(i18n.ptsCounterVal .. ": " .. tostring(originPoints))
+    renderAddButtons("PTS: +", originPoints, tryApplyPointsChange, isCooldown)
+    renderSubButtons("PTS: -", originPoints, tryApplyPointsSubChange, isCooldown)
 end
 
 local function renderNameResetSection()
