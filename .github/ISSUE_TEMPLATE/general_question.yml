@@ -1,0 +1,17 @@
+name: General Question / 其他问题
+description: Ask a question or discuss something else / 提问或讨论其他内容
+title: "[Question] "
+labels: [ "question" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For bug reports, please use the **Bug Report** template.
+        如果是反馈 Bug，请务必返回使用 **Bug report / 问题报告** 模板。
+  - type: textarea
+    id: content
+    attributes:
+      label: Content / 内容
+      description: Free form discussion / 自由讨论
+    validations:
+      required: true

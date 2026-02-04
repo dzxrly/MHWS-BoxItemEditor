@@ -1,0 +1,12 @@
+name: Feature Request / 功能建议
+description: Suggest an idea for this project / 为项目提出新想法
+title: "[Feature] "
+labels: [ "enhancement" ]
+body:
+  - type: textarea
+    id: pitch
+    attributes:
+      label: Pitch / 建议概述
+      description: What is your idea? / 您的想法是什么？
+    validations:
+      required: true
