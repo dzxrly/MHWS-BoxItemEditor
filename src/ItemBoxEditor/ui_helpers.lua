@@ -31,28 +31,28 @@ function M.setItemBoxSelectionByIndex(index)
     state.itemBoxInputCountNewVal = tostring(state.itemBoxSelectedItemNum)
 end
 
-function M.renderAddButtons(labelPrefix, baseValue, applyFn, isCooldown)
+function M.renderAddButtons(idSuffix, baseValue, applyFn, isCooldown)
     for i = 1, #config.MONEY_PTS_ADD_VALUES do
         local addValue = config.MONEY_PTS_ADD_VALUES[i]
         if i > 1 then
             imgui.same_line()
         end
         imgui.begin_disabled(isCooldown or baseValue + addValue > config.MONEY_PTS_MAX)
-        if imgui.button(labelPrefix .. tostring(addValue), config.SMALL_BTN) then
+        if imgui.button("+" .. tostring(addValue) .. "##" .. idSuffix, config.SMALL_BTN) then
             applyFn(addValue)
         end
         imgui.end_disabled()
     end
 end
 
-function M.renderSubButtons(labelPrefix, baseValue, applyFn, isCooldown)
+function M.renderSubButtons(idSuffix, baseValue, applyFn, isCooldown)
     for i = 1, #config.MONEY_PTS_ADD_VALUES do
         local subValue = config.MONEY_PTS_ADD_VALUES[i]
         if i > 1 then
             imgui.same_line()
         end
         imgui.begin_disabled(isCooldown or baseValue - subValue < 0)
-        if imgui.button(labelPrefix .. tostring(subValue), config.SMALL_BTN) then
+        if imgui.button("-" .. tostring(subValue) .. "##" .. idSuffix, config.SMALL_BTN) then
             applyFn(subValue)
         end
         imgui.end_disabled()
