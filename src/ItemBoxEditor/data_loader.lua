@@ -139,6 +139,12 @@ function M.initHunterBasicData()
     state.cBasicParam = cUserSaveParam:get_field("_BasicData")
     state.originMoney = state.cBasicParam:call("getMoney()")
     state.originPoints = state.cBasicParam:call("getPoint()")
+    state.moneySliderVal = state.originMoney
+    state.moneyInputVal = tostring(state.originMoney)
+    state.moneyInputValid = true
+    state.ptsSliderVal = state.originPoints
+    state.ptsInputVal = tostring(state.originPoints)
+    state.ptsInputValid = true
 end
 
 function M.init()

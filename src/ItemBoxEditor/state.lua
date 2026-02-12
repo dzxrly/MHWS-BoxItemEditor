@@ -56,6 +56,16 @@ M.rareFilterLabel = {}
 M.originMoney = 0
 M.originPoints = 0
 M.moneyPtsNextAllowed = 0
+M.moneySliderVal = 0
+M.moneySliderChanged = false
+M.moneyInputVal = "0"
+M.moneyInputChanged = nil
+M.moneyInputValid = true
+M.ptsSliderVal = 0
+M.ptsSliderChanged = false
+M.ptsInputVal = "0"
+M.ptsInputChanged = nil
+M.ptsInputValid = true
 
 M.newHunterName = ""
 M.newOtomoName = ""
@@ -91,6 +101,16 @@ function M.clear()
     M.originMoney = 0
     M.originPoints = 0
     M.moneyPtsNextAllowed = 0
+    M.moneySliderVal = 0
+    M.moneySliderChanged = false
+    M.moneyInputVal = "0"
+    M.moneyInputChanged = nil
+    M.moneyInputValid = true
+    M.ptsSliderVal = 0
+    M.ptsSliderChanged = false
+    M.ptsInputVal = "0"
+    M.ptsInputChanged = nil
+    M.ptsInputValid = true
 
     -- name reset state
     M.newHunterName = ""

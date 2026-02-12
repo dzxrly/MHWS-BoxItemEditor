@@ -100,11 +100,63 @@ function M.renderMoneyAndPointsSection()
     imgui.text(state.i18n.coinAndPtsEditorTitle)
     local isCooldown = os.clock() < state.moneyPtsNextAllowed
     imgui.text(state.i18n.coinCounterVal .. ": " .. tostring(state.originMoney))
+    imgui.set_next_item_width(config.WINDOW_WIDTH_M)
+    state.moneySliderChanged, state.moneySliderVal = imgui.slider_int(
+            state.i18n.coinSlider, state.moneySliderVal, 0, config.MONEY_PTS_MAX)
+    if state.moneySliderChanged then
+        state.moneyInputVal = tostring(state.moneySliderVal)
+        state.moneyInputValid = true
+    end
+    imgui.set_next_item_width(config.WINDOW_WIDTH_M)
+    state.moneyInputChanged, state.moneyInputVal = imgui.input_text(state.i18n.coinInput, state.moneyInputVal)
+    if state.moneyInputChanged then
+        local num = utils.checkIntegerInRange(state.moneyInputVal, 0, config.MONEY_PTS_MAX)
+        if num then
+            state.moneyInputValid = true
+            state.moneySliderVal = num
+        else
+            state.moneyInputValid = false
+        end
+    end
+    if not state.moneyInputValid then
+        imgui.text_colored(state.i18n.coinInputError, config.ERROR_COLOR)
+    end
+    imgui.begin_disabled(isCooldown or not state.moneyInputValid or state.moneySliderVal == state.originMoney)
+    if imgui.button(state.i18n.coinSetBtn, config.SMALL_BTN) then
+        ui_helpers.trySetMoney(state.moneySliderVal)
+    end
+    imgui.end_disabled()
     ui_helpers.renderAddButtons("Money: +", state.originMoney, ui_helpers.tryApplyMoneyChange, isCooldown)
     ui_helpers.renderSubButtons("Money: -", state.originMoney, ui_helpers.tryApplyMoneySubChange, isCooldown)
 
     imgui.new_line()
     imgui.text(state.i18n.ptsCounterVal .. ": " .. tostring(state.originPoints))
+    imgui.set_next_item_width(config.WINDOW_WIDTH_M)
+    state.ptsSliderChanged, state.ptsSliderVal = imgui.slider_int(
+            state.i18n.ptsSlider, state.ptsSliderVal, 0, config.MONEY_PTS_MAX)
+    if state.ptsSliderChanged then
+        state.ptsInputVal = tostring(state.ptsSliderVal)
+        state.ptsInputValid = true
+    end
+    imgui.set_next_item_width(config.WINDOW_WIDTH_M)
+    state.ptsInputChanged, state.ptsInputVal = imgui.input_text(state.i18n.ptsInput, state.ptsInputVal)
+    if state.ptsInputChanged then
+        local num = utils.checkIntegerInRange(state.ptsInputVal, 0, config.MONEY_PTS_MAX)
+        if num then
+            state.ptsInputValid = true
+            state.ptsSliderVal = num
+        else
+            state.ptsInputValid = false
+        end
+    end
+    if not state.ptsInputValid then
+        imgui.text_colored(state.i18n.ptsInputError, config.ERROR_COLOR)
+    end
+    imgui.begin_disabled(isCooldown or not state.ptsInputValid or state.ptsSliderVal == state.originPoints)
+    if imgui.button(state.i18n.ptsSetBtn, config.SMALL_BTN) then
+        ui_helpers.trySetPoints(state.ptsSliderVal)
+    end
+    imgui.end_disabled()
     ui_helpers.renderAddButtons("PTS: +", state.originPoints, ui_helpers.tryApplyPointsChange, isCooldown)
     ui_helpers.renderSubButtons("PTS: -", state.originPoints, ui_helpers.tryApplyPointsSubChange, isCooldown)
 end

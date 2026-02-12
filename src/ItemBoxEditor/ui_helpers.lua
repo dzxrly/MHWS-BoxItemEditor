@@ -140,6 +140,54 @@ function M.tryApplyPointsChange(diff)
     data_ops.pointAddFunc(state.cBasicParam, diff)
 end
 
+function M.trySetMoney(targetValue)
+    targetValue = tonumber(targetValue)
+    if targetValue == nil then
+        return
+    end
+    if targetValue < 0 or targetValue > config.MONEY_PTS_MAX then
+        return
+    end
+    local diff = targetValue - state.originMoney
+    if diff == 0 then
+        return
+    end
+    local allowed = false
+    allowed, state.moneyPtsNextAllowed = M.consumeDebounce(state.moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    if diff > 0 then
+        data_ops.moneyAddFunc(state.cBasicParam, diff)
+    else
+        data_ops.moneySubFunc(math.abs(diff))
+    end
+end
+
+function M.trySetPoints(targetValue)
+    targetValue = tonumber(targetValue)
+    if targetValue == nil then
+        return
+    end
+    if targetValue < 0 or targetValue > config.MONEY_PTS_MAX then
+        return
+    end
+    local diff = targetValue - state.originPoints
+    if diff == 0 then
+        return
+    end
+    local allowed = false
+    allowed, state.moneyPtsNextAllowed = M.consumeDebounce(state.moneyPtsNextAllowed)
+    if not allowed then
+        return
+    end
+    if diff > 0 then
+        data_ops.pointAddFunc(state.cBasicParam, diff)
+    else
+        data_ops.pointSubFunc(math.abs(diff))
+    end
+end
+
 function M.tryApplyPointsSubChange(diff)
     diff = math.abs(tonumber(diff) or 0)
     if diff == 0 then
