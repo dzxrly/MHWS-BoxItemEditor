@@ -8,8 +8,8 @@ local ITEM_ID_MAX = 974 -- app.ItemDef.ID.Max
 -- !!! DO NOT MODIFY THE ABOVE CODE !!!
 
 -- Just change here can change every VERSION setting in all files
-local INTER_VERSION = "v1.10.1"
-local MAX_VERSION = "1.40.3.2"
+local INTER_VERSION = "v1.10.2"
+local MAX_VERSION = "1.41.0.0"
 -- Just change here can change every VERSION setting in all files END
 
 local config = require("ItemBoxEditor.config")
