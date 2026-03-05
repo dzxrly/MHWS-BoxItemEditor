@@ -1,124 +1,57 @@
-local M = {}
+local function createEnumState()
+    return {
+        fixedIdToContent = {},
+        contentToFixedId = {},
+        fixedId = {},
+        content = {}
+    }
+end
 
--- NOT CHANGED VARIABLES:
-M.itemNameJson = nil
-M.i18n = nil
--- NOT CHANGED VARIABLES END
+local function createState()
+    return {
+        isLoadLanguage = false,
+        userConfig = {
+            mainWindowOpen = false,
+            itemWindowOpen = false,
+            aboutWindowOpen = false,
+            userLanguage = 1
+        },
+        itemEnum = createEnumState(),
+        rareEnum = createEnumState(),
+        itemTypeEnum = createEnumState(),
+        cUserSaveParam = nil,
+        itemDef = nil,
+        baseItemList = nil,
+        itemCombo = {
+            displayText = {},
+            itemNum = {},
+            cData = {},
+        },
+        -- FilterType Projection: (i18n: typeFilterComboLabel)
+        -- 1: filterNoLimitTitle 不限
+        -- 2: typeFixedId = 0, isHeal = true 1治疗道具
+        -- 3: typeFixedId = 0, isBattle = true 2战斗道具
+        -- 4: typeFixedId = 0 3调合素材
+        -- 5: typeFixedId = 2 4装备素材
+        -- 6: typeFixedId = 3 5弩炮弹药
+        -- 7: typeFixedId = 5 6特产/其他
+        -- 8: typeFixedId = 2, isForMoney = true 7换金素材
+        currentSelectedFilterTypeIdx = 1,
+        currentSelectedRareIdx = 1,
+        currentSelectedItemIdx = 1,
+        currentMoney = 0,
+        currentPts = 0,
+    }
+end
 
--- === Runtime state ===
--- window status
-M.isLoadLanguage = false
-M.userConfig = {
-    mainWindowOpen = false,
-    itemWindowOpen = false,
-    aboutWindowOpen = false,
-    userLanguage = "en-US"
-}
-M.mainWindowState = M.userConfig.mainWindowOpen
-M.itemWindowState = M.userConfig.itemWindowOpen
-M.aboutWindowState = M.userConfig.aboutWindowOpen
-M.userLanguage = "en-US" -- default language
--- window status end
+local M = createState()
 
--- item table window
-M.searchItemTarget = nil
-M.searchItemResult = {}
--- item table window end
-M.itemBoxList = {}
-M.itemIDAndFixedIDProjection = {} -- fixedId -> itemId
-M.boxItemArray = nil
-M.cItemParam = nil
-M.cBasicParam = nil
+function M.resetState()
+    local nextState = createState()
 
-M.itemBoxComboChanged = false
-M.itemBoxComboIndex = 1
-M.itemBoxSelectedItemFixedId = nil
-M.itemBoxSelectedItemNum = nil
-M.itemBoxSliderChanged = nil
-M.itemBoxSliderNewVal = nil
-M.itemBoxSearchedItems = {}
-M.itemBoxSearchedLabels = {}
-M.itemBoxInputChanged = nil
-M.itemBoxInputCountChanged = nil
-M.itemBoxInputCountNewVal = nil
-M.itemBoxConfirmBtnEnabled = true
-
-M.rareFilterComboChanged = nil
-M.typeFilterComboChanged = nil
-M.filterSetting = {
-    searchStr = "",
-    filterIndex = 1,
-    rareIndex = 1
-}
-M.typeFilterLabel = {}
-M.rareFilterLabel = {}
-
-M.originMoney = 0
-M.originPoints = 0
-M.moneyPtsNextAllowed = 0
-M.moneySliderVal = 0
-M.moneySliderChanged = false
-M.moneyInputVal = "0"
-M.moneyInputChanged = nil
-M.moneyInputValid = true
-M.ptsSliderVal = 0
-M.ptsSliderChanged = false
-M.ptsInputVal = "0"
-M.ptsInputChanged = nil
-M.ptsInputValid = true
-
-M.newHunterName = ""
-M.newOtomoName = ""
-M.hunterNameInputChanged = nil
-M.hunterNameResetBtnEnabled = false
-M.otomoNameInputChanged = nil
-M.otomoNameResetBtnEnabled = false
-
-M.isInitError = false
-M.initErrorMsg = ""
-
-M.GAME_VER = nil
-M.MAX_VER_LT_OR_EQ_GAME_VER = true
-
-function M.clear()
-    -- item box state
-    M.boxItemArray = nil
-    M.cItemParam = nil
-    M.cBasicParam = nil
-
-    M.itemBoxComboChanged = false
-    M.itemBoxComboIndex = 1
-    M.itemBoxSelectedItemFixedId = nil
-    M.itemBoxSelectedItemNum = nil
-    M.itemBoxSliderChanged = nil
-    M.itemBoxSliderNewVal = nil
-    M.itemBoxInputChanged = nil
-    M.itemBoxInputCountChanged = nil
-    M.itemBoxInputCountNewVal = nil
-    M.itemBoxConfirmBtnEnabled = true
-
-    -- money/points state
-    M.originMoney = 0
-    M.originPoints = 0
-    M.moneyPtsNextAllowed = 0
-    M.moneySliderVal = 0
-    M.moneySliderChanged = false
-    M.moneyInputVal = "0"
-    M.moneyInputChanged = nil
-    M.moneyInputValid = true
-    M.ptsSliderVal = 0
-    M.ptsSliderChanged = false
-    M.ptsInputVal = "0"
-    M.ptsInputChanged = nil
-    M.ptsInputValid = true
-
-    -- name reset state
-    M.newHunterName = ""
-    M.newOtomoName = ""
-    M.hunterNameInputChanged = nil
-    M.hunterNameResetBtnEnabled = false
-    M.otomoNameInputChanged = nil
-    M.otomoNameResetBtnEnabled = false
+    for key, value in pairs(nextState) do
+        M[key] = value
+    end
 end
 
 return M
