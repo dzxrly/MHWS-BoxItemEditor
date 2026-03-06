@@ -1,6 +1,6 @@
 local M = {}
 
-M.USER_CONFIG_PATH = "ItemBoxEditor.json"
+M.USER_CONFIG_PATH = "ItemBoxEditor/UserConfig.json"
 M.ITEM_NUM_MAX = 9999
 M.NAME_LENGTH_MAX = 10
 M.MONEY_PTS_MAX = 99999999
@@ -13,6 +13,6 @@ M.WINDOW_WIDTH_S = 150
 M.ERROR_COLOR = 0xeb4034ff
 M.CHECKED_COLOR = 0xff74ff33
 M.TIPS_COLOR = 0xff00c3ff
-M.IGNORED_KEYWORDS = {"Reject", "EXP"}
+M.IGNORED_KEYWORDS = { "Reject", "EXP" }
 
 return M

@@ -39,8 +39,11 @@ local function createState()
         currentSelectedFilterTypeIdx = 1,
         currentSelectedRareIdx = 1,
         currentSelectedItemIdx = 1,
+        currentInputItemNewNum = 0,
         currentMoney = 0,
         currentPts = 0,
+        syncMoneyStr = nil,
+        syncPtsStr = nil,
     }
 end
 
