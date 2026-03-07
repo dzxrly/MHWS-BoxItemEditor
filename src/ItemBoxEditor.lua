@@ -9,7 +9,7 @@ local init = require("ItemBoxEditor.init")
 coreApi.init("Item Box Editor")
 
 -- DO NOT CHANGE THE NEXT LINE, ONLY UPDATE THE VERSION NUMBER
-local modVersion = "v2.0.0"
+local modVersion = "v2.0.1"
 -- DO NOT CHANGE THE PREVIOUS LINE
 
 local function onStartPlayable()

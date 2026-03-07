@@ -25,7 +25,7 @@ local function getItemDataCData(itemId)
                     isBattle = cData:get_field("_Battle"),
                     isSpecial = cData:get_field("_Special"),
                     isForMoney = cData:get_field("_ForMoney"),
-                    isOutBox = cData:get_field("_OutBox"),
+                    isOutBox = cData:get_field("_OutBox")
                 }
             end
         end
@@ -45,9 +45,7 @@ local function getItemName(nameGuid)
 end
 
 local function isEditableItem(itemCData)
-    return not itemCData.isFix and
-        not itemCData.isInfinit and
-        not itemCData.isOutBox
+    return not itemCData.isFix and not itemCData.isInfinit and not itemCData.isOutBox
 end
 
 local function isInFilter(itemFixedId)
@@ -112,7 +110,7 @@ function M.initBaseItemList()
                         isBattle = itemCData.isBattle,
                         isSpecial = itemCData.isSpecial,
                         isForMoney = itemCData.isForMoney,
-                        isOutBox = itemCData.isOutBox,
+                        isOutBox = itemCData.isOutBox
                     }
                 end
             end
@@ -124,34 +122,27 @@ function M.initBaseItemList()
 end
 
 function M.getItemBoxInfo()
-    if state.baseItemList ~= nil and
-        state.cItemParam ~= nil
-    then
+    if state.baseItemList ~= nil and state.cItemParam ~= nil then
         local itemBox = state.cItemParam:get_field("_BoxItem")
         if itemBox ~= nil then
+            local itemBoxList = {}
+            -- C# array begin from 0
+            for idx = 0, #itemBox - 1 do
+                local cItemWork = itemBox[idx]
+                itemBoxList[cItemWork:get_field("ItemIdFixed")] = cItemWork:get_field("Num")
+            end
             state.itemCombo = {
                 displayText = {},
                 itemNum = {},
                 cData = {}
             }
-            -- C# array begin from 0
-            for index = 0, #itemBox - 1 do
-                local cItemWork = itemBox[index]
-                if cItemWork ~= nil then
-                    local fixedId = cItemWork:get_field("ItemIdFixed")
-                    local num = cItemWork:get_field("Num")
-                    local itemCData = state.baseItemList[fixedId]
-                    if itemCData ~= nil and isInFilter(fixedId) then
-                        local displayText = itemCData.name ..
-                            " - " ..
-                            num ..
-                            "##itemCombo_" ..
-                            tostring(fixedId) ..
-                            tostring(index)
-                        table.insert(state.itemCombo.displayText, displayText)
-                        table.insert(state.itemCombo.itemNum, num)
-                        table.insert(state.itemCombo.cData, itemCData)
-                    end
+            for fixedId, itemObj in pairs(state.baseItemList) do
+                if isInFilter(fixedId) then
+                    local num = itemBoxList[fixedId] or 0
+                    local displayText = itemObj.name .. " - " .. num .. "##itemCombo_" .. tostring(fixedId)
+                    table.insert(state.itemCombo.displayText, displayText)
+                    table.insert(state.itemCombo.itemNum, num)
+                    table.insert(state.itemCombo.cData, itemObj)
                 end
             end
         else
@@ -197,14 +188,8 @@ function M.getMoneyAndPts()
 end
 
 function M.changeItemNum(itemId, changedNumDiff)
-    if state.baseItemList ~= nil and
-        state.cItemParam ~= nil
-    then
-        state.cItemParam:call(
-            "changeItemBoxNum(app.ItemDef.ID, System.Int16)",
-            itemId,
-            changedNumDiff
-        )
+    if state.baseItemList ~= nil and state.cItemParam ~= nil then
+        state.cItemParam:call("changeItemBoxNum(app.ItemDef.ID, System.Int16)", itemId, changedNumDiff)
         M.getItemBoxInfo()
     else
         coreApi.log("Error: cItemParam is not found")
@@ -213,19 +198,12 @@ end
 
 -- mode: 1 = money, 2 = pts
 function M.changeMoneyAndPts(mode, changedDiff)
-    if state.cBasicParam ~= nil and
-        state.payMoneyFunc ~= nil and
-        state.payPtsFunc ~= nil
-    then
+    if state.cBasicParam ~= nil and state.payMoneyFunc ~= nil and state.payPtsFunc ~= nil then
         if mode == 1 then
             coreApi.log("Money changed diff = " .. tostring(changedDiff))
             if changedDiff >= 0 then
                 coreApi.executeUserCmd(function()
-                    state.cBasicParam:call(
-                        "addMoney(System.Int32, System.Boolean)",
-                        math.abs(changedDiff),
-                        false
-                    )
+                    state.cBasicParam:call("addMoney(System.Int32, System.Boolean)", math.abs(changedDiff), false)
                     M.getMoneyAndPts()
                 end)
             else
@@ -238,11 +216,7 @@ function M.changeMoneyAndPts(mode, changedDiff)
             coreApi.log("PTS changed diff = " .. tostring(changedDiff))
             if changedDiff >= 0 then
                 coreApi.executeUserCmd(function()
-                    state.cBasicParam:call(
-                        "addPoint(System.Int32, System.Boolean)",
-                        math.abs(changedDiff),
-                        false
-                    )
+                    state.cBasicParam:call("addPoint(System.Int32, System.Boolean)", math.abs(changedDiff), false)
                     M.getMoneyAndPts()
                 end)
             else
