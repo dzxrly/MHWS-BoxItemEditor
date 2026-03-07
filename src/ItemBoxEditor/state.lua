@@ -19,7 +19,10 @@ local function createState()
         itemEnum = createEnumState(),
         rareEnum = createEnumState(),
         itemTypeEnum = createEnumState(),
-        cUserSaveParam = nil,
+        cBasicParam = nil,
+        cItemParam = nil,
+        payMoneyFunc = nil,
+        payPtsFunc = nil,
         itemDef = nil,
         baseItemList = nil,
         itemCombo = {

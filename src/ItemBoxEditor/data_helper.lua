@@ -124,44 +124,41 @@ function M.initBaseItemList()
 end
 
 function M.getItemBoxInfo()
-    if state.cUserSaveParam ~= nil and state.baseItemList ~= nil then
-        local cItemParam = state.cUserSaveParam:get_field("_Item")
-        if cItemParam ~= nil then
-            local itemBox = cItemParam:get_field("_BoxItem")
-            if itemBox ~= nil then
-                state.itemCombo = {
-                    displayText = {},
-                    itemNum = {},
-                    cData = {}
-                }
-                -- C# array begin from 0
-                for index = 0, #itemBox - 1 do
-                    local cItemWork = itemBox[index]
-                    if cItemWork ~= nil then
-                        local fixedId = cItemWork:get_field("ItemIdFixed")
-                        local num = cItemWork:get_field("Num")
-                        local itemCData = state.baseItemList[fixedId]
-                        if itemCData ~= nil and isInFilter(fixedId) then
-                            local displayText = itemCData.name ..
-                                " - " ..
-                                num ..
-                                "##itemCombo_" ..
-                                tostring(fixedId) ..
-                                tostring(index)
-                            table.insert(state.itemCombo.displayText, displayText)
-                            table.insert(state.itemCombo.itemNum, num)
-                            table.insert(state.itemCombo.cData, itemCData)
-                        end
+    if state.baseItemList ~= nil and
+        state.cItemParam ~= nil
+    then
+        local itemBox = state.cItemParam:get_field("_BoxItem")
+        if itemBox ~= nil then
+            state.itemCombo = {
+                displayText = {},
+                itemNum = {},
+                cData = {}
+            }
+            -- C# array begin from 0
+            for index = 0, #itemBox - 1 do
+                local cItemWork = itemBox[index]
+                if cItemWork ~= nil then
+                    local fixedId = cItemWork:get_field("ItemIdFixed")
+                    local num = cItemWork:get_field("Num")
+                    local itemCData = state.baseItemList[fixedId]
+                    if itemCData ~= nil and isInFilter(fixedId) then
+                        local displayText = itemCData.name ..
+                            " - " ..
+                            num ..
+                            "##itemCombo_" ..
+                            tostring(fixedId) ..
+                            tostring(index)
+                        table.insert(state.itemCombo.displayText, displayText)
+                        table.insert(state.itemCombo.itemNum, num)
+                        table.insert(state.itemCombo.cData, itemCData)
                     end
                 end
-            else
-                coreApi.log("Error: cItemWork[] is not found")
             end
         else
-            coreApi.log("Error: cItemParam is not found")
+            coreApi.log("Error: cItemWork[] is not found")
         end
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cItemParam is not found")
     end
 end
 
@@ -189,117 +186,94 @@ function M.saveUserConfigJson(jsonPath)
 end
 
 function M.getMoneyAndPts()
-    if state.cUserSaveParam ~= nil then
-        local cBasicParam = state.cUserSaveParam:get_field("_BasicData")
-        if cBasicParam ~= nil then
-            state.currentMoney = cBasicParam:call("getMoney()")
-            state.currentPts = cBasicParam:call("getPoint()")
-            state.syncMoneyStr = nil
-            state.syncPtsStr = nil
-        else
-            coreApi.log("Error: cBasicParam is not found")
-        end
+    if state.cBasicParam ~= nil then
+        state.currentMoney = state.cBasicParam:call("getMoney()")
+        state.currentPts = state.cBasicParam:call("getPoint()")
+        state.syncMoneyStr = nil
+        state.syncPtsStr = nil
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cBasicParam is not found")
     end
 end
 
 function M.changeItemNum(itemId, changedNumDiff)
-    if state.cUserSaveParam ~= nil and state.baseItemList ~= nil then
-        local cItemParam = state.cUserSaveParam:get_field("_Item")
-        if cItemParam ~= nil then
-            cItemParam:call(
-                "changeItemBoxNum(app.ItemDef.ID, System.Int16)",
-                itemId,
-                changedNumDiff
-            )
-            M.getItemBoxInfo()
-        else
-            coreApi.log("Error: cItemParam is not found")
-        end
+    if state.baseItemList ~= nil and
+        state.cItemParam ~= nil
+    then
+        state.cItemParam:call(
+            "changeItemBoxNum(app.ItemDef.ID, System.Int16)",
+            itemId,
+            changedNumDiff
+        )
+        M.getItemBoxInfo()
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cItemParam is not found")
     end
 end
 
 -- mode: 1 = money, 2 = pts
 function M.changeMoneyAndPts(mode, changedDiff)
-    if state.cUserSaveParam ~= nil then
+    if state.cBasicParam ~= nil and
+        state.payMoneyFunc ~= nil and
+        state.payPtsFunc ~= nil
+    then
         if mode == 1 then
             coreApi.log("Money changed diff = " .. tostring(changedDiff))
             if changedDiff >= 0 then
-                local cBasicParam = state.cUserSaveParam:get_field("_BasicData")
-                if cBasicParam ~= nil then
-                    coreApi.executeUserCmd(function()
-                        cBasicParam:call(
-                            "addMoney(System.Int32, System.Boolean)",
-                            math.abs(changedDiff),
-                            false
-                        )
-                        M.getMoneyAndPts()
-                    end)
-                end
+                coreApi.executeUserCmd(function()
+                    state.cBasicParam:call(
+                        "addMoney(System.Int32, System.Boolean)",
+                        math.abs(changedDiff),
+                        false
+                    )
+                    M.getMoneyAndPts()
+                end)
             else
                 coreApi.executeUserCmd(function()
-                    local payMoneyFunc = sdk.find_type_definition("app.FacilityUtil"):get_method(
-                        "payMoney(System.Int32)")
-                    if payMoneyFunc ~= nil then
-                        payMoneyFunc(nil, math.abs(changedDiff))
-                    else
-                        coreApi.log("Error: payMoneyFunc is not found")
-                    end
+                    state.payMoneyFunc(nil, math.abs(changedDiff))
                     M.getMoneyAndPts()
                 end)
             end
         elseif mode == 2 then
             coreApi.log("PTS changed diff = " .. tostring(changedDiff))
             if changedDiff >= 0 then
-                local cBasicParam = state.cUserSaveParam:get_field("_BasicData")
-                if cBasicParam ~= nil then
-                    coreApi.executeUserCmd(function()
-                        cBasicParam:call(
-                            "addPoint(System.Int32, System.Boolean)",
-                            math.abs(changedDiff),
-                            false
-                        )
-                        M.getMoneyAndPts()
-                    end)
-                end
+                coreApi.executeUserCmd(function()
+                    state.cBasicParam:call(
+                        "addPoint(System.Int32, System.Boolean)",
+                        math.abs(changedDiff),
+                        false
+                    )
+                    M.getMoneyAndPts()
+                end)
             else
                 coreApi.executeUserCmd(function()
-                    local payPointFunc = sdk.find_type_definition("app.FacilityUtil"):get_method(
-                        "payPoint(System.Int32)")
-                    if payPointFunc ~= nil then
-                        payPointFunc(nil, math.abs(changedDiff))
-                    else
-                        coreApi.log("Error: payPointFunc is not found")
-                    end
+                    state.payPointFunc(nil, math.abs(changedDiff))
                     M.getMoneyAndPts()
                 end)
             end
         end
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cItemParam/payMoneyFunc/payPtsFunc is not found")
     end
 end
 
 function M.resetHunterName(newHunterName)
-    if state.cUserSaveParam ~= nil then
+    if state.cBasicParam ~= nil then
         coreApi.executeUserCmd(function()
-            state.cUserSaveParam:call("setHunterName(System.String)", newHunterName)
+            state.cBasicParam:call("setHunterName(System.String)", newHunterName)
         end)
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cBasicParam is not found")
     end
 end
 
 function M.resetOtomoName(newOtomoName)
-    if state.cUserSaveParam ~= nil then
+    if state.cBasicParam ~= nil then
         coreApi.executeUserCmd(function()
-            state.cUserSaveParam:call("setOtomoName(System.String)", newOtomoName)
+            state.cBasicParam:call("setOtomoName(System.String)", newOtomoName)
         end)
     else
-        coreApi.log("Error: cUserSaveParam is not found")
+        coreApi.log("Error: cBasicParam is not found")
     end
 end
 

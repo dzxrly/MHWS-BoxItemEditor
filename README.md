@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[![Static Badge](https://img.shields.io/badge/Nexusmods-Item%20Box%20Editor-%23d28934?style=for-the-badge)](https://www.nexusmods.com/monsterhunterwilds/mods/102) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Fmain%2Fversion.json&query=%24.version&style=for-the-badge&label=VERSION) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fversion.json&query=%24.max&style=for-the-badge&label=Supported%20Game%20Version%20(MAX)&color=FF5733) [![GitHub License](https://img.shields.io/github/license/dzxrly/MHWS-BoxItemEditor?style=for-the-badge)](https://github.com/dzxrly/MHWS-BoxItemEditor/blob/main/LICENSE)
+[![Static Badge](https://img.shields.io/badge/Nexusmods-Item%20Box%20Editor-%23d28934?style=for-the-badge)](https://www.nexusmods.com/monsterhunterwilds/mods/102) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Fmain%2Fversion.json&query=%24.version&style=for-the-badge&label=VERSION) [![GitHub License](https://img.shields.io/github/license/dzxrly/MHWS-BoxItemEditor?style=for-the-badge)](https://github.com/dzxrly/MHWS-BoxItemEditor/blob/main/LICENSE)
 
 ![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fmod_info.yaml&query=%24.views_count&style=for-the-badge&label=Nexusmods%20views&color=F0E6EF) ![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzxrly%2FMHWS-BoxItemEditor%2Frefs%2Fheads%2Fmain%2Fmod_info.yaml&query=%24.total_download_count&style=for-the-badge&label=Nexusmods%20downloads&color=A8DADC) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/dzxrly/MHWS-BoxItemEditor/total?style=for-the-badge&label=Github%20Downloads&color=bce784)
 
@@ -35,9 +35,9 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 3. Unzip the mod (**ALL FILES**) to the Monster Hunter Wilds **ROOT** directory.
 4. When you install correctly, there will be three files in your `./reframework`, and they are:
 
-   - `./reframework/autorun/ItemBoxEditor.lua`
-   - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
-   - `./reframework/ItemEditor_ItemIDs.txt`
+    - `./reframework/autorun/ItemBoxEditor.lua`
+    - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
+    - `./reframework/ItemEditor_ItemIDs.txt`
 
 ---
 
@@ -55,9 +55,9 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 2. 下载MOD；
 3. 将MOD解压缩（**所有文件**）后存放至Monster Hunter Wilds**根目录**；
 4. 当你正确安装MOD后，在你的 `./reframework` 目录下应该有三个文件路径：
-   - `./reframework/autorun/ItemBoxEditor.lua`
-   - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
-   - `./reframework/ItemEditor_ItemIDs.txt`
+    - `./reframework/autorun/ItemBoxEditor.lua`
+    - `./reframework/data/ItemBoxEditor/ItemBoxEditor.json`
+    - `./reframework/ItemEditor_ItemIDs.txt`
 
 <div align="center">
 

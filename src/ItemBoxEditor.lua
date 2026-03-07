@@ -90,8 +90,8 @@ re.on_frame(function()
     -- only display the window when REFramework is actually drawing its own UI
     if reframework:is_drawing_ui() and state.isLoadLanguage then
         ui.mainWindow()
-        -- ui.itemTableWindow()
-        -- ui.aboutWindow()
+        ui.itemTableWindow()
+        ui.aboutWindow()
     end
 
     imgui.pop_font(ref_font)
