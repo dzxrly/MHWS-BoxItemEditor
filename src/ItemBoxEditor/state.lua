@@ -41,6 +41,7 @@ local function createState()
         -- 8: typeFixedId = 2, isForMoney = true 7换金素材
         currentSelectedFilterTypeIdx = 1,
         currentSelectedRareIdx = 1,
+        mainWindowSearchText = "",
         currentSelectedItemIdx = 1,
         currentInputItemNewNum = 0,
         currentMoney = 0,

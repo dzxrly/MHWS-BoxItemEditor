@@ -54,7 +54,7 @@ local M = coreApi.createI18n({
             itemTableTitleID = "アイテムID",
             itemTableTitleName = "アイテム名",
             unknownItem = "不明なアイテム",
-            searchInput = "アイテム名/ID/数を検索",
+            searchInput = "アイテム名/ID",
             typeFilterComboLabel = {
                 "回復アイテム",
                 "戦闘アイテム",
@@ -142,7 +142,7 @@ local M = coreApi.createI18n({
             itemTableTitleID = "Item ID",
             itemTableTitleName = "Item Name",
             unknownItem = "Unknown Item",
-            searchInput = "Search Item with Name/ID/Num",
+            searchInput = "Search Item with Name/ID",
             typeFilterComboLabel = {
                 "Healing",
                 "Battle",
@@ -228,7 +228,7 @@ local M = coreApi.createI18n({
             itemTableTitleID = "아이템 ID",
             itemTableTitleName = "아이템 이름",
             unknownItem = "알 수 없는 아이템",
-            searchInput = "아이템 이름/ID/개수 검색",
+            searchInput = "아이템 이름/ID",
             typeFilterComboLabel = {
                 "회복 아이템",
                 "전투 아이템",
@@ -314,7 +314,7 @@ local M = coreApi.createI18n({
             itemTableTitleID = "物品ID",
             itemTableTitleName = "物品名稱",
             unknownItem = "未知物品",
-            searchInput = "搜索物品名稱/ID/數量",
+            searchInput = "搜索物品名稱/ID",
             typeFilterComboLabel = {
                 "治療道具",
                 "戰鬥道具",
@@ -400,7 +400,7 @@ local M = coreApi.createI18n({
             itemTableTitleID = "物品ID",
             itemTableTitleName = "物品名称",
             unknownItem = "未知物品",
-            searchInput = "搜索物品名称/ID/数量",
+            searchInput = "搜索物品名称/ID",
             typeFilterComboLabel = {
                 "治疗道具",
                 "战斗道具",

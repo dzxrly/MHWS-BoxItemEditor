@@ -121,6 +121,22 @@ function M.initBaseItemList()
     end
 end
 
+function M.isInBaseListInfo(itemObj, searchKeyword)
+    searchKeyword = string.lower(tostring(searchKeyword) or "")
+    if searchKeyword == "" then
+        return true
+    end
+
+    local id = string.lower(tostring(itemObj.id))
+    local name = string.lower(tostring(itemObj.name))
+    if string.find(id, searchKeyword, 1, true) or
+        string.find(name, searchKeyword, 1, true) then
+        return true
+    end
+
+    return false
+end
+
 function M.getItemBoxInfo()
     if state.baseItemList ~= nil and state.cItemParam ~= nil then
         local itemBox = state.cItemParam:get_field("_BoxItem")
@@ -137,7 +153,9 @@ function M.getItemBoxInfo()
                 cData = {}
             }
             for fixedId, itemObj in pairs(state.baseItemList) do
-                if isInFilter(fixedId) then
+                if isInFilter(fixedId) and
+                    M.isInBaseListInfo(itemObj, state.mainWindowSearchText)
+                then
                     local num = itemBoxList[fixedId] or 0
                     local displayText = itemObj.name .. " - " .. num .. "##itemCombo_" .. tostring(fixedId)
                     table.insert(state.itemCombo.displayText, displayText)

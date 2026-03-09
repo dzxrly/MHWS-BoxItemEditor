@@ -14,7 +14,7 @@ local function getItemTable()
     if state.baseItemList ~= nil then
         itemTable = {}
         for fixedId, itemInfo in pairs(state.baseItemList) do
-            if searchText == "" or string.find(string.lower(itemInfo.name), string.lower(searchText), 1, true) then
+            if dataHelper.isInBaseListInfo(itemInfo, searchText) then
                 table.insert(itemTable, {
                     fixedId = fixedId,
                     id = itemInfo.id,

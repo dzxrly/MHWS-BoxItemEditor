@@ -91,7 +91,9 @@ function M.mainWindow()
                 filterTypeComboObj
             )
             if filterTypeComboChanged then
-                dataHelper.getItemBoxInfo()
+                coreApi.executeUserCmd(function()
+                    dataHelper.getItemBoxInfo()
+                end)
             end
             imgui.table_next_column()
             local rareComboObj = getRareComboObj()
@@ -102,8 +104,40 @@ function M.mainWindow()
                 rareComboObj
             )
             if rareComboChanged then
-                dataHelper.getItemBoxInfo()
+                coreApi.executeUserCmd(function()
+                    dataHelper.getItemBoxInfo()
+                end)
             end
+
+            imgui.end_table()
+        end
+
+        if imgui.begin_table("table_item_search_bar", 3, config.IMGUI_TABLE_NONE) then
+            imgui.table_setup_column("", config.IMGUI_TABLE_COL_STRETCH, 2)
+            imgui.table_setup_column("", config.IMGUI_TABLE_COL_STRETCH, 1)
+            imgui.table_setup_column("", config.IMGUI_TABLE_COL_STRETCH, 1)
+
+            imgui.table_next_column()
+            imgui.set_next_item_width(-1)
+            _, state.mainWindowSearchText = imgui.input_text(
+                "##mainWindowSearchItem",
+                state.mainWindowSearchText
+            )
+            imgui.table_next_column()
+            if imgui.button(i18n.getUIText("clearBtn"), { -0.001, 0 }) then
+                coreApi.executeUserCmd(function()
+                    state.mainWindowSearchText = ""
+                    dataHelper.getItemBoxInfo()
+                end)
+            end
+            imgui.table_next_column()
+            if imgui.button(i18n.getUIText("searchBtn"), { -0.001, 0 }) then
+                coreApi.executeUserCmd(function()
+                    coreApi.log("searchBtn clicked, searchText: " .. state.mainWindowSearchText)
+                    dataHelper.getItemBoxInfo()
+                end)
+            end
+
             imgui.end_table()
         end
 
