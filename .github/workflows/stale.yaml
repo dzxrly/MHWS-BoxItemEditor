@@ -19,6 +19,9 @@ jobs:
           days-before-stale: 30
           days-before-close: 7
 
+          close-issue-reason: 'completed'
+          close-pr-reason: 'completed'
+
           stale-issue-label: 'stale'
           exempt-issue-labels: 'pinned,security,wip'
 
