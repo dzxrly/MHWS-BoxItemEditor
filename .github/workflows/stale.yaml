@@ -6,6 +6,7 @@ on:
 
 permissions:
   issues: write
+  pull-requests: write
 
 jobs:
   stale:
@@ -19,6 +20,7 @@ jobs:
           days-before-close: 7
 
           close-issue-reason: 'completed'
+          close-pr-reason: 'completed'
 
           stale-issue-label: 'stale'
           exempt-issue-labels: 'pinned,security,wip'
