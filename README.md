@@ -55,6 +55,10 @@ A mod of `Monster Hunter Wilds` for editing the itembox. / 用于`怪物猎人�
 
 <div align="center">
 
+## Related Resources
+
+- [MH Wilds Guides](https://mhwildsguides.xyz/) — Monster Hunter Wilds weapon tier lists, monster guides, armor builds, and skill combos.
+
 ## Contributors
 
 <a href="https://github.com/dzxrly/MHWS-BoxItemEditor/graphs/contributors">
